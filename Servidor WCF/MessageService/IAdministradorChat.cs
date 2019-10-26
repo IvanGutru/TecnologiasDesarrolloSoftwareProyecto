@@ -15,10 +15,10 @@ namespace MessageService
         int CrearSala(Sala sala);
         [OperationContract]
         List<Sala> ConsultarSalasDisponibles();
+        [OperationContract]
+        List<String> ConsultarJugadoresSala(int indice);
         [OperationContract(IsOneWay = true)]
         void UnirseSala(int indice, Jugador jugador);
-        [OperationContract(IsOneWay = true)]
-        void Entrar(Jugador jugador, String mensajeEntrada);
         [OperationContract(IsOneWay = true)]
         void EnviarMensaje(int indice, String mensaje);
         [OperationContract(IsOneWay = true)]

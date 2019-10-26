@@ -67,7 +67,6 @@ namespace SerpientesEscaleras
             };
             contexto = new InstanceContext(regresoMensaje);
             servidorChat = new ServidorSE.AdministradorChatClient(contexto);
-            //servidorChat.Entrar(jugador, Properties.Resources.mensajeEntrada);
         }
 
         public void CrearPartida(ServidorSE.Sala sala)
@@ -79,6 +78,8 @@ namespace SerpientesEscaleras
         public void EntrarPartida(int indice)
         {
             indiceSala = indice;
+            jugadoresConectados = servidorChat.ConsultarJugadoresSala(indice).ToList();
+            listBox_JugadoresConectados.ItemsSource = jugadoresConectados;
             servidorChat.UnirseSala(indiceSala, jugador);
         }
 

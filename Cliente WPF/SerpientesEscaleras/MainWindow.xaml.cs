@@ -29,7 +29,7 @@ namespace SerpientesEscaleras
         {
             String correoIngresado = textBox_Usuario.Text;
             String contraseñaIngresada = passwordBox_contraseña.Password;
-            if (!ValidarCampos(correoIngresado, contraseñaIngresada))
+            if (!ValidarCampos())
             {
                 return;
             }
@@ -79,17 +79,14 @@ namespace SerpientesEscaleras
             login.Show();
             this.Close();
         }
-        public bool ValidarCampos(String usuarioIngresado, String contraseñaIngresada)
+        public bool ValidarCampos()
         {
-            String usuario = textBox_Usuario.Text;
-            String contraseña = passwordBox_contraseña.Password;
-
-            if (usuario == "")
+            if (textBox_Usuario.Text == "")
             {
                 MessageBox.Show("Ingresa un usuario");
                 return false;
             }
-            else if (contraseña == "")
+            else if (passwordBox_contraseña.SecurePassword.Length == 0)
             {
                 MessageBox.Show("Ingresa una contraseña");
                 return false;

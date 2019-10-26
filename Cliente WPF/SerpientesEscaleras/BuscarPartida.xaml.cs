@@ -30,10 +30,10 @@ namespace SerpientesEscaleras
             if (dataGrid_Partidas.SelectedItem == null)
             {
                 MessageBox.Show("Elige una partida primero");
+                return;
             }
             Lobby lobby = new Lobby(jugador);
             lobby.EntrarPartida(dataGrid_Partidas.SelectedIndex);
-            lobby.lis
             lobby.Show();
             this.Close();
         }

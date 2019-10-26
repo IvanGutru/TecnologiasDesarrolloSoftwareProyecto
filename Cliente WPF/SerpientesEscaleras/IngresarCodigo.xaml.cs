@@ -13,9 +13,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
 namespace SerpientesEscaleras {
-    /// <summary>
-    /// Lógica de interacción para IngresarCodigo.xaml
-    /// </summary>
     public partial class IngresarCodigo : Window {
 
         private readonly ServidorSE.Cuenta cuenta;
@@ -25,16 +22,18 @@ namespace SerpientesEscaleras {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e) {
-            RegistroUsuario ventanaRegsitro = new RegistroUsuario();
-            ventanaRegsitro.Show();
+        private void Button_Salir(object sender, RoutedEventArgs e) {
+            MainWindow vetanaPrincipal = new MainWindow();
+            vetanaPrincipal.Show();
             this.Close();
         }
 
-        private void ButtonValidarCuenta(object sender, RoutedEventArgs e) {
-            if (textBoxCodigo.Text !="") {
+        private void Button_ValidarCuenta(object sender, RoutedEventArgs e) {
+            if (textBox_Codigo.Text !="") {
                 ServidorSE.AdministradorCuentaClient cliente = new ServidorSE.AdministradorCuentaClient();
-                if (cliente.ActivarCuentaJugador(cuenta, textBoxCodigo.Text)) {
+                if (cliente.ActivarCuentaJugador(cuenta, textBox_Codigo.Text)) 
+                {
+                    MessageBox.Show("Cuenta activada exitosamente");
                     MainWindow vetanaPrincipal = new MainWindow();
                     vetanaPrincipal.Show();
                     this.Close();
@@ -48,7 +47,7 @@ namespace SerpientesEscaleras {
             }
         }
 
-        private void ButtonReenviarCorreo(object sender, RoutedEventArgs e) {
+        private void Button_ReenviarCorreo(object sender, RoutedEventArgs e) {
             ServidorSE.AdministradorCuentaClient cliente = new ServidorSE.AdministradorCuentaClient();
             cliente.EnviarCorreo(cuenta);
         }

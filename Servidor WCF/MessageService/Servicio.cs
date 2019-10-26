@@ -72,7 +72,6 @@ namespace MessageService {
             }
             catch (Exception e)
             {
-
                 Console.WriteLine(e);
             }
             clienteSmtp.Dispose();
@@ -108,10 +107,27 @@ namespace MessageService {
             return false;
         }
 
+        public Boolean VerificarApodo(Jugador jugador)
+        {
+            conexionBaseDatos = new ServidorSE();
+            using (conexionBaseDatos)
+            {
+                var jugadorRecuperado = conexionBaseDatos.JugadorSet.Where(j => j.apodo == jugador.Apodo).FirstOrDefault();
+                if (jugadorRecuperado != null)
+                {
+                    if (jugadorRecuperado.apodo.Equals(jugador.Apodo))
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
+        }
+
         public Boolean RegistrarJugador(Jugador jugador, Cuenta cuenta)
         {
             var cuentaExistente = ObtenerCuentaJugador(cuenta.Correo);
-            if (cuentaExistente != null && cuentaExistente.Jugador.apodo.Equals(jugador.Apodo))
+            if (cuentaExistente != null)
             {
                 return false;
             }
@@ -151,7 +167,7 @@ namespace MessageService {
                 {
                     cuentaRecuperada.validada = true;
                     conexionBaseDatos.Entry(cuentaRecuperada).State = System.Data.Entity.EntityState.Modified;
-                    conexionBaseDatos.SaveChanges();
+                    conexionBaseDatos.SaveChanges(); Consultar();
                 }
                 return true;
             }
@@ -223,13 +239,22 @@ namespace MessageService {
     public partial class Servicio : IAdministradorChat
     {
         List<Sala> salasAbiertas = new List<Sala>();
-        Dictionary<IChatCliente, Jugador> jugadoresConectados = new Dictionary<IChatCliente, Jugador>();
 
         public int CrearSala(Sala sala)
         {
             sala.DiccionarioJugadores = new Dictionary<IChatCliente, Jugador>();
             salasAbiertas.Add(sala);
             return salasAbiertas.IndexOf(sala);
+        }
+
+        public List<String> ConsultarJugadoresSala(int indice)
+        {
+            List<String> listaApodos = new List<String>();
+            foreach (var miembro in salasAbiertas[indice].DiccionarioJugadores)
+            {
+                listaApodos.Add(miembro.Value.Apodo);
+            }
+            return listaApodos;
         }
 
         public void UnirseSala(int indice, Jugador jugador)
@@ -263,16 +288,6 @@ namespace MessageService {
             return salasDisponibles;
         }
 
-        public void Entrar(Jugador jugador, String mensajeEntrada)
-        {
-            var conexion = OperationContext.Current.GetCallbackChannel<IChatCliente>();
-            jugadoresConectados[conexion] = jugador;
-            foreach (var miembro in jugadoresConectados.Keys)
-            {
-                miembro.RecibirMensaje(jugador.Apodo + " " + mensajeEntrada);
-            }
-        }
-
         public void EnviarMensaje(int indice, string mensaje)
         {
             var conexion = OperationContext.Current.GetCallbackChannel<IChatCliente>();
@@ -285,24 +300,12 @@ namespace MessageService {
             {
                 miembro.RecibirMensaje(jugador.Apodo + ": " + mensaje);
             }
-            //if (!jugadoresConectados.TryGetValue(conexion, out jugador))
-            //{
-            //    return;
-            //}
-            //foreach (var miembro in jugadoresConectados.Keys)
-            //{
-            //    miembro.RecibirMensaje(jugador.Apodo + ": " + mensaje);
-            //}
         }
 
         public void SalirChat(int indice)
         {
             var conexion = OperationContext.Current.GetCallbackChannel<IChatCliente>();
             Jugador jugador;
-            //if (!jugadoresConectados.TryGetValue(conexion, out jugador))
-            //{
-            //    return;
-            //}
             if (!salasAbiertas[indice].DiccionarioJugadores.TryGetValue(conexion, out jugador))
             {
                 return;

@@ -18,6 +18,8 @@ namespace MessageService {
         [OperationContract]
         Boolean VerificarCuenta(Cuenta cuenta);
         [OperationContract]
+        Boolean VerificarApodo(Jugador jugador);
+        [OperationContract]
         Boolean EnviarCorreo(Cuenta cuenta);
         [OperationContract]
         List<FilaTablaPuntajes> ConsultarPuntajesPropios(Jugador jugador);

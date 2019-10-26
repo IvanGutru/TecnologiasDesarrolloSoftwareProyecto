@@ -6,15 +6,19 @@
         xmlns:local="clr-namespace:SerpientesEscaleras"
         xmlns:p="clr-namespace:SerpientesEscaleras.Properties"
         mc:Ignorable="d"
-        Title="{x:Static p:Resources.ingresarCodigo}" Height="260.701" Width="513.022" WindowStartupLocation="CenterScreen">
+        Title="{x:Static p:Resources.ingresarCodigo}" Height="400" Width="800" WindowStartupLocation="CenterScreen" 
+        WindowStyle="ThreeDBorderWindow" Opacity="0.9" FontSize="18" ResizeMode="CanMinimize" Icon="Resources/iconoApp.ico">
     <Grid Background="#FF424242">
-        <TextBox x:Name="textBoxCodigo" HorizontalAlignment="Left" Height="23" Margin="165,99,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="197" Foreground="White" BorderBrush="#89FFFFFF"/>
-        <Label Content="{x:Static p:Resources.ingresarCodigo}" HorizontalAlignment="Left" Margin="55,99,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF"/>
-        <Button Content="{x:Static p:Resources.aceptar}" HorizontalAlignment="Left" Margin="379,96,0,0" VerticalAlignment="Top" Width="79" Height="26" Click="ButtonValidarCuenta" FontSize="12"/>
-        <Button Content="{x:Static p:Resources.cancelar}" HorizontalAlignment="Left" Margin="415,191,0,0" VerticalAlignment="Top" Width="80" Height="29" Click="Button_Click" FontSize="12"/>
+        <TextBox x:Name="textBox_Codigo" HorizontalAlignment="Left" Margin="400,133,0,0" TextWrapping="Wrap"
+                 VerticalAlignment="Top" Width="300" Foreground="White" BorderBrush="#89FFFFFF"/>
+        <Label Content="{x:Static p:Resources.ingresarCodigo}" HorizontalAlignment="Left" Margin="100,132,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF"/>
+        <Button Content="{x:Static p:Resources.aceptar}" HorizontalAlignment="Left" Margin="550,283,0,0" 
+                VerticalAlignment="Top" Width="150" Click="Button_ValidarCuenta" FontSize="18"/>
+        <Button Content="{x:Static p:Resources.salir}" HorizontalAlignment="Left" Margin="306,283,0,0" 
+                VerticalAlignment="Top" Width="150" Click="Button_Salir" FontSize="18"/>
         <Label Content="{x:Static p:Resources.validarCuenta}" HorizontalAlignment="Left" Margin="25,19,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="20"/>
-        <Button Content="{x:Static p:Resources.reenviarCorreo}" HorizontalAlignment="Left" Margin="270,196,0,0" VerticalAlignment="Top" Width="122" Height="18" Click="ButtonReenviarCorreo" FontSize="9"/>
-        
-
+        <Button Content="{x:Static p:Resources.reenviarCorreo}" HorizontalAlignment="Left" Margin="100,223,0,0" VerticalAlignment="Top"
+                Click="Button_ReenviarCorreo" FontSize="14"/>
+        <Label Content="{x:Static p:Resources.correoEnviado}" HorizontalAlignment="Left" Margin="290,73,0,0" VerticalAlignment="Top" Width="410" FontSize="14" Foreground="White"/>
     </Grid>
 </Window>

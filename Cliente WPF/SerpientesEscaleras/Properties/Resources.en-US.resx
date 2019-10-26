@@ -144,6 +144,9 @@
   <data name="correoElectronico" xml:space="preserve">
     <value>E-mail</value>
   </data>
+  <data name="correoEnviado" xml:space="preserve">
+    <value>Your account activation code has been sent to your email.</value>
+  </data>
   <data name="crearPartida" xml:space="preserve">
     <value>Create game</value>
   </data>
@@ -209,6 +212,9 @@
   </data>
   <data name="regresar" xml:space="preserve">
     <value>Return</value>
+  </data>
+  <data name="salir" xml:space="preserve">
+    <value>Leave</value>
   </data>
   <data name="salirJuego" xml:space="preserve">
     <value>Exit game</value>

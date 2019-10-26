@@ -6,32 +6,39 @@
         xmlns:local="clr-namespace:SerpientesEscaleras"
         xmlns:p="clr-namespace:SerpientesEscaleras.Properties"
         mc:Ignorable="d"
-        Title="{x:Static p:Resources.registroUsuario}" Height="400.714" WindowStartupLocation="CenterScreen" Width="799.5">
+        Title="{x:Static p:Resources.registroUsuario}" Height="400" WindowStartupLocation="CenterScreen" Width="800"  WindowStyle="ThreeDBorderWindow" Opacity="0.9" 
+        FontSize="16" ResizeMode="CanMinimize" Icon="Resources/iconoApp.ico">
     <Grid Background="#FF252222">
-        <Rectangle Fill="#FF616060" HorizontalAlignment="Left" Height="249" Margin="428,56,0,0" Stroke="#FFFFE4E4" VerticalAlignment="Top" Width="345" Opacity=".10" OpacityMask="White" IsEnabled="False" RenderTransformOrigin="1,0"/>
-        <Rectangle Fill="#FF616060" HorizontalAlignment="Left" Height="144" Margin="42,59,0,0" Stroke="#FFFFE4E4" VerticalAlignment="Top" Width="329" Opacity=".10" OpacityMask="White" IsEnabled="False"/>
-        <Button x:Name="ButtonRegistroVentanaRegistrarse" Content="{x:Static p:Resources.registrar}" HorizontalAlignment="Left" Margin="649,319,0,0" VerticalAlignment="Top" Width="124" Height="29" Background="#FF0F8080" BorderBrush="#FF020202" Foreground="White" OpacityMask="Black" TextOptions.TextHintingMode="Fixed" SnapsToDevicePixels="True" Cursor="Arrow" FontStretch="SemiCondensed" Click="ButtonRegistrarse" FontSize="10">
+        <Rectangle Fill="#FF616060" HorizontalAlignment="Right" Height="180" Margin="0,70,25,0" Stroke="#FFFFE4E4" VerticalAlignment="Top" Width="380" Opacity=".10" OpacityMask="White" IsEnabled="False" RenderTransformOrigin="1,0"/>
+        <Rectangle Fill="#FF616060" HorizontalAlignment="Left" Height="180" Margin="25,70,0,0" Stroke="#FFFFE4E4" VerticalAlignment="Top" Width="330" Opacity=".10" OpacityMask="White" IsEnabled="False"/>
+        <TextBox x:Name="textBox_NombreUsuario" HorizontalAlignment="Left" Margin="165,93,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" 
+                 Width="175" Foreground="White" Background="{x:Null}" BorderBrush="#89F5F5F5"/>
+        <TextBox x:Name="textBox_Apellidos" HorizontalAlignment="Left" Margin="165,144,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" 
+                 Width="175" Foreground="White" Background="{x:Null}" BorderBrush="#89F5F5F5"/>
+        <TextBox x:Name="textBox_Apodo" HorizontalAlignment="Left" Margin="165,195,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" 
+                 Width="175" Foreground="White" Background="{x:Null}" BorderBrush="#89F5F5F5"/>
+        <TextBox x:Name="textBox_CorreoElectronico" HorizontalAlignment="Left" Margin="581,93,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" 
+                 Width="175" Foreground="White" Background="{x:Null}" BorderBrush="#89F5F5F5"/>
+        <PasswordBox x:Name="passwordBox_Contraseña" HorizontalAlignment="Left" Margin="581,144,0,0" VerticalAlignment="Top" 
+                     Width="175" Foreground="White" Background="{x:Null}" BorderBrush="#89F5F5F5"/>
+        <PasswordBox x:Name="passwordBox_ConfirmarContraseña" HorizontalAlignment="Left" Margin="581,195,0,0" VerticalAlignment="Top" 
+                 Width="175" Foreground="White" Background="{x:Null}" BorderBrush="#89F5F5F5"/>
+        <Button x:Name="button_RegistroVentanaRegistrarse" Content="{x:Static p:Resources.registrar}" HorizontalAlignment="Left" Margin="521,299,0,0" 
+                VerticalAlignment="Top" Width="125" Background="#FF0F8080" BorderBrush="#FF020202" Foreground="White" OpacityMask="Black" 
+                TextOptions.TextHintingMode="Fixed" SnapsToDevicePixels="True" Cursor="Arrow" FontStretch="SemiCondensed" Click="Button_Registrarse" FontSize="16">
             <Button.Effect>
                 <DropShadowEffect BlurRadius="10" RenderingBias="Quality" ShadowDepth="8"/>
             </Button.Effect>
         </Button>
-        <Label Content="{x:Static p:Resources.apodo}" HorizontalAlignment="Left" Margin="444,95,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="#DDFFFFFF"/>
-        <TextBox x:Name="TextBoxApodo" HorizontalAlignment="Left" Height="23" Margin="583,95,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="175" Foreground="White" Background="{x:Null}" BorderBrush="#89F5F5F5"/>
-        <Label Content="{x:Static p:Resources.correoElectronico}" HorizontalAlignment="Left" Margin="444,135,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="#DDFFFFFF"/>
-        <TextBox x:Name="TextBoxCorreoElectronico" HorizontalAlignment="Left" Height="23" Margin="583,138,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="175" Foreground="White" Background="{x:Null}" BorderBrush="#89F5F5F5"/>
-        <Label Content="{x:Static p:Resources.contrasenia}" HorizontalAlignment="Left" Margin="444,177,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="#DDFFFFFF"/>
-        <TextBox x:Name="TextBoxContraseña" HorizontalAlignment="Left" Height="23" Margin="583,180,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="175" Foreground="White" Background="{x:Null}" BorderBrush="#89F5F5F5"/>
-        <Label Content="{x:Static p:Resources.nombre}" HorizontalAlignment="Left" Margin="42,92,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="#DDFFFFFF"/>
-        <TextBox x:Name="TextBoxNombreUsuario" HorizontalAlignment="Left" Height="23" Margin="180,92,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="176" Foreground="White" Background="{x:Null}" BorderBrush="#89F5F5F5"/>
-        <Label Content="{x:Static p:Resources.confirmarContrasenia}" HorizontalAlignment="Left" Margin="444,216,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="#DDFFFFFF"/>
-        <TextBox x:Name="TextBoxConfirmarContraseña" HorizontalAlignment="Left" Height="23" Margin="575,219,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="175" Foreground="White" Background="{x:Null}" BorderBrush="#89F5F5F5"/>
-        <Button Content="{x:Static p:Resources.regresar}" Margin="683,0,0,333" VerticalAlignment="Bottom" Click="Button_Click" Height="31" Background="Black" HorizontalAlignment="Left" Width="96" BorderBrush="Black">
-
-        </Button>
-        <Label Content="{x:Static p:Resources.datosPersonales}" HorizontalAlignment="Left" Margin="42,17,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="#DDFFFFFF" FontSize="20"/>
-        <Label Content="{x:Static p:Resources.datosCuenta}" HorizontalAlignment="Left" Margin="428,17,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="#DDFFFFFF" FontSize="20"/>
+        <Button Content="{x:Static p:Resources.regresar}" Margin="165,0,0,40" VerticalAlignment="Bottom" Click="Button_Regresar" Background="Black" 
+                HorizontalAlignment="Left" Width="96" BorderBrush="Black" FontSize="16"/>
+        <Label Content="{x:Static p:Resources.datosPersonales}" HorizontalAlignment="Left" Margin="25,27,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="#DDFFFFFF" FontSize="20"/>
+        <Label Content="{x:Static p:Resources.datosCuenta}" HorizontalAlignment="Left" Margin="389,27,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="#DDFFFFFF" FontSize="20"/>
         <Label Content="{x:Static p:Resources.apellidos}" HorizontalAlignment="Left" Margin="42,143,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="#DDFFFFFF"/>
-        <TextBox x:Name="TextBoxApellidos" HorizontalAlignment="Left" Height="23" Margin="180,143,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="176" Foreground="White" Background="{x:Null}" BorderBrush="#89F5F5F5"/>
-
+        <Label Content="{x:Static p:Resources.apodo}" HorizontalAlignment="Left" Margin="42,194,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="#DDFFFFFF"/>
+        <Label Content="{x:Static p:Resources.correoElectronico}" HorizontalAlignment="Left" Margin="405,92,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="#DDFFFFFF"/>
+        <Label Content="{x:Static p:Resources.contrasenia}" HorizontalAlignment="Left" Margin="405,143,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="#DDFFFFFF"/>
+        <Label Content="{x:Static p:Resources.nombre}" HorizontalAlignment="Left" Margin="42,92,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="#DDFFFFFF"/>
+        <Label Content="{x:Static p:Resources.confirmarContrasenia}" HorizontalAlignment="Left" Margin="405,194,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="#DDFFFFFF"/>
     </Grid>
 </Window>

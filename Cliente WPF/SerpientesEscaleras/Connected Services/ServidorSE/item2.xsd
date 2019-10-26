@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:8081/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MessageService" />
+  <xs:import schemaLocation="http://localhost:8081/?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
   <xs:element name="IniciarSesion">
     <xs:complexType>
       <xs:sequence>
@@ -59,10 +60,24 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="VerificarApodo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/MessageService" minOccurs="0" name="jugador" nillable="true" type="q7:Jugador" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VerificarApodoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="VerificarApodoResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="EnviarCorreo">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/MessageService" minOccurs="0" name="cuenta" nillable="true" type="q7:Cuenta" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/MessageService" minOccurs="0" name="cuenta" nillable="true" type="q8:Cuenta" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -76,14 +91,14 @@
   <xs:element name="ConsultarPuntajesPropios">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/MessageService" minOccurs="0" name="jugador" nillable="true" type="q8:Jugador" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/MessageService" minOccurs="0" name="jugador" nillable="true" type="q9:Jugador" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="ConsultarPuntajesPropiosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/MessageService" minOccurs="0" name="ConsultarPuntajesPropiosResult" nillable="true" type="q9:ArrayOfFilaTablaPuntajes" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/MessageService" minOccurs="0" name="ConsultarPuntajesPropiosResult" nillable="true" type="q10:ArrayOfFilaTablaPuntajes" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -95,14 +110,14 @@
   <xs:element name="ConsultarMejoresPuntajesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/MessageService" minOccurs="0" name="ConsultarMejoresPuntajesResult" nillable="true" type="q10:ArrayOfFilaTablaPuntajes" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/MessageService" minOccurs="0" name="ConsultarMejoresPuntajesResult" nillable="true" type="q11:ArrayOfFilaTablaPuntajes" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CrearSala">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/MessageService" minOccurs="0" name="sala" nillable="true" type="q11:Sala" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/MessageService" minOccurs="0" name="sala" nillable="true" type="q12:Sala" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -121,7 +136,21 @@
   <xs:element name="ConsultarSalasDisponiblesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/MessageService" minOccurs="0" name="ConsultarSalasDisponiblesResult" nillable="true" type="q12:ArrayOfSala" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/MessageService" minOccurs="0" name="ConsultarSalasDisponiblesResult" nillable="true" type="q13:ArrayOfSala" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarJugadoresSala">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="indice" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultarJugadoresSalaResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ConsultarJugadoresSalaResult" nillable="true" type="q14:ArrayOfstring" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -129,15 +158,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="indice" type="xs:int" />
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/MessageService" minOccurs="0" name="jugador" nillable="true" type="q13:Jugador" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="Entrar">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/MessageService" minOccurs="0" name="jugador" nillable="true" type="q14:Jugador" />
-        <xs:element minOccurs="0" name="mensajeEntrada" nillable="true" type="xs:string" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/MessageService" minOccurs="0" name="jugador" nillable="true" type="q15:Jugador" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

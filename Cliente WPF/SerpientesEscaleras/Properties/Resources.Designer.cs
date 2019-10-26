@@ -142,6 +142,15 @@ namespace SerpientesEscaleras.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Se ha enviado a su correo el codigo de activación de su cuenta..
+        /// </summary>
+        public static string correoEnviado {
+            get {
+                return ResourceManager.GetString("correoEnviado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Crear partida.
         /// </summary>
         public static string crearPartida {
@@ -336,6 +345,15 @@ namespace SerpientesEscaleras.Properties {
         public static string regresar {
             get {
                 return ResourceManager.GetString("regresar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Salir.
+        /// </summary>
+        public static string salir {
+            get {
+                return ResourceManager.GetString("salir", resourceCulture);
             }
         }
         

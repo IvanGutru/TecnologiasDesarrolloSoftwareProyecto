@@ -90,6 +90,12 @@
   <wsdl:message name="IAdministradorCuenta_VerificarCuenta_OutputMessage">
     <wsdl:part name="parameters" element="tns:VerificarCuentaResponse" />
   </wsdl:message>
+  <wsdl:message name="IAdministradorCuenta_VerificarApodo_InputMessage">
+    <wsdl:part name="parameters" element="tns:VerificarApodo" />
+  </wsdl:message>
+  <wsdl:message name="IAdministradorCuenta_VerificarApodo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:VerificarApodoResponse" />
+  </wsdl:message>
   <wsdl:message name="IAdministradorCuenta_EnviarCorreo_InputMessage">
     <wsdl:part name="parameters" element="tns:EnviarCorreo" />
   </wsdl:message>
@@ -120,11 +126,14 @@
   <wsdl:message name="IAdministradorChat_ConsultarSalasDisponibles_OutputMessage">
     <wsdl:part name="parameters" element="tns:ConsultarSalasDisponiblesResponse" />
   </wsdl:message>
+  <wsdl:message name="IAdministradorChat_ConsultarJugadoresSala_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarJugadoresSala" />
+  </wsdl:message>
+  <wsdl:message name="IAdministradorChat_ConsultarJugadoresSala_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultarJugadoresSalaResponse" />
+  </wsdl:message>
   <wsdl:message name="IAdministradorChat_UnirseSala_InputMessage">
     <wsdl:part name="parameters" element="tns:UnirseSala" />
-  </wsdl:message>
-  <wsdl:message name="IAdministradorChat_Entrar_InputMessage">
-    <wsdl:part name="parameters" element="tns:Entrar" />
   </wsdl:message>
   <wsdl:message name="IAdministradorChat_EnviarMensaje_InputMessage">
     <wsdl:part name="parameters" element="tns:EnviarMensaje" />
@@ -155,6 +164,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IAdministradorCuenta/VerificarCuenta" message="tns:IAdministradorCuenta_VerificarCuenta_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IAdministradorCuenta/VerificarCuentaResponse" message="tns:IAdministradorCuenta_VerificarCuenta_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="VerificarApodo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdministradorCuenta/VerificarApodo" message="tns:IAdministradorCuenta_VerificarApodo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministradorCuenta/VerificarApodoResponse" message="tns:IAdministradorCuenta_VerificarApodo_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="EnviarCorreo">
       <wsdl:input wsaw:Action="http://tempuri.org/IAdministradorCuenta/EnviarCorreo" message="tns:IAdministradorCuenta_EnviarCorreo_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IAdministradorCuenta/EnviarCorreoResponse" message="tns:IAdministradorCuenta_EnviarCorreo_OutputMessage" />
@@ -177,11 +190,12 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IAdministradorChat/ConsultarSalasDisponibles" message="tns:IAdministradorChat_ConsultarSalasDisponibles_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IAdministradorChat/ConsultarSalasDisponiblesResponse" message="tns:IAdministradorChat_ConsultarSalasDisponibles_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="ConsultarJugadoresSala">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdministradorChat/ConsultarJugadoresSala" message="tns:IAdministradorChat_ConsultarJugadoresSala_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministradorChat/ConsultarJugadoresSalaResponse" message="tns:IAdministradorChat_ConsultarJugadoresSala_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="UnirseSala">
       <wsdl:input wsaw:Action="http://tempuri.org/IAdministradorChat/UnirseSala" message="tns:IAdministradorChat_UnirseSala_InputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="Entrar">
-      <wsdl:input wsaw:Action="http://tempuri.org/IAdministradorChat/Entrar" message="tns:IAdministradorChat_Entrar_InputMessage" />
     </wsdl:operation>
     <wsdl:operation name="EnviarMensaje">
       <wsdl:input wsaw:Action="http://tempuri.org/IAdministradorChat/EnviarMensaje" message="tns:IAdministradorChat_EnviarMensaje_InputMessage" />
@@ -228,6 +242,15 @@
     </wsdl:operation>
     <wsdl:operation name="VerificarCuenta">
       <soap12:operation soapAction="http://tempuri.org/IAdministradorCuenta/VerificarCuenta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerificarApodo">
+      <soap12:operation soapAction="http://tempuri.org/IAdministradorCuenta/VerificarApodo" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -284,14 +307,17 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="UnirseSala">
-      <soap12:operation soapAction="http://tempuri.org/IAdministradorChat/UnirseSala" style="document" />
+    <wsdl:operation name="ConsultarJugadoresSala">
+      <soap12:operation soapAction="http://tempuri.org/IAdministradorChat/ConsultarJugadoresSala" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Entrar">
-      <soap12:operation soapAction="http://tempuri.org/IAdministradorChat/Entrar" style="document" />
+    <wsdl:operation name="UnirseSala">
+      <soap12:operation soapAction="http://tempuri.org/IAdministradorChat/UnirseSala" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

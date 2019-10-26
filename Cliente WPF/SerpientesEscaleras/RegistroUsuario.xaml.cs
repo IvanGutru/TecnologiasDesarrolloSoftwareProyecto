@@ -24,17 +24,23 @@ namespace SerpientesEscaleras
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e) {
+        private void Button_Regresar(object sender, RoutedEventArgs e) {
             MainWindow ventanaPrincipal = new MainWindow();
             ventanaPrincipal.Show();
             this.Close();
         }
 
-        private void ButtonRegistrarse(object sender, RoutedEventArgs e) {
-            if (CamposVacios() ==false) {
+        private void Button_Registrarse(object sender, RoutedEventArgs e) {
+            if (ValidarCampos())
+            {
                 ServidorSE.AdministradorCuentaClient cliente = new ServidorSE.AdministradorCuentaClient();
-                ServidorSE.Cuenta cuenta = new ServidorSE.Cuenta() { Correo = TextBoxCorreoElectronico.Text, Contraseña = TextBoxContraseña.Text };
-                ServidorSE.Jugador jugador = new ServidorSE.Jugador() { Apodo = TextBoxApodo.Text, Nombre = TextBoxNombreUsuario.Text, Apellidos = TextBoxContraseña.Text };
+                ServidorSE.Cuenta cuenta = new ServidorSE.Cuenta() { Correo = textBox_CorreoElectronico.Text, Contraseña = passwordBox_Contraseña.Password };
+                ServidorSE.Jugador jugador = new ServidorSE.Jugador() { Apodo = textBox_Apodo.Text, Nombre = textBox_NombreUsuario.Text, Apellidos = textBox_Apellidos.Text };
+                if (!cliente.VerificarApodo(jugador))
+                {
+                    MessageBox.Show("Ya se encuentra registrado un usuario con ese apodo");
+                    return;
+                }
                 if (cliente.RegistrarJugador(jugador, cuenta))
                 {
                     cliente.EnviarCorreo(cuenta);
@@ -43,20 +49,24 @@ namespace SerpientesEscaleras
                     this.Close();
                 } else
                 {
-                    MessageBox.Show("El correo o apodo ya se encuentra registrado en el sistema");
+                    MessageBox.Show("El correo ya se encuentra registrado");
                 }
-                
             }
 
         }
-        private Boolean CamposVacios() {
+        private Boolean ValidarCampos() {
             var mensaje = Properties.Resources.mensajeValidacion;
-            if (TextBoxNombreUsuario.Text == "" || TextBoxApellidos.Text =="" || TextBoxApodo.Text== "" || TextBoxCorreoElectronico.Text ==""
-                || TextBoxContraseña.Text =="" || TextBoxConfirmarContraseña.Text=="") {
-                MessageBox.Show(mensaje,"",MessageBoxButton.OK,MessageBoxImage.Information);
-                return true;
+            if (textBox_NombreUsuario.Text == "" || textBox_Apellidos.Text =="" || textBox_Apodo.Text== "" || textBox_CorreoElectronico.Text ==""
+                || passwordBox_Contraseña.SecurePassword.Length == 0 || passwordBox_ConfirmarContraseña.SecurePassword.Length == 0) {
+                MessageBox.Show("Todos los campos son obligatorios");
+                return false;
             }
-            return false;
+            else if (!passwordBox_Contraseña.Password.Equals(passwordBox_ConfirmarContraseña.Password))
+            {
+                MessageBox.Show("Las contraseñas no coinciden");
+                return false;
+            }
+            return true;
         }
     }
 }

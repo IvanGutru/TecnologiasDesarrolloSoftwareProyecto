@@ -72,3 +72,24 @@ C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto\Proyecto Serpientes Es
 C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto\Proyecto Serpientes Escaleras\Host\obj\Debug\Host.csproj.CopyComplete
 C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto\Proyecto Serpientes Escaleras\Host\obj\Debug\Host.exe
 C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto\Proyecto Serpientes Escaleras\Host\obj\Debug\Host.pdb
+C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\Host\bin\Debug\Host.exe.config
+C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\Host\bin\Debug\Host.exe
+C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\Host\bin\Debug\Host.pdb
+C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\Host\bin\Debug\EntityFramework.dll
+C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\Host\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\Host\bin\Debug\MessageService.dll
+C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\Host\bin\Debug\DAO.dll
+C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\Host\bin\Debug\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\Host\bin\Debug\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\Host\bin\Debug\MessageService.pdb
+C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\Host\bin\Debug\MessageService.dll.config
+C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\Host\bin\Debug\EntityFramework.xml
+C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\Host\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\Host\bin\Debug\DAO.pdb
+C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\Host\bin\Debug\DAO.dll.config
+C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\Host\bin\Debug\Microsoft.AspNetCore.Cryptography.KeyDerivation.xml
+C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\Host\bin\Debug\Microsoft.AspNetCore.Cryptography.Internal.xml
+C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\Host\obj\Debug\Host.csprojAssemblyReference.cache
+C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\Host\obj\Debug\Host.csproj.CopyComplete
+C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\Host\obj\Debug\Host.exe
+C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\Host\obj\Debug\Host.pdb

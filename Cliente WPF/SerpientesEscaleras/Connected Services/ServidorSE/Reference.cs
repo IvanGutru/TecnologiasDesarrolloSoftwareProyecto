@@ -397,6 +397,12 @@ namespace SerpientesEscaleras.ServidorSE {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdministradorCuenta/VerificarCuenta", ReplyAction="http://tempuri.org/IAdministradorCuenta/VerificarCuentaResponse")]
         System.Threading.Tasks.Task<bool> VerificarCuentaAsync(SerpientesEscaleras.ServidorSE.Cuenta cuenta);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdministradorCuenta/VerificarApodo", ReplyAction="http://tempuri.org/IAdministradorCuenta/VerificarApodoResponse")]
+        bool VerificarApodo(SerpientesEscaleras.ServidorSE.Jugador jugador);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdministradorCuenta/VerificarApodo", ReplyAction="http://tempuri.org/IAdministradorCuenta/VerificarApodoResponse")]
+        System.Threading.Tasks.Task<bool> VerificarApodoAsync(SerpientesEscaleras.ServidorSE.Jugador jugador);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdministradorCuenta/EnviarCorreo", ReplyAction="http://tempuri.org/IAdministradorCuenta/EnviarCorreoResponse")]
         bool EnviarCorreo(SerpientesEscaleras.ServidorSE.Cuenta cuenta);
         
@@ -475,6 +481,14 @@ namespace SerpientesEscaleras.ServidorSE {
             return base.Channel.VerificarCuentaAsync(cuenta);
         }
         
+        public bool VerificarApodo(SerpientesEscaleras.ServidorSE.Jugador jugador) {
+            return base.Channel.VerificarApodo(jugador);
+        }
+        
+        public System.Threading.Tasks.Task<bool> VerificarApodoAsync(SerpientesEscaleras.ServidorSE.Jugador jugador) {
+            return base.Channel.VerificarApodoAsync(jugador);
+        }
+        
         public bool EnviarCorreo(SerpientesEscaleras.ServidorSE.Cuenta cuenta) {
             return base.Channel.EnviarCorreo(cuenta);
         }
@@ -516,17 +530,17 @@ namespace SerpientesEscaleras.ServidorSE {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdministradorChat/ConsultarSalasDisponibles", ReplyAction="http://tempuri.org/IAdministradorChat/ConsultarSalasDisponiblesResponse")]
         System.Threading.Tasks.Task<SerpientesEscaleras.ServidorSE.Sala[]> ConsultarSalasDisponiblesAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdministradorChat/ConsultarJugadoresSala", ReplyAction="http://tempuri.org/IAdministradorChat/ConsultarJugadoresSalaResponse")]
+        string[] ConsultarJugadoresSala(int indice);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdministradorChat/ConsultarJugadoresSala", ReplyAction="http://tempuri.org/IAdministradorChat/ConsultarJugadoresSalaResponse")]
+        System.Threading.Tasks.Task<string[]> ConsultarJugadoresSalaAsync(int indice);
+        
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministradorChat/UnirseSala")]
         void UnirseSala(int indice, SerpientesEscaleras.ServidorSE.Jugador jugador);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministradorChat/UnirseSala")]
         System.Threading.Tasks.Task UnirseSalaAsync(int indice, SerpientesEscaleras.ServidorSE.Jugador jugador);
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministradorChat/Entrar")]
-        void Entrar(SerpientesEscaleras.ServidorSE.Jugador jugador, string mensajeEntrada);
-        
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministradorChat/Entrar")]
-        System.Threading.Tasks.Task EntrarAsync(SerpientesEscaleras.ServidorSE.Jugador jugador, string mensajeEntrada);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministradorChat/EnviarMensaje")]
         void EnviarMensaje(int indice, string mensaje);
@@ -595,20 +609,20 @@ namespace SerpientesEscaleras.ServidorSE {
             return base.Channel.ConsultarSalasDisponiblesAsync();
         }
         
+        public string[] ConsultarJugadoresSala(int indice) {
+            return base.Channel.ConsultarJugadoresSala(indice);
+        }
+        
+        public System.Threading.Tasks.Task<string[]> ConsultarJugadoresSalaAsync(int indice) {
+            return base.Channel.ConsultarJugadoresSalaAsync(indice);
+        }
+        
         public void UnirseSala(int indice, SerpientesEscaleras.ServidorSE.Jugador jugador) {
             base.Channel.UnirseSala(indice, jugador);
         }
         
         public System.Threading.Tasks.Task UnirseSalaAsync(int indice, SerpientesEscaleras.ServidorSE.Jugador jugador) {
             return base.Channel.UnirseSalaAsync(indice, jugador);
-        }
-        
-        public void Entrar(SerpientesEscaleras.ServidorSE.Jugador jugador, string mensajeEntrada) {
-            base.Channel.Entrar(jugador, mensajeEntrada);
-        }
-        
-        public System.Threading.Tasks.Task EntrarAsync(SerpientesEscaleras.ServidorSE.Jugador jugador, string mensajeEntrada) {
-            return base.Channel.EntrarAsync(jugador, mensajeEntrada);
         }
         
         public void EnviarMensaje(int indice, string mensaje) {
