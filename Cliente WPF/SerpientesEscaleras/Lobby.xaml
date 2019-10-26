@@ -1,0 +1,32 @@
+﻿<Window x:Class="SerpientesEscaleras.Lobby"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SerpientesEscaleras"
+        xmlns:p="clr-namespace:SerpientesEscaleras.Properties"
+        xmlns:materialDesign ="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Esperando Jugadores" Height="600" Width="1000" WindowStartupLocation="CenterScreen" WindowStyle="ThreeDBorderWindow" Opacity="0.9" 
+        FontSize="16" ResizeMode="CanMinimize" Icon="Resources/iconoApp.ico"
+        Closing="CerrarVentana" >
+    <Window.Background>
+        <SolidColorBrush Color="#FF1C1C1C"/>
+    </Window.Background>
+    <Grid>
+        <ListBox x:Name="listBox_Chat" HorizontalAlignment="Left" Height="445" Margin="24,25,0,0" VerticalAlignment="Top" Width="300" BorderBrush="Aqua" BorderThickness="5" Background="WhiteSmoke"/>
+        <TextBox x:Name="textBox_Mensaje" HorizontalAlignment="Left" Height="35" Margin="24,493,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173" Foreground="White" BorderBrush="#FF107676"/>
+        <Button Content="Enviar" HorizontalAlignment="Left" Height="35" Margin="225,493,0,0" VerticalAlignment="Top" Width="99" Click="Button_Enviar"/>
+        <Label x:Name="label_JugadoresConectados" Content="Label" HorizontalAlignment="Left" Margin="694,69,0,0" VerticalAlignment="Top" Foreground="White" Width="250"/>
+        <Button x:Name="button_Regresar" Content="{x:Static p:Resources.salirJuego}" HorizontalAlignment="Left" Margin="427,493,0,0" VerticalAlignment="Top" 
+            Width="140" Height="35" Background="#FF0F8080" BorderBrush="#FF020202" Foreground="White" OpacityMask="Black" 
+            TextOptions.TextHintingMode="Fixed" SnapsToDevicePixels="True" Cursor="Arrow" FontStretch="SemiCondensed" Click="Button_Regresar" FontSize="16">
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="10" RenderingBias="Quality" ShadowDepth="8"/>
+            </Button.Effect>
+        </Button>
+        <ListBox x:Name="listBox_JugadoresConectados" HorizontalAlignment="Right" Height="200" Margin="0,100,50,0" VerticalAlignment="Top" Width="250" Background="Transparent" 
+                  Foreground="White" BorderThickness="1" BorderBrush="Aqua"/>
+
+    </Grid>
+</Window>

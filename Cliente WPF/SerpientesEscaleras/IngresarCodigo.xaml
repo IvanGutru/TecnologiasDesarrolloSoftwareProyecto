@@ -1,0 +1,20 @@
+﻿<Window x:Class="SerpientesEscaleras.IngresarCodigo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SerpientesEscaleras"
+        xmlns:p="clr-namespace:SerpientesEscaleras.Properties"
+        mc:Ignorable="d"
+        Title="{x:Static p:Resources.ingresarCodigo}" Height="260.701" Width="513.022" WindowStartupLocation="CenterScreen">
+    <Grid Background="#FF424242">
+        <TextBox x:Name="textBoxCodigo" HorizontalAlignment="Left" Height="23" Margin="165,99,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="197" Foreground="White" BorderBrush="#89FFFFFF"/>
+        <Label Content="{x:Static p:Resources.ingresarCodigo}" HorizontalAlignment="Left" Margin="55,99,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF"/>
+        <Button Content="{x:Static p:Resources.aceptar}" HorizontalAlignment="Left" Margin="379,96,0,0" VerticalAlignment="Top" Width="79" Height="26" Click="ButtonValidarCuenta" FontSize="12"/>
+        <Button Content="{x:Static p:Resources.cancelar}" HorizontalAlignment="Left" Margin="415,191,0,0" VerticalAlignment="Top" Width="80" Height="29" Click="Button_Click" FontSize="12"/>
+        <Label Content="{x:Static p:Resources.validarCuenta}" HorizontalAlignment="Left" Margin="25,19,0,0" VerticalAlignment="Top" Foreground="#DDFFFFFF" FontSize="20"/>
+        <Button Content="{x:Static p:Resources.reenviarCorreo}" HorizontalAlignment="Left" Margin="270,196,0,0" VerticalAlignment="Top" Width="122" Height="18" Click="ButtonReenviarCorreo" FontSize="9"/>
+        
+
+    </Grid>
+</Window>

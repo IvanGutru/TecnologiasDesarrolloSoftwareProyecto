@@ -1,0 +1,61 @@
+﻿<Window x:Class="SerpientesEscaleras.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SerpientesEscaleras"
+        xmlns:p="clr-namespace:SerpientesEscaleras.Properties"
+        xmlns:materialDesign ="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="{x:Static p:Resources.iniciarSesion}" Height="400" Width="800" WindowStartupLocation="CenterScreen" WindowStyle="ThreeDBorderWindow" Opacity="0.9" 
+        FontSize="18" ResizeMode="CanMinimize" Icon="Resources/iconoApp.ico">
+    <Window.Background>
+        <SolidColorBrush Color="#FF1C1C1C"/>
+    </Window.Background>
+    <Grid Margin="0,0,2,3">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Image HorizontalAlignment="Left" Height="452" VerticalAlignment="Top" Width="366" Source="Resources/serpiente.png" Margin="0,0,0,-86"/>
+        <Image HorizontalAlignment="Left" Height="33" Margin="639,10,0,0" VerticalAlignment="Top" Width="33" Source="Resources/traducir.png"/>
+        <TextBox x:Name="textBox_Usuario" HorizontalAlignment="Left" Margin="438,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="242" Background="#FF1C1C1C" Foreground="White" SelectionBrush="#FF26D4F5" materialDesign:HintAssist.IsFloating="true" LostFocus="TextBox_Usuario_LostFocus" KeyDown="TextBox_Usuario_KeyDown">
+            <TextBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF1C1C1C" Offset="0.331"/>
+                    <GradientStop Color="Cyan" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBox.BorderBrush>
+        </TextBox>
+        <PasswordBox x:Name="passwordBox_contraseña" HorizontalAlignment="Left" Margin="438,173,0,0" VerticalAlignment="Top" Width="242" Foreground="White" BorderBrush="#FF107676" LostFocus="PasswordBox_Contraseña_LostFocus" KeyDown="PasswordBox_KeyDown"/>
+        <Button x:Name="button_InciarSesión" Content="{x:Static p:Resources.iniciarSesion}" HorizontalAlignment="Left" Margin="492,235,0,0" VerticalAlignment="Top" 
+                Width="140" Height="35" Background="#FF0F8080" BorderBrush="#FF020202" Foreground="White" OpacityMask="Black" 
+                TextOptions.TextHintingMode="Fixed" SnapsToDevicePixels="True" Cursor="Arrow" FontStretch="SemiCondensed" Click="Button_IniciarSesion" FontSize="16">
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="10" RenderingBias="Quality" ShadowDepth="8"/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="button_Registrar" Content="{x:Static p:Resources.registrar}" HorizontalAlignment="Left" Margin="582,313,0,0" VerticalAlignment="Top" Width="90" Height="29" Background="#FF0F8080" BorderBrush="#FF020202" Foreground="White" OpacityMask="Black" TextOptions.TextHintingMode="Fixed" SnapsToDevicePixels="True" Cursor="Arrow" FontStretch="SemiCondensed" Click="Button_Registrarse" FontSize="14">
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="10" RenderingBias="Quality" ShadowDepth="8"/>
+            </Button.Effect>
+        </Button>
+        <TextBlock x:Name="textBlock_SinCuenta" HorizontalAlignment="Left" Margin="428,318,0,0" TextWrapping="Wrap" Text="{x:Static p:Resources.textBlockSinCuenta}" VerticalAlignment="Top" Height="22" Width="140" TextDecorations="{x:Null}" OpacityMask="#FFFF4040" Foreground="White" FontSize="14"/>
+        <Menu IsMainMenu="True"  HorizontalAlignment="Left" Height="33" Margin="678,10,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0.5,0.5" FontSize="16">
+            <Menu.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF9B9B9B" Offset="0"/>
+                    <GradientStop Color="#FF8D8B8B" Offset="1"/>
+                </LinearGradientBrush>
+            </Menu.Background>
+            <MenuItem Header="{x:Static p:Resources.idiomaEncabezado}" Height="33" Width="152">
+                <MenuItem Header="{x:Static p:Resources.idiomaEspañol}" Click="CambiarIdiomaEspañol"/>
+                <MenuItem Header="{x:Static p:Resources.idiomaIngles}" Click="CambiarIdiomaIngles" />
+            </MenuItem>
+
+        </Menu>
+        <Label x:Name="label_Contraseña" Content="{x:Static p:Resources.contrasenia}" HorizontalAlignment="Left" Margin="438,172,0,0" VerticalAlignment="Top" Width="130" Foreground="White"  Opacity="0.6" MouseDown="Label_Contraseña_MouseDown"/>
+        <Label x:Name="label_Usuario" Content="{x:Static p:Resources.usuario}" HorizontalAlignment="Left" Margin="438,101,0,0" VerticalAlignment="Top" Width="130" Foreground="White"  Opacity="0.6" MouseDown="Label_Usuario_MouseDown"/>
+
+    </Grid>
+</Window>

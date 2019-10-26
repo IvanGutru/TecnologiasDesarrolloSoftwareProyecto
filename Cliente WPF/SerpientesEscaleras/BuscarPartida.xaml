@@ -1,0 +1,34 @@
+﻿<Window x:Class="SerpientesEscaleras.BuscarPartida"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SerpientesEscaleras"
+        xmlns:p="clr-namespace:SerpientesEscaleras.Properties"
+        xmlns:materialDesign ="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Buscar partida" Height="600" Width="1000" WindowStartupLocation="CenterScreen" WindowStyle="ThreeDBorderWindow" Opacity="0.9" 
+        FontSize="18" ResizeMode="CanMinimize" Icon="Resources/iconoApp.ico">
+    <Window.Background>
+        <SolidColorBrush Color="#FF1C1C1C"/>
+    </Window.Background>
+    <Grid>
+        <DataGrid x:Name="dataGrid_Partidas" HorizontalAlignment="Center" Height="350" Margin="0,80,0,0" VerticalAlignment="Top" Width="900" 
+                  AutoGeneratingColumn="DataGrid_Partidas_AutoGeneratingColumn" SelectionUnit="FullRow" CanUserAddRows="False" IsReadOnly="True"/>
+        <Button x:Name="button_Entrar" Content="{x:Static p:Resources.entrarPartida}" HorizontalAlignment="Right" Margin="0,0,150,50" VerticalAlignment="Bottom" 
+            Height="40" Background="#FF0F8080" BorderBrush="#FF020202" Foreground="White" OpacityMask="Black" 
+            TextOptions.TextHintingMode="Fixed" SnapsToDevicePixels="True" Cursor="Arrow" FontStretch="SemiCondensed" Click="Button_Entrar" FontSize="16">
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="10" RenderingBias="Quality" ShadowDepth="8"/>
+            </Button.Effect>
+        </Button>
+        <Button x:Name="button_Cancelar" Content="{x:Static p:Resources.regresar}" HorizontalAlignment="Left" Margin="150,0,0,50" VerticalAlignment="Bottom" 
+            Width="150" Height="40" Background="#FF0F8080" BorderBrush="#FF020202" Foreground="White" OpacityMask="Black" 
+            TextOptions.TextHintingMode="Fixed" SnapsToDevicePixels="True" Cursor="Arrow" FontStretch="SemiCondensed" Click="Button_Regresar" FontSize="16">
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="10" RenderingBias="Quality" ShadowDepth="8"/>
+            </Button.Effect>
+        </Button>
+
+    </Grid>
+</Window>

@@ -1,0 +1,26 @@
+﻿<Window x:Class="SerpientesEscaleras.MenuPrincipal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SerpientesEscaleras"
+        xmlns:p="clr-namespace:SerpientesEscaleras.Properties"
+        xmlns:materialDesign ="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="{x:Static p:Resources.serpientesEscaleras}" Height="600" Width="1000" WindowStartupLocation="CenterScreen" WindowStyle="ThreeDBorderWindow" 
+        Opacity="0.9" ResizeMode="CanMinimize" Icon="Resources/iconoApp.ico">
+    <Window.Background>
+        <ImageBrush ImageSource="Resources/fondoM.jpg"/>
+    </Window.Background>
+    <Grid>
+        <Button Content="{x:Static p:Resources.buscarPartida}" HorizontalAlignment="Center" Margin="0,220,0,0" VerticalAlignment="Top" Width="180" Background="#FF0F8080" BorderBrush="#FF0F8080" Click="Button_BuscarPartida" FontSize="16"/>
+        <Button Content="{x:Static p:Resources.nuevaPartida}" HorizontalAlignment="Center" Margin="0,310,0,0" VerticalAlignment="Top" Width="180" Background="#FF0F8080" BorderBrush="#FF0F8080" Click="Button_NuevaPartida" FontSize="16"/>
+        <Button Content="{x:Static p:Resources.consultarPuntajes}" HorizontalAlignment="Center" Margin="0,390,0,0" VerticalAlignment="Top" Width="180" Click="Button_ConsultarPuntajes" BorderBrush="#FF0F8080" Background="#FF0F8080" FontSize="16"/>
+        <Button Content="{x:Static p:Resources.salirJuego}" HorizontalAlignment="Center" Margin="0,500,0,0" VerticalAlignment="Top" Width="180" Click="Button_CerrarSesion" Background="#FF0F8080" BorderBrush="#FF0F8080" FontSize="16"/>
+        <Label Content="Serpientes" HorizontalAlignment="Left" Margin="30,23,0,0" VerticalAlignment="Top" FontFamily="Bauhaus 93" Foreground="White" FontSize="48"/>
+        <Label Content="Escaleras" HorizontalAlignment="Right" Margin="30,23,36,0" VerticalAlignment="Top" FontFamily="Bauhaus 93" Foreground="White" FontSize="48"/>
+        <Label Content="Y" HorizontalAlignment="Center" Margin="0,23,0,0" VerticalAlignment="Top" FontFamily="Bauhaus 93" Foreground="White" FontSize="48"/>
+
+
+    </Grid>
+</Window>
