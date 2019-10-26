@@ -1,0 +1,20 @@
+C:\Users\irvin\Desktop\Quinto Semestre\1.-Tecnologias\Primer Parcial\Ejercicios\MessageService\MessageService\obj\Debug\MessageService.csprojAssemblyReference.cache
+C:\Users\irvin\Desktop\Quinto Semestre\1.-Tecnologias\Primer Parcial\Ejercicios\MessageService\MessageService\obj\Debug\MessageService.csproj.CoreCompileInputs.cache
+C:\Users\irvin\Desktop\Quinto Semestre\1.-Tecnologias\Primer Parcial\Ejercicios\MessageService\MessageService\bin\Debug\MessageService.dll
+C:\Users\irvin\Desktop\Quinto Semestre\1.-Tecnologias\Primer Parcial\Ejercicios\MessageService\MessageService\bin\Debug\MessageService.pdb
+C:\Users\irvin\Desktop\Quinto Semestre\1.-Tecnologias\Primer Parcial\Ejercicios\MessageService\MessageService\obj\Debug\MessageService.dll
+C:\Users\irvin\Desktop\Quinto Semestre\1.-Tecnologias\Primer Parcial\Ejercicios\MessageService\MessageService\obj\Debug\MessageService.pdb
+C:\Users\Otros\Documents\5 semestre\Tecnologías\MessageService\MessageService\bin\Debug\MessageService.dll
+C:\Users\Otros\Documents\5 semestre\Tecnologías\MessageService\MessageService\bin\Debug\MessageService.pdb
+C:\Users\Otros\Documents\5 semestre\Tecnologías\MessageService\MessageService\obj\Debug\MessageService.csprojAssemblyReference.cache
+C:\Users\Otros\Documents\5 semestre\Tecnologías\MessageService\MessageService\obj\Debug\MessageService.dll
+C:\Users\Otros\Documents\5 semestre\Tecnologías\MessageService\MessageService\obj\Debug\MessageService.pdb
+C:\Users\Otros\Documents\5 semestre\Tecnologías\MessageService\MessageService\bin\Debug\MessageService.dll.config
+C:\Users\Otros\Documents\5 semestre\Tecnologías\MessageService\MessageService\bin\Debug\DAO.dll
+C:\Users\Otros\Documents\5 semestre\Tecnologías\MessageService\MessageService\bin\Debug\EntityFramework.dll
+C:\Users\Otros\Documents\5 semestre\Tecnologías\MessageService\MessageService\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Otros\Documents\5 semestre\Tecnologías\MessageService\MessageService\bin\Debug\DAO.pdb
+C:\Users\Otros\Documents\5 semestre\Tecnologías\MessageService\MessageService\bin\Debug\DAO.dll.config
+C:\Users\Otros\Documents\5 semestre\Tecnologías\MessageService\MessageService\bin\Debug\EntityFramework.xml
+C:\Users\Otros\Documents\5 semestre\Tecnologías\MessageService\MessageService\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Otros\Documents\5 semestre\Tecnologías\MessageService\MessageService\obj\Debug\MessageService.csproj.CopyComplete

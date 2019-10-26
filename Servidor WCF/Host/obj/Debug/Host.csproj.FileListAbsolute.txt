@@ -1,0 +1,74 @@
+C:\Users\irvin\Desktop\Quinto Semestre\1.-Tecnologias\Primer Parcial\Ejercicios\MessageService\Host\bin\Debug\Host.exe.config
+C:\Users\irvin\Desktop\Quinto Semestre\1.-Tecnologias\Primer Parcial\Ejercicios\MessageService\Host\bin\Debug\Host.exe
+C:\Users\irvin\Desktop\Quinto Semestre\1.-Tecnologias\Primer Parcial\Ejercicios\MessageService\Host\bin\Debug\Host.pdb
+C:\Users\irvin\Desktop\Quinto Semestre\1.-Tecnologias\Primer Parcial\Ejercicios\MessageService\Host\obj\Debug\Host.csprojAssemblyReference.cache
+C:\Users\irvin\Desktop\Quinto Semestre\1.-Tecnologias\Primer Parcial\Ejercicios\MessageService\Host\obj\Debug\Host.csproj.CoreCompileInputs.cache
+C:\Users\irvin\Desktop\Quinto Semestre\1.-Tecnologias\Primer Parcial\Ejercicios\MessageService\Host\obj\Debug\Host.exe
+C:\Users\irvin\Desktop\Quinto Semestre\1.-Tecnologias\Primer Parcial\Ejercicios\MessageService\Host\obj\Debug\Host.pdb
+C:\Users\Otros\Documents\5 semestre\Tecnologías\MessageService\Host\obj\Debug\Host.csprojAssemblyReference.cache
+C:\Users\Otros\Documents\5 semestre\Tecnologías\MessageService\Host\obj\Debug\Host.exe
+C:\Users\Otros\Documents\5 semestre\Tecnologías\MessageService\Host\obj\Debug\Host.pdb
+C:\Users\Otros\Documents\5 semestre\Tecnologías\MessageService\Host\bin\Debug\Host.exe.config
+C:\Users\Otros\Documents\5 semestre\Tecnologías\MessageService\Host\bin\Debug\Host.exe
+C:\Users\Otros\Documents\5 semestre\Tecnologías\MessageService\Host\bin\Debug\Host.pdb
+C:\Users\Otros\Documents\5 semestre\Tecnologías\MessageService\Host\bin\Debug\MessageService.dll
+C:\Users\Otros\Documents\5 semestre\Tecnologías\MessageService\Host\bin\Debug\MessageService.pdb
+C:\Users\Otros\Documents\5 semestre\Tecnologías\MessageService\Host\obj\Debug\Host.csproj.CopyComplete
+C:\Users\Otros\Documents\5 semestre\Tecnologías\MessageService\Host\bin\Debug\EntityFramework.dll
+C:\Users\Otros\Documents\5 semestre\Tecnologías\MessageService\Host\bin\Debug\MessageService.dll.config
+C:\Users\Otros\Documents\5 semestre\Tecnologías\MessageService\Host\bin\Debug\EntityFramework.xml
+C:\Users\Otros\Documents\5 semestre\Tecnologías\MessageService\Host\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Otros\Documents\5 semestre\Tecnologías\MessageService\Host\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto Serpientes Escaleras\Host\obj\Debug\Host.csprojAssemblyReference.cache
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto Serpientes Escaleras\Host\obj\Debug\Host.exe
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto Serpientes Escaleras\Host\obj\Debug\Host.pdb
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto Serpientes Escaleras\Host\bin\Debug\Host.exe.config
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto Serpientes Escaleras\Host\bin\Debug\Host.exe
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto Serpientes Escaleras\Host\bin\Debug\Host.pdb
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto Serpientes Escaleras\Host\bin\Debug\EntityFramework.dll
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto Serpientes Escaleras\Host\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto Serpientes Escaleras\Host\bin\Debug\MessageService.dll
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto Serpientes Escaleras\Host\bin\Debug\MessageService.pdb
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto Serpientes Escaleras\Host\bin\Debug\MessageService.dll.config
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto Serpientes Escaleras\Host\bin\Debug\EntityFramework.xml
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto Serpientes Escaleras\Host\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto Serpientes Escaleras\Host\obj\Debug\Host.csproj.CopyComplete
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto Serpientes Escaleras\Host\bin\Debug\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto Serpientes Escaleras\Host\bin\Debug\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto Serpientes Escaleras\Host\bin\Debug\Microsoft.AspNetCore.Cryptography.KeyDerivation.xml
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto Serpientes Escaleras\Host\bin\Debug\Microsoft.AspNetCore.Cryptography.Internal.xml
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto Serpientes Escaleras\Host\bin\Debug\DAO.dll
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto Serpientes Escaleras\Host\bin\Debug\DAO.pdb
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto Serpientes Escaleras\Host\bin\Debug\DAO.dll.config
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto Serpientes Escaleras\Host\bin\Debug\System.Web.Mvc.dll
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto Serpientes Escaleras\Host\bin\Debug\System.Web.WebPages.dll
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto Serpientes Escaleras\Host\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto Serpientes Escaleras\Host\bin\Debug\System.Web.Razor.dll
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto Serpientes Escaleras\Host\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto Serpientes Escaleras\Host\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto Serpientes Escaleras\Host\bin\Debug\System.Web.Mvc.xml
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto Serpientes Escaleras\Host\bin\Debug\System.Web.WebPages.xml
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto Serpientes Escaleras\Host\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto Serpientes Escaleras\Host\bin\Debug\System.Web.Razor.xml
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto Serpientes Escaleras\Host\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto\Proyecto Serpientes Escaleras\Host\bin\Debug\Host.exe.config
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto\Proyecto Serpientes Escaleras\Host\bin\Debug\Host.exe
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto\Proyecto Serpientes Escaleras\Host\bin\Debug\Host.pdb
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto\Proyecto Serpientes Escaleras\Host\bin\Debug\EntityFramework.dll
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto\Proyecto Serpientes Escaleras\Host\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto\Proyecto Serpientes Escaleras\Host\bin\Debug\MessageService.dll
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto\Proyecto Serpientes Escaleras\Host\bin\Debug\DAO.dll
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto\Proyecto Serpientes Escaleras\Host\bin\Debug\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto\Proyecto Serpientes Escaleras\Host\bin\Debug\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto\Proyecto Serpientes Escaleras\Host\bin\Debug\MessageService.pdb
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto\Proyecto Serpientes Escaleras\Host\bin\Debug\MessageService.dll.config
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto\Proyecto Serpientes Escaleras\Host\bin\Debug\EntityFramework.xml
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto\Proyecto Serpientes Escaleras\Host\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto\Proyecto Serpientes Escaleras\Host\bin\Debug\DAO.pdb
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto\Proyecto Serpientes Escaleras\Host\bin\Debug\DAO.dll.config
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto\Proyecto Serpientes Escaleras\Host\bin\Debug\Microsoft.AspNetCore.Cryptography.KeyDerivation.xml
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto\Proyecto Serpientes Escaleras\Host\bin\Debug\Microsoft.AspNetCore.Cryptography.Internal.xml
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto\Proyecto Serpientes Escaleras\Host\obj\Debug\Host.csprojAssemblyReference.cache
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto\Proyecto Serpientes Escaleras\Host\obj\Debug\Host.csproj.CopyComplete
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto\Proyecto Serpientes Escaleras\Host\obj\Debug\Host.exe
+C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto\Proyecto Serpientes Escaleras\Host\obj\Debug\Host.pdb

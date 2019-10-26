@@ -1,0 +1,576 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SEModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="SEModelStoreContainer">
+    <EntitySet Name="FichaSet" EntityType="SEModel.Store.FichaSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PartidaSet" EntityType="SEModel.Store.PartidaSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TableroSet" EntityType="SEModel.Store.TableroSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CasillaSet" EntityType="SEModel.Store.CasillaSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PuntuacionSet" EntityType="SEModel.Store.PuntuacionSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CuentaSet" EntityType="SEModel.Store.CuentaSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="JugadorSet" EntityType="SEModel.Store.JugadorSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PortalSet" EntityType="SEModel.Store.PortalSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="FondoTableroSet" EntityType="SEModel.Store.FondoTableroSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="PartidaTablero" Association="SEModel.Store.PartidaTablero">
+      <End Role="Partida" EntitySet="PartidaSet" />
+      <End Role="Tablero" EntitySet="TableroSet" />
+    </AssociationSet>
+    <AssociationSet Name="TableroCasilla" Association="SEModel.Store.TableroCasilla">
+      <End Role="Tablero" EntitySet="TableroSet" />
+      <End Role="Casilla" EntitySet="CasillaSet" />
+    </AssociationSet>
+    <AssociationSet Name="JugadorCuenta" Association="SEModel.Store.JugadorCuenta">
+      <End Role="Jugador" EntitySet="JugadorSet" />
+      <End Role="Cuenta" EntitySet="CuentaSet" />
+    </AssociationSet>
+    <AssociationSet Name="PuntuacionJugador" Association="SEModel.Store.PuntuacionJugador">
+      <End Role="Puntuacion" EntitySet="PuntuacionSet" />
+      <End Role="Jugador" EntitySet="JugadorSet" />
+    </AssociationSet>
+    <AssociationSet Name="PartidaPuntuacion" Association="SEModel.Store.PartidaPuntuacion">
+      <End Role="Partida" EntitySet="PartidaSet" />
+      <End Role="Puntuacion" EntitySet="PuntuacionSet" />
+    </AssociationSet>
+    <AssociationSet Name="TableroFicha" Association="SEModel.Store.TableroFicha">
+      <End Role="Tablero" EntitySet="TableroSet" />
+      <End Role="Ficha" EntitySet="FichaSet" />
+    </AssociationSet>
+    <AssociationSet Name="CasillaPortal" Association="SEModel.Store.CasillaPortal">
+      <End Role="Casilla" EntitySet="CasillaSet" />
+      <End Role="Portal" EntitySet="PortalSet" />
+    </AssociationSet>
+    <AssociationSet Name="TableroFondoTablero" Association="SEModel.Store.TableroFondoTablero">
+      <End Role="Tablero" EntitySet="TableroSet" />
+      <End Role="FondoTablero" EntitySet="FondoTableroSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="FichaSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="imagen" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Tablero_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PartidaSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="num_jugadores" Type="smallint" Nullable="false" />
+    <Property Name="tiempo_inicio" Type="datetime" Nullable="false" />
+    <Property Name="tiempo_fin" Type="datetime" Nullable="false" />
+    <Property Name="Tablero_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TableroSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cuadricula" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="no_casillas" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CasillaSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="numero" Type="smallint" Nullable="false" />
+    <Property Name="especial" Type="bit" Nullable="false" />
+    <Property Name="TableroId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PuntuacionSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="puntos" Type="smallint" Nullable="false" />
+    <Property Name="turnos" Type="smallint" Nullable="false" />
+    <Property Name="Jugador_Id" Type="int" Nullable="false" />
+    <Property Name="Partida_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CuentaSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="correo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="salt" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="validada" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="JugadorSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="apodo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="nombre" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="apellidos" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Cuenta_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PortalSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="smallint" Nullable="false" />
+    <Property Name="color" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="imagen" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Casilla_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FondoTableroSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="imagen" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Tablero_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="PartidaTablero">
+    <End Role="Partida" Type="SEModel.Store.PartidaSet" Multiplicity="*" />
+    <End Role="Tablero" Type="SEModel.Store.TableroSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Tablero">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Partida">
+        <PropertyRef Name="Tablero_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TableroCasilla">
+    <End Role="Tablero" Type="SEModel.Store.TableroSet" Multiplicity="1" />
+    <End Role="Casilla" Type="SEModel.Store.CasillaSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tablero">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Casilla">
+        <PropertyRef Name="TableroId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="JugadorCuenta">
+    <End Role="Jugador" Type="SEModel.Store.JugadorSet" Multiplicity="*" />
+    <End Role="Cuenta" Type="SEModel.Store.CuentaSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Cuenta">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Jugador">
+        <PropertyRef Name="Cuenta_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PuntuacionJugador">
+    <End Role="Puntuacion" Type="SEModel.Store.PuntuacionSet" Multiplicity="*" />
+    <End Role="Jugador" Type="SEModel.Store.JugadorSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Jugador">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Puntuacion">
+        <PropertyRef Name="Jugador_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PartidaPuntuacion">
+    <End Role="Partida" Type="SEModel.Store.PartidaSet" Multiplicity="1" />
+    <End Role="Puntuacion" Type="SEModel.Store.PuntuacionSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Partida">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Puntuacion">
+        <PropertyRef Name="Partida_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TableroFicha">
+    <End Role="Tablero" Type="SEModel.Store.TableroSet" Multiplicity="1" />
+    <End Role="Ficha" Type="SEModel.Store.FichaSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tablero">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Ficha">
+        <PropertyRef Name="Tablero_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CasillaPortal">
+    <End Role="Casilla" Type="SEModel.Store.CasillaSet" Multiplicity="1" />
+    <End Role="Portal" Type="SEModel.Store.PortalSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Casilla">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Portal">
+        <PropertyRef Name="Casilla_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TableroFondoTablero">
+    <End Role="Tablero" Type="SEModel.Store.TableroSet" Multiplicity="1" />
+    <End Role="FondoTablero" Type="SEModel.Store.FondoTableroSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tablero">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FondoTablero">
+        <PropertyRef Name="Tablero_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="SEModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="ServidorSE" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="FichaSet" EntityType="SEModel.Ficha" />
+          <EntitySet Name="PartidaSet" EntityType="SEModel.Partida" />
+          <EntitySet Name="TableroSet" EntityType="SEModel.Tablero" />
+          <EntitySet Name="CasillaSet" EntityType="SEModel.Casilla" />
+          <AssociationSet Name="PartidaTablero" Association="SEModel.PartidaTablero">
+            <End EntitySet="PartidaSet" Role="Partida" />
+            <End EntitySet="TableroSet" Role="Tablero" />
+          </AssociationSet>
+          <AssociationSet Name="TableroCasilla" Association="SEModel.TableroCasilla">
+            <End EntitySet="TableroSet" Role="Tablero" />
+            <End EntitySet="CasillaSet" Role="Casilla" />
+          </AssociationSet>
+          <EntitySet Name="PuntuacionSet" EntityType="SEModel.Puntuacion" />
+          <EntitySet Name="CuentaSet" EntityType="SEModel.Cuenta" />
+          <EntitySet Name="JugadorSet" EntityType="SEModel.Jugador" />
+          <AssociationSet Name="JugadorCuenta" Association="SEModel.JugadorCuenta">
+            <End EntitySet="JugadorSet" Role="Jugador" />
+            <End EntitySet="CuentaSet" Role="Cuenta" />
+          </AssociationSet>
+          <AssociationSet Name="PuntuacionJugador" Association="SEModel.PuntuacionJugador">
+            <End EntitySet="PuntuacionSet" Role="Puntuacion" />
+            <End EntitySet="JugadorSet" Role="Jugador" />
+          </AssociationSet>
+          <EntitySet Name="PortalSet" EntityType="SEModel.Portal" />
+          <AssociationSet Name="PartidaPuntuacion" Association="SEModel.PartidaPuntuacion">
+            <End Role="Partida" EntitySet="PartidaSet" />
+            <End Role="Puntuacion" EntitySet="PuntuacionSet" />
+          </AssociationSet>
+          <AssociationSet Name="TableroFicha" Association="SEModel.TableroFicha">
+            <End Role="Tablero" EntitySet="TableroSet" />
+            <End Role="Ficha" EntitySet="FichaSet" />
+          </AssociationSet>
+          <AssociationSet Name="CasillaPortal" Association="SEModel.CasillaPortal">
+            <End Role="Casilla" EntitySet="CasillaSet" />
+            <End Role="Portal" EntitySet="PortalSet" />
+          </AssociationSet>
+          <EntitySet Name="FondoTableroSet" EntityType="SEModel.FondoTablero" />
+          <AssociationSet Name="TableroFondoTablero" Association="SEModel.TableroFondoTablero">
+            <End Role="Tablero" EntitySet="TableroSet" />
+            <End Role="FondoTablero" EntitySet="FondoTableroSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Ficha">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+          <Property Name="imagen" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" Type="String" />
+          <NavigationProperty Name="Tablero" Relationship="SEModel.TableroFicha" FromRole="Ficha" ToRole="Tablero" />
+        </EntityType>
+        <EntityType Name="Partida">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+          <Property Name="num_jugadores" Nullable="false" Type="Int16" />
+          <Property Name="tiempo_inicio" Nullable="false" Precision="3" Type="DateTime" />
+          <Property Name="tiempo_fin" Nullable="false" Precision="3" Type="DateTime" />
+          <NavigationProperty Name="Tablero" Relationship="SEModel.PartidaTablero" FromRole="Partida" ToRole="Tablero" />
+          <NavigationProperty Name="Puntuacion" Relationship="SEModel.PartidaPuntuacion" FromRole="Partida" ToRole="Puntuacion" />
+        </EntityType>
+        <EntityType Name="Tablero">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+          <Property Name="cuadricula" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" Type="String" />
+          <Property Name="no_casillas" Nullable="false" Type="Int16" />
+          <NavigationProperty Name="Partida" Relationship="SEModel.PartidaTablero" FromRole="Tablero" ToRole="Partida" />
+          <NavigationProperty Name="Casilla" Relationship="SEModel.TableroCasilla" FromRole="Tablero" ToRole="Casilla" />
+          <NavigationProperty Name="Ficha" Relationship="SEModel.TableroFicha" FromRole="Tablero" ToRole="Ficha" />
+          <NavigationProperty Name="FondoTablero" Relationship="SEModel.TableroFondoTablero" FromRole="Tablero" ToRole="FondoTablero" />
+        </EntityType>
+        <EntityType Name="Casilla">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+          <Property Name="numero" Nullable="false" Type="Int16" />
+          <Property Name="especial" Nullable="false" Type="Boolean" />
+          <NavigationProperty Name="Tablero" Relationship="SEModel.TableroCasilla" FromRole="Casilla" ToRole="Tablero" />
+          <Property Name="TableroId" Nullable="false" Type="Int32" />
+          <NavigationProperty Name="Portal" Relationship="SEModel.CasillaPortal" FromRole="Casilla" ToRole="Portal" />
+        </EntityType>
+        <Association Name="PartidaTablero">
+          <End Type="SEModel.Partida" Multiplicity="1" Role="Partida" />
+          <End Type="SEModel.Tablero" Multiplicity="1" Role="Tablero" />
+        </Association>
+        <Association Name="TableroCasilla">
+          <End Type="SEModel.Tablero" Multiplicity="1" Role="Tablero" />
+          <End Type="SEModel.Casilla" Multiplicity="*" Role="Casilla" />
+          <ReferentialConstraint>
+            <Principal Role="Tablero">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Casilla">
+              <PropertyRef Name="TableroId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Portal">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int16" Nullable="false" />
+          <Property Name="color" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" Type="String" />
+          <Property Name="imagen" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" Type="String" />
+          <NavigationProperty Name="Casilla" Relationship="SEModel.CasillaPortal" FromRole="Portal" ToRole="Casilla" />
+        </EntityType>
+        <EntityType Name="Puntuacion">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+          <Property Name="puntos" Nullable="false" Type="Int16" />
+          <Property Name="turnos" Nullable="false" Type="Int16" />
+          <NavigationProperty Name="Jugador" Relationship="SEModel.PuntuacionJugador" FromRole="Puntuacion" ToRole="Jugador" />
+          <NavigationProperty Name="Partida" Relationship="SEModel.PartidaPuntuacion" FromRole="Puntuacion" ToRole="Partida" />
+        </EntityType>
+        <EntityType Name="Cuenta">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+          <Property Name="correo" Nullable="false" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="password" Nullable="false" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Jugador" Relationship="SEModel.JugadorCuenta" FromRole="Cuenta" ToRole="Jugador" />
+          <Property Name="salt" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="validada" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Jugador">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="apodo" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Cuenta" Relationship="SEModel.JugadorCuenta" FromRole="Jugador" ToRole="Cuenta" />
+          <NavigationProperty Name="Puntuacion" Relationship="SEModel.PuntuacionJugador" FromRole="Jugador" ToRole="Puntuacion" />
+          <Property Name="nombre" Type="String" Nullable="false" />
+          <Property Name="apellidos" Type="String" Nullable="false" />
+        </EntityType>
+        <Association Name="JugadorCuenta">
+          <End Type="SEModel.Jugador" Multiplicity="1" Role="Jugador" />
+          <End Type="SEModel.Cuenta" Multiplicity="1" Role="Cuenta" />
+        </Association>
+        <Association Name="PuntuacionJugador">
+          <End Type="SEModel.Puntuacion" Multiplicity="*" Role="Puntuacion" />
+          <End Type="SEModel.Jugador" Multiplicity="1" Role="Jugador" />
+        </Association>
+        <Association Name="PartidaPuntuacion">
+          <End Type="SEModel.Partida" Role="Partida" Multiplicity="1" />
+          <End Type="SEModel.Puntuacion" Role="Puntuacion" Multiplicity="*" />
+        </Association>
+        <Association Name="TableroFicha">
+          <End Type="SEModel.Tablero" Role="Tablero" Multiplicity="1" />
+          <End Type="SEModel.Ficha" Role="Ficha" Multiplicity="*" />
+        </Association>
+        <Association Name="CasillaPortal">
+          <End Type="SEModel.Casilla" Role="Casilla" Multiplicity="1" />
+          <End Type="SEModel.Portal" Role="Portal" Multiplicity="0..1" />
+        </Association>
+        <EntityType Name="FondoTablero">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="imagen" Type="String" Nullable="false" />
+          <NavigationProperty Name="Tablero" Relationship="SEModel.TableroFondoTablero" FromRole="FondoTablero" ToRole="Tablero" />
+        </EntityType>
+        <Association Name="TableroFondoTablero">
+          <End Type="SEModel.Tablero" Role="Tablero" Multiplicity="1" />
+          <End Type="SEModel.FondoTablero" Role="FondoTablero" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SEModelStoreContainer" CdmEntityContainer="ServidorSE">
+    <EntitySetMapping Name="FichaSet">
+      <EntityTypeMapping TypeName="IsTypeOf(SEModel.Ficha)">
+        <MappingFragment StoreEntitySet="FichaSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="imagen" ColumnName="imagen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PartidaSet">
+      <EntityTypeMapping TypeName="IsTypeOf(SEModel.Partida)">
+        <MappingFragment StoreEntitySet="PartidaSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="num_jugadores" ColumnName="num_jugadores" />
+          <ScalarProperty Name="tiempo_inicio" ColumnName="tiempo_inicio" />
+          <ScalarProperty Name="tiempo_fin" ColumnName="tiempo_fin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TableroSet">
+      <EntityTypeMapping TypeName="IsTypeOf(SEModel.Tablero)">
+        <MappingFragment StoreEntitySet="TableroSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="cuadricula" ColumnName="cuadricula" />
+          <ScalarProperty Name="no_casillas" ColumnName="no_casillas" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CasillaSet">
+      <EntityTypeMapping TypeName="IsTypeOf(SEModel.Casilla)">
+        <MappingFragment StoreEntitySet="CasillaSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="numero" ColumnName="numero" />
+          <ScalarProperty Name="especial" ColumnName="especial" />
+          <ScalarProperty Name="TableroId" ColumnName="TableroId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PuntuacionSet">
+      <EntityTypeMapping TypeName="IsTypeOf(SEModel.Puntuacion)">
+        <MappingFragment StoreEntitySet="PuntuacionSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="puntos" ColumnName="puntos" />
+          <ScalarProperty Name="turnos" ColumnName="turnos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CuentaSet">
+      <EntityTypeMapping TypeName="IsTypeOf(SEModel.Cuenta)">
+        <MappingFragment StoreEntitySet="CuentaSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="salt" ColumnName="salt" />
+          <ScalarProperty Name="validada" ColumnName="validada" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JugadorSet">
+      <EntityTypeMapping TypeName="IsTypeOf(SEModel.Jugador)">
+        <MappingFragment StoreEntitySet="JugadorSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="apodo" ColumnName="apodo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PortalSet">
+      <EntityTypeMapping TypeName="IsTypeOf(SEModel.Portal)">
+        <MappingFragment StoreEntitySet="PortalSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="imagen" ColumnName="imagen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FondoTableroSet">
+      <EntityTypeMapping TypeName="IsTypeOf(SEModel.FondoTablero)">
+        <MappingFragment StoreEntitySet="FondoTableroSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="imagen" ColumnName="imagen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="PartidaTablero" TypeName="SEModel.PartidaTablero" StoreEntitySet="PartidaSet">
+      <EndProperty Name="Tablero">
+        <ScalarProperty Name="Id" ColumnName="Tablero_Id" />
+      </EndProperty>
+      <EndProperty Name="Partida">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="JugadorCuenta" TypeName="SEModel.JugadorCuenta" StoreEntitySet="JugadorSet">
+      <EndProperty Name="Cuenta">
+        <ScalarProperty Name="Id" ColumnName="Cuenta_Id" />
+      </EndProperty>
+      <EndProperty Name="Jugador">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PuntuacionJugador" TypeName="SEModel.PuntuacionJugador" StoreEntitySet="PuntuacionSet">
+      <EndProperty Name="Jugador">
+        <ScalarProperty Name="Id" ColumnName="Jugador_Id" />
+      </EndProperty>
+      <EndProperty Name="Puntuacion">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PartidaPuntuacion" TypeName="SEModel.PartidaPuntuacion" StoreEntitySet="PuntuacionSet">
+      <EndProperty Name="Partida">
+        <ScalarProperty Name="Id" ColumnName="Partida_Id" />
+      </EndProperty>
+      <EndProperty Name="Puntuacion">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TableroFicha" TypeName="SEModel.TableroFicha" StoreEntitySet="FichaSet">
+      <EndProperty Name="Tablero">
+        <ScalarProperty Name="Id" ColumnName="Tablero_Id" />
+      </EndProperty>
+      <EndProperty Name="Ficha">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CasillaPortal" TypeName="SEModel.CasillaPortal" StoreEntitySet="PortalSet">
+      <EndProperty Name="Casilla">
+        <ScalarProperty Name="Id" ColumnName="Casilla_Id" />
+      </EndProperty>
+      <EndProperty Name="Portal">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TableroFondoTablero" TypeName="SEModel.TableroFondoTablero" StoreEntitySet="FondoTableroSet">
+      <EndProperty Name="Tablero">
+        <ScalarProperty Name="Id" ColumnName="Tablero_Id" />
+      </EndProperty>
+      <EndProperty Name="FondoTablero">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

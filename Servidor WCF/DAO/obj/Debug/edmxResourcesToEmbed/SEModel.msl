@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SEModelStoreContainer" CdmEntityContainer="ServidorSE">
+    <EntitySetMapping Name="FichaSet">
+      <EntityTypeMapping TypeName="IsTypeOf(SEModel.Ficha)">
+        <MappingFragment StoreEntitySet="FichaSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="imagen" ColumnName="imagen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PartidaSet">
+      <EntityTypeMapping TypeName="IsTypeOf(SEModel.Partida)">
+        <MappingFragment StoreEntitySet="PartidaSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="num_jugadores" ColumnName="num_jugadores" />
+          <ScalarProperty Name="tiempo_inicio" ColumnName="tiempo_inicio" />
+          <ScalarProperty Name="tiempo_fin" ColumnName="tiempo_fin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TableroSet">
+      <EntityTypeMapping TypeName="IsTypeOf(SEModel.Tablero)">
+        <MappingFragment StoreEntitySet="TableroSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="cuadricula" ColumnName="cuadricula" />
+          <ScalarProperty Name="no_casillas" ColumnName="no_casillas" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CasillaSet">
+      <EntityTypeMapping TypeName="IsTypeOf(SEModel.Casilla)">
+        <MappingFragment StoreEntitySet="CasillaSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="numero" ColumnName="numero" />
+          <ScalarProperty Name="especial" ColumnName="especial" />
+          <ScalarProperty Name="TableroId" ColumnName="TableroId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PuntuacionSet">
+      <EntityTypeMapping TypeName="IsTypeOf(SEModel.Puntuacion)">
+        <MappingFragment StoreEntitySet="PuntuacionSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="puntos" ColumnName="puntos" />
+          <ScalarProperty Name="turnos" ColumnName="turnos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CuentaSet">
+      <EntityTypeMapping TypeName="IsTypeOf(SEModel.Cuenta)">
+        <MappingFragment StoreEntitySet="CuentaSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="salt" ColumnName="salt" />
+          <ScalarProperty Name="validada" ColumnName="validada" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="JugadorSet">
+      <EntityTypeMapping TypeName="IsTypeOf(SEModel.Jugador)">
+        <MappingFragment StoreEntitySet="JugadorSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="apodo" ColumnName="apodo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PortalSet">
+      <EntityTypeMapping TypeName="IsTypeOf(SEModel.Portal)">
+        <MappingFragment StoreEntitySet="PortalSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="color" ColumnName="color" />
+          <ScalarProperty Name="imagen" ColumnName="imagen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FondoTableroSet">
+      <EntityTypeMapping TypeName="IsTypeOf(SEModel.FondoTablero)">
+        <MappingFragment StoreEntitySet="FondoTableroSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="imagen" ColumnName="imagen" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="PartidaTablero" TypeName="SEModel.PartidaTablero" StoreEntitySet="PartidaSet">
+      <EndProperty Name="Tablero">
+        <ScalarProperty Name="Id" ColumnName="Tablero_Id" />
+      </EndProperty>
+      <EndProperty Name="Partida">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="JugadorCuenta" TypeName="SEModel.JugadorCuenta" StoreEntitySet="JugadorSet">
+      <EndProperty Name="Cuenta">
+        <ScalarProperty Name="Id" ColumnName="Cuenta_Id" />
+      </EndProperty>
+      <EndProperty Name="Jugador">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PuntuacionJugador" TypeName="SEModel.PuntuacionJugador" StoreEntitySet="PuntuacionSet">
+      <EndProperty Name="Jugador">
+        <ScalarProperty Name="Id" ColumnName="Jugador_Id" />
+      </EndProperty>
+      <EndProperty Name="Puntuacion">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PartidaPuntuacion" TypeName="SEModel.PartidaPuntuacion" StoreEntitySet="PuntuacionSet">
+      <EndProperty Name="Partida">
+        <ScalarProperty Name="Id" ColumnName="Partida_Id" />
+      </EndProperty>
+      <EndProperty Name="Puntuacion">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TableroFicha" TypeName="SEModel.TableroFicha" StoreEntitySet="FichaSet">
+      <EndProperty Name="Tablero">
+        <ScalarProperty Name="Id" ColumnName="Tablero_Id" />
+      </EndProperty>
+      <EndProperty Name="Ficha">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CasillaPortal" TypeName="SEModel.CasillaPortal" StoreEntitySet="PortalSet">
+      <EndProperty Name="Casilla">
+        <ScalarProperty Name="Id" ColumnName="Casilla_Id" />
+      </EndProperty>
+      <EndProperty Name="Portal">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TableroFondoTablero" TypeName="SEModel.TableroFondoTablero" StoreEntitySet="FondoTableroSet">
+      <EndProperty Name="Tablero">
+        <ScalarProperty Name="Id" ColumnName="Tablero_Id" />
+      </EndProperty>
+      <EndProperty Name="FondoTablero">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

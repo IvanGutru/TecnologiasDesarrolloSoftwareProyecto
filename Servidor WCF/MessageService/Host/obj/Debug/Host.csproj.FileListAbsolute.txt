@@ -1,0 +1,24 @@
+C:\Users\irvin\Desktop\Quinto Semestre\1.-Tecnologias\Primer Parcial\Ejercicios\MessageService\Host\bin\Debug\Host.exe.config
+C:\Users\irvin\Desktop\Quinto Semestre\1.-Tecnologias\Primer Parcial\Ejercicios\MessageService\Host\bin\Debug\Host.exe
+C:\Users\irvin\Desktop\Quinto Semestre\1.-Tecnologias\Primer Parcial\Ejercicios\MessageService\Host\bin\Debug\Host.pdb
+C:\Users\irvin\Desktop\Quinto Semestre\1.-Tecnologias\Primer Parcial\Ejercicios\MessageService\Host\obj\Debug\Host.csprojAssemblyReference.cache
+C:\Users\irvin\Desktop\Quinto Semestre\1.-Tecnologias\Primer Parcial\Ejercicios\MessageService\Host\obj\Debug\Host.csproj.CoreCompileInputs.cache
+C:\Users\irvin\Desktop\Quinto Semestre\1.-Tecnologias\Primer Parcial\Ejercicios\MessageService\Host\obj\Debug\Host.exe
+C:\Users\irvin\Desktop\Quinto Semestre\1.-Tecnologias\Primer Parcial\Ejercicios\MessageService\Host\obj\Debug\Host.pdb
+C:\Users\Otros\Documents\5 semestre\Tecnologías\MessageService\Host\obj\Debug\Host.csprojAssemblyReference.cache
+C:\Users\Otros\Documents\5 semestre\Tecnologías\MessageService\Host\obj\Debug\Host.exe
+C:\Users\Otros\Documents\5 semestre\Tecnologías\MessageService\Host\obj\Debug\Host.pdb
+C:\Users\Otros\Documents\5 semestre\Tecnologías\MessageService\Host\bin\Debug\Host.exe.config
+C:\Users\Otros\Documents\5 semestre\Tecnologías\MessageService\Host\bin\Debug\Host.exe
+C:\Users\Otros\Documents\5 semestre\Tecnologías\MessageService\Host\bin\Debug\Host.pdb
+C:\Users\Otros\Documents\5 semestre\Tecnologías\MessageService\Host\bin\Debug\MessageService.dll
+C:\Users\Otros\Documents\5 semestre\Tecnologías\MessageService\Host\bin\Debug\MessageService.pdb
+C:\Users\Otros\Documents\5 semestre\Tecnologías\MessageService\Host\obj\Debug\Host.csproj.CopyComplete
+C:\Users\Otros\Documents\5 semestre\Tecnologías\MessageService\Host\bin\Debug\DAO.dll
+C:\Users\Otros\Documents\5 semestre\Tecnologías\MessageService\Host\bin\Debug\EntityFramework.dll
+C:\Users\Otros\Documents\5 semestre\Tecnologías\MessageService\Host\bin\Debug\MessageService.dll.config
+C:\Users\Otros\Documents\5 semestre\Tecnologías\MessageService\Host\bin\Debug\DAO.pdb
+C:\Users\Otros\Documents\5 semestre\Tecnologías\MessageService\Host\bin\Debug\DAO.dll.config
+C:\Users\Otros\Documents\5 semestre\Tecnologías\MessageService\Host\bin\Debug\EntityFramework.xml
+C:\Users\Otros\Documents\5 semestre\Tecnologías\MessageService\Host\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Otros\Documents\5 semestre\Tecnologías\MessageService\Host\bin\Debug\EntityFramework.SqlServer.xml
