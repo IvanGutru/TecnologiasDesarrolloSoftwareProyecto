@@ -268,6 +268,15 @@ namespace MessageService {
             }
         }
 
+        public Boolean ValidarCupoSala(int indice)
+        {
+            if (salasAbiertas[indice].NumJugadores >= 4)
+            {
+                return false;
+            }
+            return true;
+        }
+
         public List<Sala> ConsultarSalasDisponibles()
         {
             List<Sala> salasDisponibles = new List<Sala>();
@@ -315,6 +324,10 @@ namespace MessageService {
             foreach (var miembro in salasAbiertas[indice].DiccionarioJugadores.Keys)
             {
                 miembro.RecibirMensajeMiembro(false, jugador.Apodo);
+            }
+            if (salasAbiertas[indice].NumJugadores == 0)
+            {
+                salasAbiertas.RemoveAt(indice);
             }
         }
 

@@ -135,6 +135,12 @@
   <wsdl:message name="IAdministradorChat_UnirseSala_InputMessage">
     <wsdl:part name="parameters" element="tns:UnirseSala" />
   </wsdl:message>
+  <wsdl:message name="IAdministradorChat_ValidarCupoSala_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarCupoSala" />
+  </wsdl:message>
+  <wsdl:message name="IAdministradorChat_ValidarCupoSala_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidarCupoSalaResponse" />
+  </wsdl:message>
   <wsdl:message name="IAdministradorChat_EnviarMensaje_InputMessage">
     <wsdl:part name="parameters" element="tns:EnviarMensaje" />
   </wsdl:message>
@@ -196,6 +202,10 @@
     </wsdl:operation>
     <wsdl:operation name="UnirseSala">
       <wsdl:input wsaw:Action="http://tempuri.org/IAdministradorChat/UnirseSala" message="tns:IAdministradorChat_UnirseSala_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarCupoSala">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdministradorChat/ValidarCupoSala" message="tns:IAdministradorChat_ValidarCupoSala_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministradorChat/ValidarCupoSalaResponse" message="tns:IAdministradorChat_ValidarCupoSala_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="EnviarMensaje">
       <wsdl:input wsaw:Action="http://tempuri.org/IAdministradorChat/EnviarMensaje" message="tns:IAdministradorChat_EnviarMensaje_InputMessage" />
@@ -321,6 +331,15 @@
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="ValidarCupoSala">
+      <soap12:operation soapAction="http://tempuri.org/IAdministradorChat/ValidarCupoSala" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="EnviarMensaje">
       <soap12:operation soapAction="http://tempuri.org/IAdministradorChat/EnviarMensaje" style="document" />

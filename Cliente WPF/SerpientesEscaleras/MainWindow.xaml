@@ -18,8 +18,10 @@
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
         <Image HorizontalAlignment="Left" Height="452" VerticalAlignment="Top" Width="366" Source="Resources/serpiente.png" Margin="0,0,0,-86"/>
-        <Image HorizontalAlignment="Left" Height="33" Margin="639,10,0,0" VerticalAlignment="Top" Width="33" Source="Resources/traducir.png"/>
-        <TextBox x:Name="textBox_Usuario" HorizontalAlignment="Left" Margin="438,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="242" Background="#FF1C1C1C" Foreground="White" SelectionBrush="#FF26D4F5" materialDesign:HintAssist.IsFloating="true" LostFocus="TextBox_Usuario_LostFocus" KeyDown="TextBox_Usuario_KeyDown">
+        <Image HorizontalAlignment="Left" Height="48" Margin="604,10,0,0" VerticalAlignment="Top" Width="53" Source="Resources/traducir.png" RenderTransformOrigin="0.096,0.595"/>
+        <TextBox x:Name="textBox_Usuario" HorizontalAlignment="Left" Margin="438,90,0,0" TextWrapping="NoWrap" MaxLength="100" VerticalAlignment="Top" 
+                 Width="242" Background="#FF1C1C1C" Foreground="White" SelectionBrush="#FF26D4F5" materialDesign:HintAssist.IsFloating="true" 
+                 LostFocus="TextBox_Usuario_LostFocus" KeyDown="TextBox_Usuario_KeyDown">
             <TextBox.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF1C1C1C" Offset="0.331"/>
@@ -27,7 +29,8 @@
                 </LinearGradientBrush>
             </TextBox.BorderBrush>
         </TextBox>
-        <PasswordBox x:Name="passwordBox_contraseña" HorizontalAlignment="Left" Margin="438,173,0,0" VerticalAlignment="Top" Width="242" Foreground="White" BorderBrush="#FF107676" LostFocus="PasswordBox_Contraseña_LostFocus" KeyDown="PasswordBox_KeyDown"/>
+        <PasswordBox x:Name="passwordBox_contraseña" HorizontalAlignment="Left" Margin="438,173,0,0" VerticalAlignment="Top" Width="242" MaxLength="50"
+                     Foreground="White" BorderBrush="#FF107676" LostFocus="PasswordBox_Contraseña_LostFocus" KeyDown="PasswordBox_KeyDown"/>
         <Button x:Name="button_InciarSesión" Content="{x:Static p:Resources.iniciarSesion}" HorizontalAlignment="Left" Margin="492,235,0,0" VerticalAlignment="Top" 
                 Width="140" Height="35" Background="#FF0F8080" BorderBrush="#FF020202" Foreground="White" OpacityMask="Black" 
                 TextOptions.TextHintingMode="Fixed" SnapsToDevicePixels="True" Cursor="Arrow" FontStretch="SemiCondensed" Click="Button_IniciarSesion" FontSize="16">
@@ -40,15 +43,16 @@
                 <DropShadowEffect BlurRadius="10" RenderingBias="Quality" ShadowDepth="8"/>
             </Button.Effect>
         </Button>
-        <TextBlock x:Name="textBlock_SinCuenta" HorizontalAlignment="Left" Margin="428,318,0,0" TextWrapping="Wrap" Text="{x:Static p:Resources.textBlockSinCuenta}" VerticalAlignment="Top" Height="22" Width="140" TextDecorations="{x:Null}" OpacityMask="#FFFF4040" Foreground="White" FontSize="14"/>
-        <Menu IsMainMenu="True"  HorizontalAlignment="Left" Height="33" Margin="678,10,0,0" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0.5,0.5" FontSize="16">
+        <TextBlock x:Name="textBlock_SinCuenta" HorizontalAlignment="Left" Margin="398,318,0,0" TextWrapping="Wrap" Text="{x:Static p:Resources.textBlockSinCuenta}" VerticalAlignment="Top" Height="22" Width="170" TextDecorations="{x:Null}" OpacityMask="#FFFF4040" Foreground="White" FontSize="14"/>
+        <Menu IsMainMenu="True"  HorizontalAlignment="Right" Margin="0,10,15,0" VerticalAlignment="Top" 
+              Width="100" RenderTransformOrigin="0.5,0.5" FontSize="16">
             <Menu.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF9B9B9B" Offset="0"/>
                     <GradientStop Color="#FF8D8B8B" Offset="1"/>
                 </LinearGradientBrush>
             </Menu.Background>
-            <MenuItem Header="{x:Static p:Resources.idiomaEncabezado}" Height="33" Width="152">
+            <MenuItem Header="{x:Static p:Resources.idiomaEncabezado}" Width="200">
                 <MenuItem Header="{x:Static p:Resources.idiomaEspañol}" Click="CambiarIdiomaEspañol"/>
                 <MenuItem Header="{x:Static p:Resources.idiomaIngles}" Click="CambiarIdiomaIngles" />
             </MenuItem>

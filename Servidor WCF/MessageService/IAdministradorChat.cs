@@ -17,8 +17,10 @@ namespace MessageService
         List<Sala> ConsultarSalasDisponibles();
         [OperationContract]
         List<String> ConsultarJugadoresSala(int indice);
-        [OperationContract(IsOneWay = true)]
+        [OperationContract(IsOneWay =true)]
         void UnirseSala(int indice, Jugador jugador);
+        [OperationContract]
+        Boolean ValidarCupoSala(int indice);
         [OperationContract(IsOneWay = true)]
         void EnviarMensaje(int indice, String mensaje);
         [OperationContract(IsOneWay = true)]

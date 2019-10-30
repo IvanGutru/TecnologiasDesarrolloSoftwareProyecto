@@ -542,6 +542,12 @@ namespace SerpientesEscaleras.ServidorSE {
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministradorChat/UnirseSala")]
         System.Threading.Tasks.Task UnirseSalaAsync(int indice, SerpientesEscaleras.ServidorSE.Jugador jugador);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdministradorChat/ValidarCupoSala", ReplyAction="http://tempuri.org/IAdministradorChat/ValidarCupoSalaResponse")]
+        bool ValidarCupoSala(int indice);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdministradorChat/ValidarCupoSala", ReplyAction="http://tempuri.org/IAdministradorChat/ValidarCupoSalaResponse")]
+        System.Threading.Tasks.Task<bool> ValidarCupoSalaAsync(int indice);
+        
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministradorChat/EnviarMensaje")]
         void EnviarMensaje(int indice, string mensaje);
         
@@ -623,6 +629,14 @@ namespace SerpientesEscaleras.ServidorSE {
         
         public System.Threading.Tasks.Task UnirseSalaAsync(int indice, SerpientesEscaleras.ServidorSE.Jugador jugador) {
             return base.Channel.UnirseSalaAsync(indice, jugador);
+        }
+        
+        public bool ValidarCupoSala(int indice) {
+            return base.Channel.ValidarCupoSala(indice);
+        }
+        
+        public System.Threading.Tasks.Task<bool> ValidarCupoSalaAsync(int indice) {
+            return base.Channel.ValidarCupoSalaAsync(indice);
         }
         
         public void EnviarMensaje(int indice, string mensaje) {

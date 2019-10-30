@@ -17,12 +17,16 @@ namespace SerpientesEscaleras
     public partial class BuscarPartida : Window
     {
         private ServidorSE.Jugador jugador;
+        private Lobby lobby;
+        private List<ServidorSE.Sala> listaSalas;
+
         public BuscarPartida(ServidorSE.Jugador jugadorRecibido)
         {
             jugador = jugadorRecibido;
             InitializeComponent();
-            Lobby lobby = new Lobby(jugadorRecibido);
-            dataGrid_Partidas.ItemsSource = lobby.ConsultarPartidasDisponibles();
+            lobby = new Lobby(jugadorRecibido);
+            listaSalas = lobby.ConsultarPartidasDisponibles();
+            dataGrid_Partidas.ItemsSource = listaSalas;
         }
 
         private void Button_Entrar(object sender, RoutedEventArgs e)
@@ -32,8 +36,14 @@ namespace SerpientesEscaleras
                 MessageBox.Show("Elige una partida primero");
                 return;
             }
-            Lobby lobby = new Lobby(jugador);
-            lobby.EntrarPartida(dataGrid_Partidas.SelectedIndex);
+            if (!lobby.EntrarPartida(dataGrid_Partidas.SelectedIndex))
+            {
+                ServidorSE.Sala partida = (ServidorSE.Sala)dataGrid_Partidas.SelectedItem;
+                MessageBox.Show("La partida " + partida.Nombre + " ya esta llena");
+                listaSalas = lobby.ConsultarPartidasDisponibles();
+                dataGrid_Partidas.Items.Refresh();
+                return;
+            }
             lobby.Show();
             this.Close();
         }

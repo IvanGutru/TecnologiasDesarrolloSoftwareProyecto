@@ -75,12 +75,17 @@ namespace SerpientesEscaleras
             servidorChat.UnirseSala(indiceSala, jugador);
         }
 
-        public void EntrarPartida(int indice)
+        public Boolean EntrarPartida(int indice)
         {
             indiceSala = indice;
             jugadoresConectados = servidorChat.ConsultarJugadoresSala(indice).ToList();
             listBox_JugadoresConectados.ItemsSource = jugadoresConectados;
-            servidorChat.UnirseSala(indiceSala, jugador);
+            if (servidorChat.ValidarCupoSala(indiceSala))
+            {
+                servidorChat.UnirseSala(indiceSala, jugador);
+                return true;
+            }
+            return false;
         }
 
         public List<ServidorSE.Sala> ConsultarPartidasDisponibles()
