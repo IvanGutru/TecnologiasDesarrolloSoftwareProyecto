@@ -53,7 +53,8 @@ namespace SerpientesEscaleras
             }
             else
             {
-                MessageBox.Show("El usuario y/o contraseña no es correcto");
+                string datosErroneos = Properties.Resources.usuarioContraseñaInvalidas;
+                MessageBox.Show(datosErroneos);
             }
         }
 
@@ -83,12 +84,14 @@ namespace SerpientesEscaleras
         {
             if (textBox_Usuario.Text == "")
             {
-                MessageBox.Show("Ingresa un usuario");
+                string ingresaUsuario = Properties.Resources.ingresaUsuario;
+                MessageBox.Show(ingresaUsuario);
                 return false;
             }
             else if (passwordBox_contraseña.SecurePassword.Length == 0)
             {
-                MessageBox.Show("Ingresa una contraseña");
+                string ingresaContraseña = Properties.Resources.ingresaContraseña;
+                MessageBox.Show(ingresaContraseña);
                 return false;
             }
             return true;

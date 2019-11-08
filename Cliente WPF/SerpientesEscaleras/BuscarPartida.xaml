@@ -7,7 +7,7 @@
         xmlns:p="clr-namespace:SerpientesEscaleras.Properties"
         xmlns:materialDesign ="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Buscar partida" Height="600" Width="1000" WindowStartupLocation="CenterScreen" WindowStyle="ThreeDBorderWindow" Opacity="0.9" 
+        Title="{x:Static p:Resources.buscarPartida}" Height="600" Width="1000" WindowStartupLocation="CenterScreen" WindowStyle="ThreeDBorderWindow" Opacity="0.9" 
         FontSize="18" ResizeMode="CanMinimize" Icon="Resources/iconoApp.ico">
     <Window.Background>
         <SolidColorBrush Color="#FF1C1C1C"/>
