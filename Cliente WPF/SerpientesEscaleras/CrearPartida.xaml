@@ -7,7 +7,7 @@
         xmlns:p="clr-namespace:SerpientesEscaleras.Properties"
         xmlns:materialDesign ="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="{x:Static p:Resources.crearPartida}" Height="600" Width="1000" WindowStartupLocation="CenterScreen" WindowStyle="ThreeDBorderWindow" Opacity="0.9" 
+        Title="Crear partida" Height="600" Width="1000" WindowStartupLocation="CenterScreen" WindowStyle="ThreeDBorderWindow" Opacity="0.9" 
         FontSize="18" ResizeMode="CanMinimize" Icon="Resources/iconoApp.ico">
     <Window.Background>
         <SolidColorBrush Color="#FF1C1C1C"/>
@@ -21,7 +21,7 @@
                 </LinearGradientBrush>
             </TextBox.BorderBrush>
         </TextBox>
-        <CheckBox x:Name="checkBox_DobleDado" HorizontalAlignment="Left" Margin="667,275,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Foreground="White" BorderBrush="White" Background="White" />
+        <CheckBox x:Name="checkBox_DobleDado" HorizontalAlignment="Left" Margin="667,275,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" />
         <CheckBox x:Name="checkBox_DobleFicha" HorizontalAlignment="Left" Margin="667,311,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5"/>
         <CheckBox x:Name="checkBox_CasillasEspeciales" HorizontalAlignment="Left" Margin="667,346,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5"/>
         <Button x:Name="button_CrearPartida" Content="{x:Static p:Resources.crearPartida}" HorizontalAlignment="Left" Margin="607,428,0,0" VerticalAlignment="Top" 
@@ -38,11 +38,11 @@
                 <DropShadowEffect BlurRadius="10" RenderingBias="Quality" ShadowDepth="8"/>
             </Button.Effect>
         </Button>
-        <Label Content="{x:Static p:Resources.casillasEspeciales}" HorizontalAlignment="Left" Margin="243,257,0,0" VerticalAlignment="Top" Width="195" Foreground="White"/>
-        <Label Content="{x:Static p:Resources.dobleDado}" HorizontalAlignment="Left" Margin="243,298,0,0" VerticalAlignment="Top" Width="195" Foreground="White"/>
-        <Label Content="{x:Static p:Resources.dobleFichaJugador}" HorizontalAlignment="Left" Margin="243,346,0,0" VerticalAlignment="Top" Width="195" Foreground="White"/>
-        <Label Content="{x:Static p:Resources.reglasEspeciales}" HorizontalAlignment="Left" Margin="243,210,0,0" VerticalAlignment="Top" Width="195" Foreground="White"/>
-        <Label x:Name="label_Nombre" Content="{x:Static p:Resources.nombrePartida}" HorizontalAlignment="Left" Margin="243,141,0,0" VerticalAlignment="Top" Width="195" Foreground="White"  Opacity="0.6" MouseDown="Label_Nombre_MouseDown"/>
+        <Label Content="Casillas especiales" HorizontalAlignment="Left" Margin="243,257,0,0" VerticalAlignment="Top" Width="195" Foreground="White"/>
+        <Label Content="Doble dado" HorizontalAlignment="Left" Margin="243,298,0,0" VerticalAlignment="Top" Width="195" Foreground="White"/>
+        <Label Content="Doble ficha de jugador" HorizontalAlignment="Left" Margin="243,346,0,0" VerticalAlignment="Top" Width="195" Foreground="White"/>
+        <Label Content="Reglas especiales" HorizontalAlignment="Left" Margin="243,210,0,0" VerticalAlignment="Top" Width="195" Foreground="White"/>
+        <Label x:Name="label_Nombre" Content="Nombre de la partida" HorizontalAlignment="Left" Margin="243,141,0,0" VerticalAlignment="Top" Width="195" Foreground="White"  Opacity="0.6" MouseDown="Label_Nombre_MouseDown"/>
 
     </Grid>
 </Window>
