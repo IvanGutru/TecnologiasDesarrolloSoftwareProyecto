@@ -30,7 +30,7 @@
                 <DropShadowEffect BlurRadius="10" RenderingBias="Quality" ShadowDepth="8"/>
             </Button.Effect>
         </Button>
-        <Button Content="{x:Static p:Resources.regresar}" Margin="165,0,0,40" VerticalAlignment="Bottom" Click="Button_Regresar" Background="Black" 
+        <Button Content="{x:Static p:Resources.regresar}" Margin="25,0,0,31" VerticalAlignment="Bottom" Click="Button_Regresar" Background="Black" 
                 HorizontalAlignment="Left" Width="96" BorderBrush="Black" FontSize="16"/>
         <Label Content="{x:Static p:Resources.datosPersonales}" HorizontalAlignment="Left" Margin="25,27,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="#DDFFFFFF" FontSize="20"/>
         <Label Content="{x:Static p:Resources.datosCuenta}" HorizontalAlignment="Left" Margin="389,27,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="#DDFFFFFF" FontSize="20"/>

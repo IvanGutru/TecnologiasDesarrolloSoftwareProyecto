@@ -7,7 +7,7 @@
         xmlns:p="clr-namespace:SerpientesEscaleras.Properties"
         xmlns:materialDesign ="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="Esperando Jugadores" Height="600" Width="1000" WindowStartupLocation="CenterScreen" WindowStyle="ThreeDBorderWindow" Opacity="0.9" 
+        Title="{x:Static p:Resources.esperandoJugadores}" Height="600" Width="1000" WindowStartupLocation="CenterScreen" WindowStyle="ThreeDBorderWindow" Opacity="0.9" 
         FontSize="16" ResizeMode="CanMinimize" Icon="Resources/iconoApp.ico"
         Closing="CerrarVentana" >
     <Window.Background>
@@ -16,7 +16,7 @@
     <Grid>
         <ListBox x:Name="listBox_Chat" HorizontalAlignment="Left" Height="445" Margin="24,25,0,0" VerticalAlignment="Top" Width="300" BorderBrush="Aqua" BorderThickness="5" Background="WhiteSmoke"/>
         <TextBox x:Name="textBox_Mensaje" HorizontalAlignment="Left" Height="35" Margin="24,493,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173" Foreground="White" BorderBrush="#FF107676"/>
-        <Button Content="Enviar" HorizontalAlignment="Left" Height="35" Margin="225,493,0,0" VerticalAlignment="Top" Width="99" Click="Button_Enviar"/>
+        <Button Content="{x:Static p:Resources.enviar}" HorizontalAlignment="Left" Height="35" Margin="225,493,0,0" VerticalAlignment="Top" Width="99" Click="Button_Enviar"/>
         <Label x:Name="label_JugadoresConectados" Content="Label" HorizontalAlignment="Left" Margin="694,69,0,0" VerticalAlignment="Top" Foreground="White" Width="250"/>
         <Button x:Name="button_Regresar" Content="{x:Static p:Resources.salirJuego}" HorizontalAlignment="Left" Margin="427,493,0,0" VerticalAlignment="Top" 
             Width="140" Height="35" Background="#FF0F8080" BorderBrush="#FF020202" Foreground="White" OpacityMask="Black" 

@@ -132,6 +132,9 @@
   <data name="cancelar" xml:space="preserve">
     <value>Cancelar</value>
   </data>
+  <data name="casillasEspeciales" xml:space="preserve">
+    <value>Casillas especiales</value>
+  </data>
   <data name="confirmarContrasenia" xml:space="preserve">
     <value>Confirmar contraseña</value>
   </data>
@@ -156,8 +159,20 @@
   <data name="datosPersonales" xml:space="preserve">
     <value>Datos Personales</value>
   </data>
+  <data name="dobleDado" xml:space="preserve">
+    <value>Doble dado</value>
+  </data>
+  <data name="dobleFichaJugador" xml:space="preserve">
+    <value>Doble ficha jugador</value>
+  </data>
   <data name="entrarPartida" xml:space="preserve">
     <value>Unirse a la partida</value>
+  </data>
+  <data name="enviar" xml:space="preserve">
+    <value>Enviar</value>
+  </data>
+  <data name="esperandoJugadores" xml:space="preserve">
+    <value>Esperando jugadores</value>
   </data>
   <data name="idiomaEncabezado" xml:space="preserve">
     <value>Idioma</value>
@@ -198,6 +213,9 @@
   <data name="nombre" xml:space="preserve">
     <value>Nombre</value>
   </data>
+  <data name="nombrePartida" xml:space="preserve">
+    <value>Nombre de la partida</value>
+  </data>
   <data name="nuevaPartida" xml:space="preserve">
     <value>Nueva Partida</value>
   </data>
@@ -209,6 +227,9 @@
   </data>
   <data name="registroUsuario" xml:space="preserve">
     <value>Registro de usuario</value>
+  </data>
+  <data name="reglasEspeciales" xml:space="preserve">
+    <value>Reglas especiales</value>
   </data>
   <data name="regresar" xml:space="preserve">
     <value>Regresar</value>
