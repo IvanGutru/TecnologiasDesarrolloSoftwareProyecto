@@ -23,7 +23,7 @@
                      Width="175" Foreground="White" Background="{x:Null}" BorderBrush="#89F5F5F5" MaxLength="50"/>
         <PasswordBox x:Name="passwordBox_ConfirmarContraseña" HorizontalAlignment="Left" Margin="581,195,0,0" VerticalAlignment="Top" 
                  Width="175" Foreground="White" Background="{x:Null}" BorderBrush="#89F5F5F5" MaxLength="50"/>
-        <Button x:Name="button_RegistroVentanaRegistrarse" Content="{x:Static p:Resources.registrar}" HorizontalAlignment="Left" Margin="521,299,0,0" 
+        <Button x:Name="button_RegistroVentanaRegistrarse" Content="{x:Static p:Resources.registrar}" HorizontalAlignment="Left" Margin="644,308,0,0" 
                 VerticalAlignment="Top" Width="125" Background="#FF0F8080" BorderBrush="#FF020202" Foreground="White" OpacityMask="Black" 
                 TextOptions.TextHintingMode="Fixed" SnapsToDevicePixels="True" Cursor="Arrow" FontStretch="SemiCondensed" Click="Button_Registrarse" FontSize="16">
             <Button.Effect>
