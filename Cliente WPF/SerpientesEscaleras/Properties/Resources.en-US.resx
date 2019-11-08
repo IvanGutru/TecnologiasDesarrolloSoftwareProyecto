@@ -129,8 +129,14 @@
   <data name="buscarPartida" xml:space="preserve">
     <value>Search game</value>
   </data>
+  <data name="camposObligatorios" xml:space="preserve">
+    <value>All fields are required</value>
+  </data>
   <data name="cancelar" xml:space="preserve">
     <value>Back</value>
+  </data>
+  <data name="codigoInvalido" xml:space="preserve">
+    <value>Invalid code</value>
   </data>
   <data name="confirmarContrasenia" xml:space="preserve">
     <value>Password confirm</value>
@@ -141,14 +147,23 @@
   <data name="contrasenia" xml:space="preserve">
     <value>Password</value>
   </data>
+  <data name="contraseñaNoCoincide" xml:space="preserve">
+    <value>The password does not match</value>
+  </data>
   <data name="correoElectronico" xml:space="preserve">
     <value>E-mail</value>
   </data>
   <data name="correoEnviado" xml:space="preserve">
     <value>Your account activation code has been sent to your email.</value>
   </data>
+  <data name="correoRepetido" xml:space="preserve">
+    <value>The email is already registered</value>
+  </data>
   <data name="crearPartida" xml:space="preserve">
     <value>Create game</value>
+  </data>
+  <data name="cuentaActivada" xml:space="preserve">
+    <value>Account successfully activated</value>
   </data>
   <data name="datosCuenta" xml:space="preserve">
     <value>Account Data</value>
@@ -156,8 +171,23 @@
   <data name="datosPersonales" xml:space="preserve">
     <value>Personal Information</value>
   </data>
+  <data name="dobleDado" xml:space="preserve">
+    <value>Double die</value>
+  </data>
+  <data name="dobleFicha" xml:space="preserve">
+    <value>Double player token</value>
+  </data>
+  <data name="elegirPartida" xml:space="preserve">
+    <value>First choose a game</value>
+  </data>
   <data name="entrarPartida" xml:space="preserve">
     <value>Join game</value>
+  </data>
+  <data name="enviar" xml:space="preserve">
+    <value>Send</value>
+  </data>
+  <data name="esperandoJugadores" xml:space="preserve">
+    <value>Waiting players</value>
   </data>
   <data name="idiomaEncabezado" xml:space="preserve">
     <value>Language</value>
@@ -168,17 +198,29 @@
   <data name="idiomaIngles" xml:space="preserve">
     <value>English</value>
   </data>
+  <data name="ingresaContraseña" xml:space="preserve">
+    <value>Enter a password</value>
+  </data>
   <data name="ingresarCodigo" xml:space="preserve">
     <value>Enter code</value>
   </data>
+  <data name="IngresarCodigoActivacion" xml:space="preserve">
+    <value>Enter the activation code</value>
+  </data>
   <data name="ingresarCodigoVacio" xml:space="preserve">
     <value>Please enter code</value>
+  </data>
+  <data name="ingresaUsuario" xml:space="preserve">
+    <value>Enter a user</value>
   </data>
   <data name="iniciarSesion" xml:space="preserve">
     <value>Login</value>
   </data>
   <data name="jugadoresConectados" xml:space="preserve">
     <value> of 4 connected players</value>
+  </data>
+  <data name="llena" xml:space="preserve">
+    <value>already full</value>
   </data>
   <data name="mejoresPuntajes" xml:space="preserve">
     <value>Best Scores</value>
@@ -198,8 +240,17 @@
   <data name="nombre" xml:space="preserve">
     <value>Name</value>
   </data>
+  <data name="nombrePartida" xml:space="preserve">
+    <value>Game name</value>
+  </data>
   <data name="nuevaPartida" xml:space="preserve">
     <value>New game</value>
+  </data>
+  <data name="numJugadores" xml:space="preserve">
+    <value>Number of connected players</value>
+  </data>
+  <data name="partida" xml:space="preserve">
+    <value>The game</value>
   </data>
   <data name="reenviarCorreo" xml:space="preserve">
     <value>Resend e-mail</value>
@@ -209,6 +260,9 @@
   </data>
   <data name="registroUsuario" xml:space="preserve">
     <value>User register</value>
+  </data>
+  <data name="reglasEspeciales" xml:space="preserve">
+    <value>Special rules</value>
   </data>
   <data name="regresar" xml:space="preserve">
     <value>Return</value>
@@ -227,6 +281,12 @@
   </data>
   <data name="usuario" xml:space="preserve">
     <value>User</value>
+  </data>
+  <data name="usuarioContraseñaInvalidas" xml:space="preserve">
+    <value>The username or password is not correct</value>
+  </data>
+  <data name="usuarioRepetido" xml:space="preserve">
+    <value>A user with that nickname is already registered</value>
   </data>
   <data name="validarCuenta" xml:space="preserve">
     <value>Validate account</value>

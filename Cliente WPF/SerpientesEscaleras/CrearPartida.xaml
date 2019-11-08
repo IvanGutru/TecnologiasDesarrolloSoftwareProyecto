@@ -38,11 +38,11 @@
                 <DropShadowEffect BlurRadius="10" RenderingBias="Quality" ShadowDepth="8"/>
             </Button.Effect>
         </Button>
-        <Label Content="Casillas especiales" HorizontalAlignment="Left" Margin="243,257,0,0" VerticalAlignment="Top" Width="195" Foreground="White"/>
-        <Label Content="Doble dado" HorizontalAlignment="Left" Margin="243,298,0,0" VerticalAlignment="Top" Width="195" Foreground="White"/>
-        <Label Content="Doble ficha de jugador" HorizontalAlignment="Left" Margin="243,346,0,0" VerticalAlignment="Top" Width="195" Foreground="White"/>
-        <Label Content="Reglas especiales" HorizontalAlignment="Left" Margin="243,210,0,0" VerticalAlignment="Top" Width="195" Foreground="White"/>
-        <Label x:Name="label_Nombre" Content="Nombre de la partida" HorizontalAlignment="Left" Margin="243,141,0,0" VerticalAlignment="Top" Width="195" Foreground="White"  Opacity="0.6" MouseDown="Label_Nombre_MouseDown"/>
+        <Label Content="{x:Static p:Resources.casillaEspecial}" HorizontalAlignment="Left" Margin="243,257,0,0" VerticalAlignment="Top" Width="195" Foreground="White"/>
+        <Label Content="{x:Static p:Resources.dobleDado}" HorizontalAlignment="Left" Margin="243,298,0,0" VerticalAlignment="Top" Width="195" Foreground="White"/>
+        <Label Content="{x:Static p:Resources.dobleFicha}" HorizontalAlignment="Left" Margin="243,346,0,0" VerticalAlignment="Top" Width="195" Foreground="White"/>
+        <Label Content="{x:Static p:Resources.reglasEspeciales}" HorizontalAlignment="Left" Margin="243,210,0,0" VerticalAlignment="Top" Width="195" Foreground="White"/>
+        <Label x:Name="label_Nombre" Content="{x:Static p:Resources.nombrePartida}" HorizontalAlignment="Left" Margin="243,141,0,0" VerticalAlignment="Top" Width="195" Foreground="White"  Opacity="0.6" MouseDown="Label_Nombre_MouseDown"/>
 
     </Grid>
 </Window>

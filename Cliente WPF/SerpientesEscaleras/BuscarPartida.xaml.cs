@@ -33,13 +33,16 @@ namespace SerpientesEscaleras
         {
             if (dataGrid_Partidas.SelectedItem == null)
             {
-                MessageBox.Show("Elige una partida primero");
+                string elegir = Properties.Resources.elegirPartida;
+                MessageBox.Show(elegir);
                 return;
             }
             if (!lobby.EntrarPartida(dataGrid_Partidas.SelectedIndex))
             {
+                string partidaRecurso = Properties.Resources.partida;
+                string llena = Properties.Resources.llena;
                 ServidorSE.Sala partida = (ServidorSE.Sala)dataGrid_Partidas.SelectedItem;
-                MessageBox.Show("La partida " + partida.Nombre + " ya esta llena");
+                MessageBox.Show(partidaRecurso + partida.Nombre + llena);
                 listaSalas = lobby.ConsultarPartidasDisponibles();
                 dataGrid_Partidas.Items.Refresh();
                 return;
@@ -68,22 +71,26 @@ namespace SerpientesEscaleras
             }
             if (titulo == "NumJugadores")
             {
-                e.Column.Header = "No. de jugadores conectados";
+                string numJugadores = Properties.Resources.numJugadores;
+                e.Column.Header = numJugadores;
                 e.Column.DisplayIndex = 1;
             }
             if (titulo == "DobleDado")
             {
-                e.Column.Header = "Doble dado";
+                string dobleDado = Properties.Resources.dobleDado;
+                e.Column.Header = dobleDado;
                 e.Column.DisplayIndex = 2;
             }
             if (titulo == "DobleFicha")
             {
-                e.Column.Header = "Doble ficha";
+                string dobleFicha = Properties.Resources.dobleFicha;
+                e.Column.Header = dobleFicha;
                 e.Column.DisplayIndex = 3;
             }
             if (titulo == "CasillasEspeciales")
             {
-                e.Column.Header = "Casillas especiales";
+                string casillaEspecial = Properties.Resources.casillaEspecial;
+                e.Column.Header = casillaEspecial;
                 e.Column.DisplayIndex = 4;
             }
         }
