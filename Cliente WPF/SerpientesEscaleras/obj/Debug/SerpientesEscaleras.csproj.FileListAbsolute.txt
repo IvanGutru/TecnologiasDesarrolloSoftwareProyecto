@@ -149,3 +149,4 @@ C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\Serpien
 C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\obj\Debug\SerpientesEscaleras.csproj.CopyComplete
 C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\obj\Debug\SerpientesEscaleras.exe
 C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\obj\Debug\SerpientesEscaleras.pdb
+C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\obj\Debug\SerpientesEscaleras.csprojAssemblyReference.cache

@@ -18,8 +18,8 @@
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
         <Image HorizontalAlignment="Left" Height="452" VerticalAlignment="Top" Width="366" Source="Resources/serpiente.png" Margin="0,0,0,-86"/>
-        <Image HorizontalAlignment="Left" Height="48" Margin="627,10,0,0" VerticalAlignment="Top" Width="53" Source="Resources/traducir.png" RenderTransformOrigin="0.096,0.595"/>
-        <TextBox x:Name="textBox_Usuario" HorizontalAlignment="Left" Margin="438,90,0,0" TextWrapping="NoWrap" MaxLength="100" VerticalAlignment="Top" 
+        <Image HorizontalAlignment="Left" Height="48" Margin="601,10,0,0" VerticalAlignment="Top" Width="53" Source="Resources/traducir.png" RenderTransformOrigin="0.096,0.595"/>
+        <TextBox x:Name="textBox_Usuario" HorizontalAlignment="Left" Margin="438,90,0,0" TextWrapping="NoWrap" MaxLength="20" VerticalAlignment="Top" 
                  Width="274" Background="#FF1C1C1C" Foreground="White" SelectionBrush="#FF26D4F5" materialDesign:HintAssist.IsFloating="true" 
                  LostFocus="TextBox_Usuario_LostFocus" KeyDown="TextBox_Usuario_KeyDown">
             <TextBox.BorderBrush>
@@ -52,7 +52,7 @@
                     <GradientStop Color="#FF8D8B8B" Offset="1"/>
                 </LinearGradientBrush>
             </Menu.Background>
-            <MenuItem Header="{x:Static p:Resources.idiomaEncabezado}" Width="141">
+            <MenuItem Header="{x:Static p:Resources.idiomaEncabezado}" Width="165" Height="30">
                 <MenuItem Header="{x:Static p:Resources.idiomaEspañol}" Click="CambiarIdiomaEspañol"/>
                 <MenuItem Header="{x:Static p:Resources.idiomaIngles}" Click="CambiarIdiomaIngles" />
             </MenuItem>
