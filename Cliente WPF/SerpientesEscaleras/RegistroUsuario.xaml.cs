@@ -38,7 +38,8 @@ namespace SerpientesEscaleras
                 ServidorJuegoSE.Jugador jugador = new ServidorJuegoSE.Jugador() { Apodo = textBox_Apodo.Text, Nombre = textBox_NombreUsuario.Text, Apellidos = textBox_Apellidos.Text };
                 if (!cliente.VerificarApodo(jugador))
                 {
-                    MessageBox.Show("Ya se encuentra registrado un usuario con ese apodo");
+                    string usuarioRepetido = Properties.Resources.usuarioRepetido;
+                    MessageBox.Show(usuarioRepetido);
                     return;
                 }
                 if (cliente.RegistrarJugador(jugador, cuenta))
@@ -49,7 +50,8 @@ namespace SerpientesEscaleras
                     this.Close();
                 } else
                 {
-                    MessageBox.Show("El correo ya se encuentra registrado");
+                    string correoRepetido = Properties.Resources.correoRepetido;
+                    MessageBox.Show(correoRepetido);
                 }
             }
 
@@ -58,12 +60,14 @@ namespace SerpientesEscaleras
             var mensaje = Properties.Resources.mensajeValidacion;
             if (textBox_NombreUsuario.Text == "" || textBox_Apellidos.Text =="" || textBox_Apodo.Text== "" || textBox_CorreoElectronico.Text ==""
                 || passwordBox_Contraseña.SecurePassword.Length == 0 || passwordBox_ConfirmarContraseña.SecurePassword.Length == 0) {
-                MessageBox.Show("Todos los campos son obligatorios");
+                string camposObligatorios = Properties.Resources.camposObligatorios;
+                MessageBox.Show(camposObligatorios);
                 return false;
             }
             else if (!passwordBox_Contraseña.Password.Equals(passwordBox_ConfirmarContraseña.Password))
             {
-                MessageBox.Show("Las contraseñas no coinciden");
+                string contraseñaInvalida = Properties.Resources.contraseñaNoCoincide;
+                MessageBox.Show(contraseñaInvalida);
                 return false;
             }
             return true;

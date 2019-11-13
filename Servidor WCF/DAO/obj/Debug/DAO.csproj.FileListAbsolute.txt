@@ -42,3 +42,14 @@ C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Servidor W
 C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\DAO\obj\Debug\DAO.csproj.CopyComplete
 C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\DAO\obj\Debug\DAO.dll
 C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\DAO\obj\Debug\DAO.pdb
+C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\DAO\bin\Debug\DAO.dll.config
+C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\DAO\bin\Debug\DAO.dll
+C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\DAO\bin\Debug\DAO.pdb
+C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\DAO\bin\Debug\EntityFramework.dll
+C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\DAO\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\DAO\bin\Debug\EntityFramework.xml
+C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\DAO\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\DAO\obj\Debug\DAO.csprojAssemblyReference.cache
+C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\DAO\obj\Debug\DAO.csproj.CopyComplete
+C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\DAO\obj\Debug\DAO.dll
+C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\DAO\obj\Debug\DAO.pdb

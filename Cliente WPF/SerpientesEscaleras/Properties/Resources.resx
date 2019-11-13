@@ -129,8 +129,17 @@
   <data name="buscarPartida" xml:space="preserve">
     <value>Buscar Partida</value>
   </data>
+  <data name="camposObligatorios" xml:space="preserve">
+    <value>Todos los campos son obligatorios</value>
+  </data>
   <data name="cancelar" xml:space="preserve">
     <value>Cancelar</value>
+  </data>
+  <data name="casillaEspecial" xml:space="preserve">
+    <value>Casillas especiales</value>
+  </data>
+  <data name="codigoInvalido" xml:space="preserve">
+    <value>Código no válido</value>
   </data>
   <data name="confirmarContrasenia" xml:space="preserve">
     <value>Confirmar contraseña</value>
@@ -141,14 +150,23 @@
   <data name="contrasenia" xml:space="preserve">
     <value>Contraseña</value>
   </data>
+  <data name="contraseñaNoCoincide" xml:space="preserve">
+    <value>La contraseña no coincide</value>
+  </data>
   <data name="correoElectronico" xml:space="preserve">
     <value>Correo eléctronico</value>
   </data>
   <data name="correoEnviado" xml:space="preserve">
     <value>Se ha enviado a su correo el codigo de activación de su cuenta.</value>
   </data>
+  <data name="correoRepetido" xml:space="preserve">
+    <value>El correo ya se encuentra registrado</value>
+  </data>
   <data name="crearPartida" xml:space="preserve">
     <value>Crear partida</value>
+  </data>
+  <data name="cuentaActivada" xml:space="preserve">
+    <value>Cuenta activada exitosamente</value>
   </data>
   <data name="datosCuenta" xml:space="preserve">
     <value>Datos de Cuenta</value>
@@ -156,8 +174,23 @@
   <data name="datosPersonales" xml:space="preserve">
     <value>Datos Personales</value>
   </data>
+  <data name="dobleDado" xml:space="preserve">
+    <value>Doble dado</value>
+  </data>
+  <data name="dobleFicha" xml:space="preserve">
+    <value>Doble ficha de jugador</value>
+  </data>
+  <data name="elegirPartida" xml:space="preserve">
+    <value>Primero elige una partida</value>
+  </data>
   <data name="entrarPartida" xml:space="preserve">
     <value>Unirse a la partida</value>
+  </data>
+  <data name="enviar" xml:space="preserve">
+    <value>Enviar</value>
+  </data>
+  <data name="esperandoJugadores" xml:space="preserve">
+    <value>Esperando jugadores</value>
   </data>
   <data name="idiomaEncabezado" xml:space="preserve">
     <value>Idioma</value>
@@ -168,17 +201,29 @@
   <data name="idiomaIngles" xml:space="preserve">
     <value>Inglés</value>
   </data>
+  <data name="ingresaContraseña" xml:space="preserve">
+    <value>Ingresa una contraseña</value>
+  </data>
   <data name="ingresarCodigo" xml:space="preserve">
     <value>Ingresar código</value>
   </data>
+  <data name="ingresarCodigoActivacion" xml:space="preserve">
+    <value>Ingresa el código de activación</value>
+  </data>
   <data name="ingresarCodigoVacio" xml:space="preserve">
     <value>Favor de ingresar un código</value>
+  </data>
+  <data name="ingresaUsuario" xml:space="preserve">
+    <value>Ingresa un usuario</value>
   </data>
   <data name="iniciarSesion" xml:space="preserve">
     <value>Iniciar sesión</value>
   </data>
   <data name="jugadoresConectados" xml:space="preserve">
     <value> de 4 jugadores conectados</value>
+  </data>
+  <data name="llena" xml:space="preserve">
+    <value>ya está llena</value>
   </data>
   <data name="mejoresPuntajes" xml:space="preserve">
     <value>Mejores Puntajes</value>
@@ -198,8 +243,17 @@
   <data name="nombre" xml:space="preserve">
     <value>Nombre</value>
   </data>
+  <data name="nombrePartida" xml:space="preserve">
+    <value>Nombre de la partida</value>
+  </data>
   <data name="nuevaPartida" xml:space="preserve">
     <value>Nueva Partida</value>
+  </data>
+  <data name="numJugadores" xml:space="preserve">
+    <value>No. de jugadores conectados</value>
+  </data>
+  <data name="partida" xml:space="preserve">
+    <value>La partida</value>
   </data>
   <data name="reenviarCorreo" xml:space="preserve">
     <value>Reenviar correo</value>
@@ -209,6 +263,9 @@
   </data>
   <data name="registroUsuario" xml:space="preserve">
     <value>Registro de usuario</value>
+  </data>
+  <data name="reglasEspeciales" xml:space="preserve">
+    <value>Reglas especiales</value>
   </data>
   <data name="regresar" xml:space="preserve">
     <value>Regresar</value>
@@ -227,6 +284,12 @@
   </data>
   <data name="usuario" xml:space="preserve">
     <value>Usuario</value>
+  </data>
+  <data name="usuarioContraseñaInvalidas" xml:space="preserve">
+    <value>El usuario y/o contraseña no es correcto</value>
+  </data>
+  <data name="usuarioRepetido" xml:space="preserve">
+    <value>Ya se encuentra registrado un usuario con ese apodo</value>
   </data>
   <data name="validarCuenta" xml:space="preserve">
     <value>Validar cuenta</value>

@@ -33,17 +33,20 @@ namespace SerpientesEscaleras {
                 ServidorJuegoSE.AdministradorCuentaClient cliente = new ServidorJuegoSE.AdministradorCuentaClient();
                 if (cliente.ActivarCuentaJugador(cuenta, textBox_Codigo.Text)) 
                 {
-                    MessageBox.Show("Cuenta activada exitosamente");
+                    var cuentaActivada = Properties.Resources.cuentaActivada;
+                    MessageBox.Show(cuentaActivada);
                     MainWindow vetanaPrincipal = new MainWindow();
                     vetanaPrincipal.Show();
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Codigo no válido");
+                    string codigoInvalido = Properties.Resources.codigoInvalido;
+                    MessageBox.Show(codigoInvalido);
                 }
             } else {
-                MessageBox.Show("Ingresa el código de activación");
+                string ingresarCodigo = Properties.Resources.ingresarCodigoActivacion;
+                MessageBox.Show(ingresarCodigo);
             }
         }
 

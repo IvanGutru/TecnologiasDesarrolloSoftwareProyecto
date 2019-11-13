@@ -42,13 +42,12 @@
         <CheckBox x:Name="checkBox_DobleDado" HorizontalAlignment="Left" Margin="861,148,0,0" VerticalAlignment="Top"/>
         <CheckBox x:Name="checkBox_DobleFicha" HorizontalAlignment="Left" Margin="861,194,0,0" VerticalAlignment="Top"/>
         <CheckBox x:Name="checkBox_CasillasEspeciales" HorizontalAlignment="Left" Margin="861,235,0,0" VerticalAlignment="Top"/>
-        <Label Content="Casillas especiales" HorizontalAlignment="Left" Margin="567,132,0,0" VerticalAlignment="Top" Width="195" Foreground="White"/>
-        <Label Content="Doble dado" HorizontalAlignment="Left" Margin="567,178,0,0" VerticalAlignment="Top" Width="195" Foreground="White"/>
-        <Label Content="Doble ficha de jugador" HorizontalAlignment="Left" Margin="567,219,0,0" VerticalAlignment="Top" Width="195" Foreground="White"/>
-        <Label Content="Reglas especiales:" HorizontalAlignment="Left" Margin="567,80,0,0" VerticalAlignment="Top" Width="195" Foreground="White"/>
-        <Label x:Name="label_Nombre" Content="Nombre de la partida" HorizontalAlignment="Left" Margin="186,132,0,0" 
-               VerticalAlignment="Top" Width="195" Opacity="0.6" MouseDown="Label_Nombre_MouseDown" Foreground="White"/>
         <Label Content="Selecciona el fondo del tablero:" HorizontalAlignment="Left" Margin="47,275,0,0" VerticalAlignment="Top" Width="265" Foreground="White"/>
+        <Label Content="{x:Static p:Resources.casillaEspecial}" HorizontalAlignment="Left" Margin="243,257,0,0" VerticalAlignment="Top" Width="195" Foreground="White"/>
+        <Label Content="{x:Static p:Resources.dobleDado}" HorizontalAlignment="Left" Margin="243,298,0,0" VerticalAlignment="Top" Width="195" Foreground="White"/>
+        <Label Content="{x:Static p:Resources.dobleFicha}" HorizontalAlignment="Left" Margin="243,346,0,0" VerticalAlignment="Top" Width="195" Foreground="White"/>
+        <Label Content="{x:Static p:Resources.reglasEspeciales}" HorizontalAlignment="Left" Margin="243,210,0,0" VerticalAlignment="Top" Width="195" Foreground="White"/>
+        <Label x:Name="label_Nombre" Content="{x:Static p:Resources.nombrePartida}" HorizontalAlignment="Left" Margin="243,141,0,0" VerticalAlignment="Top" Width="195" Foreground="White"  Opacity="0.6" MouseDown="Label_Nombre_MouseDown"/>
 
         <ScrollViewer HorizontalScrollBarVisibility="Visible" HorizontalAlignment="Center"  Width="900"
                       VerticalAlignment="Bottom" Margin="0,0,0,100" VerticalScrollBarVisibility="Disabled">

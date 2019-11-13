@@ -19,7 +19,7 @@ namespace SerpientesEscaleras.Properties {
     // a través de una herramienta como ResGen o Visual Studio.
     // Para agregar o quitar un miembro, edite el archivo .ResX y, a continuación, vuelva a ejecutar ResGen
     // con la opción /str o recompile su proyecto de VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Resources {
@@ -97,11 +97,38 @@ namespace SerpientesEscaleras.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Todos los campos son obligatorios.
+        /// </summary>
+        public static string camposObligatorios {
+            get {
+                return ResourceManager.GetString("camposObligatorios", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Cancelar.
         /// </summary>
         public static string cancelar {
             get {
                 return ResourceManager.GetString("cancelar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Casillas especiales.
+        /// </summary>
+        public static string casillaEspecial {
+            get {
+                return ResourceManager.GetString("casillaEspecial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Código no válido.
+        /// </summary>
+        public static string codigoInvalido {
+            get {
+                return ResourceManager.GetString("codigoInvalido", resourceCulture);
             }
         }
         
@@ -120,6 +147,15 @@ namespace SerpientesEscaleras.Properties {
         public static string consultarPuntajes {
             get {
                 return ResourceManager.GetString("consultarPuntajes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a La contraseña no coincide.
+        /// </summary>
+        public static string contraseñaNoCoincide {
+            get {
+                return ResourceManager.GetString("contraseñaNoCoincide", resourceCulture);
             }
         }
         
@@ -151,11 +187,29 @@ namespace SerpientesEscaleras.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a El correo ya se encuentra registrado.
+        /// </summary>
+        public static string correoRepetido {
+            get {
+                return ResourceManager.GetString("correoRepetido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Crear partida.
         /// </summary>
         public static string crearPartida {
             get {
                 return ResourceManager.GetString("crearPartida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cuenta activada exitosamente.
+        /// </summary>
+        public static string cuentaActivada {
+            get {
+                return ResourceManager.GetString("cuentaActivada", resourceCulture);
             }
         }
         
@@ -178,11 +232,56 @@ namespace SerpientesEscaleras.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Doble dado.
+        /// </summary>
+        public static string dobleDado {
+            get {
+                return ResourceManager.GetString("dobleDado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Doble ficha de jugador.
+        /// </summary>
+        public static string dobleFicha {
+            get {
+                return ResourceManager.GetString("dobleFicha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Primero elige una partida.
+        /// </summary>
+        public static string elegirPartida {
+            get {
+                return ResourceManager.GetString("elegirPartida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Unirse a la partida.
         /// </summary>
         public static string entrarPartida {
             get {
                 return ResourceManager.GetString("entrarPartida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Enviar.
+        /// </summary>
+        public static string enviar {
+            get {
+                return ResourceManager.GetString("enviar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Esperando jugadores.
+        /// </summary>
+        public static string esperandoJugadores {
+            get {
+                return ResourceManager.GetString("esperandoJugadores", resourceCulture);
             }
         }
         
@@ -214,6 +313,15 @@ namespace SerpientesEscaleras.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Ingresa una contraseña.
+        /// </summary>
+        public static string ingresaContraseña {
+            get {
+                return ResourceManager.GetString("ingresaContraseña", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Ingresar código.
         /// </summary>
         public static string ingresarCodigo {
@@ -223,11 +331,29 @@ namespace SerpientesEscaleras.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Ingresa el código de activación.
+        /// </summary>
+        public static string ingresarCodigoActivacion {
+            get {
+                return ResourceManager.GetString("ingresarCodigoActivacion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Favor de ingresar un código.
         /// </summary>
         public static string ingresarCodigoVacio {
             get {
                 return ResourceManager.GetString("ingresarCodigoVacio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ingresa un usuario.
+        /// </summary>
+        public static string ingresaUsuario {
+            get {
+                return ResourceManager.GetString("ingresaUsuario", resourceCulture);
             }
         }
         
@@ -246,6 +372,15 @@ namespace SerpientesEscaleras.Properties {
         public static string jugadoresConectados {
             get {
                 return ResourceManager.GetString("jugadoresConectados", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ya está llena.
+        /// </summary>
+        public static string llena {
+            get {
+                return ResourceManager.GetString("llena", resourceCulture);
             }
         }
         
@@ -304,11 +439,38 @@ namespace SerpientesEscaleras.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Nombre de la partida.
+        /// </summary>
+        public static string nombrePartida {
+            get {
+                return ResourceManager.GetString("nombrePartida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Nueva Partida.
         /// </summary>
         public static string nuevaPartida {
             get {
                 return ResourceManager.GetString("nuevaPartida", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No. de jugadores conectados.
+        /// </summary>
+        public static string numJugadores {
+            get {
+                return ResourceManager.GetString("numJugadores", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a La partida.
+        /// </summary>
+        public static string partida {
+            get {
+                return ResourceManager.GetString("partida", resourceCulture);
             }
         }
         
@@ -336,6 +498,15 @@ namespace SerpientesEscaleras.Properties {
         public static string registroUsuario {
             get {
                 return ResourceManager.GetString("registroUsuario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Reglas especiales.
+        /// </summary>
+        public static string reglasEspeciales {
+            get {
+                return ResourceManager.GetString("reglasEspeciales", resourceCulture);
             }
         }
         
@@ -390,6 +561,24 @@ namespace SerpientesEscaleras.Properties {
         public static string usuario {
             get {
                 return ResourceManager.GetString("usuario", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El usuario y/o contraseña no es correcto.
+        /// </summary>
+        public static string usuarioContraseñaInvalidas {
+            get {
+                return ResourceManager.GetString("usuarioContraseñaInvalidas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ya se encuentra registrado un usuario con ese apodo.
+        /// </summary>
+        public static string usuarioRepetido {
+            get {
+                return ResourceManager.GetString("usuarioRepetido", resourceCulture);
             }
         }
         
