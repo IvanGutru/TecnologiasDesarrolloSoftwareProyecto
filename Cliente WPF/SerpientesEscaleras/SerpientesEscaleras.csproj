@@ -67,12 +67,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Connected Services\ServiceReference1\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Connected Services\ServiceReference2\Reference.cs">
+    <Compile Include="Casilla.cs" />
+    <Compile Include="Connected Services\ServidorJuegoSE\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -87,6 +83,9 @@
     </Compile>
     <Compile Include="IngresarCodigo.xaml.cs">
       <DependentUpon>IngresarCodigo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Juego.xaml.cs">
+      <DependentUpon>Juego.xaml</DependentUpon>
     </Compile>
     <Compile Include="MenuPrincipal.xaml.cs">
       <DependentUpon>MenuPrincipal.xaml</DependentUpon>
@@ -108,6 +107,9 @@
     <Compile Include="CrearPartida.xaml.cs">
       <DependentUpon>CrearPartida.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Turno.xaml.cs">
+      <DependentUpon>Turno.xaml</DependentUpon>
+    </Compile>
     <Page Include="ConsultarPuntajes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -115,6 +117,10 @@
     <Page Include="IngresarCodigo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Juego.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -148,6 +154,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Turno.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -171,32 +181,28 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.en-US.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Connected Services\ServiceReference1\item.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\ServiceReference1\item1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\ServiceReference1\item2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\ServiceReference1\SerpientesEscalerasServicio.wsdl" />
-    <None Include="Connected Services\ServiceReference2\item.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\ServiceReference2\item1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\ServiceReference2\item2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\ServiceReference2\item3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\ServiceReference2\SerpientesEscaleras.ServiceReference2.Puntuacion.datasource">
+    <None Include="Connected Services\ServidorJuegoSE\SerpientesEscaleras.ServidorJuegoSE.FilaTablaPuntajes.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReference2\ServicioCuenta.wsdl" />
+    <None Include="Connected Services\ServidorJuegoSE\SerpientesEscaleras.ServidorJuegoSE.Jugador.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServidorJuegoSE\SerpientesEscaleras.ServidorJuegoSE.Sala.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServidorJuegoSE\ServicioSistema.wsdl" />
+    <None Include="Connected Services\ServidorJuegoSE\ServidorSerpientesEscaleras.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServidorJuegoSE\ServidorSerpientesEscaleras1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServidorJuegoSE\ServidorSerpientesEscaleras2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServidorJuegoSE\ServidorSerpientesEscaleras3.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\ServidorSE\item.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -220,6 +226,7 @@
     </None>
     <None Include="Connected Services\ServidorSE\ServicioCuenta.wsdl" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\System.Uri.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -249,51 +256,11 @@
     <Resource Include="Resources\portales.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\menu.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\serpienteA.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\escalera.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />
-    <WCFMetadataStorage Include="Connected Services\ServiceReference2\" />
+    <WCFMetadataStorage Include="Connected Services\ServidorJuegoSE\" />
     <WCFMetadataStorage Include="Connected Services\ServidorSE\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ServiceReference2\item.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServiceReference2\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServiceReference2\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServiceReference2\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\salir.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServiceReference1\item.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServiceReference1\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServiceReference1\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Connected Services\ServidorSE\item.disco" />
@@ -318,6 +285,65 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\fondoM.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Tablero\tablero.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServidorJuegoSE\ServidorSerpientesEscaleras.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServidorJuegoSE\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServidorJuegoSE\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ServidorJuegoSE\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\fondoTablero1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Tablero\Portales\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Tablero\FondosTablero\fondo4.jpg" />
+    <Resource Include="Resources\Tablero\FondosTablero\fondo2.jpg" />
+    <Resource Include="Resources\Tablero\FondosTablero\fondo1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Tablero\FondosTablero\fondo3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Tablero\FondosTablero\fondo5.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Tablero\FondosTablero\fondo6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Tablero\FondosTablero\fondo10.jpg" />
+    <Resource Include="Resources\Tablero\FondosTablero\fondo11.jpg" />
+    <Resource Include="Resources\Tablero\FondosTablero\fondo7.jpg" />
+    <Resource Include="Resources\Tablero\FondosTablero\fondo8.jpg" />
+    <Resource Include="Resources\Tablero\FondosTablero\fondo9.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Tablero\Fichas\ficha2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Tablero\Fichas\ficha1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Tablero\Fichas\ficha3.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Tablero\Fichas\ficha4.ico" />
+    <Resource Include="Resources\Tablero\Fichas\ficha5.ico" />
+    <Resource Include="Resources\Tablero\Fichas\ficha6.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

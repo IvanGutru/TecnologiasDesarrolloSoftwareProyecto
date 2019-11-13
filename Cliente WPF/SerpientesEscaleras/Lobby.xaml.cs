@@ -15,7 +15,7 @@ using System.Windows.Shapes;
 
 namespace SerpientesEscaleras
 {
-    public partial class RegresoMensaje : ServidorSE.IAdministradorChatCallback
+    public class RegresoMensaje : ServidorJuegoSE.IAdministradorMultijugadorCallback
     {
         private Lobby lobby;
 
@@ -44,18 +44,23 @@ namespace SerpientesEscaleras
             lobby.listBox_Chat.Items.Refresh();
             lobby.listBox_JugadoresConectados.Items.Refresh();
         }
+
+        public void EntrarJuego()
+        {
+            lobby.EntrarJuego();
+        }
     }
 
     public partial class Lobby : Window
     {
-        private int indiceSala;
-        private ServidorSE.Jugador jugador;
+        private int idSala;
+        private ServidorJuegoSE.Jugador jugador;
         public List<String> chat = new List<string>();
         InstanceContext contexto;
-        private ServidorSE.AdministradorChatClient servidorChat;
+        private ServidorJuegoSE.AdministradorMultijugadorClient clienteMultijugador;
         public List<String> jugadoresConectados = new List<String>();
 
-        public Lobby(ServidorSE.Jugador jugadorRecibido)
+        public Lobby(ServidorJuegoSE.Jugador jugadorRecibido)
         {
             jugador = jugadorRecibido;
             InitializeComponent();
@@ -66,45 +71,45 @@ namespace SerpientesEscaleras
                 Lobby = this
             };
             contexto = new InstanceContext(regresoMensaje);
-            servidorChat = new ServidorSE.AdministradorChatClient(contexto);
+            clienteMultijugador = new ServidorJuegoSE.AdministradorMultijugadorClient(contexto);
         }
 
-        public void CrearPartida(ServidorSE.Sala sala)
+        public void CrearPartida(ServidorJuegoSE.Sala sala)
         {
-            indiceSala = servidorChat.CrearSala(sala);
-            servidorChat.UnirseSala(indiceSala, jugador);
+            idSala = clienteMultijugador.CrearSala(sala);
+            clienteMultijugador.UnirseSala(idSala, jugador);
         }
 
-        public Boolean EntrarPartida(int indice)
+        public Boolean EntrarPartida(int idSalaRecibido)
         {
-            indiceSala = indice;
-            jugadoresConectados = servidorChat.ConsultarJugadoresSala(indice).ToList();
-            listBox_JugadoresConectados.ItemsSource = jugadoresConectados;
-            if (servidorChat.ValidarCupoSala(indiceSala))
+            idSala = idSalaRecibido;
+            if (clienteMultijugador.ValidarSala(idSala))
             {
-                servidorChat.UnirseSala(indiceSala, jugador);
+                jugadoresConectados = clienteMultijugador.ConsultarJugadoresSala(idSala).ToList();
+                listBox_JugadoresConectados.ItemsSource = jugadoresConectados;
+                clienteMultijugador.UnirseSala(idSala, jugador);
                 return true;
             }
             return false;
         }
 
-        public List<ServidorSE.Sala> ConsultarPartidasDisponibles()
+        public List<ServidorJuegoSE.Sala> ConsultarPartidasDisponibles()
         {
-            return servidorChat.ConsultarSalasDisponibles().ToList();
+            return clienteMultijugador.ConsultarSalasDisponibles().ToList();
         }
 
         private void Button_Enviar(object sender, RoutedEventArgs e)
         {
             if (textBox_Mensaje.Text != "")
             {
-                servidorChat.EnviarMensaje(indiceSala, textBox_Mensaje.Text);
+                clienteMultijugador.EnviarMensaje(idSala, textBox_Mensaje.Text);
                 textBox_Mensaje.Clear();
             }
         }
 
         private void CerrarVentana(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            servidorChat.SalirChat(indiceSala);
+            clienteMultijugador.SalirChat(idSala);
         }
 
         private void Button_Regresar(object sender, RoutedEventArgs e)
@@ -112,6 +117,20 @@ namespace SerpientesEscaleras
             MenuPrincipal menuPrincipal = new MenuPrincipal(jugador);
             menuPrincipal.Show();
             this.Close();
+        }
+
+        private void Button_Jugar(object sender, RoutedEventArgs e)
+        {
+            clienteMultijugador.IniciarJuego(idSala);
+        }
+
+        public void EntrarJuego()
+        {
+            Juego juego = new Juego(jugador, idSala);
+            juego.Show();
+            this.Close();
+            juego.RecibirListaJugadores(jugadoresConectados);
+            juego.Entrar();
         }
     }
 }

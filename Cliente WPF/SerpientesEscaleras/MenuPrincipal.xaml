@@ -13,10 +13,16 @@
         <ImageBrush ImageSource="Resources/fondoM.jpg"/>
     </Window.Background>
     <Grid>
-        <Button Content="{x:Static p:Resources.buscarPartida}" HorizontalAlignment="Center" Margin="0,220,0,0" VerticalAlignment="Top" Width="180" Background="#FF0F8080" BorderBrush="#FF0F8080" Click="Button_BuscarPartida" FontSize="16"/>
-        <Button Content="{x:Static p:Resources.nuevaPartida}" HorizontalAlignment="Center" Margin="0,310,0,0" VerticalAlignment="Top" Width="180" Background="#FF0F8080" BorderBrush="#FF0F8080" Click="Button_NuevaPartida" FontSize="16"/>
-        <Button Content="{x:Static p:Resources.consultarPuntajes}" HorizontalAlignment="Center" Margin="0,390,0,0" VerticalAlignment="Top" Width="180" Click="Button_ConsultarPuntajes" BorderBrush="#FF0F8080" Background="#FF0F8080" FontSize="16"/>
-        <Button Content="{x:Static p:Resources.salirJuego}" HorizontalAlignment="Center" Margin="0,500,0,0" VerticalAlignment="Top" Width="180" Click="Button_CerrarSesion" Background="#FF0F8080" BorderBrush="#FF0F8080" FontSize="16"/>
+        <Button Content="{x:Static p:Resources.buscarPartida}" HorizontalAlignment="Center" Margin="0,220,0,0" VerticalAlignment="Top" Width="180" Background="#FF0F8080" BorderBrush="#FF0F8080" Click="Button_BuscarPartida" FontSize="18"/>
+        <Button Content="{x:Static p:Resources.nuevaPartida}" HorizontalAlignment="Center" Margin="0,310,0,0" VerticalAlignment="Top" Width="180" Background="#FF0F8080" BorderBrush="#FF0F8080" Click="Button_NuevaPartida" FontSize="18"/>
+        <Button Content="{x:Static p:Resources.consultarPuntajes}" HorizontalAlignment="Center" Margin="0,390,0,0" VerticalAlignment="Top" Width="180" Click="Button_ConsultarPuntajes" BorderBrush="#FF0F8080" Background="#FF0F8080" FontSize="18"/>
+        <Button Content="{x:Static p:Resources.salirJuego}" HorizontalAlignment="Center" Margin="0,0,0,40" VerticalAlignment="Bottom" 
+                Width="180" Click="Button_CerrarSesion" Background="#FF0F8080" BorderBrush="#FF0F8080" FontSize="18" OpacityMask="Black" 
+            TextOptions.TextHintingMode="Fixed" SnapsToDevicePixels="True" Cursor="Arrow" FontStretch="SemiCondensed" Foreground="White">
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="10" RenderingBias="Quality" ShadowDepth="8"/>
+            </Button.Effect>
+        </Button>
         <Label Content="Serpientes" HorizontalAlignment="Left" Margin="30,23,0,0" VerticalAlignment="Top" FontFamily="Bauhaus 93" Foreground="White" FontSize="48"/>
         <Label Content="Escaleras" HorizontalAlignment="Right" Margin="30,23,36,0" VerticalAlignment="Top" FontFamily="Bauhaus 93" Foreground="White" FontSize="48"/>
         <Label Content="Y" HorizontalAlignment="Center" Margin="0,23,0,0" VerticalAlignment="Top" FontFamily="Bauhaus 93" Foreground="White" FontSize="48"/>

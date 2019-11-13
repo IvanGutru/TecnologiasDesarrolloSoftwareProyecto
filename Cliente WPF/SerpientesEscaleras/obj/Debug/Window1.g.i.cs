@@ -38,7 +38,7 @@ namespace SerpientesEscaleras {
     /// <summary>
     /// Window1
     /// </summary>
-    public partial class CrearPartida : System.Windows.Window, System.Windows.Markup.IComponentConnector {
+    public partial class Turno : System.Windows.Window, System.Windows.Markup.IComponentConnector {
         
         private bool _contentLoaded;
         

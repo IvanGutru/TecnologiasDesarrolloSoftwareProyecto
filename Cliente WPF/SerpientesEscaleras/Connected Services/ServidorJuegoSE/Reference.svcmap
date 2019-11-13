@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="cb8f85d9-541d-49af-bee7-def9b40fafc2" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8081/ServidorSerpientesEscaleras" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServicioSistema.wsdl" MetadataType="Wsdl" ID="2c4191ab-5875-41de-b4ed-b5b343b77dda" SourceId="1" SourceUrl="http://localhost:8081/ServidorSerpientesEscaleras?wsdl" />
+    <MetadataFile FileName="ServidorSerpientesEscaleras.xsd" MetadataType="Schema" ID="a1af12fa-395c-4cc0-8ba1-99b61f7b662d" SourceId="1" SourceUrl="http://localhost:8081/ServidorSerpientesEscaleras?xsd=xsd3" />
+    <MetadataFile FileName="ServidorSerpientesEscaleras1.xsd" MetadataType="Schema" ID="9fd3b81a-326e-4fcd-8d66-7ca283e2c769" SourceId="1" SourceUrl="http://localhost:8081/ServidorSerpientesEscaleras?xsd=xsd2" />
+    <MetadataFile FileName="ServidorSerpientesEscaleras2.xsd" MetadataType="Schema" ID="611ea4f7-75fc-43bd-9358-8bfd8262a1fc" SourceId="1" SourceUrl="http://localhost:8081/ServidorSerpientesEscaleras?xsd=xsd1" />
+    <MetadataFile FileName="ServidorSerpientesEscaleras3.xsd" MetadataType="Schema" ID="6262d351-a20d-4f7b-9257-37de0eb7a7bf" SourceId="1" SourceUrl="http://localhost:8081/ServidorSerpientesEscaleras?xsd=xsd0" />
+    <MetadataFile FileName="ServidorSerpientesEscaleras.disco" MetadataType="Disco" ID="af7caa5e-512a-45bf-b041-2973065648fe" SourceId="1" SourceUrl="http://localhost:8081/ServidorSerpientesEscaleras?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

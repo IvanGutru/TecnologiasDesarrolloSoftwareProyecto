@@ -33,9 +33,9 @@ namespace SerpientesEscaleras
         private void Button_Registrarse(object sender, RoutedEventArgs e) {
             if (ValidarCampos())
             {
-                ServidorSE.AdministradorCuentaClient cliente = new ServidorSE.AdministradorCuentaClient();
-                ServidorSE.Cuenta cuenta = new ServidorSE.Cuenta() { Correo = textBox_CorreoElectronico.Text, Contraseña = passwordBox_Contraseña.Password };
-                ServidorSE.Jugador jugador = new ServidorSE.Jugador() { Apodo = textBox_Apodo.Text, Nombre = textBox_NombreUsuario.Text, Apellidos = textBox_Apellidos.Text };
+                ServidorJuegoSE.AdministradorCuentaClient cliente = new ServidorJuegoSE.AdministradorCuentaClient();
+                ServidorJuegoSE.Cuenta cuenta = new ServidorJuegoSE.Cuenta() { Correo = textBox_CorreoElectronico.Text, Contraseña = passwordBox_Contraseña.Password };
+                ServidorJuegoSE.Jugador jugador = new ServidorJuegoSE.Jugador() { Apodo = textBox_Apodo.Text, Nombre = textBox_NombreUsuario.Text, Apellidos = textBox_Apellidos.Text };
                 if (!cliente.VerificarApodo(jugador))
                 {
                     MessageBox.Show("Ya se encuentra registrado un usuario con ese apodo");

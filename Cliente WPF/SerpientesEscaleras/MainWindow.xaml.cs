@@ -33,9 +33,9 @@ namespace SerpientesEscaleras
             {
                 return;
             }
-            ServidorSE.AdministradorCuentaClient cliente = new ServidorSE.AdministradorCuentaClient();
-            ServidorSE.Cuenta cuenta = new ServidorSE.Cuenta() { Correo = correoIngresado, Contraseña = contraseñaIngresada };
-            ServidorSE.Jugador jugador = cliente.IniciarSesion(cuenta);
+            ServidorJuegoSE.AdministradorCuentaClient cliente = new ServidorJuegoSE.AdministradorCuentaClient();
+            ServidorJuegoSE.Cuenta cuenta = new ServidorJuegoSE.Cuenta() { Correo = correoIngresado, Contraseña = contraseñaIngresada };
+            ServidorJuegoSE.Jugador jugador = cliente.IniciarSesion(cuenta);
             if (jugador != null)
             {
                 if (cliente.VerificarCuenta(cuenta))

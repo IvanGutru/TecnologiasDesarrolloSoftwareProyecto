@@ -15,9 +15,9 @@ using System.Windows.Shapes;
 namespace SerpientesEscaleras {
     public partial class IngresarCodigo : Window {
 
-        private readonly ServidorSE.Cuenta cuenta;
+        private readonly ServidorJuegoSE.Cuenta cuenta;
 
-        public IngresarCodigo(ServidorSE.Cuenta cuentaRecibida) {
+        public IngresarCodigo(ServidorJuegoSE.Cuenta cuentaRecibida) {
             cuenta = cuentaRecibida;
             InitializeComponent();
         }
@@ -30,7 +30,7 @@ namespace SerpientesEscaleras {
 
         private void Button_ValidarCuenta(object sender, RoutedEventArgs e) {
             if (textBox_Codigo.Text !="") {
-                ServidorSE.AdministradorCuentaClient cliente = new ServidorSE.AdministradorCuentaClient();
+                ServidorJuegoSE.AdministradorCuentaClient cliente = new ServidorJuegoSE.AdministradorCuentaClient();
                 if (cliente.ActivarCuentaJugador(cuenta, textBox_Codigo.Text)) 
                 {
                     MessageBox.Show("Cuenta activada exitosamente");
@@ -48,7 +48,7 @@ namespace SerpientesEscaleras {
         }
 
         private void Button_ReenviarCorreo(object sender, RoutedEventArgs e) {
-            ServidorSE.AdministradorCuentaClient cliente = new ServidorSE.AdministradorCuentaClient();
+            ServidorJuegoSE.AdministradorCuentaClient cliente = new ServidorJuegoSE.AdministradorCuentaClient();
             cliente.EnviarCorreo(cuenta);
         }
     }

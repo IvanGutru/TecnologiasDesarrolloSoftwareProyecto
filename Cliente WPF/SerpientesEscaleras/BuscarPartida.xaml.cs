@@ -16,11 +16,11 @@ namespace SerpientesEscaleras
 {
     public partial class BuscarPartida : Window
     {
-        private ServidorSE.Jugador jugador;
+        private ServidorJuegoSE.Jugador jugador;
         private Lobby lobby;
-        private List<ServidorSE.Sala> listaSalas;
+        private List<ServidorJuegoSE.Sala> listaSalas;
 
-        public BuscarPartida(ServidorSE.Jugador jugadorRecibido)
+        public BuscarPartida(ServidorJuegoSE.Jugador jugadorRecibido)
         {
             jugador = jugadorRecibido;
             InitializeComponent();
@@ -36,11 +36,12 @@ namespace SerpientesEscaleras
                 MessageBox.Show("Elige una partida primero");
                 return;
             }
-            if (!lobby.EntrarPartida(dataGrid_Partidas.SelectedIndex))
+            ServidorJuegoSE.Sala partida = (ServidorJuegoSE.Sala)dataGrid_Partidas.SelectedItem;
+            if (!lobby.EntrarPartida(partida.IdSala))
             {
-                ServidorSE.Sala partida = (ServidorSE.Sala)dataGrid_Partidas.SelectedItem;
-                MessageBox.Show("La partida " + partida.Nombre + " ya esta llena");
-                listaSalas = lobby.ConsultarPartidasDisponibles();
+                MessageBox.Show("La partida " + partida.Nombre + " ya esta llena o no está disponible");
+                listaSalas.Clear();
+                listaSalas.AddRange(lobby.ConsultarPartidasDisponibles());
                 dataGrid_Partidas.Items.Refresh();
                 return;
             }
@@ -58,7 +59,7 @@ namespace SerpientesEscaleras
         private void DataGrid_Partidas_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
         {
             string titulo = e.Column.Header.ToString();
-            if(titulo == "ExtensionData" || titulo == "DiccionarioJugadores")
+            if(titulo == "ExtensionData" || titulo == "UriFondoTablero" || titulo == "DiccionarioJugadores")
             {
                 e.Cancel = true;
             }
@@ -85,6 +86,11 @@ namespace SerpientesEscaleras
             {
                 e.Column.Header = "Casillas especiales";
                 e.Column.DisplayIndex = 4;
+            }
+            if (titulo == "Jugando")
+            {
+                e.Column.Header = "Empezó la partida";
+                e.Column.DisplayIndex = 5;
             }
         }
     }

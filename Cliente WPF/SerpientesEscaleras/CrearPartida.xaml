@@ -12,8 +12,18 @@
     <Window.Background>
         <SolidColorBrush Color="#FF1C1C1C"/>
     </Window.Background>
-    <Grid>
-        <TextBox x:Name="textBox_Nombre" HorizontalAlignment="Left" Margin="243,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="242" Background="#FF1C1C1C" Foreground="White" SelectionBrush="#FF26D4F5" materialDesign:HintAssist.IsFloating="true" LostFocus="TextBox_Nombre_LostFocus" KeyDown="TextBox_Nombre_KeyDown">
+    <Grid RenderTransformOrigin="0.606,0.32">
+        <Button x:Name="button_Regresar" Content="{x:Static p:Resources.regresar}" HorizontalAlignment="Left" Margin="10,10,0,0" 
+                VerticalAlignment="Top" Width="140" Height="35" Background="#FF0F8080" BorderBrush="#FF020202" Foreground="White" 
+                OpacityMask="Black" TextOptions.TextHintingMode="Fixed" SnapsToDevicePixels="True" Cursor="Arrow" 
+                FontStretch="SemiCondensed" Click="Button_Regresar" FontSize="16">
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="10" RenderingBias="Quality" ShadowDepth="8"/>
+            </Button.Effect>
+        </Button>
+        <TextBox x:Name="textBox_Nombre" HorizontalAlignment="Left" Margin="186,121,0,0" TextWrapping="Wrap" VerticalAlignment="Top" 
+                 Width="242" Background="#FF1C1C1C" Foreground="White" SelectionBrush="#FF26D4F5" 
+                 materialDesign:HintAssist.IsFloating="true" LostFocus="TextBox_Nombre_LostFocus" KeyDown="TextBox_Nombre_KeyDown">
             <TextBox.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF1C1C1C" Offset="0.331"/>
@@ -21,28 +31,78 @@
                 </LinearGradientBrush>
             </TextBox.BorderBrush>
         </TextBox>
-        <CheckBox x:Name="checkBox_DobleDado" HorizontalAlignment="Left" Margin="667,275,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" />
-        <CheckBox x:Name="checkBox_DobleFicha" HorizontalAlignment="Left" Margin="667,311,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5"/>
-        <CheckBox x:Name="checkBox_CasillasEspeciales" HorizontalAlignment="Left" Margin="667,346,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5"/>
-        <Button x:Name="button_CrearPartida" Content="{x:Static p:Resources.crearPartida}" HorizontalAlignment="Left" Margin="607,428,0,0" VerticalAlignment="Top" 
-            Width="140" Height="35" Background="#FF0F8080" BorderBrush="#FF020202" Foreground="White" OpacityMask="Black" 
-            TextOptions.TextHintingMode="Fixed" SnapsToDevicePixels="True" Cursor="Arrow" FontStretch="SemiCondensed" Click="Button_CrearPartida" FontSize="16">
+        <Button x:Name="button_CrearPartida" Content="{x:Static p:Resources.crearPartida}" HorizontalAlignment="Right" 
+                Margin="0,0,100,35" VerticalAlignment="Bottom" Width="140" Height="35" Background="#FF0F8080" 
+                BorderBrush="#FF020202" Foreground="White" OpacityMask="Black" TextOptions.TextHintingMode="Fixed" 
+                SnapsToDevicePixels="True" Cursor="Arrow" FontStretch="SemiCondensed" Click="Button_CrearPartida" FontSize="16">
             <Button.Effect>
                 <DropShadowEffect BlurRadius="10" RenderingBias="Quality" ShadowDepth="8"/>
             </Button.Effect>
         </Button>
-        <Button x:Name="button_Regresar" Content="{x:Static p:Resources.regresar}" HorizontalAlignment="Left" Margin="243,428,0,0" VerticalAlignment="Top" 
-            Width="140" Height="35" Background="#FF0F8080" BorderBrush="#FF020202" Foreground="White" OpacityMask="Black" 
-            TextOptions.TextHintingMode="Fixed" SnapsToDevicePixels="True" Cursor="Arrow" FontStretch="SemiCondensed" Click="Button_Regresar" FontSize="16">
-            <Button.Effect>
-                <DropShadowEffect BlurRadius="10" RenderingBias="Quality" ShadowDepth="8"/>
-            </Button.Effect>
-        </Button>
-        <Label Content="Casillas especiales" HorizontalAlignment="Left" Margin="243,257,0,0" VerticalAlignment="Top" Width="195" Foreground="White"/>
-        <Label Content="Doble dado" HorizontalAlignment="Left" Margin="243,298,0,0" VerticalAlignment="Top" Width="195" Foreground="White"/>
-        <Label Content="Doble ficha de jugador" HorizontalAlignment="Left" Margin="243,346,0,0" VerticalAlignment="Top" Width="195" Foreground="White"/>
-        <Label Content="Reglas especiales" HorizontalAlignment="Left" Margin="243,210,0,0" VerticalAlignment="Top" Width="195" Foreground="White"/>
-        <Label x:Name="label_Nombre" Content="Nombre de la partida" HorizontalAlignment="Left" Margin="243,141,0,0" VerticalAlignment="Top" Width="195" Foreground="White"  Opacity="0.6" MouseDown="Label_Nombre_MouseDown"/>
+        <CheckBox x:Name="checkBox_DobleDado" HorizontalAlignment="Left" Margin="861,148,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="checkBox_DobleFicha" HorizontalAlignment="Left" Margin="861,194,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="checkBox_CasillasEspeciales" HorizontalAlignment="Left" Margin="861,235,0,0" VerticalAlignment="Top"/>
+        <Label Content="Casillas especiales" HorizontalAlignment="Left" Margin="567,132,0,0" VerticalAlignment="Top" Width="195" Foreground="White"/>
+        <Label Content="Doble dado" HorizontalAlignment="Left" Margin="567,178,0,0" VerticalAlignment="Top" Width="195" Foreground="White"/>
+        <Label Content="Doble ficha de jugador" HorizontalAlignment="Left" Margin="567,219,0,0" VerticalAlignment="Top" Width="195" Foreground="White"/>
+        <Label Content="Reglas especiales:" HorizontalAlignment="Left" Margin="567,80,0,0" VerticalAlignment="Top" Width="195" Foreground="White"/>
+        <Label x:Name="label_Nombre" Content="Nombre de la partida" HorizontalAlignment="Left" Margin="186,132,0,0" 
+               VerticalAlignment="Top" Width="195" Opacity="0.6" MouseDown="Label_Nombre_MouseDown" Foreground="White"/>
+        <Label Content="Selecciona el fondo del tablero:" HorizontalAlignment="Left" Margin="47,275,0,0" VerticalAlignment="Top" Width="265" Foreground="White"/>
 
+        <ScrollViewer HorizontalScrollBarVisibility="Visible" HorizontalAlignment="Center"  Width="900"
+                      VerticalAlignment="Bottom" Margin="0,0,0,100" VerticalScrollBarVisibility="Disabled">
+            <Grid x:Name="grid_Fondos" HorizontalAlignment="Center" VerticalAlignment="Top">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="125"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="210"/>
+                    <ColumnDefinition Width="210"/>
+                    <ColumnDefinition Width="210"/>
+                    <ColumnDefinition Width="210"/>
+                    <ColumnDefinition Width="210"/>
+                    <ColumnDefinition Width="210"/>
+                    <ColumnDefinition Width="210"/>
+                    <ColumnDefinition Width="210"/>
+                    <ColumnDefinition Width="210"/>
+                    <ColumnDefinition Width="210"/>
+                    <ColumnDefinition Width="210"/>
+                </Grid.ColumnDefinitions>
+                <Image Source="Resources/Tablero/FondosTablero/fondo1.jpg" Grid.Row="0" Grid.Column="0" Width="200"/>
+                <Image Source="Resources/Tablero/FondosTablero/fondo2.jpg" Grid.Row="0" Grid.Column="1" Width="200"/>
+                <Image Source="Resources/Tablero/FondosTablero/fondo3.jpg" Grid.Row="0" Grid.Column="2" Width="200"/>
+                <Image Source="Resources/Tablero/FondosTablero/fondo4.jpg" Grid.Row="0" Grid.Column="3" Width="200"/>
+                <Image Source="Resources/Tablero/FondosTablero/fondo5.jpg" Grid.Row="0" Grid.Column="4" Width="200"/>
+                <Image Source="Resources/Tablero/FondosTablero/fondo6.jpg" Grid.Row="0" Grid.Column="5" Width="200"/>
+                <Image Source="Resources/Tablero/FondosTablero/fondo7.jpg" Grid.Row="0" Grid.Column="6" Width="200"/>
+                <Image Source="Resources/Tablero/FondosTablero/fondo8.jpg" Grid.Row="0" Grid.Column="7" Width="200"/>
+                <Image Source="Resources/Tablero/FondosTablero/fondo9.jpg" Grid.Row="0" Grid.Column="8" Width="200"/>
+                <Image Source="Resources/Tablero/FondosTablero/fondo10.jpg" Grid.Row="0" Grid.Column="9" Width="200"/>
+                <Image Source="Resources/Tablero/FondosTablero/fondo11.jpg" Grid.Row="0" Grid.Column="10" Width="200"/>
+                <Rectangle Width="210" Height="125" Opacity="0" Fill="Transparent" Grid.Column="0" 
+                           MouseDown="Rectangle_Clic" Stroke="Azure" StrokeThickness="5"/>
+                <Rectangle Width="210" Height="125" Opacity="0" Fill="Transparent" Grid.Column="1" 
+                           MouseDown="Rectangle_Clic" Stroke="Azure" StrokeThickness="5"/>
+                <Rectangle Width="210" Height="125" Opacity="0" Fill="Transparent" Grid.Column="2" 
+                           MouseDown="Rectangle_Clic" Stroke="Azure" StrokeThickness="5"/>
+                <Rectangle Width="210" Height="125" Opacity="0" Fill="Transparent" Grid.Column="3" 
+                           MouseDown="Rectangle_Clic" Stroke="Azure" StrokeThickness="5"/>
+                <Rectangle Width="210" Height="125" Opacity="0" Fill="Transparent" Grid.Column="4" 
+                           MouseDown="Rectangle_Clic" Stroke="Azure" StrokeThickness="5"/>
+                <Rectangle Width="210" Height="125" Opacity="0" Fill="Transparent" Grid.Column="5" 
+                           MouseDown="Rectangle_Clic" Stroke="Azure" StrokeThickness="5"/>
+                <Rectangle Width="210" Height="125" Opacity="0" Fill="Transparent" Grid.Column="6" 
+                           MouseDown="Rectangle_Clic" Stroke="Azure" StrokeThickness="5"/>
+                <Rectangle Width="210" Height="125" Opacity="0" Fill="Transparent" Grid.Column="7" 
+                           MouseDown="Rectangle_Clic" Stroke="Azure" StrokeThickness="5"/>
+                <Rectangle Width="210" Height="125" Opacity="0" Fill="Transparent" Grid.Column="8" 
+                           MouseDown="Rectangle_Clic" Stroke="Azure" StrokeThickness="5"/>
+                <Rectangle Width="210" Height="125" Opacity="0" Fill="Transparent" Grid.Column="9" 
+                           MouseDown="Rectangle_Clic" Stroke="Azure" StrokeThickness="5"/>
+                <Rectangle Width="210" Height="125" Opacity="0" Fill="Transparent" Grid.Column="10" 
+                           MouseDown="Rectangle_Clic" Stroke="Azure" StrokeThickness="5"/>
+            </Grid>
+        </ScrollViewer>
     </Grid>
 </Window>

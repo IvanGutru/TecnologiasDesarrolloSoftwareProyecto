@@ -115,7 +115,7 @@ namespace SerpientesEscaleras.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Consultar Puntajes.
+        ///   Busca una cadena traducida similar a Ver Puntajes.
         /// </summary>
         public static string consultarPuntajes {
             get {

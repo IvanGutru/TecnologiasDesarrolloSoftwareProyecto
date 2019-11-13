@@ -16,9 +16,9 @@ namespace SerpientesEscaleras {
 
     public partial class MenuPrincipal : Window {
 
-        private ServidorSE.Jugador jugador;
+        private ServidorJuegoSE.Jugador jugador;
 
-        public MenuPrincipal(ServidorSE.Jugador jugadorRecibido) {
+        public MenuPrincipal(ServidorJuegoSE.Jugador jugadorRecibido) {
             jugador = jugadorRecibido;
             InitializeComponent();
         }

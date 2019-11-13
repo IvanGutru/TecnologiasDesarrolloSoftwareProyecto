@@ -8,6 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/fondom.jpg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/tablero/fichas/mangekyou_sharingan_naka-svg.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/tablero/fichas/mangekyou_sharingan_rai-svg.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/tablero/fichas/mangekyou_sharingan_shin-svg.ico")]
 
 

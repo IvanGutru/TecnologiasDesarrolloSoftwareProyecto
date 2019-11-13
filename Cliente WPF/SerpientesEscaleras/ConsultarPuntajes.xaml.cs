@@ -18,12 +18,12 @@ namespace SerpientesEscaleras {
     /// </summary>
     public partial class ConsultarPuntajes : Window {
 
-        private ServidorSE.Jugador jugador;
+        private ServidorJuegoSE.Jugador jugador;
 
-        public ConsultarPuntajes(ServidorSE.Jugador jugadorRecibido) {
+        public ConsultarPuntajes(ServidorJuegoSE.Jugador jugadorRecibido) {
             jugador = jugadorRecibido;
             InitializeComponent();
-            ServidorSE.AdministradorCuentaClient cliente = new ServidorSE.AdministradorCuentaClient();
+            ServidorJuegoSE.AdministradorCuentaClient cliente = new ServidorJuegoSE.AdministradorCuentaClient();
             DataGrid_MisPuntajes.ItemsSource = cliente.ConsultarPuntajesPropios(jugador);
             DataGrid_MejoresPuntajes.ItemsSource = cliente.ConsultarMejoresPuntajes();
         }
