@@ -49,7 +49,7 @@ C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\DAO\bi
 C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\DAO\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\DAO\bin\Debug\EntityFramework.xml
 C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\DAO\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\DAO\obj\Debug\DAO.csprojAssemblyReference.cache
+C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
 C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\DAO\obj\Debug\DAO.csproj.CopyComplete
 C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\DAO\obj\Debug\DAO.dll
 C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\DAO\obj\Debug\DAO.pdb

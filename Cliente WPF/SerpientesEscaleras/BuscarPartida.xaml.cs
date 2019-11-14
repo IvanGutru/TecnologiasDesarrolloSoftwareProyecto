@@ -45,7 +45,6 @@ namespace SerpientesEscaleras
                 listaSalas.AddRange(lobby.ConsultarPartidasDisponibles());
                 string partidaRecurso = Properties.Resources.partida;
                 string llena = Properties.Resources.llena;
-                ServidorSE.Sala partida = (ServidorSE.Sala)dataGrid_Partidas.SelectedItem;
                 MessageBox.Show(partidaRecurso + partida.Nombre + llena);
                 listaSalas = lobby.ConsultarPartidasDisponibles();
                 dataGrid_Partidas.Items.Refresh();
