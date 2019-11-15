@@ -15,64 +15,29 @@ using System.Windows.Shapes;
 
 namespace SerpientesEscaleras
 {
-    public class RegresoJuego : ServidorJuegoSE.IAdministradorMultijugadorCallback
-    {
-        private Juego juego;
-
-        public Juego Juego { get => juego; set => juego = value; }
-
-        public void RecibirMensaje(string mensaje)
-        {
-            juego.chat.Add(mensaje);
-            juego.listBox_Chat.Items.Refresh();
-        }
-
-        public void RecibirMensajeMiembro(Boolean entrada, String apodo)
-        {
-            if (entrada)
-            {
-                int indiceApodo = juego.jugadoresConectados.FindIndex(x => x.Contains(apodo));
-                if (indiceApodo != -1)
-                {
-                    return;
-                }
-                juego.chat.Add(apodo + " " + Properties.Resources.mensajeEntrada);
-                juego.jugadoresConectados.Add(apodo);
-            }
-            else
-            {
-                juego.chat.Add(apodo + " " + Properties.Resources.mensajeSalida);
-                juego.jugadoresConectados.Remove(apodo);
-            }
-            juego.listBox_Chat.Items.Refresh();
-            juego.listBox_JugadoresConectados.Items.Refresh();
-        }
-
-        public void EntrarJuego() { }
-    }
 
     public partial class Juego : Window
     {
-        private int idSala;
-        private ServidorJuegoSE.Jugador jugador;
+        public int idSala;
+        public ServidorJuegoSE.Jugador jugador;
         public List<String> chat = new List<string>();
         InstanceContext contexto;
-        private ServidorJuegoSE.AdministradorMultijugadorClient clienteMultijugador;
+        public ServidorJuegoSE.AdministradorMultijugadorClient clienteMultijugador;
         public List<String> jugadoresConectados = new List<String>();
         private List<Casilla> casillas = new List<Casilla>();
-        private int posicion = 1;
+        public int posicion = 1;
+        private CallbackMultijugador regresoJuego;
+        public int OrdenTurno;
 
-        public Juego(ServidorJuegoSE.Jugador jugadorRecibido, int indiceSalaRecibido)
+        public Juego(ServidorJuegoSE.Jugador jugadorRecibido, int indiceSalaRecibido, CallbackMultijugador regresoMensaje)
         {
             jugador = jugadorRecibido;
             idSala = indiceSalaRecibido;
+            regresoJuego = regresoMensaje;
             InitializeComponent();
             listBox_Chat.ItemsSource = chat;
             listBox_JugadoresConectados.ItemsSource = jugadoresConectados;
-            RegresoJuego regresoJuego = new RegresoJuego()
-            {
-                Juego = this
-            };
+            regresoJuego.Juego = this;
             contexto = new InstanceContext(regresoJuego);
             clienteMultijugador = new ServidorJuegoSE.AdministradorMultijugadorClient(contexto);
             CrearCasillas(7, 10);
@@ -110,7 +75,7 @@ namespace SerpientesEscaleras
         {
             if (textBox_Mensaje.Text != "")
             {
-                clienteMultijugador.EnviarMensaje(idSala, textBox_Mensaje.Text);
+                clienteMultijugador.EnviarMensajeJuego(idSala, textBox_Mensaje.Text);
                 textBox_Mensaje.Clear();
             }
         }
@@ -140,8 +105,6 @@ namespace SerpientesEscaleras
             Casilla casillaTemporal = casillas.ElementAt(posicion-1);
             Grid.SetColumn(image_Token1, casillaTemporal.Columna);
             Grid.SetRow(image_Token1, casillaTemporal.Fila);
-            Turno turno = new Turno();
-            turno.Show();
         }
 
         public void RecibirListaJugadores(List<String> jugadores)
@@ -152,8 +115,35 @@ namespace SerpientesEscaleras
 
         public void Entrar()
         {
-            clienteMultijugador.UnirseSala(idSala, jugador);
+            clienteMultijugador.UnirseJuego(idSala, jugador);
         }
 
+        public void MoverFicha(int ordenJugador)
+        {
+            if (posicion > 70)
+            {
+                posicion = 70 - (posicion - 70);
+            }
+            Casilla casillaTemporal = casillas.ElementAt(posicion - 1);
+            switch (ordenJugador)
+            {
+                case 0:
+                    Grid.SetColumn(image_Token1, casillaTemporal.Columna);
+                    Grid.SetRow(image_Token1, casillaTemporal.Fila);
+                    break;
+                case 1:
+                    Grid.SetColumn(image_Token2, casillaTemporal.Columna);
+                    Grid.SetRow(image_Token2, casillaTemporal.Fila);
+                    break;
+                case 2:
+                    Grid.SetColumn(image_Token3, casillaTemporal.Columna);
+                    Grid.SetRow(image_Token3, casillaTemporal.Fila);
+                    break;
+                case 3:
+                    Grid.SetColumn(image_Token4, casillaTemporal.Columna);
+                    Grid.SetRow(image_Token4, casillaTemporal.Fila);
+                    break;
+            }
+        }
     }
 }

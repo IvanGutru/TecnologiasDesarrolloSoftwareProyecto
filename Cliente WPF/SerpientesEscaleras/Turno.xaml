@@ -14,42 +14,17 @@
     </Window.Background>
     <Grid>
         <ScrollViewer HorizontalScrollBarVisibility="Visible" HorizontalAlignment="Center"  Width="350"
-                      VerticalAlignment="Bottom" Margin="0,0,0,100" VerticalScrollBarVisibility="Disabled">
-            <Grid x:Name="grid_Fondos" HorizontalAlignment="Center" VerticalAlignment="Top">
+                      VerticalAlignment="Bottom" Margin="22,0,22,60" VerticalScrollBarVisibility="Disabled">
+            <Grid x:Name="grid_Fichas" HorizontalAlignment="Center" VerticalAlignment="Top">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="100"/>
                 </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="110"/>
-                    <ColumnDefinition Width="110"/>
-                    <ColumnDefinition Width="110"/>
-                    <ColumnDefinition Width="110"/>
-                    <ColumnDefinition Width="110"/>
-                    <ColumnDefinition Width="110"/>
-                    <ColumnDefinition Width="110"/>
-                </Grid.ColumnDefinitions>
-                <Image Source="Resources/Tablero/Fichas/ficha1.ico" Grid.Row="0" Grid.Column="0" Width="100"/>
-                <Image Source="Resources/iconoApp.ico" Grid.Row="0" Grid.Column="1" Width="100"/>
-                <Image Source="Resources/Tablero/Fichas/ficha2.ico" Grid.Row="0" Grid.Column="2" Width="100"/>
-                <Image Source="Resources/Tablero/Fichas/ficha3.ico" Grid.Row="0" Grid.Column="3" Width="100"/>
-                <Image Source="Resources/Tablero/Fichas/ficha4.ico" Grid.Row="0" Grid.Column="4" Width="100"/>
-                <Image Source="Resources/Tablero/Fichas/ficha5.ico" Grid.Row="0" Grid.Column="5" Width="100"/>
-                <Image Source="Resources/Tablero/Fichas/ficha6.ico" Grid.Row="0" Grid.Column="6" Width="100"/>
-                <Rectangle Width="110" Height="100" Opacity="0" Fill="Transparent" Grid.Column="0" 
-                           MouseDown="Rectangle_Clic" Stroke="Azure" StrokeThickness="5"/>
-                <Rectangle Width="110" Height="100" Opacity="0" Fill="Transparent" Grid.Column="1" 
-                           MouseDown="Rectangle_Clic" Stroke="Azure" StrokeThickness="5"/>
-                <Rectangle Width="110" Height="100" Opacity="0" Fill="Transparent" Grid.Column="2" 
-                           MouseDown="Rectangle_Clic" Stroke="Azure" StrokeThickness="5"/>
-                <Rectangle Width="110" Height="100" Opacity="0" Fill="Transparent" Grid.Column="3" 
-                           MouseDown="Rectangle_Clic" Stroke="Azure" StrokeThickness="5"/>
-                <Rectangle Width="110" Height="100" Opacity="0" Fill="Transparent" Grid.Column="4" 
-                           MouseDown="Rectangle_Clic" Stroke="Azure" StrokeThickness="5"/>
-                <Rectangle Width="110" Height="100" Opacity="0" Fill="Transparent" Grid.Column="5" 
-                           MouseDown="Rectangle_Clic" Stroke="Azure" StrokeThickness="5"/>
-                <Rectangle Width="110" Height="100" Opacity="0" Fill="Transparent" Grid.Column="6" 
-                           MouseDown="Rectangle_Clic" Stroke="Azure" StrokeThickness="5"/>
             </Grid>
         </ScrollViewer>
+        <Label x:Name="label_Instruccion" HorizontalAlignment="Left" Margin="44,49,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <Button x:Name="button_Elegir" HorizontalAlignment="Right" Margin="0,0,20,10" 
+                VerticalAlignment="Bottom" Width="100" Click="Button_Elegir" Visibility="Hidden" Foreground="White"/>
+        <Button x:Name="button_Tirar" HorizontalAlignment="Center" Margin="0,0,0,10" 
+                VerticalAlignment="Bottom" Width="100" Click="Button_Tirar" Visibility="Hidden" Foreground="White"/>
     </Grid>
 </Window>

@@ -110,3 +110,7 @@ C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Cliente WP
 C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\obj\Debug\SerpientesEscaleras.csproj.GenerateResource.cache
 C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\obj\Debug\en-US\SerpientesEscaleras.resources.dll
 C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\obj\Debug\SerpientesEscaleras.csproj.CopyComplete
+C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\obj\Debug\Juego.g.cs
+C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\obj\Debug\Turno.g.cs
+C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\obj\Debug\Juego.baml
+C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\obj\Debug\Turno.baml

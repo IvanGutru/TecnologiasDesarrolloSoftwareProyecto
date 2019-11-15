@@ -15,41 +15,6 @@ using System.Windows.Shapes;
 
 namespace SerpientesEscaleras
 {
-    public class RegresoMensaje : ServidorJuegoSE.IAdministradorMultijugadorCallback
-    {
-        private Lobby lobby;
-
-        public Lobby Lobby { get => lobby; set => lobby = value; }
-
-        public void RecibirMensaje(string mensaje)
-        {
-            lobby.chat.Add(mensaje);
-            lobby.listBox_Chat.Items.Refresh();
-        }
-
-        public void RecibirMensajeMiembro(Boolean entrada, String apodo)
-        {
-            if (entrada)
-            {
-                lobby.chat.Add(apodo + " " + Properties.Resources.mensajeEntrada);
-                lobby.jugadoresConectados.Add(apodo);
-                lobby.label_JugadoresConectados.Content = lobby.jugadoresConectados.Count + Properties.Resources.jugadoresConectados;
-            }
-            else
-            {
-                lobby.chat.Add(apodo + " " + Properties.Resources.mensajeSalida);
-                lobby.jugadoresConectados.Remove(apodo);
-                lobby.label_JugadoresConectados.Content = lobby.jugadoresConectados.Count + Properties.Resources.jugadoresConectados;
-            }
-            lobby.listBox_Chat.Items.Refresh();
-            lobby.listBox_JugadoresConectados.Items.Refresh();
-        }
-
-        public void EntrarJuego()
-        {
-            lobby.EntrarJuego();
-        }
-    }
 
     public partial class Lobby : Window
     {
@@ -59,6 +24,7 @@ namespace SerpientesEscaleras
         InstanceContext contexto;
         private ServidorJuegoSE.AdministradorMultijugadorClient clienteMultijugador;
         public List<String> jugadoresConectados = new List<String>();
+        private CallbackMultijugador regresoMensaje;
 
         public Lobby(ServidorJuegoSE.Jugador jugadorRecibido)
         {
@@ -66,7 +32,7 @@ namespace SerpientesEscaleras
             InitializeComponent();
             listBox_Chat.ItemsSource = chat;
             listBox_JugadoresConectados.ItemsSource = jugadoresConectados;
-            RegresoMensaje regresoMensaje = new RegresoMensaje
+            regresoMensaje = new CallbackMultijugador
             {
                 Lobby = this
             };
@@ -126,11 +92,12 @@ namespace SerpientesEscaleras
 
         public void EntrarJuego()
         {
-            Juego juego = new Juego(jugador, idSala);
+            Juego juego = new Juego(jugador, idSala, regresoMensaje);
+            juego.RecibirListaJugadores(jugadoresConectados);
             juego.Show();
             this.Close();
-            juego.RecibirListaJugadores(jugadoresConectados);
             juego.Entrar();
         }
+
     }
 }

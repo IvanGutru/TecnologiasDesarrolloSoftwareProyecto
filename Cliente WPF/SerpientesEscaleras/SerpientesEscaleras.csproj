@@ -68,6 +68,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Casilla.cs" />
+    <Compile Include="CallbackMultijugador.cs" />
     <Compile Include="Connected Services\ServidorJuegoSE\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -344,6 +345,9 @@
     <Resource Include="Resources\Tablero\Fichas\ficha4.ico" />
     <Resource Include="Resources\Tablero\Fichas\ficha5.ico" />
     <Resource Include="Resources\Tablero\Fichas\ficha6.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Tablero\Fichas\ficha7.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
