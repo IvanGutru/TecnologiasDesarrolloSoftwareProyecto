@@ -260,13 +260,25 @@ namespace SerpientesEscaleras.ServidorJuegoSE {
         private System.Collections.Generic.Dictionary<object, SerpientesEscaleras.ServidorJuegoSE.Jugador> DiccionarioJugadoresField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Collections.Generic.Dictionary<object, SerpientesEscaleras.ServidorJuegoSE.Jugador> DiccionarioJugadoresLobbyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool DobleDadoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool DobleFichaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SerpientesEscaleras.ServidorJuegoSE.Ficha[] FichasField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int IdSalaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string JugadorEnTurnoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string[] JugadoresJugandoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool JugandoField;
@@ -317,6 +329,19 @@ namespace SerpientesEscaleras.ServidorJuegoSE {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.Generic.Dictionary<object, SerpientesEscaleras.ServidorJuegoSE.Jugador> DiccionarioJugadoresLobby {
+            get {
+                return this.DiccionarioJugadoresLobbyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DiccionarioJugadoresLobbyField, value) != true)) {
+                    this.DiccionarioJugadoresLobbyField = value;
+                    this.RaisePropertyChanged("DiccionarioJugadoresLobby");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public bool DobleDado {
             get {
                 return this.DobleDadoField;
@@ -343,6 +368,19 @@ namespace SerpientesEscaleras.ServidorJuegoSE {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public SerpientesEscaleras.ServidorJuegoSE.Ficha[] Fichas {
+            get {
+                return this.FichasField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FichasField, value) != true)) {
+                    this.FichasField = value;
+                    this.RaisePropertyChanged("Fichas");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public int IdSala {
             get {
                 return this.IdSalaField;
@@ -351,6 +389,32 @@ namespace SerpientesEscaleras.ServidorJuegoSE {
                 if ((this.IdSalaField.Equals(value) != true)) {
                     this.IdSalaField = value;
                     this.RaisePropertyChanged("IdSala");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string JugadorEnTurno {
+            get {
+                return this.JugadorEnTurnoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.JugadorEnTurnoField, value) != true)) {
+                    this.JugadorEnTurnoField = value;
+                    this.RaisePropertyChanged("JugadorEnTurno");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string[] JugadoresJugando {
+            get {
+                return this.JugadoresJugandoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.JugadoresJugandoField, value) != true)) {
+                    this.JugadoresJugandoField = value;
+                    this.RaisePropertyChanged("JugadoresJugando");
                 }
             }
         }
@@ -403,6 +467,83 @@ namespace SerpientesEscaleras.ServidorJuegoSE {
                 if ((object.ReferenceEquals(this.UriFondoTableroField, value) != true)) {
                     this.UriFondoTableroField = value;
                     this.RaisePropertyChanged("UriFondoTablero");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Ficha", Namespace="http://schemas.datacontract.org/2004/07/MessageService")]
+    [System.SerializableAttribute()]
+    public partial class Ficha : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ApodoJugadorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PosicionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UriFichaField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ApodoJugador {
+            get {
+                return this.ApodoJugadorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ApodoJugadorField, value) != true)) {
+                    this.ApodoJugadorField = value;
+                    this.RaisePropertyChanged("ApodoJugador");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Posicion {
+            get {
+                return this.PosicionField;
+            }
+            set {
+                if ((this.PosicionField.Equals(value) != true)) {
+                    this.PosicionField = value;
+                    this.RaisePropertyChanged("Posicion");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string UriFicha {
+            get {
+                return this.UriFichaField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UriFichaField, value) != true)) {
+                    this.UriFichaField = value;
+                    this.RaisePropertyChanged("UriFicha");
                 }
             }
         }
@@ -614,6 +755,18 @@ namespace SerpientesEscaleras.ServidorJuegoSE {
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministradorMultijugador/IniciarJuego")]
         System.Threading.Tasks.Task IniciarJuegoAsync(int idSala);
         
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministradorMultijugador/UnirseJuego")]
+        void UnirseJuego(int idSala, SerpientesEscaleras.ServidorJuegoSE.Jugador jugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministradorMultijugador/UnirseJuego")]
+        System.Threading.Tasks.Task UnirseJuegoAsync(int idSala, SerpientesEscaleras.ServidorJuegoSE.Jugador jugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministradorMultijugador/EnviarMensajeJuego")]
+        void EnviarMensajeJuego(int idSala, string mensaje);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministradorMultijugador/EnviarMensajeJuego")]
+        System.Threading.Tasks.Task EnviarMensajeJuegoAsync(int idSala, string mensaje);
+        
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministradorMultijugador/SalirJuego")]
         void SalirJuego(int idSala);
         
@@ -625,10 +778,31 @@ namespace SerpientesEscaleras.ServidorJuegoSE {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdministradorMultijugador/ObtenerFondo", ReplyAction="http://tempuri.org/IAdministradorMultijugador/ObtenerFondoResponse")]
         System.Threading.Tasks.Task<string> ObtenerFondoAsync(int idSala);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministradorMultijugador/AsignarFicha")]
+        void AsignarFicha(int idSala, SerpientesEscaleras.ServidorJuegoSE.Ficha ficha);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministradorMultijugador/AsignarFicha")]
+        System.Threading.Tasks.Task AsignarFichaAsync(int idSala, SerpientesEscaleras.ServidorJuegoSE.Ficha ficha);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministradorMultijugador/RecibirTiro")]
+        void RecibirTiro(int idSala, int numDado);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministradorMultijugador/RecibirTiro")]
+        System.Threading.Tasks.Task RecibirTiroAsync(int idSala, int numDado);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface IAdministradorMultijugadorCallback {
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministradorMultijugador/RecibirMensajeLobby")]
+        void RecibirMensajeLobby(string mensaje);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministradorMultijugador/RecibirMensajeMiembroLobby")]
+        void RecibirMensajeMiembroLobby(bool entrada, string apodo);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministradorMultijugador/EntrarJuego")]
+        void EntrarJuego();
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministradorMultijugador/RecibirMensaje")]
         void RecibirMensaje(string mensaje);
@@ -636,8 +810,17 @@ namespace SerpientesEscaleras.ServidorJuegoSE {
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministradorMultijugador/RecibirMensajeMiembro")]
         void RecibirMensajeMiembro(bool entrada, string apodo);
         
-        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministradorMultijugador/EntrarJuego")]
-        void EntrarJuego();
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministradorMultijugador/ElegirFicha")]
+        void ElegirFicha(string apodo);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministradorMultijugador/MostrarFichaElegida")]
+        void MostrarFichaElegida(SerpientesEscaleras.ServidorJuegoSE.Ficha ficha, int ordenJugador);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministradorMultijugador/Tirar")]
+        void Tirar(string apodo);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministradorMultijugador/MostrarTiro")]
+        void MostrarTiro(int ordenJugador, int posicion);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -732,6 +915,22 @@ namespace SerpientesEscaleras.ServidorJuegoSE {
             return base.Channel.IniciarJuegoAsync(idSala);
         }
         
+        public void UnirseJuego(int idSala, SerpientesEscaleras.ServidorJuegoSE.Jugador jugador) {
+            base.Channel.UnirseJuego(idSala, jugador);
+        }
+        
+        public System.Threading.Tasks.Task UnirseJuegoAsync(int idSala, SerpientesEscaleras.ServidorJuegoSE.Jugador jugador) {
+            return base.Channel.UnirseJuegoAsync(idSala, jugador);
+        }
+        
+        public void EnviarMensajeJuego(int idSala, string mensaje) {
+            base.Channel.EnviarMensajeJuego(idSala, mensaje);
+        }
+        
+        public System.Threading.Tasks.Task EnviarMensajeJuegoAsync(int idSala, string mensaje) {
+            return base.Channel.EnviarMensajeJuegoAsync(idSala, mensaje);
+        }
+        
         public void SalirJuego(int idSala) {
             base.Channel.SalirJuego(idSala);
         }
@@ -746,6 +945,22 @@ namespace SerpientesEscaleras.ServidorJuegoSE {
         
         public System.Threading.Tasks.Task<string> ObtenerFondoAsync(int idSala) {
             return base.Channel.ObtenerFondoAsync(idSala);
+        }
+        
+        public void AsignarFicha(int idSala, SerpientesEscaleras.ServidorJuegoSE.Ficha ficha) {
+            base.Channel.AsignarFicha(idSala, ficha);
+        }
+        
+        public System.Threading.Tasks.Task AsignarFichaAsync(int idSala, SerpientesEscaleras.ServidorJuegoSE.Ficha ficha) {
+            return base.Channel.AsignarFichaAsync(idSala, ficha);
+        }
+        
+        public void RecibirTiro(int idSala, int numDado) {
+            base.Channel.RecibirTiro(idSala, numDado);
+        }
+        
+        public System.Threading.Tasks.Task RecibirTiroAsync(int idSala, int numDado) {
+            return base.Channel.RecibirTiroAsync(idSala, numDado);
         }
     }
 }

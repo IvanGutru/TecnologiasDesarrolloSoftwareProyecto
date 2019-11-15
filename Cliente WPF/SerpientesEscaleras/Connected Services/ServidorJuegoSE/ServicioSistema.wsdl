@@ -150,6 +150,12 @@
   <wsdl:message name="IAdministradorMultijugador_IniciarJuego_InputMessage">
     <wsdl:part name="parameters" element="tns:IniciarJuego" />
   </wsdl:message>
+  <wsdl:message name="IAdministradorMultijugador_UnirseJuego_InputMessage">
+    <wsdl:part name="parameters" element="tns:UnirseJuego" />
+  </wsdl:message>
+  <wsdl:message name="IAdministradorMultijugador_EnviarMensajeJuego_InputMessage">
+    <wsdl:part name="parameters" element="tns:EnviarMensajeJuego" />
+  </wsdl:message>
   <wsdl:message name="IAdministradorMultijugador_SalirJuego_InputMessage">
     <wsdl:part name="parameters" element="tns:SalirJuego" />
   </wsdl:message>
@@ -159,14 +165,38 @@
   <wsdl:message name="IAdministradorMultijugador_ObtenerFondo_OutputMessage">
     <wsdl:part name="parameters" element="tns:ObtenerFondoResponse" />
   </wsdl:message>
+  <wsdl:message name="IAdministradorMultijugador_AsignarFicha_InputMessage">
+    <wsdl:part name="parameters" element="tns:AsignarFicha" />
+  </wsdl:message>
+  <wsdl:message name="IAdministradorMultijugador_RecibirTiro_InputMessage">
+    <wsdl:part name="parameters" element="tns:RecibirTiro" />
+  </wsdl:message>
+  <wsdl:message name="IAdministradorMultijugador_RecibirMensajeLobby_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RecibirMensajeLobby" />
+  </wsdl:message>
+  <wsdl:message name="IAdministradorMultijugador_RecibirMensajeMiembroLobby_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RecibirMensajeMiembroLobby" />
+  </wsdl:message>
+  <wsdl:message name="IAdministradorMultijugador_EntrarJuego_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:EntrarJuego" />
+  </wsdl:message>
   <wsdl:message name="IAdministradorMultijugador_RecibirMensaje_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:RecibirMensaje" />
   </wsdl:message>
   <wsdl:message name="IAdministradorMultijugador_RecibirMensajeMiembro_OutputCallbackMessage">
     <wsdl:part name="parameters" element="tns:RecibirMensajeMiembro" />
   </wsdl:message>
-  <wsdl:message name="IAdministradorMultijugador_EntrarJuego_OutputCallbackMessage">
-    <wsdl:part name="parameters" element="tns:EntrarJuego" />
+  <wsdl:message name="IAdministradorMultijugador_ElegirFicha_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ElegirFicha" />
+  </wsdl:message>
+  <wsdl:message name="IAdministradorMultijugador_MostrarFichaElegida_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:MostrarFichaElegida" />
+  </wsdl:message>
+  <wsdl:message name="IAdministradorMultijugador_Tirar_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:Tirar" />
+  </wsdl:message>
+  <wsdl:message name="IAdministradorMultijugador_MostrarTiro_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:MostrarTiro" />
   </wsdl:message>
   <wsdl:portType name="IAdministradorCuenta">
     <wsdl:operation name="IniciarSesion">
@@ -231,6 +261,12 @@
     <wsdl:operation name="IniciarJuego">
       <wsdl:input wsaw:Action="http://tempuri.org/IAdministradorMultijugador/IniciarJuego" message="tns:IAdministradorMultijugador_IniciarJuego_InputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="UnirseJuego">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdministradorMultijugador/UnirseJuego" message="tns:IAdministradorMultijugador_UnirseJuego_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EnviarMensajeJuego">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdministradorMultijugador/EnviarMensajeJuego" message="tns:IAdministradorMultijugador_EnviarMensajeJuego_InputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="SalirJuego">
       <wsdl:input wsaw:Action="http://tempuri.org/IAdministradorMultijugador/SalirJuego" message="tns:IAdministradorMultijugador_SalirJuego_InputMessage" />
     </wsdl:operation>
@@ -238,14 +274,38 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IAdministradorMultijugador/ObtenerFondo" message="tns:IAdministradorMultijugador_ObtenerFondo_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IAdministradorMultijugador/ObtenerFondoResponse" message="tns:IAdministradorMultijugador_ObtenerFondo_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="AsignarFicha">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdministradorMultijugador/AsignarFicha" message="tns:IAdministradorMultijugador_AsignarFicha_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RecibirTiro">
+      <wsdl:input wsaw:Action="http://tempuri.org/IAdministradorMultijugador/RecibirTiro" message="tns:IAdministradorMultijugador_RecibirTiro_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RecibirMensajeLobby">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministradorMultijugador/RecibirMensajeLobby" message="tns:IAdministradorMultijugador_RecibirMensajeLobby_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RecibirMensajeMiembroLobby">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministradorMultijugador/RecibirMensajeMiembroLobby" message="tns:IAdministradorMultijugador_RecibirMensajeMiembroLobby_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EntrarJuego">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministradorMultijugador/EntrarJuego" message="tns:IAdministradorMultijugador_EntrarJuego_OutputCallbackMessage" />
+    </wsdl:operation>
     <wsdl:operation name="RecibirMensaje">
       <wsdl:output wsaw:Action="http://tempuri.org/IAdministradorMultijugador/RecibirMensaje" message="tns:IAdministradorMultijugador_RecibirMensaje_OutputCallbackMessage" />
     </wsdl:operation>
     <wsdl:operation name="RecibirMensajeMiembro">
       <wsdl:output wsaw:Action="http://tempuri.org/IAdministradorMultijugador/RecibirMensajeMiembro" message="tns:IAdministradorMultijugador_RecibirMensajeMiembro_OutputCallbackMessage" />
     </wsdl:operation>
-    <wsdl:operation name="EntrarJuego">
-      <wsdl:output wsaw:Action="http://tempuri.org/IAdministradorMultijugador/EntrarJuego" message="tns:IAdministradorMultijugador_EntrarJuego_OutputCallbackMessage" />
+    <wsdl:operation name="ElegirFicha">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministradorMultijugador/ElegirFicha" message="tns:IAdministradorMultijugador_ElegirFicha_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MostrarFichaElegida">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministradorMultijugador/MostrarFichaElegida" message="tns:IAdministradorMultijugador_MostrarFichaElegida_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Tirar">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministradorMultijugador/Tirar" message="tns:IAdministradorMultijugador_Tirar_OutputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MostrarTiro">
+      <wsdl:output wsaw:Action="http://tempuri.org/IAdministradorMultijugador/MostrarTiro" message="tns:IAdministradorMultijugador_MostrarTiro_OutputCallbackMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="NetTcpBinding_IAdministradorCuenta" type="tns:IAdministradorCuenta">
@@ -387,6 +447,18 @@
         <soap12:body use="literal" />
       </wsdl:input>
     </wsdl:operation>
+    <wsdl:operation name="UnirseJuego">
+      <soap12:operation soapAction="http://tempuri.org/IAdministradorMultijugador/UnirseJuego" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="EnviarMensajeJuego">
+      <soap12:operation soapAction="http://tempuri.org/IAdministradorMultijugador/EnviarMensajeJuego" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
     <wsdl:operation name="SalirJuego">
       <soap12:operation soapAction="http://tempuri.org/IAdministradorMultijugador/SalirJuego" style="document" />
       <wsdl:input>
@@ -398,6 +470,36 @@
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AsignarFicha">
+      <soap12:operation soapAction="http://tempuri.org/IAdministradorMultijugador/AsignarFicha" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="RecibirTiro">
+      <soap12:operation soapAction="http://tempuri.org/IAdministradorMultijugador/RecibirTiro" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="RecibirMensajeLobby">
+      <soap12:operation soapAction="http://tempuri.org/IAdministradorMultijugador/RecibirMensajeLobby" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecibirMensajeMiembroLobby">
+      <soap12:operation soapAction="http://tempuri.org/IAdministradorMultijugador/RecibirMensajeMiembroLobby" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EntrarJuego">
+      <soap12:operation soapAction="http://tempuri.org/IAdministradorMultijugador/EntrarJuego" style="document" />
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>
@@ -414,8 +516,26 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="EntrarJuego">
-      <soap12:operation soapAction="http://tempuri.org/IAdministradorMultijugador/EntrarJuego" style="document" />
+    <wsdl:operation name="ElegirFicha">
+      <soap12:operation soapAction="http://tempuri.org/IAdministradorMultijugador/ElegirFicha" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MostrarFichaElegida">
+      <soap12:operation soapAction="http://tempuri.org/IAdministradorMultijugador/MostrarFichaElegida" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Tirar">
+      <soap12:operation soapAction="http://tempuri.org/IAdministradorMultijugador/Tirar" style="document" />
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MostrarTiro">
+      <soap12:operation soapAction="http://tempuri.org/IAdministradorMultijugador/MostrarTiro" style="document" />
       <wsdl:output>
         <soap12:body use="literal" />
       </wsdl:output>

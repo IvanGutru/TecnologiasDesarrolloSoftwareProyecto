@@ -20,7 +20,7 @@ namespace MessageService
 
         public int CrearSala(Sala sala)
         {
-            sala.DiccionarioJugadores = new Dictionary<IJugador, Jugador>();
+            sala.DiccionarioJugadoresLobby = new Dictionary<IJugador, Jugador>();
             sala.IdSala = idsSalas;
             sala.Jugando = false;
             idsSalas++;
@@ -32,7 +32,7 @@ namespace MessageService
         {
             int indice = BuscarSala(idSala);
             List<String> listaApodos = new List<String>();
-            foreach (var miembro in salasAbiertas[indice].DiccionarioJugadores)
+            foreach (var miembro in salasAbiertas[indice].DiccionarioJugadoresLobby)
             {
                 listaApodos.Add(miembro.Value.Apodo);
             }
@@ -43,11 +43,11 @@ namespace MessageService
         {
             int indice = BuscarSala(idSala);
             var conexion = OperationContext.Current.GetCallbackChannel<IJugador>();
-            salasAbiertas[indice].DiccionarioJugadores[conexion] = jugador;
+            salasAbiertas[indice].DiccionarioJugadoresLobby[conexion] = jugador;
             salasAbiertas[indice].NumJugadores++;
-            foreach (var miembro in salasAbiertas[indice].DiccionarioJugadores.Keys)
+            foreach (var miembro in salasAbiertas[indice].DiccionarioJugadoresLobby.Keys)
             {
-                miembro.RecibirMensajeMiembro(true, jugador.Apodo);
+                miembro.RecibirMensajeMiembroLobby(true, jugador.Apodo);
             }
         }
 
@@ -91,17 +91,70 @@ namespace MessageService
             int indice = BuscarSala(idSala);
             var conexion = OperationContext.Current.GetCallbackChannel<IJugador>();
             Jugador jugador;
-            if (!salasAbiertas[indice].DiccionarioJugadores.TryGetValue(conexion, out jugador))
+            if (!salasAbiertas[indice].DiccionarioJugadoresLobby.TryGetValue(conexion, out jugador))
             {
                 return;
             }
-            foreach (var miembro in salasAbiertas[indice].DiccionarioJugadores.Keys)
+            foreach (var miembro in salasAbiertas[indice].DiccionarioJugadoresLobby.Keys)
             {
-                miembro.RecibirMensaje(jugador.Apodo + ": " + mensaje);
+                miembro.RecibirMensajeLobby(jugador.Apodo + ": " + mensaje);
             }
         }
 
         public void SalirChat(int idSala)
+        {
+            int indice = BuscarSala(idSala);
+            if (salasAbiertas[indice].Jugando)
+            {
+                return;
+            }
+            var conexion = OperationContext.Current.GetCallbackChannel<IJugador>();
+            Jugador jugador;
+            if (!salasAbiertas[indice].DiccionarioJugadoresLobby.TryGetValue(conexion, out jugador))
+            {
+                return;
+            }
+            salasAbiertas[indice].DiccionarioJugadoresLobby.Remove(conexion);
+            salasAbiertas[indice].NumJugadores--;
+            if (salasAbiertas[indice].NumJugadores == 0)
+            {
+                salasAbiertas.RemoveAt(indice);
+                return;
+            }
+            foreach (var miembro in salasAbiertas[indice].DiccionarioJugadoresLobby.Keys)
+            {
+                miembro.RecibirMensajeMiembroLobby(false, jugador.Apodo);
+            }
+        }
+
+        public void IniciarJuego(int idSala)
+        {
+            int indice = BuscarSala(idSala);
+            salasAbiertas[indice].Jugando = true;
+            salasAbiertas[indice].DiccionarioJugadores = new Dictionary<IJugador, Jugador>();
+            salasAbiertas[indice].Fichas = new List<Ficha>();
+            foreach (var miembro in salasAbiertas[indice].DiccionarioJugadoresLobby.Keys)
+            {
+                miembro.EntrarJuego();
+            }
+        }
+
+        public void UnirseJuego(int idSala, Jugador jugador)
+        {
+            int indice = BuscarSala(idSala);
+            var conexion = OperationContext.Current.GetCallbackChannel<IJugador>();
+            salasAbiertas[indice].DiccionarioJugadores[conexion] = jugador;
+            foreach (var miembro in salasAbiertas[indice].DiccionarioJugadores.Keys)
+            {
+                miembro.RecibirMensajeMiembro(true, jugador.Apodo);
+            }
+            if(salasAbiertas[indice].DiccionarioJugadores.Count == salasAbiertas[indice].NumJugadores)
+            {
+                EmpezarElegirFichas(indice);
+            }
+        }
+
+        public void EnviarMensajeJuego(int idSala, string mensaje)
         {
             int indice = BuscarSala(idSala);
             var conexion = OperationContext.Current.GetCallbackChannel<IJugador>();
@@ -110,28 +163,9 @@ namespace MessageService
             {
                 return;
             }
-            salasAbiertas[indice].DiccionarioJugadores.Remove(conexion);
-            salasAbiertas[indice].NumJugadores--;
-            if (!salasAbiertas[indice].Jugando)
-            {
-                foreach (var miembro in salasAbiertas[indice].DiccionarioJugadores.Keys)
-                {
-                    miembro.RecibirMensajeMiembro(false, jugador.Apodo);
-                }
-            }
-            if (salasAbiertas[indice].NumJugadores == 0 && !salasAbiertas[indice].Jugando)
-            {
-                salasAbiertas.RemoveAt(indice);
-            }
-        }
-
-        public void IniciarJuego(int idSala)
-        {
-            int indice = BuscarSala(idSala);
-            salasAbiertas[indice].Jugando = true;
             foreach (var miembro in salasAbiertas[indice].DiccionarioJugadores.Keys)
             {
-                miembro.EntrarJuego();
+                miembro.RecibirMensaje(jugador.Apodo + ": " + mensaje);
             }
         }
 
@@ -146,13 +180,14 @@ namespace MessageService
             }
             salasAbiertas[indice].DiccionarioJugadores.Remove(conexion);
             salasAbiertas[indice].NumJugadores--;
-            foreach (var miembro in salasAbiertas[indice].DiccionarioJugadores.Keys)
-            {
-                miembro.RecibirMensajeMiembro(false, jugador.Apodo);
-            }
             if (salasAbiertas[indice].NumJugadores == 0)
             {
                 salasAbiertas.RemoveAt(indice);
+                return;
+            }
+            foreach (var miembro in salasAbiertas[indice].DiccionarioJugadores.Keys)
+            {
+                miembro.RecibirMensajeMiembro(false, jugador.Apodo);
             }
         }
 
@@ -162,6 +197,85 @@ namespace MessageService
             return salasAbiertas[indice].UriFondoTablero;
         }
 
+        private void EmpezarElegirFichas(int indice)
+        {
+            salasAbiertas[indice].JugadoresJugando = new List<string>();
+            foreach (var miembro in salasAbiertas[indice].DiccionarioJugadores.Values)
+            {
+                salasAbiertas[indice].JugadoresJugando.Add(miembro.Apodo);
+            }
+            salasAbiertas[indice].JugadorEnTurno = salasAbiertas[indice].JugadoresJugando.First();
+            foreach (var miembro in salasAbiertas[indice].DiccionarioJugadores.Keys)
+            {
+                miembro.ElegirFicha(salasAbiertas[indice].JugadorEnTurno);
+            }
+            //var ficha = salasAbiertas[indice].Fichas.Find(x => x.ApodoJugador.Equals(jugador.Apodo));
+            //if(ficha == null)
+            //{
+
+            //    return;
+            //}
+        }
+
+        public void AsignarFicha(int idSala, Ficha ficha)
+        {
+            int indice = BuscarSala(idSala);
+            salasAbiertas[indice].Fichas.Add(ficha);
+            int ordenJugador = salasAbiertas[indice].JugadoresJugando.FindIndex( x => x.Equals(salasAbiertas[indice].JugadorEnTurno));
+            foreach (var miembro in salasAbiertas[indice].DiccionarioJugadores.Keys)
+            {
+                miembro.MostrarFichaElegida(ficha, ordenJugador);
+            }
+            SiguienteTurno(indice);
+            var jugador = salasAbiertas[indice].JugadorEnTurno;
+            var fichaTemporal = salasAbiertas[indice].Fichas.Find(x => x.ApodoJugador.Equals(jugador));
+            if (fichaTemporal == null)
+            {
+                foreach (var miembro in salasAbiertas[indice].DiccionarioJugadores.Keys)
+                {
+                    miembro.ElegirFicha(salasAbiertas[indice].JugadorEnTurno);
+                }
+            }
+            else
+            {
+                foreach (var miembro in salasAbiertas[indice].DiccionarioJugadores.Keys)
+                {
+                    miembro.Tirar(salasAbiertas[indice].JugadorEnTurno);
+                }
+            }
+        }
+
+        public void RecibirTiro(int idSala, int numDado)
+        {
+            int indice = BuscarSala(idSala);
+            var ficha = salasAbiertas[indice].Fichas.Find(x => x.ApodoJugador == salasAbiertas[indice].JugadorEnTurno);
+            int posicion = ficha.Posicion + numDado;
+            ficha.Posicion = posicion;
+            int ordenJugador = salasAbiertas[indice].JugadoresJugando.FindIndex(x => x.Equals(salasAbiertas[indice].JugadorEnTurno));
+            foreach (var miembro in salasAbiertas[indice].DiccionarioJugadores.Keys)
+            {
+                miembro.MostrarTiro(ordenJugador, posicion);
+            }
+            SiguienteTurno(indice);
+            var jugador = salasAbiertas[indice].JugadorEnTurno;
+            foreach (var miembro in salasAbiertas[indice].DiccionarioJugadores.Keys)
+            {
+                miembro.Tirar(salasAbiertas[indice].JugadorEnTurno);
+            }
+        }
+
+        private void SiguienteTurno(int indice)
+        {
+            int indiceJugador = salasAbiertas[indice].JugadoresJugando.FindIndex(x => x.Equals(salasAbiertas[indice].JugadorEnTurno));
+            if(indiceJugador < salasAbiertas[indice].JugadoresJugando.Count-1)
+            {
+                salasAbiertas[indice].JugadorEnTurno = salasAbiertas[indice].JugadoresJugando.ElementAt(indiceJugador + 1);
+            }
+            else
+            {
+                salasAbiertas[indice].JugadorEnTurno = salasAbiertas[indice].JugadoresJugando.ElementAt(0);
+            }
+        }
     }
 
 }

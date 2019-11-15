@@ -40,12 +40,14 @@ namespace SerpientesEscaleras
             ServidorJuegoSE.Sala partida = (ServidorJuegoSE.Sala)dataGrid_Partidas.SelectedItem;
             if (!lobby.EntrarPartida(partida.IdSala))
             {
-                MessageBox.Show("La partida " + partida.Nombre + " ya esta llena o no está disponible");
                 listaSalas.Clear();
-                listaSalas.AddRange(lobby.ConsultarPartidasDisponibles());
                 string partidaRecurso = Properties.Resources.partida;
                 string llena = Properties.Resources.llena;
-                MessageBox.Show(partidaRecurso + partida.Nombre + llena);
+
+               
+
+                MessageBox.Show(partidaRecurso + " " + partida.Nombre + " " + llena);
+
                 listaSalas = lobby.ConsultarPartidasDisponibles();
                 dataGrid_Partidas.Items.Refresh();
                 return;
