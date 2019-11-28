@@ -159,12 +159,6 @@
   <wsdl:message name="IAdministradorMultijugador_SalirJuego_InputMessage">
     <wsdl:part name="parameters" element="tns:SalirJuego" />
   </wsdl:message>
-  <wsdl:message name="IAdministradorMultijugador_ObtenerFondo_InputMessage">
-    <wsdl:part name="parameters" element="tns:ObtenerFondo" />
-  </wsdl:message>
-  <wsdl:message name="IAdministradorMultijugador_ObtenerFondo_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ObtenerFondoResponse" />
-  </wsdl:message>
   <wsdl:message name="IAdministradorMultijugador_AsignarFicha_InputMessage">
     <wsdl:part name="parameters" element="tns:AsignarFicha" />
   </wsdl:message>
@@ -269,10 +263,6 @@
     </wsdl:operation>
     <wsdl:operation name="SalirJuego">
       <wsdl:input wsaw:Action="http://tempuri.org/IAdministradorMultijugador/SalirJuego" message="tns:IAdministradorMultijugador_SalirJuego_InputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="ObtenerFondo">
-      <wsdl:input wsaw:Action="http://tempuri.org/IAdministradorMultijugador/ObtenerFondo" message="tns:IAdministradorMultijugador_ObtenerFondo_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IAdministradorMultijugador/ObtenerFondoResponse" message="tns:IAdministradorMultijugador_ObtenerFondo_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="AsignarFicha">
       <wsdl:input wsaw:Action="http://tempuri.org/IAdministradorMultijugador/AsignarFicha" message="tns:IAdministradorMultijugador_AsignarFicha_InputMessage" />
@@ -464,15 +454,6 @@
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
-    </wsdl:operation>
-    <wsdl:operation name="ObtenerFondo">
-      <soap12:operation soapAction="http://tempuri.org/IAdministradorMultijugador/ObtenerFondo" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
     </wsdl:operation>
     <wsdl:operation name="AsignarFicha">
       <soap12:operation soapAction="http://tempuri.org/IAdministradorMultijugador/AsignarFicha" style="document" />

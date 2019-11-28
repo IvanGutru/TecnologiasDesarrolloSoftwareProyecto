@@ -71,7 +71,6 @@ C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto\SerpientesEscaleras\Se
 C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto\SerpientesEscaleras\SerpientesEscaleras\obj\Debug\BuscarPartida.baml
 C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto\SerpientesEscaleras\SerpientesEscaleras\obj\Debug\CrearPartida.g.cs
 C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto\SerpientesEscaleras\SerpientesEscaleras\obj\Debug\CrearPartida.baml
-C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\obj\Debug\SerpientesEscaleras.csprojAssemblyReference.cache
 C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\obj\Debug\ConsultarPuntajes.g.cs
 C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\obj\Debug\IngresarCodigo.g.cs
 C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\obj\Debug\MainWindow.g.cs
@@ -110,6 +109,7 @@ C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Cliente WP
 C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\obj\Debug\SerpientesEscaleras.csproj.GenerateResource.cache
 C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\obj\Debug\en-US\SerpientesEscaleras.resources.dll
 C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\obj\Debug\SerpientesEscaleras.csproj.CopyComplete
+
 
 C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\bin\Debug\SerpientesEscaleras.exe.config
 C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\bin\Debug\SerpientesEscaleras.exe
@@ -154,4 +154,3 @@ C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\Serpien
 C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\obj\Debug\SerpientesEscaleras.csproj.CopyComplete
 C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\obj\Debug\SerpientesEscaleras.exe
 C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\obj\Debug\SerpientesEscaleras.pdb
-

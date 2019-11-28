@@ -72,60 +72,38 @@ namespace SerpientesEscaleras
             juego.listBox_JugadoresConectados.Items.Refresh();
         }
 
-        public void ElegirFicha(String apodo)
+        public void ElegirFicha(String apodo, ServidorJuegoSE.Ficha[] fichasEscogidas)
         {
             Turno turno = new Turno(juego);
+            juego.label_Aviso.Content = apodo + " está eligiendo su ficha...";
             if (apodo.Equals(juego.jugador.Apodo))
             {
-                turno.ElegirFicha();
+                turno.ElegirFicha(fichasEscogidas.ToList());
+                turno.ShowDialog();
             }
-            else
-            {
-                turno.EligiendoFicha(apodo);
-            }
-            turno.ShowDialog();
         }
 
-        public void MostrarFichaElegida(ServidorJuegoSE.Ficha ficha, int ordenJugador)
+        public void MostrarFichaElegida(ServidorJuegoSE.Ficha ficha)
         {
-            juego.OrdenTurno = ordenJugador;
-            switch (ordenJugador)
-            {
-                case 0:
-                    juego.image_Token1.Source = new BitmapImage(new Uri(ficha.UriFicha, UriKind.Relative));
-                    break;
-                case 1:
-                    juego.image_Token2.Source = new BitmapImage(new Uri(ficha.UriFicha, UriKind.Relative));
-                    break;
-                case 2:
-                    juego.image_Token3.Source = new BitmapImage(new Uri(ficha.UriFicha, UriKind.Relative));
-                    break;
-                case 3:
-                    juego.image_Token4.Source = new BitmapImage(new Uri(ficha.UriFicha, UriKind.Relative));
-                    break;
-            }
+            juego.jugadorEnTurno = ficha;
+            juego.MostrarFichaEnTablero();
         }
 
         public void Tirar(String apodo)
         {
             Turno turno = new Turno(juego);
+            juego.label_Aviso.Content = apodo + " está tirando...";
             if (apodo.Equals(juego.jugador.Apodo))
             {
                 turno.Tirar();
+                turno.ShowDialog();
             }
-            else
-            {
-                turno.Tirando(apodo);
-            }
-            turno.ShowDialog();
         }
 
-        public void MostrarTiro(int ordenJugador, int posicion)
+        public void MostrarTiro(ServidorJuegoSE.Ficha ficha)
         {
-            juego.OrdenTurno = ordenJugador;
-            juego.label_Dado.Content = posicion;
-            juego.posicion = posicion;
-            juego.MoverFicha(ordenJugador);
+            juego.jugadorEnTurno = ficha;
+            juego.MoverFicha(false);
         }
     }
 }

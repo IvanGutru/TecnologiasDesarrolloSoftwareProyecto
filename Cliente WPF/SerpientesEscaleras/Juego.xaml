@@ -14,7 +14,7 @@
         <SolidColorBrush Color="#FF1C1C1C"/>
     </Window.Background>
     <Grid>
-        <ListBox x:Name="listBox_Chat" HorizontalAlignment="Left" Height="445" Margin="10,216,0,0" VerticalAlignment="Top" Width="300" 
+        <ListBox x:Name="listBox_Chat" HorizontalAlignment="Left" Height="400" Margin="10,0,0,80" VerticalAlignment="Bottom" Width="300" 
             BorderBrush="Aqua" BorderThickness="5" Background="WhiteSmoke" FontSize="16">
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -27,9 +27,9 @@
                 </Style>
             </ListBox.ItemContainerStyle>
         </ListBox>
-        <TextBox x:Name="textBox_Mensaje" HorizontalAlignment="Left" Height="63" Margin="10,666,0,0" TextWrapping="Wrap" VerticalAlignment="Top" 
+        <TextBox x:Name="textBox_Mensaje" HorizontalAlignment="Left" Height="63" Margin="10,0,0,10" TextWrapping="Wrap" VerticalAlignment="Bottom" 
             Width="180" Foreground="White" BorderBrush="#FF107676"/>
-        <Button Content="Enviar" HorizontalAlignment="Left" Height="35" Margin="210,694,0,0" VerticalAlignment="Top" Width="100" Click="Button_Enviar"/>
+        <Button Content="Enviar" HorizontalAlignment="Left" Height="35" Margin="210,694,0,10" VerticalAlignment="Bottom" Width="100" Click="Button_Enviar"/>
         <Button x:Name="button_Regresar" Content="{x:Static p:Resources.salirJuego}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" 
             Width="140" Height="35" Background="#FF0F8080" BorderBrush="#FF020202" Foreground="White" OpacityMask="Black" 
             TextOptions.TextHintingMode="Fixed" SnapsToDevicePixels="True" Cursor="Arrow" FontStretch="SemiCondensed" Click="Button_Salir" FontSize="16">
@@ -61,14 +61,10 @@
                 <ColumnDefinition Width="100*"/>
                 <ColumnDefinition Width="100*"/>
             </Grid.ColumnDefinitions>
-            <Image x:Name="image_Token1" Grid.Row="6" Width="70" Height="70"/>
-            <Image x:Name="image_Token2" Grid.Row="6" Width="70" Height="70"/>
-            <Image x:Name="image_Token3" Grid.Row="6" Width="70" Height="70"/>
-            <Image x:Name="image_Token4" Grid.Row="6" Width="70" Height="70"/>
         </Grid>
-        <Image Source="Resources/Tablero/tablero.png" HorizontalAlignment="Right" Margin="0,0,10,0" Width="1000" Height="719"></Image>
+        <Image Source="Resources/Tablero/tablero.png" HorizontalAlignment="Right" Margin="0,0,10,1" Width="1000" Height="720"></Image>
         <Button Content="Tirar" HorizontalAlignment="Left" Height="35" Margin="168,10,0,0" VerticalAlignment="Top" Width="100" Click="Button_Tirar"/>
-        <Label x:Name="label_Dado" HorizontalAlignment="Left" Margin="282,10,0,0" VerticalAlignment="Top" Height="35" Width="50" Foreground="White"/>
+        <Label x:Name="label_Aviso" HorizontalAlignment="Left" Margin="10,219,0,0" VerticalAlignment="Top" Height="35" Width="300" Foreground="White"/>
 
     </Grid>
 </Window>

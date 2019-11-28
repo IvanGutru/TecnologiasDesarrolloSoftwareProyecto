@@ -79,7 +79,8 @@ namespace MessageService
                         DobleDado = sala.DobleDado,
                         DobleFicha = sala.DobleFicha,
                         CasillasEspeciales = sala.CasillasEspeciales,
-                        NumJugadores = sala.NumJugadores
+                        NumJugadores = sala.NumJugadores,
+                        UriFondoTablero = sala.UriFondoTablero
                     });
                 }
             }
@@ -191,12 +192,6 @@ namespace MessageService
             }
         }
 
-        public String ObtenerFondo(int idSala)
-        {
-            int indice = BuscarSala(idSala);
-            return salasAbiertas[indice].UriFondoTablero;
-        }
-
         private void EmpezarElegirFichas(int indice)
         {
             salasAbiertas[indice].JugadoresJugando = new List<string>();
@@ -207,24 +202,17 @@ namespace MessageService
             salasAbiertas[indice].JugadorEnTurno = salasAbiertas[indice].JugadoresJugando.First();
             foreach (var miembro in salasAbiertas[indice].DiccionarioJugadores.Keys)
             {
-                miembro.ElegirFicha(salasAbiertas[indice].JugadorEnTurno);
+                miembro.ElegirFicha(salasAbiertas[indice].JugadorEnTurno, salasAbiertas[indice].Fichas.ToArray());
             }
-            //var ficha = salasAbiertas[indice].Fichas.Find(x => x.ApodoJugador.Equals(jugador.Apodo));
-            //if(ficha == null)
-            //{
-
-            //    return;
-            //}
         }
 
         public void AsignarFicha(int idSala, Ficha ficha)
         {
             int indice = BuscarSala(idSala);
             salasAbiertas[indice].Fichas.Add(ficha);
-            int ordenJugador = salasAbiertas[indice].JugadoresJugando.FindIndex( x => x.Equals(salasAbiertas[indice].JugadorEnTurno));
             foreach (var miembro in salasAbiertas[indice].DiccionarioJugadores.Keys)
             {
-                miembro.MostrarFichaElegida(ficha, ordenJugador);
+                miembro.MostrarFichaElegida(ficha);
             }
             SiguienteTurno(indice);
             var jugador = salasAbiertas[indice].JugadorEnTurno;
@@ -233,7 +221,7 @@ namespace MessageService
             {
                 foreach (var miembro in salasAbiertas[indice].DiccionarioJugadores.Keys)
                 {
-                    miembro.ElegirFicha(salasAbiertas[indice].JugadorEnTurno);
+                    miembro.ElegirFicha(salasAbiertas[indice].JugadorEnTurno, salasAbiertas[indice].Fichas.ToArray());
                 }
             }
             else
@@ -249,12 +237,14 @@ namespace MessageService
         {
             int indice = BuscarSala(idSala);
             var ficha = salasAbiertas[indice].Fichas.Find(x => x.ApodoJugador == salasAbiertas[indice].JugadorEnTurno);
-            int posicion = ficha.Posicion + numDado;
-            ficha.Posicion = posicion;
-            int ordenJugador = salasAbiertas[indice].JugadoresJugando.FindIndex(x => x.Equals(salasAbiertas[indice].JugadorEnTurno));
+            ficha.Posicion = ficha.Posicion + numDado;
+            if (ficha.Posicion > 70)
+            {
+                ficha.Posicion = 70 - (ficha.Posicion - 70);
+            }
             foreach (var miembro in salasAbiertas[indice].DiccionarioJugadores.Keys)
             {
-                miembro.MostrarTiro(ordenJugador, posicion);
+                miembro.MostrarTiro(ficha);
             }
             SiguienteTurno(indice);
             var jugador = salasAbiertas[indice].JugadorEnTurno;
@@ -263,6 +253,8 @@ namespace MessageService
                 miembro.Tirar(salasAbiertas[indice].JugadorEnTurno);
             }
         }
+
+
 
         private void SiguienteTurno(int indice)
         {
