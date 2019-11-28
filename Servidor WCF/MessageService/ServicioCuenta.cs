@@ -168,7 +168,7 @@ namespace MessageService {
                 {
                     cuentaRecuperada.validada = true;
                     conexionBaseDatos.Entry(cuentaRecuperada).State = System.Data.Entity.EntityState.Modified;
-                    conexionBaseDatos.SaveChanges(); Consultar();
+                    conexionBaseDatos.SaveChanges();
                 }
                 return true;
             }

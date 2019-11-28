@@ -71,7 +71,6 @@ C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto\SerpientesEscaleras\Se
 C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto\SerpientesEscaleras\SerpientesEscaleras\obj\Debug\BuscarPartida.baml
 C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto\SerpientesEscaleras\SerpientesEscaleras\obj\Debug\CrearPartida.g.cs
 C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto\SerpientesEscaleras\SerpientesEscaleras\obj\Debug\CrearPartida.baml
-C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\obj\Debug\SerpientesEscaleras.csprojAssemblyReference.cache
 C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\obj\Debug\ConsultarPuntajes.g.cs
 C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\obj\Debug\IngresarCodigo.g.cs
 C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\obj\Debug\MainWindow.g.cs
@@ -114,3 +113,6 @@ C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Cliente WP
 C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\obj\Debug\Turno.g.cs
 C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\obj\Debug\Juego.baml
 C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\obj\Debug\Turno.baml
+C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\bin\Debug\WpfAnimatedGif.dll
+C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\bin\Debug\WpfAnimatedGif.xml
+C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\obj\Debug\SerpientesEscaleras.csprojAssemblyReference.cache

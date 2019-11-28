@@ -61,6 +61,9 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WpfAnimatedGif, Version=1.4.18.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WpfAnimatedGif.1.4.18\lib\net\WpfAnimatedGif.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -69,6 +72,7 @@
     </ApplicationDefinition>
     <Compile Include="Casilla.cs" />
     <Compile Include="CallbackMultijugador.cs" />
+    <Compile Include="Portal.cs" />
     <Compile Include="Connected Services\ServidorJuegoSE\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -309,9 +313,6 @@
     <Resource Include="Resources\fondoTablero1.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\Tablero\Portales\" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\Tablero\FondosTablero\fondo4.jpg" />
     <Resource Include="Resources\Tablero\FondosTablero\fondo2.jpg" />
     <Resource Include="Resources\Tablero\FondosTablero\fondo1.jpg" />
@@ -348,6 +349,26 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Tablero\Fichas\ficha7.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Tablero\Dado\dado.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Tablero\Dado\cara1.png" />
+    <Resource Include="Resources\Tablero\Dado\cara2.png" />
+    <Resource Include="Resources\Tablero\Dado\cara3.png" />
+    <Resource Include="Resources\Tablero\Dado\cara4.png" />
+    <Resource Include="Resources\Tablero\Dado\cara5.png" />
+    <Resource Include="Resources\Tablero\Dado\cara6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Tablero\Portales\portalAmarillo.png" />
+    <Resource Include="Resources\Tablero\Portales\portalAzul.png" />
+    <Resource Include="Resources\Tablero\Portales\portalBlancoNegro.png" />
+    <Resource Include="Resources\Tablero\Portales\portalBrilloso.png" />
+    <Resource Include="Resources\Tablero\Portales\portalColores.png" />
+    <Resource Include="Resources\Tablero\Portales\portalRojo.png" />
+    <Resource Include="Resources\Tablero\Portales\portalVerde.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

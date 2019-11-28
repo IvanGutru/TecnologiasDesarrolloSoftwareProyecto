@@ -38,7 +38,7 @@ namespace SerpientesEscaleras
                 return;
             }
             ServidorJuegoSE.Sala partida = (ServidorJuegoSE.Sala)dataGrid_Partidas.SelectedItem;
-            if (!lobby.EntrarPartida(partida.IdSala))
+            if (!lobby.EntrarPartida(partida))
             {
                 listaSalas.Clear();
                 string partidaRecurso = Properties.Resources.partida;

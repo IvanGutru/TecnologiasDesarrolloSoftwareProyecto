@@ -58,6 +58,7 @@
   <xs:complexType name="Ficha">
     <xs:sequence>
       <xs:element minOccurs="0" name="ApodoJugador" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreFicha" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Posicion" type="xs:int" />
       <xs:element minOccurs="0" name="UriFicha" nillable="true" type="xs:string" />
     </xs:sequence>

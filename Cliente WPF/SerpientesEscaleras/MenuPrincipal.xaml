@@ -27,6 +27,5 @@
         <Label Content="Escaleras" HorizontalAlignment="Right" Margin="30,23,36,0" VerticalAlignment="Top" FontFamily="Bauhaus 93" Foreground="White" FontSize="48"/>
         <Label Content="Y" HorizontalAlignment="Center" Margin="0,23,0,0" VerticalAlignment="Top" FontFamily="Bauhaus 93" Foreground="White" FontSize="48"/>
 
-
     </Grid>
 </Window>

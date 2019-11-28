@@ -34,8 +34,6 @@ namespace MessageService
         void EnviarMensajeJuego(int idSala, String mensaje);
         [OperationContract(IsOneWay = true)]
         void SalirJuego(int idSala);
-        [OperationContract]
-        String ObtenerFondo(int idSala);
         [OperationContract(IsOneWay = true)]
         void AsignarFicha(int idSala, Ficha ficha);
         [OperationContract(IsOneWay = true)]
@@ -56,13 +54,13 @@ namespace MessageService
         [OperationContract(IsOneWay = true)]
         void RecibirMensajeMiembro(Boolean entrada, String apodo);
         [OperationContract(IsOneWay = true)]
-        void ElegirFicha(String apodo);
+        void ElegirFicha(String apodo, Ficha[] fichasEscogidas);
         [OperationContract(IsOneWay = true)]
-        void MostrarFichaElegida(Ficha ficha,int ordenJugador);
+        void MostrarFichaElegida(Ficha ficha);
         [OperationContract(IsOneWay = true)]
         void Tirar(String apodo);
         [OperationContract(IsOneWay = true)]
-        void MostrarTiro(int ordenJugador, int posicion);
+        void MostrarTiro(Ficha ficha);
     }
 
     [DataContract]
@@ -177,9 +175,17 @@ namespace MessageService
     [DataContract]
     public class Ficha
     {
+        private String nombreFicha;
         private String uriFicha;
         private String apodoJugador;
         private int posicion;
+
+        [DataMember]
+        public String NombreFicha
+        {
+            get { return nombreFicha; }
+            set { nombreFicha = value; }
+        }
 
         [DataMember]
         public String UriFicha
