@@ -35,7 +35,7 @@ namespace MessageService {
                 numBytesRequested: 256 / 8));
         }
 
-        private DAO.Cuenta ObtenerCuentaJugador(String correo)
+        public DAO.Cuenta ObtenerCuentaJugador(String correo)
         {
             conexionBaseDatos = new ServidorSE();
             using (conexionBaseDatos)

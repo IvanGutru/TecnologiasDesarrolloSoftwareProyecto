@@ -172,6 +172,14 @@ namespace MessageService
             get { return jugadoresJugando; }
             set { jugadoresJugando = value; }
         }
+        public Sala(int idSala2)
+        {
+            idSala = idSala2;
+        }
+        public Sala()
+        {
+
+        }
     }
 
     [DataContract]
