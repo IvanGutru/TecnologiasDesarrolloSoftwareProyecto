@@ -12,6 +12,111 @@
       },
       "results": [
         {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Casilla.cs",
+                "region": {
+                  "startLine": 1,
+                  "startColumn": 1,
+                  "endLine": 1,
+                  "endColumn": 14
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Casilla.cs",
+                "region": {
+                  "startLine": 2,
+                  "startColumn": 1,
+                  "endLine": 2,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Casilla.cs",
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 1,
+                  "endLine": 3,
+                  "endColumn": 19
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Casilla.cs",
+                "region": {
+                  "startLine": 4,
+                  "startColumn": 1,
+                  "endLine": 4,
+                  "endColumn": 19
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Casilla.cs",
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 1,
+                  "endLine": 5,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
           "ruleId": "S125",
           "level": "warning",
           "message": "Remove this commented out code.",
@@ -39,6 +144,132 @@
           "locations": [
             {
               "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/CallbackMultijugador.cs",
+                "region": {
+                  "startLine": 4,
+                  "startColumn": 1,
+                  "endLine": 4,
+                  "endColumn": 19
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/CallbackMultijugador.cs",
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 1,
+                  "endLine": 5,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/CallbackMultijugador.cs",
+                "region": {
+                  "startLine": 6,
+                  "startColumn": 1,
+                  "endLine": 6,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Portal.cs",
+                "region": {
+                  "startLine": 3,
+                  "startColumn": 1,
+                  "endLine": 3,
+                  "endColumn": 19
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Portal.cs",
+                "region": {
+                  "startLine": 4,
+                  "startColumn": 1,
+                  "endLine": 4,
+                  "endColumn": 19
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Portal.cs",
+                "region": {
+                  "startLine": 5,
+                  "startColumn": 1,
+                  "endLine": 5,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
                 "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/ConsultarPuntajes.xaml.cs",
                 "region": {
                   "startLine": 1,
@@ -480,12 +711,117 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/MenuPrincipal.xaml.cs",
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Juego.xaml.cs",
                 "region": {
-                  "startLine": 1,
+                  "startLine": 5,
                   "startColumn": 1,
-                  "endLine": 1,
-                  "endColumn": 14
+                  "endLine": 5,
+                  "endColumn": 20
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Juego.xaml.cs",
+                "region": {
+                  "startLine": 7,
+                  "startColumn": 1,
+                  "endLine": 7,
+                  "endColumn": 19
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Juego.xaml.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 1,
+                  "endLine": 8,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Juego.xaml.cs",
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 1,
+                  "endLine": 12,
+                  "endColumn": 32
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Juego.xaml.cs",
+                "region": {
+                  "startLine": 13,
+                  "startColumn": 1,
+                  "endLine": 13,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Juego.xaml.cs",
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 1,
+                  "endLine": 16,
+                  "endColumn": 29
                 }
               }
             }
@@ -527,7 +863,7 @@
                   "startLine": 3,
                   "startColumn": 1,
                   "endLine": 3,
-                  "endColumn": 19
+                  "endColumn": 29
                 }
               }
             }
@@ -566,10 +902,10 @@
               "resultFile": {
                 "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/MenuPrincipal.xaml.cs",
                 "region": {
-                  "startLine": 5,
+                  "startLine": 6,
                   "startColumn": 1,
-                  "endLine": 5,
-                  "endColumn": 30
+                  "endLine": 6,
+                  "endColumn": 19
                 }
               }
             }
@@ -590,28 +926,7 @@
                   "startLine": 7,
                   "startColumn": 1,
                   "endLine": 7,
-                  "endColumn": 31
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S1128",
-          "level": "warning",
-          "message": "Remove this unnecessary 'using'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/MenuPrincipal.xaml.cs",
-                "region": {
-                  "startLine": 8,
-                  "startColumn": 1,
-                  "endLine": 8,
-                  "endColumn": 27
+                  "endColumn": 30
                 }
               }
             }
@@ -632,7 +947,7 @@
                   "startLine": 9,
                   "startColumn": 1,
                   "endLine": 9,
-                  "endColumn": 32
+                  "endColumn": 31
                 }
               }
             }
@@ -653,7 +968,7 @@
                   "startLine": 10,
                   "startColumn": 1,
                   "endLine": 10,
-                  "endColumn": 28
+                  "endColumn": 27
                 }
               }
             }
@@ -674,7 +989,7 @@
                   "startLine": 11,
                   "startColumn": 1,
                   "endLine": 11,
-                  "endColumn": 28
+                  "endColumn": 32
                 }
               }
             }
@@ -695,6 +1010,27 @@
                   "startLine": 12,
                   "startColumn": 1,
                   "endLine": 12,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/MenuPrincipal.xaml.cs",
+                "region": {
+                  "startLine": 14,
+                  "startColumn": 1,
+                  "endLine": 14,
                   "endColumn": 36
                 }
               }
@@ -713,9 +1049,9 @@
               "resultFile": {
                 "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/MenuPrincipal.xaml.cs",
                 "region": {
-                  "startLine": 13,
+                  "startLine": 15,
                   "startColumn": 1,
-                  "endLine": 13,
+                  "endLine": 15,
                   "endColumn": 29
                 }
               }
@@ -936,6 +1272,111 @@
           }
         },
         {
+          "ruleId": "S2292",
+          "level": "warning",
+          "message": "Make this an auto-implemented property and remove its backing field.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Casilla.cs",
+                "region": {
+                  "startLine": 24,
+                  "startColumn": 20,
+                  "endLine": 24,
+                  "endColumn": 22
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2292",
+          "level": "warning",
+          "message": "Make this an auto-implemented property and remove its backing field.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Casilla.cs",
+                "region": {
+                  "startLine": 27,
+                  "startColumn": 21,
+                  "endLine": 27,
+                  "endColumn": 29
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2292",
+          "level": "warning",
+          "message": "Make this an auto-implemented property and remove its backing field.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Casilla.cs",
+                "region": {
+                  "startLine": 25,
+                  "startColumn": 20,
+                  "endLine": 25,
+                  "endColumn": 24
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2292",
+          "level": "warning",
+          "message": "Make this an auto-implemented property and remove its backing field.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Casilla.cs",
+                "region": {
+                  "startLine": 26,
+                  "startColumn": 20,
+                  "endLine": 26,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2292",
+          "level": "warning",
+          "message": "Make this an auto-implemented property and remove its backing field.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Casilla.cs",
+                "region": {
+                  "startLine": 28,
+                  "startColumn": 23,
+                  "endLine": 28,
+                  "endColumn": 29
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
           "ruleId": "S1128",
           "level": "warning",
           "message": "Remove this unnecessary 'using'.",
@@ -969,6 +1410,27 @@
                   "startColumn": 1,
                   "endLine": 6,
                   "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Lobby.xaml.cs",
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 1,
+                  "endLine": 9,
+                  "endColumn": 27
                 }
               }
             }
@@ -1083,6 +1545,69 @@
           }
         },
         {
+          "ruleId": "S2292",
+          "level": "warning",
+          "message": "Make this an auto-implemented property and remove its backing field.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Portal.cs",
+                "region": {
+                  "startLine": 15,
+                  "startColumn": 23,
+                  "endLine": 15,
+                  "endColumn": 34
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2292",
+          "level": "warning",
+          "message": "Make this an auto-implemented property and remove its backing field.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Portal.cs",
+                "region": {
+                  "startLine": 16,
+                  "startColumn": 23,
+                  "endLine": 16,
+                  "endColumn": 28
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2292",
+          "level": "warning",
+          "message": "Make this an auto-implemented property and remove its backing field.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Portal.cs",
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 23,
+                  "endLine": 17,
+                  "endColumn": 32
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
           "ruleId": "S1128",
           "level": "warning",
           "message": "Remove this unnecessary 'using'.",
@@ -1251,27 +1776,6 @@
           }
         },
         {
-          "ruleId": "S3926",
-          "level": "warning",
-          "message": "Add deserialization event handlers.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Connected%20Services/ServiceReference1/Reference.cs",
-                "region": {
-                  "startLine": 20,
-                  "startColumn": 26,
-                  "endLine": 20,
-                  "endColumn": 32
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
           "ruleId": "S1128",
           "level": "warning",
           "message": "Remove this unnecessary 'using'.",
@@ -1284,48 +1788,6 @@
                   "startColumn": 1,
                   "endLine": 2,
                   "endColumn": 34
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S3926",
-          "level": "warning",
-          "message": "Add deserialization event handlers.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Connected%20Services/ServidorSE/Reference.cs",
-                "region": {
-                  "startLine": 20,
-                  "startColumn": 26,
-                  "endLine": 20,
-                  "endColumn": 32
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S1128",
-          "level": "warning",
-          "message": "Remove this unnecessary 'using'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/CrearPartida.xaml.cs",
-                "region": {
-                  "startLine": 3,
-                  "startColumn": 1,
-                  "endLine": 3,
-                  "endColumn": 19
                 }
               }
             }
@@ -1446,12 +1908,12 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/CrearPartida.xaml.cs",
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Turno.xaml.cs",
                 "region": {
-                  "startLine": 12,
+                  "startLine": 4,
                   "startColumn": 1,
-                  "endLine": 12,
-                  "endColumn": 36
+                  "endLine": 4,
+                  "endColumn": 19
                 }
               }
             }
@@ -1467,12 +1929,54 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/CrearPartida.xaml.cs",
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Turno.xaml.cs",
                 "region": {
-                  "startLine": 13,
+                  "startLine": 5,
                   "startColumn": 1,
-                  "endLine": 13,
-                  "endColumn": 29
+                  "endLine": 5,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Turno.xaml.cs",
+                "region": {
+                  "startLine": 8,
+                  "startColumn": 1,
+                  "endLine": 8,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1128",
+          "level": "warning",
+          "message": "Remove this unnecessary 'using'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Turno.xaml.cs",
+                "region": {
+                  "startLine": 9,
+                  "startColumn": 1,
+                  "endLine": 9,
+                  "endColumn": 32
                 }
               }
             }
@@ -1809,48 +2313,6 @@
                   "startColumn": 1,
                   "endLine": 14,
                   "endColumn": 29
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S3926",
-          "level": "warning",
-          "message": "Add deserialization event handlers.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Connected%20Services/ServiceReference2/Reference.cs",
-                "region": {
-                  "startLine": 20,
-                  "startColumn": 26,
-                  "endLine": 20,
-                  "endColumn": 32
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S3926",
-          "level": "warning",
-          "message": "Add deserialization event handlers.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Connected%20Services/ServidorSE/Reference.cs",
-                "region": {
-                  "startLine": 81,
-                  "startColumn": 26,
-                  "endLine": 81,
-                  "endColumn": 33
                 }
               }
             }
@@ -1908,12 +2370,348 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Connected%20Services/ServiceReference2/Reference.cs",
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Connected%20Services/ServidorSE/Reference.cs",
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 26,
+                  "endLine": 20,
+                  "endColumn": 32
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2292",
+          "level": "warning",
+          "message": "Make this an auto-implemented property and remove its backing field.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/CallbackMultijugador.cs",
+                "region": {
+                  "startLine": 15,
+                  "startColumn": 22,
+                  "endLine": 15,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2292",
+          "level": "warning",
+          "message": "Make this an auto-implemented property and remove its backing field.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/CallbackMultijugador.cs",
+                "region": {
+                  "startLine": 17,
+                  "startColumn": 22,
+                  "endLine": 17,
+                  "endColumn": 27
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3926",
+          "level": "warning",
+          "message": "Add deserialization event handlers.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Connected%20Services/ServidorSE/Reference.cs",
                 "region": {
                   "startLine": 81,
                   "startColumn": 26,
                   "endLine": 81,
                   "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3926",
+          "level": "warning",
+          "message": "Add deserialization event handlers.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Connected%20Services/ServidorJuegoSE/Reference.cs",
+                "region": {
+                  "startLine": 20,
+                  "startColumn": 26,
+                  "endLine": 20,
+                  "endColumn": 32
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1104",
+          "level": "warning",
+          "message": "Make this field 'private' and encapsulate it in a 'public' property.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Juego.xaml.cs",
+                "region": {
+                  "startLine": 24,
+                  "startColumn": 40,
+                  "endLine": 24,
+                  "endColumn": 47
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1104",
+          "level": "warning",
+          "message": "Make this field 'private' and encapsulate it in a 'public' property.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Juego.xaml.cs",
+                "region": {
+                  "startLine": 27,
+                  "startColumn": 64,
+                  "endLine": 27,
+                  "endColumn": 83
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1104",
+          "level": "warning",
+          "message": "Make this field 'private' and encapsulate it in a 'public' property.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Juego.xaml.cs",
+                "region": {
+                  "startLine": 25,
+                  "startColumn": 29,
+                  "endLine": 25,
+                  "endColumn": 54
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1104",
+          "level": "warning",
+          "message": "Make this field 'private' and encapsulate it in a 'public' property.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Juego.xaml.cs",
+                "region": {
+                  "startLine": 31,
+                  "startColumn": 37,
+                  "endLine": 31,
+                  "endColumn": 41
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1104",
+          "level": "warning",
+          "message": "Make this field 'private' and encapsulate it in a 'public' property.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Juego.xaml.cs",
+                "region": {
+                  "startLine": 28,
+                  "startColumn": 29,
+                  "endLine": 28,
+                  "endColumn": 69
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1104",
+          "level": "warning",
+          "message": "Make this field 'private' and encapsulate it in a 'public' property.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Juego.xaml.cs",
+                "region": {
+                  "startLine": 32,
+                  "startColumn": 38,
+                  "endLine": 32,
+                  "endColumn": 82
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1104",
+          "level": "warning",
+          "message": "Make this field 'private' and encapsulate it in a 'public' property.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Lobby.xaml.cs",
+                "region": {
+                  "startLine": 22,
+                  "startColumn": 29,
+                  "endLine": 22,
+                  "endColumn": 54
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1104",
+          "level": "warning",
+          "message": "Make this field 'private' and encapsulate it in a 'public' property.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Lobby.xaml.cs",
+                "region": {
+                  "startLine": 25,
+                  "startColumn": 29,
+                  "endLine": 25,
+                  "endColumn": 69
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1104",
+          "level": "warning",
+          "message": "Make this field 'private' and encapsulate it in a 'public' property.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Turno.xaml.cs",
+                "region": {
+                  "startLine": 22,
+                  "startColumn": 38,
+                  "endLine": 22,
+                  "endColumn": 43
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2245",
+          "level": "warning",
+          "message": "Make sure that using this pseudorandom number generator is safe here.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Turno.xaml.cs",
+                "region": {
+                  "startLine": 25,
+                  "startColumn": 36,
+                  "endLine": 25,
+                  "endColumn": 48
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3926",
+          "level": "warning",
+          "message": "Add deserialization event handlers.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Connected%20Services/ServidorJuegoSE/Reference.cs",
+                "region": {
+                  "startLine": 81,
+                  "startColumn": 26,
+                  "endLine": 81,
+                  "endColumn": 33
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S3604",
+          "level": "warning",
+          "message": "Remove the member initializer, all constructors set an initial value for the member.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/CrearPartida.xaml.cs",
+                "region": {
+                  "startLine": 19,
+                  "startColumn": 49,
+                  "endLine": 19,
+                  "endColumn": 80
                 }
               }
             }
@@ -1950,12 +2748,12 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Connected%20Services/ServiceReference2/Reference.cs",
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Connected%20Services/ServidorJuegoSE/Reference.cs",
                 "region": {
                   "startLine": 158,
                   "startColumn": 26,
                   "endLine": 158,
-                  "endColumn": 36
+                  "endColumn": 43
                 }
               }
             }
@@ -1992,221 +2790,11 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Connected%20Services/ServiceReference2/Reference.cs",
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Connected%20Services/ServidorJuegoSE/Reference.cs",
                 "region": {
-                  "startLine": 267,
+                  "startLine": 488,
                   "startColumn": 26,
-                  "endLine": 267,
-                  "endColumn": 34
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S2292",
-          "level": "warning",
-          "message": "Make this an auto-implemented property and remove its backing field.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Lobby.xaml.cs",
-                "region": {
-                  "startLine": 22,
-                  "startColumn": 22,
-                  "endLine": 22,
-                  "endColumn": 27
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S3926",
-          "level": "warning",
-          "message": "Add deserialization event handlers.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Connected%20Services/ServiceReference2/Reference.cs",
-                "region": {
-                  "startLine": 392,
-                  "startColumn": 26,
-                  "endLine": 392,
-                  "endColumn": 33
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S3926",
-          "level": "warning",
-          "message": "Add deserialization event handlers.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Connected%20Services/ServiceReference2/Reference.cs",
-                "region": {
-                  "startLine": 517,
-                  "startColumn": 26,
-                  "endLine": 517,
-                  "endColumn": 33
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S1104",
-          "level": "warning",
-          "message": "Make this field 'private' and encapsulate it in a 'public' property.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Lobby.xaml.cs",
-                "region": {
-                  "startLine": 53,
-                  "startColumn": 29,
-                  "endLine": 53,
-                  "endColumn": 54
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S1104",
-          "level": "warning",
-          "message": "Make this field 'private' and encapsulate it in a 'public' property.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Lobby.xaml.cs",
-                "region": {
-                  "startLine": 56,
-                  "startColumn": 29,
-                  "endLine": 56,
-                  "endColumn": 69
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S3604",
-          "level": "warning",
-          "message": "Remove the member initializer, all constructors set an initial value for the member.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/CrearPartida.xaml.cs",
-                "region": {
-                  "startLine": 22,
-                  "startColumn": 44,
-                  "endLine": 22,
-                  "endColumn": 70
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S3926",
-          "level": "warning",
-          "message": "Add deserialization event handlers.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Connected%20Services/ServiceReference2/Reference.cs",
-                "region": {
-                  "startLine": 642,
-                  "startColumn": 26,
-                  "endLine": 642,
-                  "endColumn": 33
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S3926",
-          "level": "warning",
-          "message": "Add deserialization event handlers.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Connected%20Services/ServiceReference2/Reference.cs",
-                "region": {
-                  "startLine": 783,
-                  "startColumn": 26,
-                  "endLine": 783,
-                  "endColumn": 33
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S3926",
-          "level": "warning",
-          "message": "Add deserialization event handlers.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Connected%20Services/ServiceReference2/Reference.cs",
-                "region": {
-                  "startLine": 985,
-                  "startColumn": 26,
-                  "endLine": 985,
-                  "endColumn": 38
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S3926",
-          "level": "warning",
-          "message": "Add deserialization event handlers.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Connected%20Services/ServiceReference2/Reference.cs",
-                "region": {
-                  "startLine": 908,
-                  "startColumn": 26,
-                  "endLine": 908,
+                  "endLine": 488,
                   "endColumn": 31
                 }
               }
@@ -2223,12 +2811,96 @@
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Connected%20Services/ServiceReference2/Reference.cs",
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Connected%20Services/ServidorJuegoSE/Reference.cs",
                 "region": {
-                  "startLine": 1062,
+                  "startLine": 251,
                   "startColumn": 26,
-                  "endLine": 1062,
-                  "endColumn": 32
+                  "endLine": 251,
+                  "endColumn": 30
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1075",
+          "level": "warning",
+          "message": "Refactor your code not to use hardcoded absolute paths or URIs.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/MenuPrincipal.xaml.cs",
+                "region": {
+                  "startLine": 29,
+                  "startColumn": 38,
+                  "endLine": 29,
+                  "endColumn": 86
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2245",
+          "level": "warning",
+          "message": "Make sure that using this pseudorandom number generator is safe here.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Juego.xaml.cs",
+                "region": {
+                  "startLine": 82,
+                  "startColumn": 32,
+                  "endLine": 82,
+                  "endColumn": 44
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S2245",
+          "level": "warning",
+          "message": "Make sure that using this pseudorandom number generator is safe here.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Juego.xaml.cs",
+                "region": {
+                  "startLine": 138,
+                  "startColumn": 27,
+                  "endLine": 138,
+                  "endColumn": 39
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'casillaTemporal'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Juego.xaml.cs",
+                "region": {
+                  "startLine": 146,
+                  "startColumn": 21,
+                  "endLine": 146,
+                  "endColumn": 36
                 }
               }
             }
@@ -2257,9 +2929,46 @@
           "properties": {
             "warningLevel": 1
           }
+        },
+        {
+          "ruleId": "S1481",
+          "level": "warning",
+          "message": "Remove the unused local variable 'fuenteFicha'.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Cliente%20WPF/SerpientesEscaleras/Juego.xaml.cs",
+                "region": {
+                  "startLine": 163,
+                  "startColumn": 25,
+                  "endLine": 163,
+                  "endColumn": 36
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
         }
       ],
       "rules": {
+        "S1075": {
+          "id": "S1075",
+          "shortDescription": "URIs should not be hardcoded",
+          "fullDescription": "Hardcoding a URI makes it difficult to test a program: path literals are not always portable across operating systems, a given absolute path may not exist on a specific test environment, a specified Internet URL may not be available when executing the tests, production environment filesystems usually differ from the development environment, ...etc. For all those reasons, a URI should never be hardcoded. Instead, it should be replaced by customizable parameter.",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1075",
+          "properties": {
+            "category": "Minor Code Smell",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope"
+            ]
+          }
+        },
         "S1104": {
           "id": "S1104",
           "shortDescription": "Fields should not have public accessibility",
@@ -2324,6 +3033,23 @@
               "SonarWay",
               "MainSourceScope",
               "TestSourceScope"
+            ]
+          }
+        },
+        "S2245": {
+          "id": "S2245",
+          "shortDescription": "Using pseudorandom number generators (PRNGs) is security-sensitive",
+          "fullDescription": "Using pseudorandom number generators (PRNGs) is security-sensitive. For example, it has led in the past to the following vulnerabilities:",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-2245",
+          "properties": {
+            "category": "Critical Security Hotspot",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope",
+              "NotConfigurable"
             ]
           }
         },
