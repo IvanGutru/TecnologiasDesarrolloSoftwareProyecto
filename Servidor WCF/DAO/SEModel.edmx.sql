@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 10/14/2019 00:19:11
--- Generated from EDMX file: C:\Users\Otros\Documents\5 semestre\Tecnologías\Proyecto Serpientes Escaleras\DAO\SEModel.edmx
+-- Date Created: 11/30/2019 12:09:06
+-- Generated from EDMX file: C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\DAO\SEModel.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -17,52 +17,61 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[FK_JugadorCuenta]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[JugadorSet] DROP CONSTRAINT [FK_JugadorCuenta];
-GO
-IF OBJECT_ID(N'[dbo].[FK_JugadorFicha]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[FichaSet] DROP CONSTRAINT [FK_JugadorFicha];
-GO
 IF OBJECT_ID(N'[dbo].[FK_PartidaTablero]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[PartidaSet] DROP CONSTRAINT [FK_PartidaTablero];
-GO
-IF OBJECT_ID(N'[dbo].[FK_PuntuacionJugador]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[PuntuacionSet] DROP CONSTRAINT [FK_PuntuacionJugador];
 GO
 IF OBJECT_ID(N'[dbo].[FK_TableroCasilla]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[CasillaSet] DROP CONSTRAINT [FK_TableroCasilla];
 GO
-IF OBJECT_ID(N'[dbo].[FK_TableroPortal]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[PortalSet] DROP CONSTRAINT [FK_TableroPortal];
+IF OBJECT_ID(N'[dbo].[FK_JugadorCuenta]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[JugadorSet] DROP CONSTRAINT [FK_JugadorCuenta];
+GO
+IF OBJECT_ID(N'[dbo].[FK_PuntuacionJugador]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[PuntuacionSet] DROP CONSTRAINT [FK_PuntuacionJugador];
+GO
+IF OBJECT_ID(N'[dbo].[FK_PartidaPuntuacion]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[PuntuacionSet] DROP CONSTRAINT [FK_PartidaPuntuacion];
+GO
+IF OBJECT_ID(N'[dbo].[FK_TableroFicha]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[FichaSet] DROP CONSTRAINT [FK_TableroFicha];
+GO
+IF OBJECT_ID(N'[dbo].[FK_CasillaPortal]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[PortalSet] DROP CONSTRAINT [FK_CasillaPortal];
+GO
+IF OBJECT_ID(N'[dbo].[FK_TableroFondoTablero]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[FondoTableroSet] DROP CONSTRAINT [FK_TableroFondoTablero];
 GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[CasillaSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[CasillaSet];
-GO
-IF OBJECT_ID(N'[dbo].[CuentaSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[CuentaSet];
-GO
 IF OBJECT_ID(N'[dbo].[FichaSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[FichaSet];
-GO
-IF OBJECT_ID(N'[dbo].[JugadorSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[JugadorSet];
 GO
 IF OBJECT_ID(N'[dbo].[PartidaSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[PartidaSet];
 GO
-IF OBJECT_ID(N'[dbo].[PortalSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[PortalSet];
+IF OBJECT_ID(N'[dbo].[TableroSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[TableroSet];
+GO
+IF OBJECT_ID(N'[dbo].[CasillaSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[CasillaSet];
 GO
 IF OBJECT_ID(N'[dbo].[PuntuacionSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[PuntuacionSet];
 GO
-IF OBJECT_ID(N'[dbo].[TableroSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[TableroSet];
+IF OBJECT_ID(N'[dbo].[CuentaSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[CuentaSet];
+GO
+IF OBJECT_ID(N'[dbo].[JugadorSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[JugadorSet];
+GO
+IF OBJECT_ID(N'[dbo].[PortalSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[PortalSet];
+GO
+IF OBJECT_ID(N'[dbo].[FondoTableroSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[FondoTableroSet];
 GO
 
 -- --------------------------------------------------
