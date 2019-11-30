@@ -4,7 +4,7 @@
 winexe
 C#
 .cs
-C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\obj\Debug\
+C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\obj\Debug\
 SerpientesEscaleras
 none
 false
@@ -12,9 +12,11 @@ DEBUG;TRACE
 C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\App.xaml
 10118067098
 
-20571845962
-19-1805963972
+
+191944903879
+18-1794865186
+
 ConsultarPuntajes.xaml;IngresarCodigo.xaml;Juego.xaml;MainWindow.xaml;MenuPrincipal.xaml;RegistroUsuario.xaml;Lobby.xaml;BuscarPartida.xaml;CrearPartida.xaml;Turno.xaml;
 
-False
+True
 
