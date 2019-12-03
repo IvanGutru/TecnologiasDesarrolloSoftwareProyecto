@@ -574,6 +574,192 @@ namespace SerpientesEscaleras.ServidorJuegoSE {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Casilla", Namespace="http://schemas.datacontract.org/2004/07/MessageService")]
+    [System.SerializableAttribute()]
+    public partial class Casilla : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ColumnaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool EspecialField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int FilaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Columna {
+            get {
+                return this.ColumnaField;
+            }
+            set {
+                if ((this.ColumnaField.Equals(value) != true)) {
+                    this.ColumnaField = value;
+                    this.RaisePropertyChanged("Columna");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Especial {
+            get {
+                return this.EspecialField;
+            }
+            set {
+                if ((this.EspecialField.Equals(value) != true)) {
+                    this.EspecialField = value;
+                    this.RaisePropertyChanged("Especial");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Fila {
+            get {
+                return this.FilaField;
+            }
+            set {
+                if ((this.FilaField.Equals(value) != true)) {
+                    this.FilaField = value;
+                    this.RaisePropertyChanged("Fila");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Portal", Namespace="http://schemas.datacontract.org/2004/07/MessageService")]
+    [System.SerializableAttribute()]
+    public partial class Portal : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ColorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdCasillaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UriPortalField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ZonaTableroField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Color {
+            get {
+                return this.ColorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ColorField, value) != true)) {
+                    this.ColorField = value;
+                    this.RaisePropertyChanged("Color");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int IdCasilla {
+            get {
+                return this.IdCasillaField;
+            }
+            set {
+                if ((this.IdCasillaField.Equals(value) != true)) {
+                    this.IdCasillaField = value;
+                    this.RaisePropertyChanged("IdCasilla");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string UriPortal {
+            get {
+                return this.UriPortalField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UriPortalField, value) != true)) {
+                    this.UriPortalField = value;
+                    this.RaisePropertyChanged("UriPortal");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ZonaTablero {
+            get {
+                return this.ZonaTableroField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ZonaTableroField, value) != true)) {
+                    this.ZonaTableroField = value;
+                    this.RaisePropertyChanged("ZonaTablero");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServidorJuegoSE.IAdministradorCuenta")]
     public interface IAdministradorCuenta {
@@ -800,6 +986,18 @@ namespace SerpientesEscaleras.ServidorJuegoSE {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministradorMultijugador/RecibirTiro")]
         System.Threading.Tasks.Task RecibirTiroAsync(int idSala, int numDado);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministradorMultijugador/CambiarPosicionFicha")]
+        void CambiarPosicionFicha(int idSala, SerpientesEscaleras.ServidorJuegoSE.Ficha ficha);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministradorMultijugador/CambiarPosicionFicha")]
+        System.Threading.Tasks.Task CambiarPosicionFichaAsync(int idSala, SerpientesEscaleras.ServidorJuegoSE.Ficha ficha);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministradorMultijugador/CambiarPortales")]
+        void CambiarPortales(int idSala, SerpientesEscaleras.ServidorJuegoSE.Casilla[] casillasRecibidas, SerpientesEscaleras.ServidorJuegoSE.Portal[] portalesRecibidos);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministradorMultijugador/CambiarPortales")]
+        System.Threading.Tasks.Task CambiarPortalesAsync(int idSala, SerpientesEscaleras.ServidorJuegoSE.Casilla[] casillasRecibidas, SerpientesEscaleras.ServidorJuegoSE.Portal[] portalesRecibidos);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -812,7 +1010,10 @@ namespace SerpientesEscaleras.ServidorJuegoSE {
         void RecibirMensajeMiembroLobby(bool entrada, string apodo);
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministradorMultijugador/EntrarJuego")]
-        void EntrarJuego();
+        void EntrarJuego(SerpientesEscaleras.ServidorJuegoSE.Casilla[] casillas, SerpientesEscaleras.ServidorJuegoSE.Portal[] portales);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministradorMultijugador/SolicitarCrearTablero")]
+        void SolicitarCrearTablero();
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministradorMultijugador/RecibirMensaje")]
         void RecibirMensaje(string mensaje);
@@ -831,6 +1032,12 @@ namespace SerpientesEscaleras.ServidorJuegoSE {
         
         [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministradorMultijugador/MostrarTiro")]
         void MostrarTiro(SerpientesEscaleras.ServidorJuegoSE.Ficha ficha);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministradorMultijugador/MostrarNuevosPortales")]
+        void MostrarNuevosPortales(SerpientesEscaleras.ServidorJuegoSE.Portal[] portales);
+        
+        [System.ServiceModel.OperationContractAttribute(IsOneWay=true, Action="http://tempuri.org/IAdministradorMultijugador/MostrarGanador")]
+        void MostrarGanador(SerpientesEscaleras.ServidorJuegoSE.Ficha ficha);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -963,6 +1170,22 @@ namespace SerpientesEscaleras.ServidorJuegoSE {
         
         public System.Threading.Tasks.Task RecibirTiroAsync(int idSala, int numDado) {
             return base.Channel.RecibirTiroAsync(idSala, numDado);
+        }
+        
+        public void CambiarPosicionFicha(int idSala, SerpientesEscaleras.ServidorJuegoSE.Ficha ficha) {
+            base.Channel.CambiarPosicionFicha(idSala, ficha);
+        }
+        
+        public System.Threading.Tasks.Task CambiarPosicionFichaAsync(int idSala, SerpientesEscaleras.ServidorJuegoSE.Ficha ficha) {
+            return base.Channel.CambiarPosicionFichaAsync(idSala, ficha);
+        }
+        
+        public void CambiarPortales(int idSala, SerpientesEscaleras.ServidorJuegoSE.Casilla[] casillasRecibidas, SerpientesEscaleras.ServidorJuegoSE.Portal[] portalesRecibidos) {
+            base.Channel.CambiarPortales(idSala, casillasRecibidas, portalesRecibidos);
+        }
+        
+        public System.Threading.Tasks.Task CambiarPortalesAsync(int idSala, SerpientesEscaleras.ServidorJuegoSE.Casilla[] casillasRecibidas, SerpientesEscaleras.ServidorJuegoSE.Portal[] portalesRecibidos) {
+            return base.Channel.CambiarPortalesAsync(idSala, casillasRecibidas, portalesRecibidos);
         }
     }
 }

@@ -26,11 +26,11 @@ namespace SerpientesEscaleras
         InstanceContext contexto;
         public ServidorJuegoSE.AdministradorMultijugadorClient clienteMultijugador;
         public List<String> jugadoresConectados = new List<String>();
-        private List<Casilla> casillas = new List<Casilla>();
+        private List<ServidorJuegoSE.Casilla> casillas;
+        private List<ServidorJuegoSE.Portal> portales;
         private CallbackMultijugador regresoJuego;
         public ServidorJuegoSE.Sala sala;
         public ServidorJuegoSE.Ficha jugadorEnTurno = new ServidorJuegoSE.Ficha();
-        private Portal portalCaido;
 
         public Juego(ServidorJuegoSE.Jugador jugadorRecibido, ServidorJuegoSE.Sala salaRecibida, CallbackMultijugador regresoMensaje)
         {
@@ -46,70 +46,101 @@ namespace SerpientesEscaleras
             ImageBrush brushGrid = new ImageBrush();
             brushGrid.ImageSource = new BitmapImage(new Uri(sala.UriFondoTablero));
             grid_Tablero.Background = brushGrid;
-            CrearCasillas(7, 10);
+            //CrearCasillas(7, 10);
+            //Portal portal = new Portal();
+            //portales = portal.CrearPortales();
+        }
+
+        public List<ServidorJuegoSE.Casilla> Casillas { get { return casillas; } set { casillas = value; } }
+        public List<ServidorJuegoSE.Portal> Portales { get { return portales; } set { portales = value; } }
+
+        public void InicializarTablero()
+        {
+            ColocarCasillasEspeciales();
             ColocarPortales();
         }
 
-        private void CrearCasillas(int filas, int columnas)
+        //private void CrearCasillas(int filas, int columnas)
+        //{
+        //    int id = 1;
+        //    int columna;
+        //    for (int fila = filas-1; fila >= 0; fila--)
+        //    {
+        //        if (fila % 2 == 0)
+        //        {
+        //            for (columna = 0; columna < columnas; columna++)
+        //            {
+        //                casillas.Add(new Casilla(id, fila, columna));
+        //                id++;
+        //            }
+        //        }
+        //        else
+        //        {
+        //            for (columna = 9; columna >= 0; columna--)
+        //            {
+        //                casillas.Add(new Casilla(id, fila, columna));
+        //                id++;
+        //            }
+        //        }
+        //    }
+        //}
+
+        //private void CrearCasillasEspeciales()
+        //{
+
+        //}
+
+        private void ColocarCasillasEspeciales()
         {
-            int id = 1;
-            int columna;
-            for (int fila = filas-1; fila >= 0; fila--)
+            //Random aleatorio = new Random();
+            //int columna;
+            //int indiceCasilla;
+            Image casillaEspecial;
+            var casillasEspeciales = casillas.Where(x => x.Especial).ToList();
+            for (int i = 0; i < casillasEspeciales.Count(); i++)
             {
-                if (fila % 2 == 0)
-                {
-                    for (columna = 0; columna < columnas; columna++)
-                    {
-                        casillas.Add(new Casilla(id, fila, columna));
-                        id++;
-                    }
-                }
-                else
-                {
-                    for (columna = 9; columna >= 0; columna--)
-                    {
-                        casillas.Add(new Casilla(id, fila, columna));
-                        id++;
-                    }
-                }
+                //do
+                //{
+                //    columna = aleatorio.Next(0, 10);
+                //    indiceCasilla = casillas.FindIndex(x => x.Columna == columna && x.Fila == i);
+                //} while (casillas[indiceCasilla].Id == 70 || casillas[indiceCasilla].Id == 1);
+                //casillas[indiceCasilla].Especial = true;
+                casillaEspecial = new Image();
+                casillaEspecial.Source = new BitmapImage(new Uri("Resources/Tablero/casillaEspecial.png", UriKind.Relative));
+                casillaEspecial.HorizontalAlignment = HorizontalAlignment.Left;
+                casillaEspecial.VerticalAlignment = VerticalAlignment.Bottom;
+                casillaEspecial.Height = 70;
+                Grid.SetColumn(casillaEspecial, casillasEspeciales[i].Columna);
+                Grid.SetRow(casillaEspecial, casillasEspeciales[i].Fila);
+                grid_Tablero.Children.Add(casillaEspecial);
             }
         }
 
         private void ColocarPortales()
         {
-            Portal portal = new Portal();
-            List<Portal> portales = portal.CrearPortales();
-            Random aleatorio = new Random();
-            int fila;
-            int columna;
-            Casilla casilla;
+            //Random aleatorio = new Random();
+            ServidorJuegoSE.Casilla casilla;
             Image imagenPortal;
-            for (int i = 0; i < 12; i++)
+            //int portalEnCasilla;
+            for (int i = 0; i < portales.Count; i++)
             {
-                do
-                {
-                    if ((i + 1) % 2 == 0)
-                    {
-                        fila = aleatorio.Next(4, 7);
-                    }
-                    else
-                    {
-                        fila = aleatorio.Next(0, 4);
-                    }
-                    columna = aleatorio.Next(0, 10);
-                    casilla = casillas.Find(x => x.Columna == columna && x.Fila == fila);
-                } while (casilla.Especial || casilla.Portal != null || casilla.Id == 70 || casilla.Id == 1);
-                casilla.Portal = portales[i];
+                //do
+                //{
+                //    casilla = ObtenerCasillaAleatoria(i, aleatorio);
+                //    portalEnCasilla = portales.FindIndex(x => x.IdCasilla == casilla.Id);
+                //} while (casilla.Especial || portalEnCasilla != -1 || casilla.Id == 70 || casilla.Id == 1);
+                //portales[i].IdCasilla = casilla.Id;
+                casilla = casillas.Find(x => x.Id == portales[i].IdCasilla);
                 imagenPortal = new Image();
                 imagenPortal.Source = new BitmapImage(new Uri(portales[i].UriPortal, UriKind.Relative));
                 imagenPortal.HorizontalAlignment = HorizontalAlignment.Left;
                 imagenPortal.VerticalAlignment = VerticalAlignment.Bottom;
                 imagenPortal.Height = 90;
-                Grid.SetRow(imagenPortal, fila);
-                Grid.SetColumn(imagenPortal, columna);
+                imagenPortal.Name = portales[i].Color + portales[i].ZonaTablero;
+                Grid.SetRow(imagenPortal, casilla.Fila);
+                Grid.SetColumn(imagenPortal, casilla.Columna);
                 grid_Tablero.Children.Add(imagenPortal);
             }
-            
         }
 
         private void Button_Enviar(object sender, RoutedEventArgs e)
@@ -133,19 +164,6 @@ namespace SerpientesEscaleras
             this.Close();
         }
 
-        private void Button_Tirar(object sender, RoutedEventArgs e)
-        {
-            Random dado = new Random();
-            int numDado = dado.Next(1, 7);
-            int posicion = 1;
-            posicion = posicion + numDado;
-            if (posicion > 70)
-            {
-                posicion = 70 - (posicion-70);
-            }
-            Casilla casillaTemporal = casillas.ElementAt(posicion-1);
-        }
-
         public void RecibirListaJugadores(List<String> jugadores)
         {
             jugadoresConectados.AddRange(jugadores);
@@ -159,19 +177,29 @@ namespace SerpientesEscaleras
 
         public void MoverFicha(bool cayoPortal)
         {
-            Casilla casillaTemporal = casillas.ElementAt(jugadorEnTurno.Posicion - 1);
+            ServidorJuegoSE.Casilla casillaTemporal = casillas.ElementAt(jugadorEnTurno.Posicion - 1);
             ImageSource fuenteFicha = new BitmapImage(new Uri(jugadorEnTurno.UriFicha, UriKind.Relative));
             var imagenesTablero = grid_Tablero.Children.Cast<UIElement>().Where(i => i is Image).Cast<Image>();
             var fichaAMover = imagenesTablero.FirstOrDefault(i => i.Name == jugadorEnTurno.NombreFicha);
             Grid.SetColumn(fichaAMover, casillaTemporal.Columna);
             Grid.SetRow(fichaAMover, casillaTemporal.Fila);
-            if (casillaTemporal.Portal != null && !cayoPortal)
+            var portal = portales.Find(x => x.IdCasilla == casillaTemporal.Id);
+            if (portal != null && !cayoPortal)
             {
-                portalCaido = casillaTemporal.Portal;
+                var otroPortal = portales.Find(x => x.Color == portal.Color && x.ZonaTablero != portal.ZonaTablero);
+                jugadorEnTurno.Posicion = otroPortal.IdCasilla;
+                if (jugadorEnTurno.ApodoJugador == jugador.Apodo)
+                {
+                    clienteMultijugador.CambiarPosicionFicha(sala.IdSala, jugadorEnTurno);
+                }
                 DispatcherTimer temporizador = new DispatcherTimer();
                 temporizador.Interval = TimeSpan.FromSeconds(2d);
                 temporizador.Tick += TemporizadorDetenido;
                 temporizador.Start();
+            }
+            if (casillaTemporal.Especial && jugadorEnTurno.ApodoJugador == jugador.Apodo)
+            {
+                clienteMultijugador.CambiarPortales(sala.IdSala, casillas.ToArray(), portales.ToArray());
             }
         }
 
@@ -179,10 +207,6 @@ namespace SerpientesEscaleras
         {
             var temporizador = sender as DispatcherTimer;
             temporizador.Stop();
-            var otroPortal = casillas.Find(
-                x => x.Portal !=null && x.Portal.Color == portalCaido.Color && x.Portal.ZonaTablero != portalCaido.ZonaTablero
-                );
-            jugadorEnTurno.Posicion = otroPortal.Id;
             MoverFicha(true);
         }
 
@@ -197,6 +221,51 @@ namespace SerpientesEscaleras
             Grid.SetColumn(imagenFicha, 0);
             Grid.SetRow(imagenFicha, 6);
         }
+
+        public void CambiarPortales(ServidorJuegoSE.Portal[] portalesRecibidos)
+        {
+            //Random aleatorio = new Random();
+            //int portalEnCasilla;
+            for (int i = 0; i < portales.Count; i++)
+            {
+                //do
+                //{
+                //    casilla = ObtenerCasillaAleatoria(i, aleatorio);
+                //    portalEnCasilla = portales.FindIndex(x => x.IdCasilla == casilla.Id);
+                //} while (casilla.Especial || casilla.Id == 70 || casilla.Id == 1 || (portalEnCasilla < i && portalEnCasilla >= 0));
+                var casillaDelPortal = casillas.Find(x => x.Id == portales[i].IdCasilla);
+                var imagenesEnCasilla = grid_Tablero.Children.Cast<UIElement>().Where
+                    (x => x is Image && Grid.GetColumn(x) == casillaDelPortal.Columna
+                    && Grid.GetRow(x) == casillaDelPortal.Fila).Cast<Image>();
+                var portal = imagenesEnCasilla.FirstOrDefault(x => x.Name.Equals(portales[i].Color + portales[i].ZonaTablero));
+                var nuevaCasilla = casillas.Find(x => x.Id == portalesRecibidos[i].IdCasilla);
+                //portales[i].IdCasilla = casilla.Id;
+                Grid.SetRow(portal, nuevaCasilla.Fila);
+                Grid.SetColumn(portal, nuevaCasilla.Columna);
+            }
+            portales = portalesRecibidos.ToList();
+        }
+
+        //private Casilla ObtenerCasillaAleatoria(int indice, Random aleatorio)
+        //{
+        //    int fila;
+        //    int columna;
+        //    if (portales[indice].ZonaTablero.Equals("abajo"))
+        //    {
+        //        fila = aleatorio.Next(4, 7);
+        //    }
+        //    else
+        //    {
+        //        fila = aleatorio.Next(0, 4);
+        //    }
+        //    columna = aleatorio.Next(0, 10);
+        //    return casillas.Find(x => x.Columna == columna && x.Fila == fila);
+        //}
+
+        //public void CrearTablero()
+        //{
+
+        //}
 
     }
 }

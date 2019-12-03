@@ -49,6 +49,10 @@ namespace MessageService
             {
                 miembro.RecibirMensajeMiembroLobby(true, jugador.Apodo);
             }
+            if(salasAbiertas[indice].NumJugadores == 4)
+            {
+                IniciarJuego(idSala);
+            }
         }
 
         public Boolean ValidarSala(int idSala)
@@ -134,9 +138,12 @@ namespace MessageService
             salasAbiertas[indice].Jugando = true;
             salasAbiertas[indice].DiccionarioJugadores = new Dictionary<IJugador, Jugador>();
             salasAbiertas[indice].Fichas = new List<Ficha>();
+            List<Casilla> casillas = CrearCasillas(7, 10);
+            casillas = AnñadirCasillasEspeciales(casillas);
+            List<Portal> portales = CrearPortales(casillas);
             foreach (var miembro in salasAbiertas[indice].DiccionarioJugadoresLobby.Keys)
             {
-                miembro.EntrarJuego();
+                miembro.EntrarJuego( casillas.ToArray(), portales.ToArray());
             }
         }
 
@@ -200,6 +207,7 @@ namespace MessageService
                 salasAbiertas[indice].JugadoresJugando.Add(miembro.Apodo);
             }
             salasAbiertas[indice].JugadorEnTurno = salasAbiertas[indice].JugadoresJugando.First();
+            salasAbiertas[indice].DiccionarioJugadores.First(x => x.Value.Apodo.Equals(salasAbiertas[indice].JugadorEnTurno)).Key.SolicitarCrearTablero();
             foreach (var miembro in salasAbiertas[indice].DiccionarioJugadores.Keys)
             {
                 miembro.ElegirFicha(salasAbiertas[indice].JugadorEnTurno, salasAbiertas[indice].Fichas.ToArray());
@@ -242,19 +250,31 @@ namespace MessageService
             {
                 ficha.Posicion = 70 - (ficha.Posicion - 70);
             }
+            if (ficha.Posicion == 70)
+            {
+                foreach (var miembro in salasAbiertas[indice].DiccionarioJugadores.Keys)
+                {
+                    miembro.MostrarGanador(ficha);
+                }
+                return;
+            }
             foreach (var miembro in salasAbiertas[indice].DiccionarioJugadores.Keys)
             {
                 miembro.MostrarTiro(ficha);
             }
             SiguienteTurno(indice);
-            var jugador = salasAbiertas[indice].JugadorEnTurno;
             foreach (var miembro in salasAbiertas[indice].DiccionarioJugadores.Keys)
             {
                 miembro.Tirar(salasAbiertas[indice].JugadorEnTurno);
             }
         }
 
-
+        public void CambiarPosicionFicha(int idSala, Ficha ficha)
+        {
+            int indice = BuscarSala(idSala);
+            var fichaACambiar = salasAbiertas[indice].Fichas.Find(x => x.ApodoJugador == ficha.ApodoJugador);
+            fichaACambiar.Posicion = ficha.Posicion;
+        }
 
         private void SiguienteTurno(int indice)
         {
@@ -268,6 +288,115 @@ namespace MessageService
                 salasAbiertas[indice].JugadorEnTurno = salasAbiertas[indice].JugadoresJugando.ElementAt(0);
             }
         }
-    }
 
+        private List<Casilla> CrearCasillas(int filas, int columnas)
+        {
+            List<Casilla> casillas = new List<Casilla>();
+            int id = 1;
+            int columna;
+            for (int fila = filas - 1; fila >= 0; fila--)
+            {
+                if (fila % 2 == 0)
+                {
+                    for (columna = 0; columna < columnas; columna++)
+                    {
+                        casillas.Add(new Casilla(id, fila, columna));
+                        id++;
+                    }
+                }
+                else
+                {
+                    for (columna = 9; columna >= 0; columna--)
+                    {
+                        casillas.Add(new Casilla(id, fila, columna));
+                        id++;
+                    }
+                }
+            }
+            return casillas;
+        }
+
+        private List<Casilla> AnñadirCasillasEspeciales(List<Casilla> casillas)
+        {
+            Random aleatorio = new Random();
+            int indiceCasilla;
+            int columna;
+            for (int i = 0; i < 7; i++)
+            {
+                do
+                {
+                    columna = aleatorio.Next(0, 10);
+                    indiceCasilla = casillas.FindIndex(x => x.Columna == columna && x.Fila == i);
+                } while (casillas[indiceCasilla].Id == 70 || casillas[indiceCasilla].Id == 1);
+                casillas[indiceCasilla].Especial = true;
+            }
+            return casillas;
+        }
+
+        private List<Portal> CrearPortales(List<Casilla> casillas)
+        {
+            List<Portal> portales = new Portal().CrearPortales();
+            Random aleatorio = new Random();
+            Casilla casilla;
+            int portalEnCasilla;
+            int fila;
+            int columna;
+            for (int i = 0; i < portales.Count; i++)
+            {
+                do
+                {
+                    if (portales[i].ZonaTablero.Equals("abajo"))
+                    {
+                        fila = aleatorio.Next(4, 7);
+                    }
+                    else
+                    {
+                        fila = aleatorio.Next(0, 4);
+                    }
+                    columna = aleatorio.Next(0, 10);
+                    casilla = casillas.Find(x => x.Columna == columna && x.Fila == fila);
+                    portalEnCasilla = portales.FindIndex(x => x.IdCasilla == casilla.Id);
+                } while (casilla.Especial || portalEnCasilla != -1 || casilla.Id == 70 || casilla.Id == 1);
+                portales[i].IdCasilla = casilla.Id;
+            }
+            return portales;
+        }
+
+        public void CambiarPortales(int idSala, Casilla[] casillasRecibidas, Portal[] portalesRecibidos)
+        {
+            List<Casilla> casillas = casillasRecibidas.ToList();
+            List<Portal> portales = portalesRecibidos.ToList();
+            Random aleatorio = new Random();
+            Casilla casilla;
+            int portalEnCasilla;
+            int fila;
+            int columna;
+            for (int i = 0; i < portales.Count; i++)
+            {
+                do
+                {
+                    if (portales[i].ZonaTablero.Equals("abajo"))
+                    {
+                        fila = aleatorio.Next(4, 7);
+                    }
+                    else
+                    {
+                        fila = aleatorio.Next(0, 4);
+                    }
+                    columna = aleatorio.Next(0, 10);
+                    casilla = casillas.Find(x => x.Columna == columna && x.Fila == fila);
+                    portalEnCasilla = portales.FindIndex(x => x.IdCasilla == casilla.Id);
+                } while (casilla.Especial || casilla.Id == 70 || casilla.Id == 1 || (portalEnCasilla < i && portalEnCasilla >= 0));
+                portales[i].IdCasilla = casilla.Id;
+            }
+            int indice = BuscarSala(idSala);
+            var nuevosPortales = portales.ToArray();
+            foreach (var miembro in salasAbiertas[indice].DiccionarioJugadores.Keys)
+            {
+                miembro.MostrarNuevosPortales(nuevosPortales);
+            }
+        }
+
+
+    }
 }

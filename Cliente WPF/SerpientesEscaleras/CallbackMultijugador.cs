@@ -40,9 +40,9 @@ namespace SerpientesEscaleras
             lobby.listBox_JugadoresConectados.Items.Refresh();
         }
 
-        public void EntrarJuego()
+        public void EntrarJuego(ServidorJuegoSE.Casilla[] casillas, ServidorJuegoSE.Portal[] portales)
         {
-            lobby.EntrarJuego();
+            lobby.EntrarJuego(casillas, portales);
         }
 
         public void RecibirMensaje(string mensaje)
@@ -70,6 +70,11 @@ namespace SerpientesEscaleras
             }
             juego.listBox_Chat.Items.Refresh();
             juego.listBox_JugadoresConectados.Items.Refresh();
+        }
+
+        public void SolicitarCrearTablero()
+        {
+
         }
 
         public void ElegirFicha(String apodo, ServidorJuegoSE.Ficha[] fichasEscogidas)
@@ -104,6 +109,16 @@ namespace SerpientesEscaleras
         {
             juego.jugadorEnTurno = ficha;
             juego.MoverFicha(false);
+        }
+
+        public void MostrarNuevosPortales(ServidorJuegoSE.Portal[] portales)
+        {
+            juego.CambiarPortales(portales);
+        }
+
+        public void MostrarGanador(ServidorJuegoSE.Ficha ficha)
+        {
+
         }
     }
 }

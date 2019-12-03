@@ -38,6 +38,10 @@ namespace MessageService
         void AsignarFicha(int idSala, Ficha ficha);
         [OperationContract(IsOneWay = true)]
         void RecibirTiro(int idSala, int numDado);
+        [OperationContract(IsOneWay = true)]
+        void CambiarPosicionFicha(int idSala, Ficha ficha);
+        [OperationContract(IsOneWay = true)]
+        void CambiarPortales(int idSala, Casilla[] casillasRecibidas, Portal[] portalesRecibidos);
     }
     
     [ServiceContract]
@@ -48,7 +52,9 @@ namespace MessageService
         [OperationContract(IsOneWay = true)]
         void RecibirMensajeMiembroLobby(Boolean entrada, String apodo);
         [OperationContract(IsOneWay = true)]
-        void EntrarJuego();
+        void EntrarJuego(Casilla[] casillas, Portal[] portales);
+        [OperationContract(IsOneWay = true)]
+        void SolicitarCrearTablero();
         [OperationContract(IsOneWay = true)]
         void RecibirMensaje(String mensaje);
         [OperationContract(IsOneWay = true)]
@@ -61,6 +67,10 @@ namespace MessageService
         void Tirar(String apodo);
         [OperationContract(IsOneWay = true)]
         void MostrarTiro(Ficha ficha);
+        [OperationContract(IsOneWay = true)]
+        void MostrarNuevosPortales(Portal[] portales);
+        [OperationContract(IsOneWay = true)]
+        void MostrarGanador(Ficha ficha);
     }
 
     [DataContract]

@@ -370,5 +370,8 @@
     <Resource Include="Resources\Tablero\Portales\portalRojo.png" />
     <Resource Include="Resources\Tablero\Portales\portalVerde.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Tablero\casillaEspecial.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

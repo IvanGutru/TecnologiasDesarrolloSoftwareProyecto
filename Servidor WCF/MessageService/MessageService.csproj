@@ -83,6 +83,8 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Casilla.cs" />
+    <Compile Include="Portal.cs" />
     <Compile Include="ServicioMultijugador.cs" />
     <Compile Include="FilaTablaPuntajes.cs" />
     <Compile Include="IAdministradorCuenta.cs" />
