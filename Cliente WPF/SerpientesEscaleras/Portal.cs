@@ -5,13 +5,9 @@ namespace SerpientesEscaleras
 {
     public class Portal
     {
-        private String zonaTablero;
-        private String color;
-        private String uriPortal;
-
-        public String ZonaTablero { get { return zonaTablero; } set { zonaTablero = value; } }
-        public String Color { get { return color; } set { color = value; } }
-        public String UriPortal { get { return uriPortal; } set { uriPortal = value; } }
+        public String ZonaTablero { get; set; }
+        public String Color { get; set; }
+        public String UriPortal { get; set; }
 
         public List<Portal> CrearPortales()
         {

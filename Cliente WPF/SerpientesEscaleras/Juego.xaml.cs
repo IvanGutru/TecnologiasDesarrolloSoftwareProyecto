@@ -16,28 +16,29 @@ namespace SerpientesEscaleras
 
     public partial class Juego : Window
     {
-        public ServidorJuegoSE.Jugador jugador;
-        public List<String> chat = new List<string>();
+        public ServidorJuegoSE.Jugador Jugador { get; set; }
+        public List<string> Chat { get; set; }
         InstanceContext contexto;
-        public ServidorJuegoSE.AdministradorMultijugadorClient clienteMultijugador;
-        public List<String> jugadoresConectados = new List<String>();
+        public ServidorJuegoSE.AdministradorMultijugadorClient ClienteMultijugador;
+        public List<String> jugadoresConectados = new List<string>();
         private List<Casilla> casillas = new List<Casilla>();
         private CallbackMultijugador regresoJuego;
         public ServidorJuegoSE.Sala sala;
-        public ServidorJuegoSE.Ficha jugadorEnTurno = new ServidorJuegoSE.Ficha();
+        public ServidorJuegoSE.Ficha JugadorEnTurno { get; set; }
         private Portal portalCaido;
 
-        public Juego(ServidorJuegoSE.Jugador jugadorRecibido, ServidorJuegoSE.Sala salaRecibida, CallbackMultijugador regresoMensaje)
+       
+    public Juego(ServidorJuegoSE.Jugador jugadorRecibido, ServidorJuegoSE.Sala salaRecibida, CallbackMultijugador regresoMensaje)
         {
-            jugador = jugadorRecibido;
+            Jugador = jugadorRecibido;
             sala = salaRecibida;
             regresoJuego = regresoMensaje;
             InitializeComponent();
-            listBox_Chat.ItemsSource = chat;
+            listBox_Chat.ItemsSource = Chat;
             listBox_JugadoresConectados.ItemsSource = jugadoresConectados;
             regresoJuego.Juego = this;
             contexto = new InstanceContext(regresoJuego);
-            clienteMultijugador = new ServidorJuegoSE.AdministradorMultijugadorClient(contexto);
+            ClienteMultijugador = new ServidorJuegoSE.AdministradorMultijugadorClient(contexto);
             ImageBrush brushGrid = new ImageBrush();
             brushGrid.ImageSource = new BitmapImage(new Uri(sala.UriFondoTablero));
             grid_Tablero.Background = brushGrid;
@@ -111,19 +112,19 @@ namespace SerpientesEscaleras
         {
             if (textBox_Mensaje.Text != "")
             {
-                clienteMultijugador.EnviarMensajeJuego(sala.IdSala, textBox_Mensaje.Text);
+                ClienteMultijugador.EnviarMensajeJuego(sala.IdSala, textBox_Mensaje.Text);
                 textBox_Mensaje.Clear();
             }
         }
 
         private void CerrarVentana(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            clienteMultijugador.SalirJuego(sala.IdSala);
+            ClienteMultijugador.SalirJuego(sala.IdSala);
         }
 
         private void Button_Salir(object sender, RoutedEventArgs e)
         {
-            MenuPrincipal menuPrincipal = new MenuPrincipal(jugador);
+            MenuPrincipal menuPrincipal = new MenuPrincipal(Jugador);
             menuPrincipal.Show();
             this.Close();
         }
@@ -149,15 +150,14 @@ namespace SerpientesEscaleras
 
         public void Entrar()
         {
-            clienteMultijugador.UnirseJuego(sala.IdSala, jugador);
+            ClienteMultijugador.UnirseJuego(sala.IdSala, Jugador);
         }
 
         public void MoverFicha(bool cayoPortal)
         {
-            Casilla casillaTemporal = casillas.ElementAt(jugadorEnTurno.Posicion - 1);
-            ImageSource fuenteFicha = new BitmapImage(new Uri(jugadorEnTurno.UriFicha, UriKind.Relative));
+            Casilla casillaTemporal = casillas.ElementAt(JugadorEnTurno.Posicion - 1);
             var imagenesTablero = grid_Tablero.Children.Cast<UIElement>().Where(i => i is Image).Cast<Image>();
-            var fichaAMover = imagenesTablero.FirstOrDefault(i => i.Name == jugadorEnTurno.NombreFicha);
+            var fichaAMover = imagenesTablero.FirstOrDefault(i => i.Name == JugadorEnTurno.NombreFicha);
             Grid.SetColumn(fichaAMover, casillaTemporal.Columna);
             Grid.SetRow(fichaAMover, casillaTemporal.Fila);
             if (casillaTemporal.Portal != null && !cayoPortal)
@@ -177,15 +177,15 @@ namespace SerpientesEscaleras
             var otroPortal = casillas.Find(
                 x => x.Portal !=null && x.Portal.Color == portalCaido.Color && x.Portal.ZonaTablero != portalCaido.ZonaTablero
                 );
-            jugadorEnTurno.Posicion = otroPortal.Id;
+            JugadorEnTurno.Posicion = otroPortal.Id;
             MoverFicha(true);
         }
 
         public void MostrarFichaEnTablero()
         {
             Image imagenFicha = new Image();
-            imagenFicha.Source = new BitmapImage(new Uri(jugadorEnTurno.UriFicha, UriKind.Relative));
-            imagenFicha.Name = jugadorEnTurno.NombreFicha;
+            imagenFicha.Source = new BitmapImage(new Uri(JugadorEnTurno.UriFicha, UriKind.Relative));
+            imagenFicha.Name = JugadorEnTurno.NombreFicha;
             imagenFicha.Width = 70;
             imagenFicha.Height = 70;
             grid_Tablero.Children.Add(imagenFicha);
@@ -193,5 +193,7 @@ namespace SerpientesEscaleras
             Grid.SetRow(imagenFicha, 6);
         }
 
+       
     }
+    
 }

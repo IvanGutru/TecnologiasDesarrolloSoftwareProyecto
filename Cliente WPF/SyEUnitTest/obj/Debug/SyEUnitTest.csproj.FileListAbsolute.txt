@@ -1,0 +1,2 @@
+C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SyEUnitTest\obj\Debug\SyEUnitTest.csprojAssemblyReference.cache
+C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SyEUnitTest\obj\Debug\SyEUnitTest.csproj.CoreCompileInputs.cache

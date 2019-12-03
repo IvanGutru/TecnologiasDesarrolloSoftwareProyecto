@@ -6,74 +6,72 @@ namespace SerpientesEscaleras
 {
     public class CallbackMultijugador : ServidorJuegoSE.IAdministradorMultijugadorCallback
     {
-        private Lobby lobby;
-        private Juego juego;
 
-        public Juego Juego { get => juego; set => juego = value; }
+        public Juego Juego { get; set; }
 
-        public Lobby Lobby { get => lobby; set => lobby = value; }
+        public Lobby Lobby { get; set; }
 
         public void RecibirMensajeLobby(string mensaje)
         {
-            lobby.chat.Add(mensaje);
-            lobby.listBox_Chat.Items.Refresh();
+            Lobby.chat.Add(mensaje);
+            Lobby.listBox_Chat.Items.Refresh();
         }
 
         public void RecibirMensajeMiembroLobby(Boolean entrada, String apodo)
         {
             if (entrada)
             {
-                lobby.chat.Add(apodo + " " + Properties.Resources.mensajeEntrada);
-                lobby.jugadoresConectados.Add(apodo);
-                lobby.label_JugadoresConectados.Content = lobby.jugadoresConectados.Count + Properties.Resources.jugadoresConectados;
+                Lobby.chat.Add(apodo + " " + Properties.Resources.mensajeEntrada);
+                Lobby.jugadoresConectados.Add(apodo);
+                Lobby.label_JugadoresConectados.Content = Lobby.jugadoresConectados.Count + Properties.Resources.jugadoresConectados;
             }
             else
             {
-                lobby.chat.Add(apodo + " " + Properties.Resources.mensajeSalida);
-                lobby.jugadoresConectados.Remove(apodo);
-                lobby.label_JugadoresConectados.Content = lobby.jugadoresConectados.Count + Properties.Resources.jugadoresConectados;
+                Lobby.chat.Add(apodo + " " + Properties.Resources.mensajeSalida);
+                Lobby.jugadoresConectados.Remove(apodo);
+                Lobby.label_JugadoresConectados.Content = Lobby.jugadoresConectados.Count + Properties.Resources.jugadoresConectados;
             }
-            lobby.listBox_Chat.Items.Refresh();
-            lobby.listBox_JugadoresConectados.Items.Refresh();
+            Lobby.listBox_Chat.Items.Refresh();
+            Lobby.listBox_JugadoresConectados.Items.Refresh();
         }
 
         public void EntrarJuego()
         {
-            lobby.EntrarJuego();
+            Lobby.EntrarJuego();
         }
 
         public void RecibirMensaje(string mensaje)
         {
-            juego.chat.Add(mensaje);
-            juego.listBox_Chat.Items.Refresh();
+            Juego.Chat.Add(mensaje);
+            Juego.listBox_Chat.Items.Refresh();
         }
 
         public void RecibirMensajeMiembro(Boolean entrada, String apodo)
         {
             if (entrada)
             {
-                int indiceApodo = juego.jugadoresConectados.FindIndex(x => x.Contains(apodo));
+                int indiceApodo = Juego.jugadoresConectados.FindIndex(x => x.Contains(apodo));
                 if (indiceApodo != -1)
                 {
                     return;
                 }
-                juego.chat.Add(apodo + " " + Properties.Resources.mensajeEntrada);
-                juego.jugadoresConectados.Add(apodo);
+                Juego.Chat.Add(apodo + " " + Properties.Resources.mensajeEntrada);
+                Juego.jugadoresConectados.Add(apodo);
             }
             else
             {
-                juego.chat.Add(apodo + " " + Properties.Resources.mensajeSalida);
-                juego.jugadoresConectados.Remove(apodo);
+                Juego.Chat.Add(apodo + " " + Properties.Resources.mensajeSalida);
+                Juego.jugadoresConectados.Remove(apodo);
             }
-            juego.listBox_Chat.Items.Refresh();
-            juego.listBox_JugadoresConectados.Items.Refresh();
+            Juego.listBox_Chat.Items.Refresh();
+            Juego.listBox_JugadoresConectados.Items.Refresh();
         }
 
         public void ElegirFicha(String apodo, ServidorJuegoSE.Ficha[] fichasEscogidas)
         {
-            Turno turno = new Turno(juego);
-            juego.label_Aviso.Content = apodo + " está eligiendo su ficha...";
-            if (apodo.Equals(juego.jugador.Apodo))
+            Turno turno = new Turno(Juego);
+            Juego.label_Aviso.Content = apodo + " está eligiendo su ficha...";
+            if (apodo.Equals(Juego.Jugador.Apodo))
             {
                 turno.ElegirFicha(fichasEscogidas.ToList());
                 turno.ShowDialog();
@@ -82,15 +80,15 @@ namespace SerpientesEscaleras
 
         public void MostrarFichaElegida(ServidorJuegoSE.Ficha ficha)
         {
-            juego.jugadorEnTurno = ficha;
-            juego.MostrarFichaEnTablero();
+            Juego.JugadorEnTurno = ficha;
+            Juego.MostrarFichaEnTablero();
         }
 
         public void Tirar(String apodo)
         {
-            Turno turno = new Turno(juego);
-            juego.label_Aviso.Content = apodo + " está tirando...";
-            if (apodo.Equals(juego.jugador.Apodo))
+            Turno turno = new Turno(Juego);
+            Juego.label_Aviso.Content = apodo + " está tirando...";
+            if (apodo.Equals(Juego.Jugador.Apodo))
             {
                 turno.Tirar();
                 turno.ShowDialog();
@@ -99,8 +97,8 @@ namespace SerpientesEscaleras
 
         public void MostrarTiro(ServidorJuegoSE.Ficha ficha)
         {
-            juego.jugadorEnTurno = ficha;
-            juego.MoverFicha(false);
+            Juego.JugadorEnTurno = ficha;
+            Juego.MoverFicha(false);
         }
     }
 }

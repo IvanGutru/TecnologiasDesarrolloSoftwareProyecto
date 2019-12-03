@@ -84,11 +84,11 @@ namespace SerpientesEscaleras
             {
                 NombreFicha = direccionFicha.Name,
                 UriFicha = ((BitmapImage)direccionFicha.Source).UriSource.OriginalString,
-                ApodoJugador = juego.jugador.Apodo,
+                ApodoJugador = juego.Jugador.Apodo,
                 Posicion = 1
             };
             this.Close();
-            juego.clienteMultijugador.AsignarFicha(juego.sala.IdSala, ficha);
+            juego.ClienteMultijugador.AsignarFicha(juego.sala.IdSala, ficha);
         }
 
         public void Tirar()
@@ -158,7 +158,7 @@ namespace SerpientesEscaleras
         {
             temporizador.Stop();
             this.Close();
-            juego.clienteMultijugador.RecibirTiro(juego.sala.IdSala, numeroDado1 + numeroDado2);
+            juego.ClienteMultijugador.RecibirTiro(juego.sala.IdSala, numeroDado1 + numeroDado2);
         }
 
         private void MostrarDados(int numDados)
