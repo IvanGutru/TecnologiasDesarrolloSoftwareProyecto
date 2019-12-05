@@ -1,18 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="SEModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
   <EntityContainer Name="ServidorSE" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="FichaSet" EntityType="SEModel.Ficha" />
-    <EntitySet Name="PartidaSet" EntityType="SEModel.Partida" />
-    <EntitySet Name="TableroSet" EntityType="SEModel.Tablero" />
-    <EntitySet Name="CasillaSet" EntityType="SEModel.Casilla" />
-    <AssociationSet Name="PartidaTablero" Association="SEModel.PartidaTablero">
-      <End EntitySet="PartidaSet" Role="Partida" />
-      <End EntitySet="TableroSet" Role="Tablero" />
-    </AssociationSet>
-    <AssociationSet Name="TableroCasilla" Association="SEModel.TableroCasilla">
-      <End EntitySet="TableroSet" Role="Tablero" />
-      <End EntitySet="CasillaSet" Role="Casilla" />
-    </AssociationSet>
     <EntitySet Name="PuntuacionSet" EntityType="SEModel.Puntuacion" />
     <EntitySet Name="CuentaSet" EntityType="SEModel.Cuenta" />
     <EntitySet Name="JugadorSet" EntityType="SEModel.Jugador" />
@@ -24,101 +12,46 @@
       <End EntitySet="PuntuacionSet" Role="Puntuacion" />
       <End EntitySet="JugadorSet" Role="Jugador" />
     </AssociationSet>
-    <EntitySet Name="PortalSet" EntityType="SEModel.Portal" />
-    <AssociationSet Name="PartidaPuntuacion" Association="SEModel.PartidaPuntuacion">
-      <End Role="Partida" EntitySet="PartidaSet" />
-      <End Role="Puntuacion" EntitySet="PuntuacionSet" />
-    </AssociationSet>
-    <AssociationSet Name="TableroFicha" Association="SEModel.TableroFicha">
-      <End Role="Tablero" EntitySet="TableroSet" />
-      <End Role="Ficha" EntitySet="FichaSet" />
-    </AssociationSet>
-    <AssociationSet Name="CasillaPortal" Association="SEModel.CasillaPortal">
-      <End Role="Casilla" EntitySet="CasillaSet" />
-      <End Role="Portal" EntitySet="PortalSet" />
-    </AssociationSet>
-    <EntitySet Name="FondoTableroSet" EntityType="SEModel.FondoTablero" />
-    <AssociationSet Name="TableroFondoTablero" Association="SEModel.TableroFondoTablero">
-      <End Role="Tablero" EntitySet="TableroSet" />
-      <End Role="FondoTablero" EntitySet="FondoTableroSet" />
-    </AssociationSet>
+    <EntitySet Name="sysdiagrams" EntityType="SEModel.sysdiagrams" />
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(SEModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(SEModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
   </EntityContainer>
-  <EntityType Name="Ficha">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
-    <Property Name="imagen" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" Type="String" />
-    <NavigationProperty Name="Tablero" Relationship="SEModel.TableroFicha" FromRole="Ficha" ToRole="Tablero" />
-  </EntityType>
-  <EntityType Name="Partida">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
-    <Property Name="num_jugadores" Nullable="false" Type="Int16" />
-    <Property Name="tiempo_inicio" Nullable="false" Precision="3" Type="DateTime" />
-    <Property Name="tiempo_fin" Nullable="false" Precision="3" Type="DateTime" />
-    <NavigationProperty Name="Tablero" Relationship="SEModel.PartidaTablero" FromRole="Partida" ToRole="Tablero" />
-    <NavigationProperty Name="Puntuacion" Relationship="SEModel.PartidaPuntuacion" FromRole="Partida" ToRole="Puntuacion" />
-  </EntityType>
-  <EntityType Name="Tablero">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
-    <Property Name="cuadricula" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" Type="String" />
-    <Property Name="no_casillas" Nullable="false" Type="Int16" />
-    <NavigationProperty Name="Partida" Relationship="SEModel.PartidaTablero" FromRole="Tablero" ToRole="Partida" />
-    <NavigationProperty Name="Casilla" Relationship="SEModel.TableroCasilla" FromRole="Tablero" ToRole="Casilla" />
-    <NavigationProperty Name="Ficha" Relationship="SEModel.TableroFicha" FromRole="Tablero" ToRole="Ficha" />
-    <NavigationProperty Name="FondoTablero" Relationship="SEModel.TableroFondoTablero" FromRole="Tablero" ToRole="FondoTablero" />
-  </EntityType>
-  <EntityType Name="Casilla">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
-    <Property Name="numero" Nullable="false" Type="Int16" />
-    <Property Name="especial" Nullable="false" Type="Boolean" />
-    <NavigationProperty Name="Tablero" Relationship="SEModel.TableroCasilla" FromRole="Casilla" ToRole="Tablero" />
-    <Property Name="TableroId" Nullable="false" Type="Int32" />
-    <NavigationProperty Name="Portal" Relationship="SEModel.CasillaPortal" FromRole="Casilla" ToRole="Portal" />
-  </EntityType>
-  <Association Name="PartidaTablero">
-    <End Type="SEModel.Partida" Multiplicity="1" Role="Partida" />
-    <End Type="SEModel.Tablero" Multiplicity="1" Role="Tablero" />
-  </Association>
-  <Association Name="TableroCasilla">
-    <End Type="SEModel.Tablero" Multiplicity="1" Role="Tablero" />
-    <End Type="SEModel.Casilla" Multiplicity="*" Role="Casilla" />
-    <ReferentialConstraint>
-      <Principal Role="Tablero">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Casilla">
-        <PropertyRef Name="TableroId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityType Name="Portal">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int16" Nullable="false" />
-    <Property Name="color" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" Type="String" />
-    <Property Name="imagen" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" Type="String" />
-    <NavigationProperty Name="Casilla" Relationship="SEModel.CasillaPortal" FromRole="Portal" ToRole="Casilla" />
-  </EntityType>
   <EntityType Name="Puntuacion">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
-    <Property Name="puntos" Nullable="false" Type="Int16" />
     <Property Name="turnos" Nullable="false" Type="Int16" />
     <NavigationProperty Name="Jugador" Relationship="SEModel.PuntuacionJugador" FromRole="Puntuacion" ToRole="Jugador" />
-    <NavigationProperty Name="Partida" Relationship="SEModel.PartidaPuntuacion" FromRole="Puntuacion" ToRole="Partida" />
+    <Property Name="fecha" Type="DateTime" Nullable="false" />
   </EntityType>
   <EntityType Name="Cuenta">
     <Key>
@@ -130,6 +63,7 @@
     <NavigationProperty Name="Jugador" Relationship="SEModel.JugadorCuenta" FromRole="Cuenta" ToRole="Jugador" />
     <Property Name="salt" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="validada" Type="Boolean" Nullable="false" />
+    <Property Name="secionIniciada" Type="Boolean" Nullable="false" />
   </EntityType>
   <EntityType Name="Jugador">
     <Key>
@@ -139,8 +73,8 @@
     <Property Name="apodo" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="Cuenta" Relationship="SEModel.JugadorCuenta" FromRole="Jugador" ToRole="Cuenta" />
     <NavigationProperty Name="Puntuacion" Relationship="SEModel.PuntuacionJugador" FromRole="Jugador" ToRole="Puntuacion" />
-    <Property Name="nombre" Type="String" Nullable="false" />
-    <Property Name="apellidos" Type="String" Nullable="false" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="apellidos" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
   </EntityType>
   <Association Name="JugadorCuenta">
     <End Type="SEModel.Jugador" Multiplicity="1" Role="Jugador" />
@@ -150,28 +84,25 @@
     <End Type="SEModel.Puntuacion" Multiplicity="*" Role="Puntuacion" />
     <End Type="SEModel.Jugador" Multiplicity="1" Role="Jugador" />
   </Association>
-  <Association Name="PartidaPuntuacion">
-    <End Type="SEModel.Partida" Role="Partida" Multiplicity="1" />
-    <End Type="SEModel.Puntuacion" Role="Puntuacion" Multiplicity="*" />
-  </Association>
-  <Association Name="TableroFicha">
-    <End Type="SEModel.Tablero" Role="Tablero" Multiplicity="1" />
-    <End Type="SEModel.Ficha" Role="Ficha" Multiplicity="*" />
-  </Association>
-  <Association Name="CasillaPortal">
-    <End Type="SEModel.Casilla" Role="Casilla" Multiplicity="1" />
-    <End Type="SEModel.Portal" Role="Portal" Multiplicity="0..1" />
-  </Association>
-  <EntityType Name="FondoTablero">
+  <EntityType Name="sysdiagrams">
     <Key>
-      <PropertyRef Name="Id" />
+      <PropertyRef Name="diagram_id" />
     </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="imagen" Type="String" Nullable="false" />
-    <NavigationProperty Name="Tablero" Relationship="SEModel.TableroFondoTablero" FromRole="FondoTablero" ToRole="Tablero" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
-  <Association Name="TableroFondoTablero">
-    <End Type="SEModel.Tablero" Role="Tablero" Multiplicity="1" />
-    <End Type="SEModel.FondoTablero" Role="FondoTablero" Multiplicity="*" />
-  </Association>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
 </Schema>

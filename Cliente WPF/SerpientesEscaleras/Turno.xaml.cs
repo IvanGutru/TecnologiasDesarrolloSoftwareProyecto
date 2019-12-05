@@ -199,12 +199,37 @@ namespace SerpientesEscaleras
             }
         }
 
+        public void MostrarGanador(ServidorJuegoSE.Ficha fichaGanador)
+        {
+            label_Instruccion.Content = "El ganador es: " + fichaGanador.ApodoJugador;
+            ColumnDefinition columna = new ColumnDefinition();
+            columna.Width = new GridLength(110);
+            grid_Dados.ColumnDefinitions.Add(columna);
+            Image imagenGanador = new Image();
+            imagenGanador.Source = new BitmapImage(new Uri(fichaGanador.UriFicha, UriKind.Relative));
+            imagenGanador.Width = 100;
+            grid_Dados.Children.Add(imagenGanador);
+            Grid.SetColumn(imagenGanador, 0);
+            Grid.SetRow(imagenGanador, 0);
+            button_Salir.Content = "Salir";
+            button_Salir.Visibility = Visibility.Visible;
+            grid_Dados.Visibility = Visibility.Visible;
+        }
+
         private void Cerrando(object sender, System.ComponentModel.CancelEventArgs e)
         {
             if (!cerrar)
             {
                 e.Cancel = true;
             }
+        }
+
+        private void Button_Salir(object sender, RoutedEventArgs e)
+        {
+            cerrar = true;
+            MenuPrincipal menuPrincipal = new MenuPrincipal(juego.jugador);
+            menuPrincipal.Show();
+            this.Close();
         }
     }
 }

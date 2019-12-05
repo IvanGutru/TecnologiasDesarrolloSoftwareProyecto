@@ -5,6 +5,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="Contraseña" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Correo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Validada" type="xs:boolean" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Cuenta" nillable="true" type="tns:Cuenta" />

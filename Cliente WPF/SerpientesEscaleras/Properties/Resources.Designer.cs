@@ -19,7 +19,7 @@ namespace SerpientesEscaleras.Properties {
     // a través de una herramienta como ResGen o Visual Studio.
     // Para agregar o quitar un miembro, edite el archivo .ResX y, a continuación, vuelva a ejecutar ResGen
     // con la opción /str o recompile su proyecto de VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Resources {
@@ -187,6 +187,15 @@ namespace SerpientesEscaleras.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Correo inválido..
+        /// </summary>
+        public static string correoInvalido {
+            get {
+                return ResourceManager.GetString("correoInvalido", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a El correo ya se encuentra registrado.
         /// </summary>
         public static string correoRepetido {
@@ -273,6 +282,33 @@ namespace SerpientesEscaleras.Properties {
         public static string enviar {
             get {
                 return ResourceManager.GetString("enviar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error al conectar con la base de datos. Intente de nuevo más tarde..
+        /// </summary>
+        public static string errorConexionBaseDatos {
+            get {
+                return ResourceManager.GetString("errorConexionBaseDatos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error al conectar con el servidor. Verifique su conexión a internet o intente más tarde..
+        /// </summary>
+        public static string errorConexionServidor {
+            get {
+                return ResourceManager.GetString("errorConexionServidor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error al mandar su correo de activación. Verifique que su correo sea correcto..
+        /// </summary>
+        public static string errorMandarCorreo {
+            get {
+                return ResourceManager.GetString("errorMandarCorreo", resourceCulture);
             }
         }
         
@@ -552,6 +588,15 @@ namespace SerpientesEscaleras.Properties {
         public static string textBlockSinCuenta {
             get {
                 return ResourceManager.GetString("textBlockSinCuenta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error de conexión.
+        /// </summary>
+        public static string tituloErrorConexion {
+            get {
+                return ResourceManager.GetString("tituloErrorConexion", resourceCulture);
             }
         }
         

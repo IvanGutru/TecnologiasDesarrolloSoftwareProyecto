@@ -17,7 +17,7 @@ namespace SerpientesEscaleras {
 
         private readonly ServidorJuegoSE.Cuenta cuenta;
 
-        public IngresarCodigo(ServidorJuegoSE.Cuenta cuentaRecibida) {
+        public IngresarCodigo (ServidorJuegoSE.Cuenta cuentaRecibida) {
             cuenta = cuentaRecibida;
             InitializeComponent();
         }
@@ -29,9 +29,16 @@ namespace SerpientesEscaleras {
         }
 
         private void Button_ValidarCuenta(object sender, RoutedEventArgs e) {
-            if (textBox_Codigo.Text !="") {
-                ServidorJuegoSE.AdministradorCuentaClient cliente = new ServidorJuegoSE.AdministradorCuentaClient();
-                if (cliente.ActivarCuentaJugador(cuenta, textBox_Codigo.Text)) 
+            if (textBox_Codigo.Text == "") {
+                string ingresarCodigo = Properties.Resources.ingresarCodigoActivacion;
+                MessageBox.Show(ingresarCodigo);
+                return;
+            }
+            ServidorJuegoSE.AdministradorCuentaClient cliente = new ServidorJuegoSE.AdministradorCuentaClient();
+            try
+            {
+                int respuesta = cliente.ActivarCuentaJugador(cuenta, textBox_Codigo.Text);
+                if (respuesta == 1)
                 {
                     var cuentaActivada = Properties.Resources.cuentaActivada;
                     MessageBox.Show(cuentaActivada);
@@ -39,20 +46,46 @@ namespace SerpientesEscaleras {
                     vetanaPrincipal.Show();
                     this.Close();
                 }
-                else
+                else if (respuesta == 0)
                 {
-                    string codigoInvalido = Properties.Resources.codigoInvalido;
-                    MessageBox.Show(codigoInvalido);
+                    MessageBox.Show(Properties.Resources.codigoInvalido);
                 }
-            } else {
-                string ingresarCodigo = Properties.Resources.ingresarCodigoActivacion;
-                MessageBox.Show(ingresarCodigo);
+                else if (respuesta == -10 || respuesta == -11)
+                {
+                    MessageBox.Show(Properties.Resources.errorConexionBaseDatos, Properties.Resources.tituloErrorConexion, MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+            catch (System.ServiceModel.EndpointNotFoundException)
+            {
+                MessageBox.Show(Properties.Resources.errorConexionServidor, Properties.Resources.tituloErrorConexion, MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
         private void Button_ReenviarCorreo(object sender, RoutedEventArgs e) {
             ServidorJuegoSE.AdministradorCuentaClient cliente = new ServidorJuegoSE.AdministradorCuentaClient();
-            cliente.EnviarCorreo(cuenta);
+            int respuesta;
+            try
+            {
+                respuesta = cliente.EnviarCorreo(cuenta);
+                if (respuesta == 1)
+                {
+                    MessageBox.Show(Properties.Resources.correoEnviado);
+                }
+                if (respuesta == -10)
+                {
+                    MessageBox.Show(Properties.Resources.errorConexionBaseDatos, Properties.Resources.tituloErrorConexion, MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                if (respuesta == 0)
+                {
+                    MessageBox.Show(Properties.Resources.errorMandarCorreo);
+                }
+            }
+            catch (System.ServiceModel.EndpointNotFoundException)
+            {
+                MessageBox.Show(Properties.Resources.errorConexionServidor, Properties.Resources.tituloErrorConexion, MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            
         }
+
     }
 }

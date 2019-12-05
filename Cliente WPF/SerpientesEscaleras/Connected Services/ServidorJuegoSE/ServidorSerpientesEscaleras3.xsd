@@ -27,7 +27,7 @@
   <xs:element name="RegistrarJugadorResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="RegistrarJugadorResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="RegistrarJugadorResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -42,7 +42,7 @@
   <xs:element name="ActivarCuentaJugadorResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="ActivarCuentaJugadorResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="ActivarCuentaJugadorResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -56,21 +56,7 @@
   <xs:element name="VerificarCuentaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="VerificarCuentaResult" type="xs:boolean" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="VerificarApodo">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/MessageService" minOccurs="0" name="jugador" nillable="true" type="q7:Jugador" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="VerificarApodoResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="VerificarApodoResult" type="xs:boolean" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/MessageService" minOccurs="0" name="VerificarCuentaResult" nillable="true" type="q7:Cuenta" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -84,7 +70,7 @@
   <xs:element name="EnviarCorreoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="EnviarCorreoResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="EnviarCorreoResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

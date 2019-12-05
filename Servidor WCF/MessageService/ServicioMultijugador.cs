@@ -74,7 +74,7 @@ namespace MessageService
             List<Sala> salasDisponibles = new List<Sala>();
             foreach (var sala in salasAbiertas)
             {
-                if (sala.NumJugadores <= 4)
+                if (sala.NumJugadores <= 4 && !sala.Jugando)
                 {
                     salasDisponibles.Add(new Sala()
                     {
@@ -102,7 +102,40 @@ namespace MessageService
             }
             foreach (var miembro in salasAbiertas[indice].DiccionarioJugadoresLobby.Keys)
             {
-                miembro.RecibirMensajeLobby(jugador.Apodo + ": " + mensaje);
+                try
+                {
+                    miembro.RecibirMensajeLobby(jugador.Apodo + ": " + mensaje);
+                }
+                catch (System.ServiceModel.CommunicationObjectAbortedException)
+                {
+                    //SacarDelLobby(indice, miembro);
+                }
+                
+            }
+        }
+
+        private void SacarDelLobby(int indiceSala, IJugador conexion)
+        {
+            Jugador jugador;
+            salasAbiertas[indiceSala].DiccionarioJugadoresLobby.TryGetValue(conexion, out jugador);
+            salasAbiertas[indiceSala].DiccionarioJugadoresLobby.Remove(conexion);
+            salasAbiertas[indiceSala].NumJugadores--;
+            if (salasAbiertas[indiceSala].NumJugadores == 0)
+            {
+                salasAbiertas.RemoveAt(indiceSala);
+                return;
+            }
+            foreach (var miembro in salasAbiertas[indiceSala].DiccionarioJugadoresLobby.Keys)
+            {
+                try
+                {
+                    miembro.RecibirMensajeMiembroLobby(false, jugador.Apodo);
+                }
+                catch (Exception)
+                {
+                    SacarDelLobby(indiceSala, conexion);
+                }
+                
             }
         }
 
@@ -139,7 +172,10 @@ namespace MessageService
             salasAbiertas[indice].DiccionarioJugadores = new Dictionary<IJugador, Jugador>();
             salasAbiertas[indice].Fichas = new List<Ficha>();
             List<Casilla> casillas = CrearCasillas(7, 10);
-            casillas = AnñadirCasillasEspeciales(casillas);
+            if (salasAbiertas[indice].CasillasEspeciales)
+            {
+                casillas = AnñadirCasillasEspeciales(casillas);
+            }
             List<Portal> portales = CrearPortales(casillas);
             foreach (var miembro in salasAbiertas[indice].DiccionarioJugadoresLobby.Keys)
             {
@@ -187,6 +223,7 @@ namespace MessageService
                 return;
             }
             salasAbiertas[indice].DiccionarioJugadores.Remove(conexion);
+            salasAbiertas[indice].JugadoresJugando.Remove(jugador.Apodo);
             salasAbiertas[indice].NumJugadores--;
             if (salasAbiertas[indice].NumJugadores == 0)
             {

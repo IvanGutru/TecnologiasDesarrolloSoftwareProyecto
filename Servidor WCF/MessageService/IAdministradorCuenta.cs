@@ -12,15 +12,13 @@ namespace MessageService {
         [OperationContract]
         Jugador IniciarSesion(Cuenta cuenta);
         [OperationContract]
-        Boolean RegistrarJugador(Jugador jugador, Cuenta cuenta);
+        int RegistrarJugador(Jugador jugador, Cuenta cuenta);
         [OperationContract]
-        Boolean ActivarCuentaJugador(Cuenta cuenta, String codigo);
+        int ActivarCuentaJugador(Cuenta cuenta, String codigo);
         [OperationContract]
-        Boolean VerificarCuenta(Cuenta cuenta);
+        Cuenta VerificarCuenta(Cuenta cuenta);
         [OperationContract]
-        Boolean VerificarApodo(Jugador jugador);
-        [OperationContract]
-        Boolean EnviarCorreo(Cuenta cuenta);
+        int EnviarCorreo(Cuenta cuenta);
         [OperationContract]
         List<FilaTablaPuntajes> ConsultarPuntajesPropios(Jugador jugador);
         [OperationContract]
@@ -61,6 +59,7 @@ namespace MessageService {
     {
         private String correo;
         private String contraseña;
+        private Boolean validada;
 
         [DataMember]
         public String Correo
@@ -74,6 +73,13 @@ namespace MessageService {
         {
             get { return contraseña; }
             set { contraseña = value; }
+        }
+
+        [DataMember]
+        public Boolean Validada
+        {
+            get { return validada; }
+            set { validada = value; }
         }
     }
 

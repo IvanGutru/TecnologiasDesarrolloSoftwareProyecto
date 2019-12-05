@@ -118,7 +118,11 @@ namespace SerpientesEscaleras
 
         public void MostrarGanador(ServidorJuegoSE.Ficha ficha)
         {
-
+            Turno turno = new Turno(juego);
+            juego.label_Aviso.Content = "";
+            turno.MostrarGanador(ficha);
+            turno.ShowDialog();
+            juego.Close();
         }
     }
 }
