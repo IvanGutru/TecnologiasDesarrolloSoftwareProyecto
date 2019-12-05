@@ -84,6 +84,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Casilla.cs" />
+    <Compile Include="Encriptador.cs" />
     <Compile Include="Portal.cs" />
     <Compile Include="ServicioMultijugador.cs" />
     <Compile Include="FilaTablaPuntajes.cs" />

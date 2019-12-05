@@ -31,6 +31,7 @@ namespace SerpientesEscaleras
         private CallbackMultijugador regresoJuego;
         public ServidorJuegoSE.Sala sala;
         public ServidorJuegoSE.Ficha jugadorEnTurno = new ServidorJuegoSE.Ficha();
+        private MediaPlayer musicaFondo = new MediaPlayer();
 
         public Juego(ServidorJuegoSE.Jugador jugadorRecibido, ServidorJuegoSE.Sala salaRecibida, CallbackMultijugador regresoMensaje)
         {
@@ -46,6 +47,9 @@ namespace SerpientesEscaleras
             ImageBrush brushGrid = new ImageBrush();
             brushGrid.ImageSource = new BitmapImage(new Uri(sala.UriFondoTablero));
             grid_Tablero.Background = brushGrid;
+            musicaFondo.MediaOpened += SoundTrackCargado;
+            musicaFondo.MediaEnded += SoundTrackFinalizado;
+            musicaFondo.Open(new Uri("pack://siteoforigin:,,,/SoundTracks/track1.mp3"));
             //CrearCasillas(7, 10);
             //Portal portal = new Portal();
             //portales = portal.CrearPortales();
@@ -58,6 +62,16 @@ namespace SerpientesEscaleras
         {
             ColocarCasillasEspeciales();
             ColocarPortales();
+        }
+
+        private void SoundTrackCargado(object sender, EventArgs e)
+        {
+            musicaFondo.Play();
+        }
+
+        private void SoundTrackFinalizado(object sender, EventArgs e)
+        {
+            musicaFondo.Play();
         }
 
         //private void CrearCasillas(int filas, int columnas)
@@ -154,6 +168,7 @@ namespace SerpientesEscaleras
 
         private void CerrarVentana(object sender, System.ComponentModel.CancelEventArgs e)
         {
+            musicaFondo.Stop();
             clienteMultijugador.SalirJuego(sala.IdSala);
         }
 

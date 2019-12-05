@@ -8,6 +8,8 @@ using System.Text;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 using DAO;
 using System.Net.Mail;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace MessageService {
 
@@ -35,48 +37,56 @@ namespace MessageService {
                 numBytesRequested: 256 / 8));
         }
 
-        private DAO.Cuenta ObtenerCuentaJugador(String correo)
+        public int EnviarCorreo(Cuenta cuenta)
         {
             conexionBaseDatos = new ServidorSE();
             using (conexionBaseDatos)
             {
-                var cuentaRecuperada = conexionBaseDatos.CuentaSet.Where(c => c.correo == correo).FirstOrDefault();
-                if (cuentaRecuperada != null)
+                DAO.Cuenta cuentaRecuperada = new DAO.Cuenta();
+                try
                 {
-                    if (cuentaRecuperada.correo.Equals(correo))
+                    cuentaRecuperada = conexionBaseDatos.CuentaSet.Where(c => c.correo.Equals(cuenta.Correo)).FirstOrDefault();
+                    if (cuentaRecuperada == null)
                     {
-                        return cuentaRecuperada;
+                        return -1;
+                    }
+                    if (!cuentaRecuperada.correo.Equals(cuenta.Correo))
+                    {
+                        return -1;
                     }
                 }
+                catch (System.Data.Entity.Core.EntityException)
+                {
+                    return -10;
+                }
+                MessageService.Encriptador encriptador = new MessageService.Encriptador();
+                Stream openFileStream = File.OpenRead("CuentaCorreo.txt");
+                BinaryFormatter deserializer = new BinaryFormatter();
+                String correoJuego = (String)deserializer.Deserialize(openFileStream);
+                String contraseñaJuego = (String)deserializer.Deserialize(openFileStream);
+                openFileStream.Close();
+                MailAddress direccionJuego = new MailAddress(encriptador.Desencriptar(correoJuego), "LIRI Games");
+                MailAddress direccionJugador = new MailAddress(cuenta.Correo, cuentaRecuperada.Jugador.apodo);
+                MailMessage correo = new MailMessage(direccionJuego, direccionJugador);
+                correo.Subject = "Activación de la cuenta de Serpientes y Escaleras";
+                correo.Body = "<p>Código para la activación de la cuenta: " + cuentaRecuperada.salt + " </p><br>";
+                correo.IsBodyHtml = true;
+                SmtpClient clienteSmtp = new SmtpClient("smtp.gmail.com");
+                clienteSmtp.EnableSsl = true;
+                clienteSmtp.UseDefaultCredentials = false;
+                clienteSmtp.Port = 587;
+                clienteSmtp.Credentials = new System.Net.NetworkCredential(direccionJuego.Address, encriptador.Desencriptar(contraseñaJuego));
+                try
+                {
+                    clienteSmtp.Send(correo);
+                }
+                catch (Exception)
+                {
+                    return 0;
+                }
+                clienteSmtp.Dispose();
+                return 1;
             }
-            return null;
-        }
-
-        public Boolean EnviarCorreo(Cuenta cuenta)
-        {
-            var cuentaRecuperada = ObtenerCuentaJugador(cuenta.Correo);
-            if (cuentaRecuperada == null)
-            {
-                return false;
-            }
-            MailMessage correo = new MailMessage("serpientesyescalerasportalitos@gmail.com", cuenta.Correo, "Activación de la cuenta",
-            "<p>Código para la activación de la cuenta: " + cuentaRecuperada.salt + "</p><br>");
-            correo.IsBodyHtml = true;
-            SmtpClient clienteSmtp = new SmtpClient("smtp.gmail.com");
-            clienteSmtp.EnableSsl = true;
-            clienteSmtp.UseDefaultCredentials = false;
-            clienteSmtp.Port = 587;
-            clienteSmtp.Credentials = new System.Net.NetworkCredential("serpientesyescalerasportalitos@gmail.com", "portalitos99");
-            try
-            {
-                clienteSmtp.Send(correo);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-            }
-            clienteSmtp.Dispose();
-            return true;
         }
 
         public Jugador IniciarSesion(Cuenta cuenta)
@@ -84,95 +94,150 @@ namespace MessageService {
             conexionBaseDatos = new ServidorSE();
             using (conexionBaseDatos)
             {
-                var cuentaRecuperada = conexionBaseDatos.CuentaSet.Where(c => c.correo == cuenta.Correo).FirstOrDefault();
-                if (cuentaRecuperada != null && cuentaRecuperada.correo.Equals(cuenta.Correo))
+                DAO.Cuenta cuentaRecuperada;
+                try
                 {
-                    String contreseñaHasheada = ObtenerHash(cuenta.Contraseña, cuentaRecuperada.salt);
-                    if (contreseñaHasheada.Equals(cuentaRecuperada.password))
+                    cuentaRecuperada = conexionBaseDatos.CuentaSet.Where(c => c.correo.Equals(cuenta.Correo)).FirstOrDefault();
+                    if (cuentaRecuperada != null)
                     {
-                        return new Jugador() { Apodo = cuentaRecuperada.Jugador.apodo };
+                        if (cuentaRecuperada.correo.Equals(cuenta.Correo))
+                        {
+                            String contreseñaHasheada = ObtenerHash(cuenta.Contraseña, cuentaRecuperada.salt);
+                            if (contreseñaHasheada.Equals(cuentaRecuperada.password))
+                            {
+                                cuentaRecuperada.secionIniciada = true;
+                                conexionBaseDatos.Entry(cuentaRecuperada).State = System.Data.Entity.EntityState.Modified;
+                                conexionBaseDatos.SaveChanges();
+                                return new Jugador() { Apodo = cuentaRecuperada.Jugador.apodo };
+                            }
+                        }
                     }
                 }
-                
+                catch (Exception)
+                {
+                    return new Jugador { Apodo = "ErrorConexionBaseDatos"};
+                }
             }
             return null;
         }
 
-        public Boolean VerificarCuenta(Cuenta cuenta)
-        {
-            var cuentaRecuperada = ObtenerCuentaJugador(cuenta.Correo);
-            if (cuentaRecuperada != null && cuentaRecuperada.validada)
-            {
-                return true;
-            }
-            return false;
-        }
-
-        public Boolean VerificarApodo(Jugador jugador)
+        public Cuenta VerificarCuenta(Cuenta cuenta)
         {
             conexionBaseDatos = new ServidorSE();
             using (conexionBaseDatos)
             {
-                var jugadorRecuperado = conexionBaseDatos.JugadorSet.Where(j => j.apodo == jugador.Apodo).FirstOrDefault();
-                if (jugadorRecuperado != null)
-                {
-                    if (jugadorRecuperado.apodo.Equals(jugador.Apodo))
-                    {
-                        return false;
-                    }
-                }
-                return true;
-            }
-        }
-
-        public Boolean RegistrarJugador(Jugador jugador, Cuenta cuenta)
-        {
-            var cuentaExistente = ObtenerCuentaJugador(cuenta.Correo);
-            if (cuentaExistente != null)
-            {
-                return false;
-            }
-            String nuevoSalt;
-            conexionBaseDatos = new ServidorSE();
-            using (conexionBaseDatos)
-            {
-                DAO.Jugador nuevoJugador = new DAO.Jugador() { apodo = jugador.Apodo, nombre = jugador.Nombre, apellidos = jugador.Apellidos };
-                nuevoSalt = ObtenerSalt();
-                conexionBaseDatos.CuentaSet.Add(new DAO.Cuenta()
-                {
-                    correo = cuenta.Correo,
-                    password = ObtenerHash(cuenta.Contraseña, nuevoSalt),
-                    salt = nuevoSalt,
-                    validada = false,
-                    Jugador = nuevoJugador,
-                });
+                DAO.Cuenta cuentaRecuperada = new DAO.Cuenta();
                 try
                 {
-                    conexionBaseDatos.SaveChanges();
+                    cuentaRecuperada = conexionBaseDatos.CuentaSet.Where(c => c.correo.Equals(cuenta.Correo)).FirstOrDefault();
+                    if (cuentaRecuperada != null)
+                    {
+                        if (cuentaRecuperada.correo.Equals(cuenta.Correo))
+                        {
+                            return new Cuenta { Correo = cuentaRecuperada.correo, Validada = cuentaRecuperada.validada };
+                        }
+                    }
                 }
-                catch (Exception e)
+                catch (System.Data.Entity.Core.EntityException)
                 {
-                    Console.WriteLine(e);
+                    return new Cuenta { Correo = "ErrorConexionBaseDatos" };
                 }
             }
-            return true;
+            return null;
         }
 
-        public bool ActivarCuentaJugador(Cuenta cuenta, String codigo)
+        public int RegistrarJugador(Jugador jugador, Cuenta cuenta)
         {
-            var cuentaRecuperada = ObtenerCuentaJugador(cuenta.Correo);
-            if (cuentaRecuperada != null && cuentaRecuperada.salt.Equals(codigo))
+            conexionBaseDatos = new ServidorSE();
+            using (conexionBaseDatos)
             {
-                conexionBaseDatos = new ServidorSE();
-                using (conexionBaseDatos)
+                DAO.Jugador jugadorRecuperado;
+                DAO.Cuenta cuentaRecuperada;
+                try
                 {
+                    jugadorRecuperado = conexionBaseDatos.JugadorSet.Where(j => j.apodo.Equals(jugador.Apodo)).FirstOrDefault();
+                    cuentaRecuperada = conexionBaseDatos.CuentaSet.Where(c => c.correo.Equals(cuenta.Correo)).FirstOrDefault();
+                    if (jugadorRecuperado != null)
+                    {
+                        if (jugadorRecuperado.apodo.Equals(jugador.Apodo))
+                        {
+                            return -1;
+                        }
+                    }
+                    if (cuentaRecuperada != null)
+                    {
+                        if (cuentaRecuperada.correo.Equals(cuenta.Correo))
+                        {
+                            return -2;
+                        }
+                    }
+                    String nuevoSalt;
+                    nuevoSalt = ObtenerSalt();
+                    DAO.Jugador nuevoJugador = new DAO.Jugador() { 
+                        apodo = jugador.Apodo, 
+                        nombre = jugador.Nombre, 
+                        apellidos = jugador.Apellidos };
+                    conexionBaseDatos.CuentaSet.Add(new DAO.Cuenta()
+                    {
+                        correo = cuenta.Correo,
+                        password = ObtenerHash(cuenta.Contraseña, nuevoSalt),
+                        salt = nuevoSalt,
+                        validada = false,
+                        secionIniciada = false,
+                        Jugador = nuevoJugador,
+                    });
+                    conexionBaseDatos.SaveChanges();
+                }
+                catch (System.Data.Entity.Core.EntityException)
+                {
+                    return -10;
+                }
+                catch (Exception)
+                {
+                    return -11;
+                }
+            }
+            return 1;
+        }
+
+        public int ActivarCuentaJugador(Cuenta cuenta, String codigo)
+        {
+            conexionBaseDatos = new ServidorSE();
+            using (conexionBaseDatos)
+            {
+                DAO.Cuenta cuentaRecuperada = new DAO.Cuenta();
+                try
+                {
+                    cuentaRecuperada = conexionBaseDatos.CuentaSet.Where(c => c.correo.Equals(cuenta.Correo)).FirstOrDefault();
+                    if (cuentaRecuperada != null)
+                    {
+                        if (!cuentaRecuperada.correo.Equals(cuenta.Correo))
+                        {
+                            return -1;
+                        }
+                    }
+                    if (cuentaRecuperada == null)
+                    {
+                        return -1;
+                    }
+                    if (!cuentaRecuperada.salt.Equals(codigo))
+                    {
+                        return 0;
+                    }
                     cuentaRecuperada.validada = true;
                     conexionBaseDatos.Entry(cuentaRecuperada).State = System.Data.Entity.EntityState.Modified;
                     conexionBaseDatos.SaveChanges();
                 }
-                return true;
+                catch (System.Data.Entity.Core.EntityException)
+                {
+                    return -10;
+                }
+                catch (Exception)
+                {
+                    return -11;
+                }
             }
-            return false;
+            return 1;
         }
 
         public List<FilaTablaPuntajes> ConsultarPuntajesPropios(Jugador jugador)
@@ -181,14 +246,21 @@ namespace MessageService {
             conexionBaseDatos = new ServidorSE();
             using (conexionBaseDatos)
             {
-                var listaPuntajes = conexionBaseDatos.PuntuacionSet.Where(p => p.Jugador.apodo == jugador.Apodo).ToList();
+                List<DAO.Puntuacion> listaPuntajes;
+                try
+                {
+                    listaPuntajes = conexionBaseDatos.PuntuacionSet.Where(p => p.Jugador.apodo.Equals(jugador.Apodo)).ToList();
+                }
+                catch (System.Data.Entity.Core.EntityException)
+                {
+                    return null;
+                }
                 foreach (var puntaje in listaPuntajes)
                 {
                     ListaFilas.Add(new FilaTablaPuntajes(){
                         Apodo = puntaje.Jugador.apodo,
-                        Fecha = puntaje.Partida.tiempo_fin,
                         Turnos = puntaje.turnos,
-                        Puntos = puntaje.puntos
+                        Puntos = 10000 / puntaje.turnos
                     });
                 }
             }
@@ -201,37 +273,26 @@ namespace MessageService {
             conexionBaseDatos = new ServidorSE();
             using (conexionBaseDatos)
             {
-                var listaPuntajes = conexionBaseDatos.PuntuacionSet.OrderByDescending(p => p.puntos).Take(10).ToList();
+                List<DAO.Puntuacion> listaPuntajes;
+                try
+                {
+                    listaPuntajes = conexionBaseDatos.PuntuacionSet.OrderByDescending(x => x.turnos).Take(10).ToList();
+                }
+                catch (System.Data.Entity.Core.EntityException)
+                {
+                    return null;
+                }
                 foreach (var puntaje in listaPuntajes)
                 {
                     ListaFilas.Add(new FilaTablaPuntajes()
                     {
                         Apodo = puntaje.Jugador.apodo,
-                        Fecha = puntaje.Partida.tiempo_fin,
                         Turnos = puntaje.turnos,
-                        Puntos = puntaje.puntos
+                        Puntos = 10000 / puntaje.turnos
                     });
                 }
             }
             return ListaFilas;
-        }
-
-        public void Consultar()
-        {
-            conexionBaseDatos = new ServidorSE();
-            using (conexionBaseDatos)
-            {
-                var lista = conexionBaseDatos.JugadorSet.ToList();
-                var lista2 = conexionBaseDatos.CuentaSet.ToList();
-                foreach (var item in lista)
-                {
-                    Console.WriteLine(item.Id + item.apodo + item.Cuenta.correo);
-                }
-                foreach (var item in lista2)
-                {
-                    Console.WriteLine(item.Id + item.correo + item.password + item.validada);
-                }
-            }
         }
 
     }

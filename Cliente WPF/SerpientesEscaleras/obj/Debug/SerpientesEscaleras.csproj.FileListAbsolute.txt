@@ -116,3 +116,4 @@ C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Cliente WP
 C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\bin\Debug\WpfAnimatedGif.dll
 C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\bin\Debug\WpfAnimatedGif.xml
 C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\obj\Debug\SerpientesEscaleras.csprojAssemblyReference.cache
+C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\bin\Debug\SerpientesEscaleras.xml

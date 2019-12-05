@@ -28,6 +28,9 @@ namespace SerpientesEscaleras.ServidorJuegoSE {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string CorreoField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool ValidadaField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -60,6 +63,19 @@ namespace SerpientesEscaleras.ServidorJuegoSE {
                 if ((object.ReferenceEquals(this.CorreoField, value) != true)) {
                     this.CorreoField = value;
                     this.RaisePropertyChanged("Correo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Validada {
+            get {
+                return this.ValidadaField;
+            }
+            set {
+                if ((this.ValidadaField.Equals(value) != true)) {
+                    this.ValidadaField = value;
+                    this.RaisePropertyChanged("Validada");
                 }
             }
         }
@@ -771,34 +787,28 @@ namespace SerpientesEscaleras.ServidorJuegoSE {
         System.Threading.Tasks.Task<SerpientesEscaleras.ServidorJuegoSE.Jugador> IniciarSesionAsync(SerpientesEscaleras.ServidorJuegoSE.Cuenta cuenta);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdministradorCuenta/RegistrarJugador", ReplyAction="http://tempuri.org/IAdministradorCuenta/RegistrarJugadorResponse")]
-        bool RegistrarJugador(SerpientesEscaleras.ServidorJuegoSE.Jugador jugador, SerpientesEscaleras.ServidorJuegoSE.Cuenta cuenta);
+        int RegistrarJugador(SerpientesEscaleras.ServidorJuegoSE.Jugador jugador, SerpientesEscaleras.ServidorJuegoSE.Cuenta cuenta);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdministradorCuenta/RegistrarJugador", ReplyAction="http://tempuri.org/IAdministradorCuenta/RegistrarJugadorResponse")]
-        System.Threading.Tasks.Task<bool> RegistrarJugadorAsync(SerpientesEscaleras.ServidorJuegoSE.Jugador jugador, SerpientesEscaleras.ServidorJuegoSE.Cuenta cuenta);
+        System.Threading.Tasks.Task<int> RegistrarJugadorAsync(SerpientesEscaleras.ServidorJuegoSE.Jugador jugador, SerpientesEscaleras.ServidorJuegoSE.Cuenta cuenta);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdministradorCuenta/ActivarCuentaJugador", ReplyAction="http://tempuri.org/IAdministradorCuenta/ActivarCuentaJugadorResponse")]
-        bool ActivarCuentaJugador(SerpientesEscaleras.ServidorJuegoSE.Cuenta cuenta, string codigo);
+        int ActivarCuentaJugador(SerpientesEscaleras.ServidorJuegoSE.Cuenta cuenta, string codigo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdministradorCuenta/ActivarCuentaJugador", ReplyAction="http://tempuri.org/IAdministradorCuenta/ActivarCuentaJugadorResponse")]
-        System.Threading.Tasks.Task<bool> ActivarCuentaJugadorAsync(SerpientesEscaleras.ServidorJuegoSE.Cuenta cuenta, string codigo);
+        System.Threading.Tasks.Task<int> ActivarCuentaJugadorAsync(SerpientesEscaleras.ServidorJuegoSE.Cuenta cuenta, string codigo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdministradorCuenta/VerificarCuenta", ReplyAction="http://tempuri.org/IAdministradorCuenta/VerificarCuentaResponse")]
-        bool VerificarCuenta(SerpientesEscaleras.ServidorJuegoSE.Cuenta cuenta);
+        SerpientesEscaleras.ServidorJuegoSE.Cuenta VerificarCuenta(SerpientesEscaleras.ServidorJuegoSE.Cuenta cuenta);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdministradorCuenta/VerificarCuenta", ReplyAction="http://tempuri.org/IAdministradorCuenta/VerificarCuentaResponse")]
-        System.Threading.Tasks.Task<bool> VerificarCuentaAsync(SerpientesEscaleras.ServidorJuegoSE.Cuenta cuenta);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdministradorCuenta/VerificarApodo", ReplyAction="http://tempuri.org/IAdministradorCuenta/VerificarApodoResponse")]
-        bool VerificarApodo(SerpientesEscaleras.ServidorJuegoSE.Jugador jugador);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdministradorCuenta/VerificarApodo", ReplyAction="http://tempuri.org/IAdministradorCuenta/VerificarApodoResponse")]
-        System.Threading.Tasks.Task<bool> VerificarApodoAsync(SerpientesEscaleras.ServidorJuegoSE.Jugador jugador);
+        System.Threading.Tasks.Task<SerpientesEscaleras.ServidorJuegoSE.Cuenta> VerificarCuentaAsync(SerpientesEscaleras.ServidorJuegoSE.Cuenta cuenta);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdministradorCuenta/EnviarCorreo", ReplyAction="http://tempuri.org/IAdministradorCuenta/EnviarCorreoResponse")]
-        bool EnviarCorreo(SerpientesEscaleras.ServidorJuegoSE.Cuenta cuenta);
+        int EnviarCorreo(SerpientesEscaleras.ServidorJuegoSE.Cuenta cuenta);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdministradorCuenta/EnviarCorreo", ReplyAction="http://tempuri.org/IAdministradorCuenta/EnviarCorreoResponse")]
-        System.Threading.Tasks.Task<bool> EnviarCorreoAsync(SerpientesEscaleras.ServidorJuegoSE.Cuenta cuenta);
+        System.Threading.Tasks.Task<int> EnviarCorreoAsync(SerpientesEscaleras.ServidorJuegoSE.Cuenta cuenta);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdministradorCuenta/ConsultarPuntajesPropios", ReplyAction="http://tempuri.org/IAdministradorCuenta/ConsultarPuntajesPropiosResponse")]
         SerpientesEscaleras.ServidorJuegoSE.FilaTablaPuntajes[] ConsultarPuntajesPropios(SerpientesEscaleras.ServidorJuegoSE.Jugador jugador);
@@ -848,43 +858,35 @@ namespace SerpientesEscaleras.ServidorJuegoSE {
             return base.Channel.IniciarSesionAsync(cuenta);
         }
         
-        public bool RegistrarJugador(SerpientesEscaleras.ServidorJuegoSE.Jugador jugador, SerpientesEscaleras.ServidorJuegoSE.Cuenta cuenta) {
+        public int RegistrarJugador(SerpientesEscaleras.ServidorJuegoSE.Jugador jugador, SerpientesEscaleras.ServidorJuegoSE.Cuenta cuenta) {
             return base.Channel.RegistrarJugador(jugador, cuenta);
         }
         
-        public System.Threading.Tasks.Task<bool> RegistrarJugadorAsync(SerpientesEscaleras.ServidorJuegoSE.Jugador jugador, SerpientesEscaleras.ServidorJuegoSE.Cuenta cuenta) {
+        public System.Threading.Tasks.Task<int> RegistrarJugadorAsync(SerpientesEscaleras.ServidorJuegoSE.Jugador jugador, SerpientesEscaleras.ServidorJuegoSE.Cuenta cuenta) {
             return base.Channel.RegistrarJugadorAsync(jugador, cuenta);
         }
         
-        public bool ActivarCuentaJugador(SerpientesEscaleras.ServidorJuegoSE.Cuenta cuenta, string codigo) {
+        public int ActivarCuentaJugador(SerpientesEscaleras.ServidorJuegoSE.Cuenta cuenta, string codigo) {
             return base.Channel.ActivarCuentaJugador(cuenta, codigo);
         }
         
-        public System.Threading.Tasks.Task<bool> ActivarCuentaJugadorAsync(SerpientesEscaleras.ServidorJuegoSE.Cuenta cuenta, string codigo) {
+        public System.Threading.Tasks.Task<int> ActivarCuentaJugadorAsync(SerpientesEscaleras.ServidorJuegoSE.Cuenta cuenta, string codigo) {
             return base.Channel.ActivarCuentaJugadorAsync(cuenta, codigo);
         }
         
-        public bool VerificarCuenta(SerpientesEscaleras.ServidorJuegoSE.Cuenta cuenta) {
+        public SerpientesEscaleras.ServidorJuegoSE.Cuenta VerificarCuenta(SerpientesEscaleras.ServidorJuegoSE.Cuenta cuenta) {
             return base.Channel.VerificarCuenta(cuenta);
         }
         
-        public System.Threading.Tasks.Task<bool> VerificarCuentaAsync(SerpientesEscaleras.ServidorJuegoSE.Cuenta cuenta) {
+        public System.Threading.Tasks.Task<SerpientesEscaleras.ServidorJuegoSE.Cuenta> VerificarCuentaAsync(SerpientesEscaleras.ServidorJuegoSE.Cuenta cuenta) {
             return base.Channel.VerificarCuentaAsync(cuenta);
         }
         
-        public bool VerificarApodo(SerpientesEscaleras.ServidorJuegoSE.Jugador jugador) {
-            return base.Channel.VerificarApodo(jugador);
-        }
-        
-        public System.Threading.Tasks.Task<bool> VerificarApodoAsync(SerpientesEscaleras.ServidorJuegoSE.Jugador jugador) {
-            return base.Channel.VerificarApodoAsync(jugador);
-        }
-        
-        public bool EnviarCorreo(SerpientesEscaleras.ServidorJuegoSE.Cuenta cuenta) {
+        public int EnviarCorreo(SerpientesEscaleras.ServidorJuegoSE.Cuenta cuenta) {
             return base.Channel.EnviarCorreo(cuenta);
         }
         
-        public System.Threading.Tasks.Task<bool> EnviarCorreoAsync(SerpientesEscaleras.ServidorJuegoSE.Cuenta cuenta) {
+        public System.Threading.Tasks.Task<int> EnviarCorreoAsync(SerpientesEscaleras.ServidorJuegoSE.Cuenta cuenta) {
             return base.Channel.EnviarCorreoAsync(cuenta);
         }
         

@@ -159,6 +159,9 @@
   <data name="correoEnviado" xml:space="preserve">
     <value>Se ha enviado a su correo el codigo de activación de su cuenta.</value>
   </data>
+  <data name="correoInvalido" xml:space="preserve">
+    <value>Correo inválido.</value>
+  </data>
   <data name="correoRepetido" xml:space="preserve">
     <value>El correo ya se encuentra registrado</value>
   </data>
@@ -188,6 +191,15 @@
   </data>
   <data name="enviar" xml:space="preserve">
     <value>Enviar</value>
+  </data>
+  <data name="errorConexionBaseDatos" xml:space="preserve">
+    <value>Error al conectar con la base de datos. Intente de nuevo más tarde.</value>
+  </data>
+  <data name="errorConexionServidor" xml:space="preserve">
+    <value>Error al conectar con el servidor. Verifique su conexión a internet o intente más tarde.</value>
+  </data>
+  <data name="errorMandarCorreo" xml:space="preserve">
+    <value>Error al mandar su correo de activación. Verifique que su correo sea correcto.</value>
   </data>
   <data name="esperandoJugadores" xml:space="preserve">
     <value>Esperando jugadores</value>
@@ -281,6 +293,9 @@
   </data>
   <data name="textBlockSinCuenta" xml:space="preserve">
     <value>¿No tienes cuenta?</value>
+  </data>
+  <data name="tituloErrorConexion" xml:space="preserve">
+    <value>Error de conexión</value>
   </data>
   <data name="usuario" xml:space="preserve">
     <value>Usuario</value>
