@@ -83,10 +83,13 @@ namespace SerpientesEscaleras
             clienteMultijugador.IniciarJuego(sala.IdSala);
         }
 
-        public void EntrarJuego()
+        public void EntrarJuego(ServidorJuegoSE.Casilla[] casillas, ServidorJuegoSE.Portal[] portales)
         {
             Juego juego = new Juego(jugador, sala, regresoMensaje);
             juego.RecibirListaJugadores(jugadoresConectados);
+            juego.Casillas = casillas.ToList();
+            juego.Portales = portales.ToList();
+            juego.InicializarTablero();
             juego.Show();
             this.Close();
             juego.Entrar();

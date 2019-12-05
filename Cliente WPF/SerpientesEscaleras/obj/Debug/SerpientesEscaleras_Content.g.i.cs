@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/f/track1.wav")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/tablero/casillaespecial.png")]
 
 

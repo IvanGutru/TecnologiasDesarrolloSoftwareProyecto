@@ -19,6 +19,7 @@ namespace DAO
         public string password { get; set; }
         public string salt { get; set; }
         public bool validada { get; set; }
+        public bool secionIniciada { get; set; }
     
         public virtual Jugador Jugador { get; set; }
     }

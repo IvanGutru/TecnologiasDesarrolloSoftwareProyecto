@@ -27,7 +27,7 @@
   <xs:element name="RegistrarJugadorResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="RegistrarJugadorResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="RegistrarJugadorResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -42,7 +42,7 @@
   <xs:element name="ActivarCuentaJugadorResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="ActivarCuentaJugadorResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="ActivarCuentaJugadorResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -56,21 +56,7 @@
   <xs:element name="VerificarCuentaResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="VerificarCuentaResult" type="xs:boolean" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="VerificarApodo">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/MessageService" minOccurs="0" name="jugador" nillable="true" type="q7:Jugador" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="VerificarApodoResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="VerificarApodoResult" type="xs:boolean" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/MessageService" minOccurs="0" name="VerificarCuentaResult" nillable="true" type="q7:Cuenta" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -84,7 +70,7 @@
   <xs:element name="EnviarCorreoResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="EnviarCorreoResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="EnviarCorreoResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -237,6 +223,23 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="CambiarPosicionFicha">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idSala" type="xs:int" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/MessageService" minOccurs="0" name="ficha" nillable="true" type="q18:Ficha" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CambiarPortales">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idSala" type="xs:int" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/MessageService" minOccurs="0" name="casillasRecibidas" nillable="true" type="q19:ArrayOfCasilla" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/MessageService" minOccurs="0" name="portalesRecibidos" nillable="true" type="q20:ArrayOfPortal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="RecibirMensajeLobby">
     <xs:complexType>
       <xs:sequence>
@@ -253,6 +256,14 @@
     </xs:complexType>
   </xs:element>
   <xs:element name="EntrarJuego">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/MessageService" minOccurs="0" name="casillas" nillable="true" type="q21:ArrayOfCasilla" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/MessageService" minOccurs="0" name="portales" nillable="true" type="q22:ArrayOfPortal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SolicitarCrearTablero">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
@@ -276,14 +287,14 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="apodo" nillable="true" type="xs:string" />
-        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/MessageService" minOccurs="0" name="fichasEscogidas" nillable="true" type="q18:ArrayOfFicha" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/MessageService" minOccurs="0" name="fichasEscogidas" nillable="true" type="q23:ArrayOfFicha" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="MostrarFichaElegida">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/MessageService" minOccurs="0" name="ficha" nillable="true" type="q19:Ficha" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/MessageService" minOccurs="0" name="ficha" nillable="true" type="q24:Ficha" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -297,7 +308,21 @@
   <xs:element name="MostrarTiro">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/MessageService" minOccurs="0" name="ficha" nillable="true" type="q20:Ficha" />
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/MessageService" minOccurs="0" name="ficha" nillable="true" type="q25:Ficha" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MostrarNuevosPortales">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/MessageService" minOccurs="0" name="portales" nillable="true" type="q26:ArrayOfPortal" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MostrarGanador">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/MessageService" minOccurs="0" name="ficha" nillable="true" type="q27:Ficha" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -9,19 +9,11 @@ namespace SerpientesEscaleras {
     public partial class MenuPrincipal : Window {
 
         private ServidorJuegoSE.Jugador jugador;
-        private MediaPlayer musicaFondo = new MediaPlayer();
         private SoundPlayer sonidoBoton = new SoundPlayer("SystemSounds/button.wav");
 
         public MenuPrincipal(ServidorJuegoSE.Jugador jugadorRecibido) {
             jugador = jugadorRecibido;
             InitializeComponent();
-            musicaFondo.MediaOpened += SoundTrackCargado;
-            musicaFondo.Open(new Uri("pack://siteoforigin:,,,/SoundTracks/track1.mp3"));
-        }
-
-        private void SoundTrackCargado(object sender, EventArgs e)
-        {
-            musicaFondo.Play();
         }
 
         private void Button_ConsultarPuntajes(object sender, RoutedEventArgs e) {

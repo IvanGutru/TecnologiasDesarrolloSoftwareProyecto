@@ -12,12 +12,12 @@ namespace DAO
     using System;
     using System.Collections.Generic;
     
-    public partial class Portal
+    public partial class sysdiagrams
     {
-        public short Id { get; set; }
-        public string color { get; set; }
-        public string imagen { get; set; }
-    
-        public virtual Casilla Casilla { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

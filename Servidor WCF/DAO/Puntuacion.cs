@@ -15,10 +15,9 @@ namespace DAO
     public partial class Puntuacion
     {
         public int Id { get; set; }
-        public short puntos { get; set; }
         public short turnos { get; set; }
+        public System.DateTime fecha { get; set; }
     
         public virtual Jugador Jugador { get; set; }
-        public virtual Partida Partida { get; set; }
     }
 }

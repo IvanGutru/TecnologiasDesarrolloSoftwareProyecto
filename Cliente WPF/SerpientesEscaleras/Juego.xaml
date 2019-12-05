@@ -63,7 +63,6 @@
             </Grid.ColumnDefinitions>
         </Grid>
         <Image Source="Resources/Tablero/tablero.png" HorizontalAlignment="Right" Margin="0,0,10,1" Width="1000" Height="720"></Image>
-        <Button Content="Tirar" HorizontalAlignment="Left" Height="35" Margin="168,10,0,0" VerticalAlignment="Top" Width="100" Click="Button_Tirar"/>
         <Label x:Name="label_Aviso" HorizontalAlignment="Left" Margin="10,219,0,0" VerticalAlignment="Top" Height="35" Width="300" Foreground="White"/>
 
     </Grid>

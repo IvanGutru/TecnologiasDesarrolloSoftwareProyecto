@@ -5,23 +5,12 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="f64a4d6b06db4fd786135f246e225fb7" Name="Diagram1" ZoomLevel="109" >
-        <EntityTypeShape EntityType="SEModel.Ficha" PointX="8" PointY="0.5" Width="1.5" />
-        <EntityTypeShape EntityType="SEModel.Partida" PointX="5" PointY="3" Width="1.5" />
-        <EntityTypeShape EntityType="SEModel.Tablero" PointX="7.25" PointY="3" Width="1.5" />
-        <EntityTypeShape EntityType="SEModel.Casilla" PointX="9.875" PointY="2.875" Width="1.5" />
-        <AssociationConnector Association="SEModel.PartidaTablero" />
-        <AssociationConnector Association="SEModel.TableroCasilla" />
-        <EntityTypeShape EntityType="SEModel.Portal" PointX="9.875" PointY="0.5" Width="1.5" />
         <EntityTypeShape EntityType="SEModel.Puntuacion" PointX="2.625" PointY="3.25" Width="1.5" />
         <EntityTypeShape EntityType="SEModel.Cuenta" PointX="0.5" PointY="0.5" Width="1.5" />
         <EntityTypeShape EntityType="SEModel.Jugador" Width="1.5" PointX="2.625" PointY="0.5" />
         <AssociationConnector Association="SEModel.JugadorCuenta" />
         <AssociationConnector Association="SEModel.PuntuacionJugador" />
-        <AssociationConnector Association="SEModel.PartidaPuntuacion" />
-        <AssociationConnector Association="SEModel.TableroFicha" />
-        <AssociationConnector Association="SEModel.CasillaPortal" />
-        <EntityTypeShape EntityType="SEModel.FondoTablero" Width="1.5" PointX="6.25" PointY="0.5" />
-        <AssociationConnector Association="SEModel.TableroFondoTablero" />
+        <EntityTypeShape EntityType="SEModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

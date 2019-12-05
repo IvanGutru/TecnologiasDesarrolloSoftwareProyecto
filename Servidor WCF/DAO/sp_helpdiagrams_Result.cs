@@ -10,16 +10,13 @@
 namespace DAO
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Casilla
+    public partial class sp_helpdiagrams_Result
     {
-        public int Id { get; set; }
-        public short numero { get; set; }
-        public bool especial { get; set; }
-        public int TableroId { get; set; }
-    
-        public virtual Tablero Tablero { get; set; }
-        public virtual Portal Portal { get; set; }
+        public string Database { get; set; }
+        public string Name { get; set; }
+        public int ID { get; set; }
+        public string Owner { get; set; }
+        public int OwnerID { get; set; }
     }
 }

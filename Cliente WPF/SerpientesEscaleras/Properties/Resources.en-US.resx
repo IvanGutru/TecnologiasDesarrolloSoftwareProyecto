@@ -156,6 +156,9 @@
   <data name="correoEnviado" xml:space="preserve">
     <value>Your account activation code has been sent to your email.</value>
   </data>
+  <data name="correoInvalido" xml:space="preserve">
+    <value>Invalid e-mail.</value>
+  </data>
   <data name="correoRepetido" xml:space="preserve">
     <value>The email is already registered</value>
   </data>
@@ -185,6 +188,15 @@
   </data>
   <data name="enviar" xml:space="preserve">
     <value>Send</value>
+  </data>
+  <data name="errorConexionBaseDatos" xml:space="preserve">
+    <value>Failed to connect to database. Try again later.</value>
+  </data>
+  <data name="errorConexionServidor" xml:space="preserve">
+    <value>Failed to connect to server. Verify your internet connection or try again later.</value>
+  </data>
+  <data name="errorMandarCorreo" xml:space="preserve">
+    <value>Fail to send your activation email. Verify that your email is correct.</value>
   </data>
   <data name="esperandoJugadores" xml:space="preserve">
     <value>Waiting players</value>
@@ -278,6 +290,9 @@
   </data>
   <data name="textBlockSinCuenta" xml:space="preserve">
     <value>Don´t you have account?</value>
+  </data>
+  <data name="tituloErrorConexion" xml:space="preserve">
+    <value>Connection error</value>
   </data>
   <data name="usuario" xml:space="preserve">
     <value>User</value>

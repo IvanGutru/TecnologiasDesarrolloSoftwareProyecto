@@ -21,7 +21,7 @@ namespace SerpientesEscaleras
         private Random aleatorio = new Random();
         private int numeroDado1;
         private int numeroDado2 = 0;
-        DispatcherTimer temporizador = new DispatcherTimer();
+        private bool cerrar = false;
 
         public Turno(Juego juegoReferencia)
         {
@@ -79,6 +79,11 @@ namespace SerpientesEscaleras
         private void Button_Elegir(object sender, RoutedEventArgs e)
         {
             var rectangulo = grid_Fichas.Children.Cast<UIElement>().FirstOrDefault(i => i is Rectangle && i.Opacity == 1);
+            if (rectangulo == null)
+            {
+                MessageBox.Show("Debe elegir una ficha");
+                return;
+            }
             var direccionFicha = (Image)grid_Fichas.Children.Cast<UIElement>().First(i => i is Image && Grid.GetColumn(i) == Grid.GetColumn(rectangulo));
             ficha = new ServidorJuegoSE.Ficha()
             {
@@ -87,6 +92,7 @@ namespace SerpientesEscaleras
                 ApodoJugador = juego.jugador.Apodo,
                 Posicion = 1
             };
+            cerrar = true;
             this.Close();
             juego.clienteMultijugador.AsignarFicha(juego.sala.IdSala, ficha);
         }
@@ -139,6 +145,7 @@ namespace SerpientesEscaleras
             caraDado.Source = new BitmapImage(new Uri(uri, UriKind.Relative));
             Grid.SetColumn(caraDado, 0);
             grid_Dados.Children.Add(caraDado);
+            DispatcherTimer temporizador = new DispatcherTimer();
             temporizador.Interval = TimeSpan.FromSeconds(3d);
             temporizador.Tick += temporizadorDetenido;
             temporizador.Start();
@@ -156,7 +163,9 @@ namespace SerpientesEscaleras
 
         private void temporizadorDetenido(object sender, EventArgs e)
         {
+            var temporizador = sender as DispatcherTimer;
             temporizador.Stop();
+            cerrar = true;
             this.Close();
             juego.clienteMultijugador.RecibirTiro(juego.sala.IdSala, numeroDado1 + numeroDado2);
         }
@@ -186,5 +195,37 @@ namespace SerpientesEscaleras
             }
         }
 
+        public void MostrarGanador(ServidorJuegoSE.Ficha fichaGanador)
+        {
+            label_Instruccion.Content = "El ganador es: " + fichaGanador.ApodoJugador;
+            ColumnDefinition columna = new ColumnDefinition();
+            columna.Width = new GridLength(110);
+            grid_Dados.ColumnDefinitions.Add(columna);
+            Image imagenGanador = new Image();
+            imagenGanador.Source = new BitmapImage(new Uri(fichaGanador.UriFicha, UriKind.Relative));
+            imagenGanador.Width = 100;
+            grid_Dados.Children.Add(imagenGanador);
+            Grid.SetColumn(imagenGanador, 0);
+            Grid.SetRow(imagenGanador, 0);
+            button_Salir.Content = "Salir";
+            button_Salir.Visibility = Visibility.Visible;
+            grid_Dados.Visibility = Visibility.Visible;
+        }
+
+        private void Cerrando(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (!cerrar)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void Button_Salir(object sender, RoutedEventArgs e)
+        {
+            cerrar = true;
+            MenuPrincipal menuPrincipal = new MenuPrincipal(juego.jugador);
+            menuPrincipal.Show();
+            this.Close();
+        }
     }
 }
