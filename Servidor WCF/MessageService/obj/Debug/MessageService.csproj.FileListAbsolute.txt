@@ -526,3 +526,4 @@ C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\Messag
 C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\MessageService\obj\Debug\MessageService.csproj.CopyComplete
 C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\MessageService\obj\Debug\MessageService.dll
 C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\MessageService\obj\Debug\MessageService.pdb
+C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\MessageService\obj\Debug\MessageService.csproj.CoreCompileInputs.cache

@@ -10,6 +10,23 @@ namespace MessageService
     [ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Single, InstanceContextMode = InstanceContextMode.Single)]
     public partial class ServicioSistema : IAdministradorMultijugador
     {
+        private Func<IAdministradorMultijugador> callbackChannel;
+        private Func<IJugador> callbackChannel2;
+
+        public ServicioSistema()
+        {
+
+        }
+        public ServicioSistema(Func<IAdministradorMultijugador> callbackCreator)
+        {
+            this.callbackChannel = callbackCreator ?? throw new ArgumentNullException("callbackCreator");
+        }
+
+        public ServicioSistema(Func<IJugador> callbackCreator)
+        {
+            this.callbackChannel2 = callbackCreator ?? throw new ArgumentNullException("callbackCreator");
+        }
+
         List<Sala> salasAbiertas = new List<Sala>();
         private int idsSalas = 1;
 
@@ -42,8 +59,10 @@ namespace MessageService
         public void UnirseSala(int idSala, Jugador jugador)
         {
             int indice = BuscarSala(idSala);
-            var conexion = OperationContext.Current.GetCallbackChannel<IJugador>();
-            salasAbiertas[indice].DiccionarioJugadoresLobby[conexion] = jugador;
+            if (callbackChannel2 == null) {
+                callbackChannel2 = () => OperationContext.Current.GetCallbackChannel<IJugador>();
+            }
+            salasAbiertas[indice].DiccionarioJugadoresLobby[callbackChannel2()] = jugador;
             salasAbiertas[indice].NumJugadores++;
             foreach (var miembro in salasAbiertas[indice].DiccionarioJugadoresLobby.Keys)
             {

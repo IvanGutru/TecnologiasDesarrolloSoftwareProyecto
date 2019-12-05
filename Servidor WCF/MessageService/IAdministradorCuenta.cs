@@ -30,72 +30,49 @@ namespace MessageService {
     [DataContract]
     public class Jugador
     {
-        private String apodo;
-        private String nombre;
-        private string apellidos;
+        [DataMember]
+        public String Apodo { get; set; }
 
         [DataMember]
-        public String Apodo
-        {
-            get { return apodo; }
-            set { apodo = value; }
-        }
+        public String Nombre { get; set; }
 
         [DataMember]
-        public String Nombre
+        public String Apellidos { get; set; }
+
+        public Jugador()
         {
-            get { return nombre; }
-            set { nombre = value; }
+
         }
 
-        [DataMember]
-        public String Apellidos
+        public Jugador(string apodo, string nombre, string apellidos)
         {
-            get { return apellidos; }
-            set { apellidos = value; }
+            this.Apodo = apodo;
+            this.Nombre = nombre;
+            this.Apellidos = apellidos;
         }
+
     }
 
     [DataContract]
     public class Cuenta
     {
-        private String correo;
-        private String contraseña;
+        [DataMember]
+        public String Correo { get; set; }
 
         [DataMember]
-        public String Correo
-        {
-            get { return correo; }
-            set { correo = value; }
-        }
+        public String Contraseña { get; set; }
 
-        [DataMember]
-        public String Contraseña
-        {
-            get { return contraseña; }
-            set { contraseña = value; }
-        }
+   
     }
 
     [DataContract]
     public class Puntuacion
     {
-        private int puntos;
-        private int turnos;
+        [DataMember]
+        public int Puntos { get; set; }
 
         [DataMember]
-        public int Puntos
-        {
-            get { return puntos; }
-            set { puntos = value; }
-        }
-
-        [DataMember]
-        public int Turnos
-        {
-            get { return turnos; }
-            set { turnos = value; }
-        }
+        public int Turnos { get; set; }
     }
 
 }

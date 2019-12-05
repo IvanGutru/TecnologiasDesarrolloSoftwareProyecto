@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace MessageService
 {
     [ServiceContract(CallbackContract = typeof(IJugador))]
-    interface IAdministradorMultijugador
+    public interface IAdministradorMultijugador
     {
         [OperationContract]
         int CrearSala(Sala sala);
