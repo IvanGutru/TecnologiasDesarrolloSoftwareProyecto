@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 12/05/2019 00:44:44
--- Generated from EDMX file: C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\DAO\SEModel.edmx
+-- Date Created: 12/05/2019 13:16:18
+-- Generated from EDMX file: C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\DAO\SEModel.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -17,11 +17,26 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_JugadorCuenta]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[JugadorSet] DROP CONSTRAINT [FK_JugadorCuenta];
+GO
+IF OBJECT_ID(N'[dbo].[FK_PuntuacionJugador]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[PuntuacionSet] DROP CONSTRAINT [FK_PuntuacionJugador];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[PuntuacionSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[PuntuacionSet];
+GO
+IF OBJECT_ID(N'[dbo].[CuentaSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[CuentaSet];
+GO
+IF OBJECT_ID(N'[dbo].[JugadorSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[JugadorSet];
+GO
 IF OBJECT_ID(N'[dbo].[sysdiagrams]', 'U') IS NOT NULL
     DROP TABLE [dbo].[sysdiagrams];
 GO

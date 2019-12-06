@@ -154,4 +154,5 @@ C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\Serpien
 C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\bin\Debug\WpfAnimatedGif.dll
 C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\bin\Debug\WpfAnimatedGif.xml
 C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\obj\Debug\SerpientesEscaleras.csprojAssemblyReference.cache
-
+C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\bin\Debug\SerpientesEscaleras.xml
+C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\obj\Debug\SerpientesEscaleras.csproj.CoreCompileInputs.cache

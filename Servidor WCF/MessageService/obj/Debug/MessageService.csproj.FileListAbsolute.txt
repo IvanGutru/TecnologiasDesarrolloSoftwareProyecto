@@ -399,7 +399,6 @@ C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Servidor W
 C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\MessageService\obj\Debug\MessageService.csproj.CopyComplete
 C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\MessageService\obj\Debug\MessageService.dll
 C:\Users\Otros\Documents\GitHub\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\MessageService\obj\Debug\MessageService.pdb
-C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\MessageService\bin\Debug\System.Globalization.Extensions.dll
 C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\MessageService\bin\Debug\MessageService.dll.config
 C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\MessageService\bin\Debug\MessageService.dll
 C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\MessageService\bin\Debug\MessageService.pdb
@@ -429,6 +428,7 @@ C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\Messag
 C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\MessageService\bin\Debug\System.Dynamic.Runtime.dll
 C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\MessageService\bin\Debug\System.Globalization.Calendars.dll
 C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\MessageService\bin\Debug\System.Globalization.dll
+C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\MessageService\bin\Debug\System.Globalization.Extensions.dll
 C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\MessageService\bin\Debug\System.IO.Compression.dll
 C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\MessageService\bin\Debug\System.IO.Compression.ZipFile.dll
 C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\MessageService\bin\Debug\System.IO.dll

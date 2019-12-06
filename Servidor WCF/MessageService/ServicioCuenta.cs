@@ -256,6 +256,9 @@ namespace MessageService {
                 catch (System.Data.Entity.Core.EntityException)
                 {
                     return null;
+                } catch (Exception) 
+                {
+                    return null;
                 }
                 foreach (var puntaje in listaPuntajes)
                 {
@@ -281,6 +284,9 @@ namespace MessageService {
                     listaPuntajes = conexionBaseDatos.PuntuacionSet.OrderByDescending(x => x.turnos).Take(10).ToList();
                 }
                 catch (System.Data.Entity.Core.EntityException)
+                {
+                    return null;
+                } catch (Exception)
                 {
                     return null;
                 }

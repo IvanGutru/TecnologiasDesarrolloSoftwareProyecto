@@ -45,6 +45,7 @@ namespace SerpientesEscaleras
             {
                 jugador = cliente.IniciarSesion(cuenta);
                 cuenta = cliente.VerificarCuenta(cuenta);
+
             }
             catch (System.ServiceModel.EndpointNotFoundException)
             {
@@ -210,9 +211,9 @@ namespace SerpientesEscaleras
         private Boolean ValidarFormatoCorreo()
         {
             String expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
-            if (Regex.IsMatch(textBox_Usuario.Text, expresion))
+            if (System.Text.RegularExpressions.Regex.IsMatch(textBox_Usuario.Text, expresion))
             {
-                if (Regex.Replace(textBox_Usuario.Text, expresion, String.Empty).Length == 0)
+                if (System.Text.RegularExpressions.Regex.Replace(textBox_Usuario.Text, expresion, String.Empty).Length == 0)
                 {
                     return true;
                 }
