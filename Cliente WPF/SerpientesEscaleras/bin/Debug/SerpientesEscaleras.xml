@@ -12,6 +12,13 @@
             ConsultarPuntajes
             </summary>
         </member>
+        <member name="M:SerpientesEscaleras.ConsultarPuntajes.#ctor(SerpientesEscaleras.ServidorJuegoSE.Jugador)">
+            <summary>
+            Método que muestra los puntajes del jugador que recibe como parametro, tambien muestra los 
+            puntajes de todas las partidas.
+            </summary>
+            <param name="jugadorRecibido"></param>
+        </member>
         <member name="M:SerpientesEscaleras.ConsultarPuntajes.InitializeComponent">
             <summary>
             InitializeComponent
@@ -21,6 +28,20 @@
             <summary>
             IngresarCodigo
             </summary>
+        </member>
+        <member name="M:SerpientesEscaleras.IngresarCodigo.#ctor(SerpientesEscaleras.ServidorJuegoSE.Cuenta)">
+             <summary>
+            Constructor de la ventana que recibe la cuenta registrada a la cual se le envio el 
+            codigo para verificarla
+             </summary>
+             <param name="cuentaRecibida"></param>
+        </member>
+        <member name="M:SerpientesEscaleras.IngresarCodigo.Button_Salir(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Regresa al menu principal del juego
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
         </member>
         <member name="M:SerpientesEscaleras.IngresarCodigo.InitializeComponent">
             <summary>
@@ -380,7 +401,7 @@
         </member>
         <member name="P:SerpientesEscaleras.Properties.Resources.usuarioContraseñaInvalidas">
             <summary>
-              Busca una cadena traducida similar a El usuario y/o contraseña no es correcto.
+              Busca una cadena traducida similar a Usuario o contraseña incorrectos, vuelva a intentar..
             </summary>
         </member>
         <member name="P:SerpientesEscaleras.Properties.Resources.usuarioRepetido">

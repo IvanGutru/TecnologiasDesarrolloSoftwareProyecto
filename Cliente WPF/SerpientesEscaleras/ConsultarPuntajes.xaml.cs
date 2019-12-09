@@ -27,5 +27,14 @@ namespace SerpientesEscaleras {
             ventanaPrincipal.Show();
             this.Close();
         }
+
+        private void DataGrid_Puntajes_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            string titulo = e.Column.Header.ToString();
+            if (titulo == "ExtensionData")
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

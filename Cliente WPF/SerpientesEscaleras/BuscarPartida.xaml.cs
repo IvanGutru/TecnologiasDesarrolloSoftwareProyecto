@@ -58,7 +58,7 @@ namespace SerpientesEscaleras
         private void DataGrid_Partidas_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
         {
             string titulo = e.Column.Header.ToString();
-            if(titulo == "ExtensionData" || titulo == "UriFondoTablero" || titulo == "DiccionarioJugadores")
+            if(titulo == "ExtensionData" || titulo == "UriFondoTablero" || titulo == "DiccionarioJugadores" || titulo == "DiccionarioJugadoresLobby" || titulo == "DobleFicha" || titulo == "Jugando" || titulo == "IdSala" || titulo == "IdSala" || titulo == "Fichas" || titulo == "JugadorEnTurno" || titulo == "JugadoresJugando")
             {
                 e.Cancel = true;
             }
@@ -78,22 +78,11 @@ namespace SerpientesEscaleras
                 e.Column.Header = dobleDado;
                 e.Column.DisplayIndex = 2;
             }
-            if (titulo == "DobleFicha")
-            {
-                string dobleFicha = Properties.Resources.dobleFicha;
-                e.Column.Header = dobleFicha;
-                e.Column.DisplayIndex = 3;
-            }
             if (titulo == "CasillasEspeciales")
             {
                 string casillaEspecial = Properties.Resources.casillaEspecial;
                 e.Column.Header = casillaEspecial;
-                e.Column.DisplayIndex = 4;
-            }
-            if (titulo == "Jugando")
-            {
-                e.Column.Header = "Empezó la partida";
-                e.Column.DisplayIndex = 5;
+                e.Column.DisplayIndex = 3;
             }
         }
     }

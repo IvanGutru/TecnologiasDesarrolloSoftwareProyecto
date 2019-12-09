@@ -288,8 +288,39 @@ namespace MessageService {
             return ListaFilas;
         }
 
-    }
+        private void RegistrarPuntaje(int indiceSala, Ficha fichaGanador)
+        {
+            ServidorSE conexionBaseDatos = new ServidorSE();
+            using (conexionBaseDatos)
+            {
+                DAO.Jugador jugadorRecuperado;
+                try
+                {
+                    jugadorRecuperado = conexionBaseDatos.JugadorSet.Where(j => j.apodo.Equals(salasAbiertas[indiceSala].JugadorEnTurno)).FirstOrDefault();
+                    if (jugadorRecuperado != null && jugadorRecuperado.apodo.Equals(salasAbiertas[indiceSala].JugadorEnTurno))
+                    {
+                        return;
+                    }
+                    //conexionBaseDatos.PuntuacionSet.Add(new DAO.Puntuacion()
+                    //{
+                    //    turnos = Convert.ToInt16(fichaGanador.Movimientos),
+                    //    fecha = DateTime.Now,
+                    //    Jugador = jugadorRecuperado
+                    //});
+                    //conexionBaseDatos.SaveChanges();
+                }
+                catch (System.Data.Entity.Core.EntityException)
+                {
+                    return;
+                }
+                catch (Exception)
+                {
+                    return;
+                }
+            }
+        }
 
+    }
 }
 
 

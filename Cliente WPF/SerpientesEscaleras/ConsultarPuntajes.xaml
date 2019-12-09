@@ -6,13 +6,17 @@
         xmlns:local="clr-namespace:SerpientesEscaleras"
         xmlns:p="clr-namespace:SerpientesEscaleras.Properties"
         mc:Ignorable="d"
-        Title="{x:Static p:Resources.consultarPuntajes}" Height="360.332" Width="690.406" Background="#FF404040">
+        Title="{x:Static p:Resources.consultarPuntajes}" Height="600" Width="1000" WindowStartupLocation="CenterScreen" WindowStyle="ThreeDBorderWindow" 
+        Opacity="0.9" ResizeMode="CanMinimize" Icon="Resources/iconoApp.ico">
+    <Window.Background>
+        <SolidColorBrush Color="#FF1C1C1C"/>
+    </Window.Background>
     <Grid>
-        <Button Content="{x:Static p:Resources.regresar}" HorizontalAlignment="Left" Margin="550,287,0,0" VerticalAlignment="Top" Width="107" Click="Button_Click"/>
-        <DataGrid x:Name="DataGrid_MisPuntajes" HorizontalAlignment="Left" Height="188" Margin="10,93,0,0" VerticalAlignment="Top" Width="313" Opacity="0.6" />
-        <DataGrid x:Name="DataGrid_MejoresPuntajes" HorizontalAlignment="Left" Height="188" Margin="344,93,0,0" VerticalAlignment="Top" Width="313" Opacity="0.6"/>
-        <Label Content="{x:Static p:Resources.misPuntajes}" HorizontalAlignment="Left" Margin="81,51,0,0" VerticalAlignment="Top" BorderBrush="White" Foreground="#DDFFFFFF" FontSize="20" FontFamily="Dragon Ball"/>
-        <Label Content="{x:Static p:Resources.mejoresPuntajes}" HorizontalAlignment="Left" Margin="387,51,0,0" VerticalAlignment="Top" BorderBrush="White" Foreground="#DDFFFFFF" FontSize="20" FontFamily="Dragon Ball"/>
+        <Button Content="{x:Static p:Resources.regresar}" Margin="0,0,0,30" VerticalAlignment="Bottom" Width="107" Click="Button_Click" HorizontalAlignment="Center"/>
+        <DataGrid x:Name="DataGrid_MisPuntajes" HorizontalAlignment="Left" Height="350" Margin="50,100,0,0" VerticalAlignment="Top" Width="400" Opacity="0.6" AutoGeneratingColumn="DataGrid_Puntajes_AutoGeneratingColumn" SelectionUnit="FullRow" CanUserAddRows="False" IsReadOnly="True"/>
+        <DataGrid x:Name="DataGrid_MejoresPuntajes" HorizontalAlignment="Right" Height="350" Margin="0,100,50,0" VerticalAlignment="Top" Width="400" Opacity="0.6" AutoGeneratingColumn="DataGrid_Puntajes_AutoGeneratingColumn" SelectionUnit="FullRow" CanUserAddRows="False" IsReadOnly="True"/>
+        <Label Content="{x:Static p:Resources.misPuntajes}" HorizontalAlignment="Left" Margin="50,51,0,0" VerticalAlignment="Top" BorderBrush="White" Foreground="#DDFFFFFF" FontSize="20" FontFamily="Dragon Ball"/>
+        <Label Content="{x:Static p:Resources.mejoresPuntajes}" HorizontalAlignment="Left" Margin="631,51,0,0" VerticalAlignment="Top" BorderBrush="White" Foreground="#DDFFFFFF" FontSize="20" FontFamily="Dragon Ball"/>
 
     </Grid>
 </Window>
