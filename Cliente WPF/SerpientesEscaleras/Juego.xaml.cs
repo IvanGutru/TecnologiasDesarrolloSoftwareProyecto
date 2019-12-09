@@ -44,14 +44,18 @@ namespace SerpientesEscaleras
             musicaFondo.MediaOpened += SoundTrackCargado;
             musicaFondo.MediaEnded += SoundTrackFinalizado;
             musicaFondo.Open(new Uri("pack://siteoforigin:,,,/SoundTracks/track1.mp3"));
-            //CrearCasillas(7, 10);
-            //Portal portal = new Portal();
-            //portales = portal.CrearPortales();
         }
-
+        /// <summary>
+        /// Metodo para obtener las casillas
+        /// </summary>
         public List<ServidorJuegoSE.Casilla> Casillas { get { return casillas; } set { casillas = value; } }
+        /// <summary>
+        /// Metodo para obtener los portales.
+        /// </summary>
         public List<ServidorJuegoSE.Portal> Portales { get { return portales; } set { portales = value; } }
-
+        /// <summary>
+        /// Metodo que inicializa los portales y casillas especiales en el tablero
+        /// </summary>
         public void InicializarTablero()
         {
             ColocarCasillasEspeciales();
@@ -68,51 +72,13 @@ namespace SerpientesEscaleras
             musicaFondo.Play();
         }
 
-        //private void CrearCasillas(int filas, int columnas)
-        //{
-        //    int id = 1;
-        //    int columna;
-        //    for (int fila = filas-1; fila >= 0; fila--)
-        //    {
-        //        if (fila % 2 == 0)
-        //        {
-        //            for (columna = 0; columna < columnas; columna++)
-        //            {
-        //                casillas.Add(new Casilla(id, fila, columna));
-        //                id++;
-        //            }
-        //        }
-        //        else
-        //        {
-        //            for (columna = 9; columna >= 0; columna--)
-        //            {
-        //                casillas.Add(new Casilla(id, fila, columna));
-        //                id++;
-        //            }
-        //        }
-        //    }
-        //}
-
-        //private void CrearCasillasEspeciales()
-        //{
-
-        //}
-
+       
         private void ColocarCasillasEspeciales()
         {
-            //Random aleatorio = new Random();
-            //int columna;
-            //int indiceCasilla;
             Image casillaEspecial;
             var casillasEspeciales = casillas.Where(x => x.Especial).ToList();
             for (int i = 0; i < casillasEspeciales.Count(); i++)
             {
-                //do
-                //{
-                //    columna = aleatorio.Next(0, 10);
-                //    indiceCasilla = casillas.FindIndex(x => x.Columna == columna && x.Fila == i);
-                //} while (casillas[indiceCasilla].Id == 70 || casillas[indiceCasilla].Id == 1);
-                //casillas[indiceCasilla].Especial = true;
                 casillaEspecial = new Image();
                 casillaEspecial.Source = new BitmapImage(new Uri("Resources/Tablero/casillaEspecial.png", UriKind.Relative));
                 casillaEspecial.HorizontalAlignment = HorizontalAlignment.Left;
@@ -126,18 +92,10 @@ namespace SerpientesEscaleras
 
         private void ColocarPortales()
         {
-            //Random aleatorio = new Random();
             ServidorJuegoSE.Casilla casilla;
             Image imagenPortal;
-            //int portalEnCasilla;
             for (int i = 0; i < portales.Count; i++)
             {
-                //do
-                //{
-                //    casilla = ObtenerCasillaAleatoria(i, aleatorio);
-                //    portalEnCasilla = portales.FindIndex(x => x.IdCasilla == casilla.Id);
-                //} while (casilla.Especial || portalEnCasilla != -1 || casilla.Id == 70 || casilla.Id == 1);
-                //portales[i].IdCasilla = casilla.Id;
                 casilla = casillas.Find(x => x.Id == portales[i].IdCasilla);
                 imagenPortal = new Image();
                 imagenPortal.Source = new BitmapImage(new Uri(portales[i].UriPortal, UriKind.Relative));
@@ -172,18 +130,26 @@ namespace SerpientesEscaleras
             menuPrincipal.Show();
             this.Close();
         }
-
+        /// <summary>
+        /// Metodo que agrega los jugadores de la partida a la ventana.
+        /// </summary>
+        /// <param name="jugadores">lista de jugadores</param>
         public void RecibirListaJugadores(List<String> jugadores)
         {
             jugadoresConectados.AddRange(jugadores);
             listBox_JugadoresConectados.Items.Refresh();
         }
-
+        /// <summary>
+        /// Metodo que permite al jugador unirse a una sala
+        /// </summary>
         public void Entrar()
         {
             clienteMultijugador.UnirseJuego(sala.IdSala, jugador);
         }
-
+        /// <summary>
+        /// Metodo que mueve la ficha del jugador en turno por el tablero y portales.
+        /// </summary>
+        /// <param name="cayoPortal"> identificar si cayo en un portal </param>
         public void MoverFicha(bool cayoPortal)
         {
             ServidorJuegoSE.Casilla casillaTemporal = casillas.ElementAt(jugadorEnTurno.Posicion - 1);
@@ -218,7 +184,9 @@ namespace SerpientesEscaleras
             temporizador.Stop();
             MoverFicha(true);
         }
-
+        /// <summary>
+        /// Metodo que muestra las fichas en el tablero
+        /// </summary>
         public void MostrarFichaEnTablero()
         {
             Image imagenFicha = new Image();
@@ -230,51 +198,25 @@ namespace SerpientesEscaleras
             Grid.SetColumn(imagenFicha, 0);
             Grid.SetRow(imagenFicha, 6);
         }
-
+        /// <summary>
+        /// Metodo que cambia la ubicación de los portales
+        /// </summary>
+        /// <param name="portalesRecibidos"></param>
         public void CambiarPortales(ServidorJuegoSE.Portal[] portalesRecibidos)
         {
-            //Random aleatorio = new Random();
-            //int portalEnCasilla;
             for (int i = 0; i < portales.Count; i++)
             {
-                //do
-                //{
-                //    casilla = ObtenerCasillaAleatoria(i, aleatorio);
-                //    portalEnCasilla = portales.FindIndex(x => x.IdCasilla == casilla.Id);
-                //} while (casilla.Especial || casilla.Id == 70 || casilla.Id == 1 || (portalEnCasilla < i && portalEnCasilla >= 0));
                 var casillaDelPortal = casillas.Find(x => x.Id == portales[i].IdCasilla);
                 var imagenesEnCasilla = grid_Tablero.Children.Cast<UIElement>().Where
                     (x => x is Image && Grid.GetColumn(x) == casillaDelPortal.Columna
                     && Grid.GetRow(x) == casillaDelPortal.Fila).Cast<Image>();
                 var portal = imagenesEnCasilla.FirstOrDefault(x => x.Name.Equals(portales[i].Color + portales[i].ZonaTablero));
                 var nuevaCasilla = casillas.Find(x => x.Id == portalesRecibidos[i].IdCasilla);
-                //portales[i].IdCasilla = casilla.Id;
                 Grid.SetRow(portal, nuevaCasilla.Fila);
                 Grid.SetColumn(portal, nuevaCasilla.Columna);
             }
             portales = portalesRecibidos.ToList();
         }
-
-        //private Casilla ObtenerCasillaAleatoria(int indice, Random aleatorio)
-        //{
-        //    int fila;
-        //    int columna;
-        //    if (portales[indice].ZonaTablero.Equals("abajo"))
-        //    {
-        //        fila = aleatorio.Next(4, 7);
-        //    }
-        //    else
-        //    {
-        //        fila = aleatorio.Next(0, 4);
-        //    }
-        //    columna = aleatorio.Next(0, 10);
-        //    return casillas.Find(x => x.Columna == columna && x.Fila == fila);
-        //}
-
-        //public void CrearTablero()
-        //{
-
-        //}
 
     }
 }

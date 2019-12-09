@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/MessageService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/MessageService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://192.168.43.115:8081/ServidorSerpientesEscaleras?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="Cuenta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Contraseña" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Correo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Validada" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Cuenta" nillable="true" type="tns:Cuenta" />
+  <xs:complexType name="Jugador">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Apellidos" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Apodo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Jugador" nillable="true" type="tns:Jugador" />
+  <xs:complexType name="ArrayOfFilaTablaPuntajes">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FilaTablaPuntajes" nillable="true" type="tns:FilaTablaPuntajes" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFilaTablaPuntajes" nillable="true" type="tns:ArrayOfFilaTablaPuntajes" />
+  <xs:complexType name="FilaTablaPuntajes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Apodo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Puntos" type="xs:int" />
+      <xs:element minOccurs="0" name="Turnos" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FilaTablaPuntajes" nillable="true" type="tns:FilaTablaPuntajes" />
+  <xs:complexType name="Sala">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CasillasEspeciales" type="xs:boolean" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DiccionarioJugadores" nillable="true" type="q1:ArrayOfKeyValueOfanyTypeJugadorSL_SLRbTC" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DiccionarioJugadoresLobby" nillable="true" type="q2:ArrayOfKeyValueOfanyTypeJugadorSL_SLRbTC" />
+      <xs:element minOccurs="0" name="DobleDado" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DobleFicha" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Fichas" nillable="true" type="tns:ArrayOfFicha" />
+      <xs:element minOccurs="0" name="IdSala" type="xs:int" />
+      <xs:element minOccurs="0" name="JugadorEnTurno" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="JugadoresJugando" nillable="true" type="q3:ArrayOfstring" />
+      <xs:element minOccurs="0" name="Jugando" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumJugadores" type="xs:int" />
+      <xs:element minOccurs="0" name="UriFondoTablero" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Sala" nillable="true" type="tns:Sala" />
+  <xs:complexType name="ArrayOfFicha">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Ficha" nillable="true" type="tns:Ficha" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFicha" nillable="true" type="tns:ArrayOfFicha" />
+  <xs:complexType name="Ficha">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ApodoJugador" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreFicha" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Posicion" type="xs:int" />
+      <xs:element minOccurs="0" name="UriFicha" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Ficha" nillable="true" type="tns:Ficha" />
+  <xs:complexType name="ArrayOfSala">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Sala" nillable="true" type="tns:Sala" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSala" nillable="true" type="tns:ArrayOfSala" />
+  <xs:complexType name="ArrayOfCasilla">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Casilla" nillable="true" type="tns:Casilla" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCasilla" nillable="true" type="tns:ArrayOfCasilla" />
+  <xs:complexType name="Casilla">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Columna" type="xs:int" />
+      <xs:element minOccurs="0" name="Especial" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Fila" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Casilla" nillable="true" type="tns:Casilla" />
+  <xs:complexType name="ArrayOfPortal">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Portal" nillable="true" type="tns:Portal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPortal" nillable="true" type="tns:ArrayOfPortal" />
+  <xs:complexType name="Portal">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Color" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdCasilla" type="xs:int" />
+      <xs:element minOccurs="0" name="UriPortal" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ZonaTablero" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Portal" nillable="true" type="tns:Portal" />
+</xs:schema>

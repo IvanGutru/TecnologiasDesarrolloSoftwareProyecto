@@ -11,7 +11,11 @@ namespace SerpientesEscaleras
     public partial class CrearPartida : Window
     {
         private ServidorJuegoSE.Jugador jugador = new ServidorJuegoSE.Jugador();
-
+       
+        /// <summary>
+        /// Constructor de CrearPartida que muestra los jugadores
+        /// </summary>
+        /// <param name="jugadorRecibido"></param>
         public CrearPartida(ServidorJuegoSE.Jugador jugadorRecibido)
         {
             jugador = jugadorRecibido;

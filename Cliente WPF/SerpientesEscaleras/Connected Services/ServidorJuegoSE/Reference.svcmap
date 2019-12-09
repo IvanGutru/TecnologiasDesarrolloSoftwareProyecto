@@ -22,12 +22,12 @@
     <MetadataSource Address="http://localhost:8081/ServidorSerpientesEscaleras" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ServicioSistema.wsdl" MetadataType="Wsdl" ID="2c4191ab-5875-41de-b4ed-b5b343b77dda" SourceId="1" SourceUrl="http://localhost:8081/ServidorSerpientesEscaleras?wsdl" />
-    <MetadataFile FileName="ServidorSerpientesEscaleras.xsd" MetadataType="Schema" ID="a1af12fa-395c-4cc0-8ba1-99b61f7b662d" SourceId="1" SourceUrl="http://localhost:8081/ServidorSerpientesEscaleras?xsd=xsd3" />
-    <MetadataFile FileName="ServidorSerpientesEscaleras1.xsd" MetadataType="Schema" ID="9fd3b81a-326e-4fcd-8d66-7ca283e2c769" SourceId="1" SourceUrl="http://localhost:8081/ServidorSerpientesEscaleras?xsd=xsd2" />
-    <MetadataFile FileName="ServidorSerpientesEscaleras2.xsd" MetadataType="Schema" ID="611ea4f7-75fc-43bd-9358-8bfd8262a1fc" SourceId="1" SourceUrl="http://localhost:8081/ServidorSerpientesEscaleras?xsd=xsd1" />
-    <MetadataFile FileName="ServidorSerpientesEscaleras3.xsd" MetadataType="Schema" ID="6262d351-a20d-4f7b-9257-37de0eb7a7bf" SourceId="1" SourceUrl="http://localhost:8081/ServidorSerpientesEscaleras?xsd=xsd0" />
-    <MetadataFile FileName="ServidorSerpientesEscaleras.disco" MetadataType="Disco" ID="af7caa5e-512a-45bf-b041-2973065648fe" SourceId="1" SourceUrl="http://localhost:8081/ServidorSerpientesEscaleras?disco" />
+    <MetadataFile FileName="ServicioSistema1.wsdl" MetadataType="Wsdl" ID="665c67b1-6fb5-4760-8122-f95f8db92f2c" SourceId="1" SourceUrl="http://192.168.43.115:8081/ServidorSerpientesEscaleras?wsdl" />
+    <MetadataFile FileName="ServidorSerpientesEscaleras1.disco" MetadataType="Disco" ID="b58b59e5-289b-4c64-b338-b5aa8262fe86" SourceId="1" SourceUrl="http://192.168.43.115:8081/ServidorSerpientesEscaleras?disco" />
+    <MetadataFile FileName="ServidorSerpientesEscaleras4.xsd" MetadataType="Schema" ID="eaa9b7b4-fce2-48f4-b5af-5df8f5fdcb2e" SourceId="1" SourceUrl="http://192.168.43.115:8081/ServidorSerpientesEscaleras?xsd=xsd0" />
+    <MetadataFile FileName="ServidorSerpientesEscaleras41.xsd" MetadataType="Schema" ID="ef71bd88-7460-46cd-ad2a-9bfb36d9751e" SourceId="1" SourceUrl="http://192.168.43.115:8081/ServidorSerpientesEscaleras?xsd=xsd3" />
+    <MetadataFile FileName="ServidorSerpientesEscaleras42.xsd" MetadataType="Schema" ID="f9828e86-d089-4ecf-aebf-df0289861aee" SourceId="1" SourceUrl="http://192.168.43.115:8081/ServidorSerpientesEscaleras?xsd=xsd1" />
+    <MetadataFile FileName="ServidorSerpientesEscaleras43.xsd" MetadataType="Schema" ID="c9798632-5fac-4c0b-af59-a961d7657380" SourceId="1" SourceUrl="http://192.168.43.115:8081/ServidorSerpientesEscaleras?xsd=xsd2" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

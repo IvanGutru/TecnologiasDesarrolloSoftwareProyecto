@@ -17,7 +17,10 @@ namespace SerpientesEscaleras
         public List<String> jugadoresConectados = new List<String>();
         private CallbackMultijugador regresoMensaje;
         private ServidorJuegoSE.Sala sala;
-
+        /// <summary>
+        /// Constructor de la ventana lobby, implementa el servicio al callback para el multijugador
+        /// </summary>
+        /// <param name="jugadorRecibido"></param>
         public Lobby(ServidorJuegoSE.Jugador jugadorRecibido)
         {
             jugador = jugadorRecibido;
@@ -31,14 +34,23 @@ namespace SerpientesEscaleras
             contexto = new InstanceContext(regresoMensaje);
             clienteMultijugador = new ServidorJuegoSE.AdministradorMultijugadorClient(contexto);
         }
-
+        /// <summary>
+        /// Metodo que recibe la sala creada en la ventana crear partida y la añade al servidor para despues
+        /// unirse a ella
+        /// </summary>
+        /// <param name="salaRecibida">Sala creada en la ventana crear partida</param>
         public void CrearPartida(ServidorJuegoSE.Sala salaRecibida)
         {
             sala = salaRecibida;
             sala.IdSala = clienteMultijugador.CrearSala(sala);
             clienteMultijugador.UnirseSala(sala.IdSala, jugador);
         }
-
+        /// <summary>
+        /// Verifica que si la sala está dispobible y que no haya empezado, de cumplirse
+        /// añade a los jugadores a la partida
+        /// </summary>
+        /// <param name="salaRecibida">sala creada en la ventana crear partida</param>
+        /// <returns>true si el jugador entró a la partida, false sino se pudo</returns>
         public Boolean EntrarPartida(ServidorJuegoSE.Sala salaRecibida)
         {
             sala = salaRecibida;

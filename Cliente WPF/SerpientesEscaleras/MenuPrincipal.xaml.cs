@@ -10,7 +10,11 @@ namespace SerpientesEscaleras {
 
         private ServidorJuegoSE.Jugador jugador;
         private SoundPlayer sonidoBoton = new SoundPlayer("SystemSounds/button.wav");
-
+        /// <summary>
+        /// Constructor de la ventana el menu principal conforme al usuairo qu erecibe
+        /// como 
+        /// </summary>
+        /// <param name="jugadorRecibido"></param>
         public MenuPrincipal(ServidorJuegoSE.Jugador jugadorRecibido) {
             jugador = jugadorRecibido;
             InitializeComponent();

@@ -4,6 +4,37 @@
         <name>SerpientesEscaleras</name>
     </assembly>
     <members>
+        <member name="P:SerpientesEscaleras.CallbackMultijugador.Juego">
+            <summary>
+            Propiedad que nos sirve para acceder o modificar los valores
+            del Juego
+            </summary>
+        </member>
+        <member name="P:SerpientesEscaleras.CallbackMultijugador.Lobby">
+            <summary>
+            Propiedad que nos sirve para acceder o modificar los valores del  Lobby
+            </summary>
+        </member>
+        <member name="M:SerpientesEscaleras.CallbackMultijugador.RecibirMensajeLobby(System.String)">
+            <summary>
+            Metodo que sirve para mostrar los mensajes dentro del contenedor del chat
+            </summary>
+            <param name="mensaje"></param>
+        </member>
+        <member name="M:SerpientesEscaleras.CallbackMultijugador.RecibirMensajeMiembroLobby(System.Boolean,System.String)">
+            <summary>
+            Muestra los mensajes en el apartado del chat
+            </summary>
+            <param name="entrada">estado del mensaje</param>
+            <param name="apodo"> Se refiere al usuario</param>
+        </member>
+        <member name="M:SerpientesEscaleras.CallbackMultijugador.EntrarJuego(SerpientesEscaleras.ServidorJuegoSE.Casilla[],SerpientesEscaleras.ServidorJuegoSE.Portal[])">
+            <summary>
+            
+            </summary>
+            <param name="casillas"></param>
+            <param name="portales"></param>
+        </member>
         <member name="T:SerpientesEscaleras.ConsultarPuntajes">
             <summary>
             Lógica de interacción para ConsultarPuntajes.xaml
@@ -11,6 +42,20 @@
             <summary>
             ConsultarPuntajes
             </summary>
+        </member>
+        <member name="M:SerpientesEscaleras.ConsultarPuntajes.#ctor(SerpientesEscaleras.ServidorJuegoSE.Jugador)">
+            <summary>
+            Método que muestra los puntajes del jugador que recibe como parametro, tambien muestra los 
+            puntajes de todas las partidas.
+            </summary>
+            <param name="jugadorRecibido"></param>
+        </member>
+        <member name="M:SerpientesEscaleras.ConsultarPuntajes.Button_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Método que regresa a la ventana principal y cierra la de consultar puntajes
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
         </member>
         <member name="M:SerpientesEscaleras.ConsultarPuntajes.InitializeComponent">
             <summary>
@@ -22,6 +67,20 @@
             IngresarCodigo
             </summary>
         </member>
+        <member name="M:SerpientesEscaleras.IngresarCodigo.#ctor(SerpientesEscaleras.ServidorJuegoSE.Cuenta)">
+             <summary>
+            Constructor de la ventana que recibe la cuenta registrada a la cual se le envio el 
+            codigo para verificarla
+             </summary>
+             <param name="cuentaRecibida"></param>
+        </member>
+        <member name="M:SerpientesEscaleras.IngresarCodigo.Button_Salir(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Regresa al menu principal del juego
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
         <member name="M:SerpientesEscaleras.IngresarCodigo.InitializeComponent">
             <summary>
             InitializeComponent
@@ -32,6 +91,23 @@
             Juego
             </summary>
         </member>
+        <member name="M:SerpientesEscaleras.Juego.MoverFicha(System.Boolean)">
+            <summary>
+            Metodo que mueve la ficha por el tablero y atraves de los portales
+            </summary>
+            <param name="cayoPortal"> </param>
+        </member>
+        <member name="M:SerpientesEscaleras.Juego.MostrarFichaEnTablero">
+            <summary>
+            Metodo que muestra las fichas en el tablero
+            </summary>
+        </member>
+        <member name="M:SerpientesEscaleras.Juego.CambiarPortales(SerpientesEscaleras.ServidorJuegoSE.Portal[])">
+            <summary>
+            Metodo que cambia la ubicación de los portales
+            </summary>
+            <param name="portalesRecibidos"></param>
+        </member>
         <member name="M:SerpientesEscaleras.Juego.InitializeComponent">
             <summary>
             InitializeComponent
@@ -41,6 +117,13 @@
             <summary>
             MenuPrincipal
             </summary>
+        </member>
+        <member name="M:SerpientesEscaleras.MenuPrincipal.#ctor(SerpientesEscaleras.ServidorJuegoSE.Jugador)">
+            <summary>
+            Constructor de la ventana el menu principal conforme al usuairo qu erecibe
+            como 
+            </summary>
+            <param name="jugadorRecibido"></param>
         </member>
         <member name="M:SerpientesEscaleras.MenuPrincipal.InitializeComponent">
             <summary>
@@ -380,7 +463,7 @@
         </member>
         <member name="P:SerpientesEscaleras.Properties.Resources.usuarioContraseñaInvalidas">
             <summary>
-              Busca una cadena traducida similar a El usuario y/o contraseña no es correcto.
+              Busca una cadena traducida similar a Usuario o contraseña incorrectos, vuelva a intentar..
             </summary>
         </member>
         <member name="P:SerpientesEscaleras.Properties.Resources.usuarioRepetido">
@@ -458,6 +541,13 @@
             BuscarPartida
             </summary>
         </member>
+        <member name="M:SerpientesEscaleras.BuscarPartida.#ctor(SerpientesEscaleras.ServidorJuegoSE.Jugador)">
+            <summary>
+            Constructor de buscar partida que recibe al jugador que busca la partida
+            muestra el lobby con las partidas disponibles
+            </summary>
+            <param name="jugadorRecibido"></param>
+        </member>
         <member name="M:SerpientesEscaleras.BuscarPartida.InitializeComponent">
             <summary>
             InitializeComponent
@@ -467,6 +557,12 @@
             <summary>
             CrearPartida
             </summary>
+        </member>
+        <member name="M:SerpientesEscaleras.CrearPartida.#ctor(SerpientesEscaleras.ServidorJuegoSE.Jugador)">
+            <summary>
+            Constructor de CrearPartida que muestra los jugadores
+            </summary>
+            <param name="jugadorRecibido"></param>
         </member>
         <member name="M:SerpientesEscaleras.CrearPartida.InitializeComponent">
             <summary>

@@ -102,12 +102,14 @@ namespace MessageService {
                         
                         
                             String contreseñaHasheada = ObtenerHash(cuenta.Contraseña, cuentaRecuperada.salt);
-                            if (contreseñaHasheada.Equals(cuentaRecuperada.password))
+                            if (contreseñaHasheada.Equals(cuentaRecuperada.password ))
                             {
+                          
                                 cuentaRecuperada.secionIniciada = true;
                                 conexionBaseDatos.Entry(cuentaRecuperada).State = System.Data.Entity.EntityState.Modified;
                                 conexionBaseDatos.SaveChanges();
                                 return new Jugador() { Apodo = cuentaRecuperada.Jugador.apodo };
+                          
                             }
                         
                     }

@@ -11,7 +11,11 @@ namespace SerpientesEscaleras
         private ServidorJuegoSE.Jugador jugador;
         private Lobby lobby;
         private List<ServidorJuegoSE.Sala> listaSalas;
-
+        /// <summary>
+        /// Constructor de buscar partida que recibe al jugador que busca la partida
+        /// muestra el lobby con las partidas disponibles
+        /// </summary>
+        /// <param name="jugadorRecibido"></param>
         public BuscarPartida(ServidorJuegoSE.Jugador jugadorRecibido)
         {
             jugador = jugadorRecibido;

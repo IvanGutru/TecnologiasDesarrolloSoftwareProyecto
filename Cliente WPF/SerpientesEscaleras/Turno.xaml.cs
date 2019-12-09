@@ -22,13 +22,19 @@ namespace SerpientesEscaleras
         private int numeroDado1;
         private int numeroDado2 = 0;
         private bool cerrar = false;
-
+        /// <summary>
+        /// Constructor de la ventana tuno
+        /// </summary>
+        /// <param name="juegoReferencia"> la configuracion del juego</param>
         public Turno(Juego juegoReferencia)
         {
             juego = juegoReferencia;
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Muestra la ventana con las fichas a elegir
+        /// </summary>
+        /// <param name="fichasEscogidas">lista de fichas disponibles</param>
         public void ElegirFicha(List<ServidorJuegoSE.Ficha> fichasEscogidas)
         {
             label_Instruccion.Content = "Elija su ficha:";
