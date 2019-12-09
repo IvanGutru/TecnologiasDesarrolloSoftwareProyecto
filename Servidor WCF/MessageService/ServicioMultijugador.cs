@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
+using DAO;
 
 
 namespace MessageService
@@ -61,7 +62,7 @@ namespace MessageService
             {
                 return false;
             }
-            if (salasAbiertas[indice].NumJugadores >= 4)
+            if (salasAbiertas[indice].NumJugadores >= 4 || salasAbiertas[indice].Jugando)
             {
                 return false;
             }
@@ -73,7 +74,7 @@ namespace MessageService
             List<Sala> salasDisponibles = new List<Sala>();
             foreach (var sala in salasAbiertas)
             {
-                if (sala.NumJugadores <= 4 && !sala.Jugando)
+                if (sala.NumJugadores < 4 && !sala.Jugando)
                 {
                     salasDisponibles.Add(new Sala()
                     {
@@ -282,14 +283,16 @@ namespace MessageService
             int indice = BuscarSala(idSala);
             var ficha = salasAbiertas[indice].Fichas.Find(x => x.ApodoJugador == salasAbiertas[indice].JugadorEnTurno);
             ficha.Posicion = ficha.Posicion + numDado;
+            ficha.Movimientos++;
             if (ficha.Posicion > 70)
             {
                 ficha.Posicion = 70 - (ficha.Posicion - 70);
             }
-            if (ficha.Posicion == 70)
+            if (ficha.Posicion == 6 || ficha.Posicion == 7 || ficha.Posicion == 5)
             {
                 foreach (var miembro in salasAbiertas[indice].DiccionarioJugadores.Keys)
                 {
+                    RegistrarPuntaje(indice, ficha);
                     miembro.MostrarGanador(ficha);
                 }
                 return;
@@ -432,7 +435,6 @@ namespace MessageService
                 miembro.MostrarNuevosPortales(nuevosPortales);
             }
         }
-
 
     }
 }

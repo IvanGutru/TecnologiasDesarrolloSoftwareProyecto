@@ -136,6 +136,9 @@ namespace MessageService
         [DataMember]
         public int Posicion { get; set; }
 
+        [DataMember]
+        public int Movimientos { get; set; }
+
     }
 
 }

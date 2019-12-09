@@ -96,7 +96,8 @@ namespace SerpientesEscaleras
                 NombreFicha = direccionFicha.Name,
                 UriFicha = ((BitmapImage)direccionFicha.Source).UriSource.OriginalString,
                 ApodoJugador = juego.jugador.Apodo,
-                Posicion = 1
+                Posicion = 1,
+                Movimientos = 0
             };
             cerrar = true;
             this.Close();

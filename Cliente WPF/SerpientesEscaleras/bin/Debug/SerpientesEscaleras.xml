@@ -50,6 +50,7 @@
             </summary>
             <param name="jugadorRecibido"></param>
         </member>
+
         <member name="M:SerpientesEscaleras.ConsultarPuntajes.Button_Click(System.Object,System.Windows.RoutedEventArgs)">
             <summary>
             Método que regresa a la ventana principal y cierra la de consultar puntajes
@@ -57,6 +58,7 @@
             <param name="sender"></param>
             <param name="e"></param>
         </member>
+
         <member name="M:SerpientesEscaleras.ConsultarPuntajes.InitializeComponent">
             <summary>
             InitializeComponent

@@ -60,7 +60,6 @@ namespace SerpientesEscaleras
             {
                 Nombre = textBox_Nombre.Text,
                 DobleDado = checkBox_DobleDado.IsChecked.Value,
-                DobleFicha = checkBox_DobleFicha.IsChecked.Value,
                 CasillasEspeciales = checkBox_CasillasEspeciales.IsChecked.Value,
                 UriFondoTablero = ((BitmapFrame)fondo.Source).Decoder.ToString()
             };
