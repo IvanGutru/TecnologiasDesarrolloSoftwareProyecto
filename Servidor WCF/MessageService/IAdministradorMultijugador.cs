@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MessageService
 {
@@ -76,113 +73,47 @@ namespace MessageService
     [DataContract]
     public class Sala
     {
-        private int idSala;
-        private String nombre;
-        private Boolean dobleDado;
-        private Boolean dobleFicha;
-        private Boolean casillasEspeciales;
-        private int numJugadores;
-        private Boolean jugando;
-        private Dictionary<IJugador, Jugador> diccionarioJugadoresLobby;
-        private Dictionary<IJugador, Jugador> diccionarioJugadores;
-        private String uriFondoTablero;
-        private List<Ficha> fichas;
-        private String jugadorEnTurno;
-        private List<String> jugadoresJugando;
+        [DataMember]
+        public int IdSala { get; set; }
 
         [DataMember]
-        public int IdSala
-        {
-            get { return idSala; }
-            set { idSala = value; }
-        }
+        public String Nombre { get; set; }
 
         [DataMember]
-        public String Nombre
-        {
-            get { return nombre; }
-            set { nombre = value; }
-        }
+        public Boolean DobleDado { get; set; }
 
         [DataMember]
-        public Boolean DobleDado
-        {
-            get { return dobleDado; }
-            set { dobleDado = value; }
-        }
+        public Boolean DobleFicha { get; set; }
 
         [DataMember]
-        public Boolean DobleFicha
-        {
-            get { return dobleFicha; }
-            set { dobleFicha = value; }
-        }
+        public Boolean CasillasEspeciales { get; set; }
 
         [DataMember]
-        public Boolean CasillasEspeciales
-        {
-            get { return casillasEspeciales; }
-            set { casillasEspeciales = value; }
-        }
+        public int NumJugadores { get; set; }
 
         [DataMember]
-        public int NumJugadores
-        {
-            get { return numJugadores; }
-            set { numJugadores = value; }
-        }
+        public Boolean Jugando { get; set; }
 
         [DataMember]
-        public Boolean Jugando
-        {
-            get { return jugando; }
-            set { jugando = value; }
-        }
+        public Dictionary<IJugador, Jugador> DiccionarioJugadoresLobby { get; set; }
 
         [DataMember]
-        public Dictionary<IJugador, Jugador> DiccionarioJugadoresLobby
-        {
-            get { return diccionarioJugadoresLobby; }
-            set { diccionarioJugadoresLobby = value; }
-        }
+        public Dictionary<IJugador, Jugador> DiccionarioJugadores { get; set; }
 
         [DataMember]
-        public Dictionary<IJugador, Jugador> DiccionarioJugadores
-        {
-            get { return diccionarioJugadores; }
-            set { diccionarioJugadores = value; }
-        }
+        public String UriFondoTablero { get; set; }
 
         [DataMember]
-        public String UriFondoTablero
-        {
-            get { return uriFondoTablero; }
-            set { uriFondoTablero = value; }
-        }
+        public List<Ficha> Fichas { get; set; }
 
         [DataMember]
-        public List<Ficha> Fichas
-        {
-            get { return fichas; }
-            set { fichas = value; }
-        }
+        public String JugadorEnTurno { get; set; }
 
         [DataMember]
-        public String JugadorEnTurno
-        {
-            get { return jugadorEnTurno; }
-            set { jugadorEnTurno = value; }
-        }
-
-        [DataMember]
-        public List<String> JugadoresJugando
-        {
-            get { return jugadoresJugando; }
-            set { jugadoresJugando = value; }
-        }
+        public List<String> JugadoresJugando { get; set; }
         public Sala(int idSala2)
         {
-            idSala = idSala2;
+            IdSala = idSala2;
         }
         public Sala()
         {
@@ -193,38 +124,17 @@ namespace MessageService
     [DataContract]
     public class Ficha
     {
-        private String nombreFicha;
-        private String uriFicha;
-        private String apodoJugador;
-        private int posicion;
+        [DataMember]
+        public String NombreFicha { get; set; }
 
         [DataMember]
-        public String NombreFicha
-        {
-            get { return nombreFicha; }
-            set { nombreFicha = value; }
-        }
+        public String UriFicha { get; set; }
 
         [DataMember]
-        public String UriFicha
-        {
-            get { return uriFicha; }
-            set { uriFicha = value; }
-        }
+        public String ApodoJugador { get; set; }
 
         [DataMember]
-        public String ApodoJugador
-        {
-            get { return apodoJugador; }
-            set { apodoJugador = value; }
-        }
-
-        [DataMember]
-        public int Posicion
-        {
-            get { return posicion; }
-            set { posicion = value; }
-        }
+        public int Posicion { get; set; }
 
     }
 

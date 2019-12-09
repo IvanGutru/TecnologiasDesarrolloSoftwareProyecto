@@ -203,6 +203,11 @@
               Busca una cadena traducida similar a Error al mandar su correo de activación. Verifique que su correo sea correcto..
             </summary>
         </member>
+        <member name="P:SerpientesEscaleras.Properties.Resources.escenarioObligatorio">
+            <summary>
+              Busca una cadena traducida similar a Debe elegir un fondo de escenario.
+            </summary>
+        </member>
         <member name="P:SerpientesEscaleras.Properties.Resources.esperandoJugadores">
             <summary>
               Busca una cadena traducida similar a Esperando jugadores.
@@ -291,6 +296,11 @@
         <member name="P:SerpientesEscaleras.Properties.Resources.nombre">
             <summary>
               Busca una cadena traducida similar a Nombre.
+            </summary>
+        </member>
+        <member name="P:SerpientesEscaleras.Properties.Resources.nombreObligatorio">
+            <summary>
+              Busca una cadena traducida similar a El nombre es obligatorio.
             </summary>
         </member>
         <member name="P:SerpientesEscaleras.Properties.Resources.nombrePartida">

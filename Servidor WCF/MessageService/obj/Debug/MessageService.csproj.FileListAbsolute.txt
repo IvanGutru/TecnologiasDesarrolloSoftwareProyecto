@@ -523,7 +523,6 @@ C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\Messag
 C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\MessageService\bin\Debug\System.Web.WebPages.Deployment.xml
 C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\MessageService\bin\Debug\System.Web.WebPages.Razor.xml
 C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\MessageService\obj\Debug\MessageService.csprojAssemblyReference.cache
-C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\MessageService\obj\Debug\MessageService.csproj.CoreCompileInputs.cache
 C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\MessageService\obj\Debug\MessageService.csproj.CopyComplete
 C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\MessageService\obj\Debug\MessageService.dll
 C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\MessageService\obj\Debug\MessageService.pdb

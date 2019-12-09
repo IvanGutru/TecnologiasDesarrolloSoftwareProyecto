@@ -1,29 +1,28 @@
-⁄
-gC:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\Casilla.cs 8@HR 0=0;5=0;10=1;20=0;30=0;60=0;90=0Z1=11;2=0;4=0;6=0;8=0;10=0;12=0r	
-Ç–
-tC:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\CallbackMultijugador.cs& (08@HR 0=0;5=0;10=1;20=0;30=0;60=0;90=0Z1=9;2=4;4=0;6=0;8=0;10=0;12=0r^	
- !"#$%&()*+-./013456789:;<=>?@ABCDEFHIJKLMNOPQSTUVWYZ[\]^_`abdefghijxÇ$ !"$%*/0578:<=ABDEKLNOUV\]_`fg∑
-fC:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\Portal.cs (08@HR 0=0;5=1;10=0;20=0;30=0;60=0;90=0Z1=7;2=0;4=0;6=0;8=0;10=0;12=0rg	
- !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijÇ%+17=CIOU[agÏ
-vC:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\ConsultarPuntajes.xaml.cs (08@HR 0=1;5=0;10=0;20=0;30=0;60=0;90=0Z1=2;2=0;4=0;6=0;8=0;10=0;12=0jr	ÇÜ
-sC:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\IngresarCodigo.xaml.cs (08@HR 0=0;5=1;10=0;20=0;30=0;60=0;90=0Z1=3;2=1;4=0;6=0;8=0;10=0;12=0r*
- !"#$%&'()+,-./0xÇ"#&'-¢
-jC:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\Juego.xaml.csY (08@HR 0=0;5=0;10=0;20=1;30=0;60=0;90=0Z1=6;2=4;4=1;6=0;8=1;10=0;12=0rÚ	
- !"#$%&'()*+,-/0123456789:;<=>?@ABCDEFHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghikmnopqrstvwxy{|}~ÄÇÉÑÖÜáàâäãåçèêëíìïñóòöõúùûü†°¢£§•¶ß®©™¨≠ÆØ∞±≤≥¥µ∑∏π∫ªºΩæø¿¡√ƒxÇk !"#$%&')*+,3579:?ABKQSUW[]^_`abcdefghoqrx~Öáàäåëíóúùûü†°¢§¶ß®Ø∞±≥¥∫ªºΩæø¿ä
-rC:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\MenuPrincipal.xaml.cs (08@HR 0=0;5=1;10=0;20=0;30=0;60=0;90=0Z1=6;2=0;4=0;6=0;8=0;10=0;12=0r/	 "#$%&')*+,-./12345679:Ç#%&+-.356¶
-tC:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\RegistroUsuario.xaml.cs (08@HR 0=0;5=0;10=1;20=0;30=0;60=0;90=0Z1=2;2=0;4=1;6=0;8=1;10=0;12=0j	r9
- !"#$%&'()*+,-.013456789:;<=>?@ABx	Ç !#%'(+,345679;<=?¥
-jC:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\Lobby.xaml.cs 	(08@HR 0=0;5=0;10=1;20=0;30=0;60=0;90=0Z1=7;2=2;4=0;6=0;8=0;10=0;12=0rS	 !#$%&'(*+,-./012345789:<=>?@ABCEFGHJKLMNOQRSTVWXYZ[\]_`xÇ %&',-/01249>@AGMNSYZ[\’
+æ
+gC:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\Casilla.csR 0=1;5=0;10=0;20=0;30=0;60=0;90=0Z1=0;2=0;4=0;6=0;8=0;10=0;12=0j	rÂ
+tC:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\CallbackMultijugador.cs, (08@HR 0=0;5=0;10=0;20=1;30=0;60=0;90=0Z1=12;2=4;4=0;6=0;8=0;10=0;12=0rm	
+ !"#$%&()*+-./013456789:;<=>?@ABCDEFHIKMNOPQRSTUVXYZ[\^_`abcdefgijklmopqrtuvwxyz{|}xÇ) !"$%*/0578:<=ABDEPQSTZ[abdeklqwxyzˆ
+fC:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\Portal.csR 0=1;5=0;10=0;20=0;30=0;60=0;90=0Z1=0;2=0;4=0;6=0;8=0;10=0;12=0jD	
+!#$%')*+-/0135679;<=?ABCEGHIKMNOQSTUWYZ[]_`acefgirlÏ
+vC:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\ConsultarPuntajes.xaml.cs (08@HR 0=1;5=0;10=0;20=0;30=0;60=0;90=0Z1=2;2=0;4=0;6=0;8=0;10=0;12=0jr	Ç±
+sC:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\IngresarCodigo.xaml.cs" (08@HR 0=0;5=0;10=1;20=0;30=0;60=0;90=0Z1=2;2=0;4=1;6=1;8=0;10=0;12=0rI
+ !"#$%&'()*+,-./012346789:;<=>?@ABCDEFGHIJKLNPQx
+Ç!"$%')+-2;<>@BDFK¡
+jC:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\Juego.xaml.cs_ (08@HR 0=0;5=0;10=0;20=0;30=1;60=0;90=0Z1=14;2=3;4=1;6=1;8=0;10=0;12=0jH/01GIJKMOQRUWYZ`ghinpqrsÅÑáâäãåÏÌÚÛÙ˚ÇÑÖÜàäåéèír†	
+ !"#$%&'()*+,-.245789:;=>?@BCDEefjklmtuvwxyz{|}ÄÇÉÖÜçéèêëíìîïñóòöõúùûü†°£§•¶ß©™´¨≠Æ∞±≤≥¥∂∑∏πªºΩæø¿¡¬√ƒ≈∆«»… ÀÃÕŒœ–—“”‘’◊ÿŸ⁄€‹ﬁﬂ‡·‚„‰ÂÊÁËÍÎÓÔıˆ˜¯˘˙¸˝˛ˇÄóòxÇê !"#$%&'(*+,-.459:?Dkltuvwxyz{Öçéèêëíìîïñúûü•¶¨≠≤≥∏Ωæø¿¡¬√ƒ∆«» ÕŒœ—”⁄€·‚„‰ÂÊÁÓıˆ˜¯˘˙¸˝ˇÄ
+rC:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\MenuPrincipal.xaml.cs (08@HR 0=0;5=1;10=0;20=0;30=0;60=0;90=0Z1=5;2=0;4=0;6=0;8=0;10=0;12=0r(	!"#$%&')*+,-./12Ç#%&+-.Ó
+tC:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\RegistroUsuario.xaml.cs- (8@HR 0=0;5=0;10=0;20=1;30=0;60=0;90=0Z1=2;2=1;4=0;6=0;8=2;10=0;12=0j	
+"#$%&'()VWXYZ[mnoprZ *+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRST\^_`abcdefghijkqrstuvwxyz{|}ÄxÇ(+-01568:;@ACEFGIKLMOQR^_`abdfghjtvx{|∫
+jC:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\Lobby.xaml.cs" 	(08@HR 0=0;5=0;10=1;20=0;30=0;60=0;90=0Z1=7;2=2;4=0;6=0;8=0;10=0;12=0rV	 !#$%&'(*+,-./012345789:<=>?@ABCEFGHJKLMNOQRSTVWXYZ[\]^_`bcxÇ  %&',-/01249>@AGMNSYZ[\]^_’
 rC:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\BuscarPartida.xaml.cs/ (08@HR 0=0;5=0;10=1;20=0;30=0;60=0;90=0Z1=2;2=1;4=0;6=0;8=0;10=1;12=0r[	
  !"#$%)+,-./01345678:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdx
-Ç. !#$%)+,-/067<=?ACEGHIKMNOQSTUWYZ[]_`√
-qC:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\CrearPartida.xaml.cs  (08@HR 0=0;5=0;10=1;20=0;30=0;60=0;90=0Z1=4;2=2;4=2;6=0;8=0;10=0;12=0rW	
- !#$%&()*+,-/0123456789:;<=>?@ABCEFGHIJKLMNPQRSTUVWXYZ[\]^_`x	Ç! %+,13569:;<=@ABHIKMRTUWXZ[]ö
-jC:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\Turno.xaml.csY (08@HR 0=0;5=0;10=0;20=1;30=0;60=0;90=0Z1=6;2=6;4=0;6=0;8=0;10=0;12=0rÈ	
- !"#$%&'()*+,-./0123456789:;<=>?@ABDEFGHIJKLMOPQRSTUVWXYZ[\^_`abcdefghijklmopqrstuvwxy{|}~ÅÇÉÑÜáàâäãåçéèêëìîïñóòôöõùûü†°¢§•¶ß®©™´¨≠ÆØ∞±≤≥¥µ∂∑∏π∫ªΩæxÇl"')*,-./0123456789:;<?@AGHJLQRSUVWZ[`abcefjlqrsuvx}~Éàãåçéèêïòôöü†°ß™´¨≠ÆØ∞≤≥∑∏≈
-hC:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\App.xaml.cs (8@HR 0=1;5=0;10=0;20=0;30=0;60=0;90=0Z1=1;2=0;4=0;6=0;8=0;10=0;12=0jr	·
-oC:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\MainWindow.xaml.cs/ (08@HR 0=0;5=0;10=1;20=0;30=0;60=0;90=0Z1=8;2=3;4=1;6=0;8=0;10=0;12=0rp	
- !"#$%&'()*+,-./01345678:;<=>?@BCDEFGHIJKLMNOPQRSTUVWXZ[\]^_`bcdefghjklmopqrtuvwyz{|}x
-Ç("#()./67<>?DFGKMNOQSTUW\^dflqv{Î
+Ç. !#$%)+,-/067<=?ACEGHIKMNOQSTUWYZ[]_`«
+qC:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\CrearPartida.xaml.cs" (08@HR 0=0;5=0;10=1;20=0;30=0;60=0;90=0Z1=4;2=2;4=2;6=0;8=0;10=0;12=0rY	
+ !#$%&()*+,-/0123456789:;<=>?@ABCEFGHIJKLMNPQRSTUVWXYZ[\]^_`abx	Ç# %+,13569:;<=@ABHIKMRTUVXY[\]_í
+jC:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\Turno.xaml.css (08@HR 0=0;5=0;10=0;20=1;30=0;60=0;90=0Z1=8;2=6;4=1;6=0;8=0;10=0;12=0r∂	
+ !"#$%&'()*+,-./0123456789:;<=>?@ABDEFGHIJKLMOPQRSTUVWXYZ[\]^_`abdefghijklmnopqrsuvwxyz{|}~ÅÇÉÑÖáàâäåçéèêëíìîïñóòöõúùûü†°¢§•¶ß®©™´≠ÆØ∞±≤≥¥µ∂∑∏π∫ªºΩæø¿¡¬√ƒ∆«»… ÀÃÕŒœ–—“”‘’◊ÿŸ⁄€‹›ﬂ‡·‚„‰ÂÊÁxÇñ"')*,-./0123456789:;<?@AGHJLQRTUWXZ[\_`afghiklprwxy{|~ÉÑâéëíìïñóúü†°ß®©™∞≥¥µ∂∑∏πªº¿¡» ÀÕŒœ–—“”‘Ÿ€·‚„‰≈
+hC:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\App.xaml.cs (8@HR 0=1;5=0;10=0;20=0;30=0;60=0;90=0Z1=1;2=0;4=0;6=0;8=0;10=0;12=0jr	º
+oC:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\MainWindow.xaml.cs< (8@HR 0=0;5=0;10=0;20=1;30=0;60=0;90=0Z1=8;2=4;4=0;6=0;8=1;10=0;12=0jg	
+ QRSTU]^_`ajklmnwxyzçéèêëöõúùûß®©™´±≤≥¥µªºΩæø≈∆«»…œ–—“rƒ!"#$%&'()*+,-./123456789:;<=>?@ABCDEFGHIJKLMNOVWXYZ[bcdefghopqrstu{|~ÄÅÇÉÑÖÜáàâäãíìîïñóòü†°¢£§•¨≠ÆØ∂∑∏π¿¡¬√ ÀÃÕ”‘’÷◊ÿŸ⁄€‹›ﬁﬂ·‚xÇG#$%'./4579;<>ABGHMYZdfgqst~ÄÅÇÑÜáàäîñ°£Æ∏¬Ã÷ÿ⁄›ﬁÎ
 wC:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Cliente WPF\SerpientesEscaleras\Properties\AssemblyInfo.csR 0=1;5=0;10=0;20=0;30=0;60=0;90=0Z1=0;2=0;4=0;6=0;8=0;10=0;12=0j!"#$%&*,-./123r	
  !$'45

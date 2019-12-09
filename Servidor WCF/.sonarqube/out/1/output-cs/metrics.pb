@@ -1,11 +1,17 @@
-Ï
-mC:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\MessageService\FilaTablaPuntajes.cs (08@HR 0=0;5=1;10=0;20=0;30=0;60=0;90=0Z1=8;2=0;4=0;6=0;8=0;10=0;12=0r	
-°
-pC:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\MessageService\IAdministradorCuenta.cs (08@HR 0=0;5=0;10=1;20=0;30=0;60=0;90=0Z1=14;2=0;4=0;6=0;8=0;10=0;12=0rY	
- !"#%&'()*,-./013456789;<=>?ABCDEFHIJKLMNPQRSTVWXYZ[]^_`abce‚()/067DEKLYZ`aü
-nC:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\MessageService\IAdministradorChat.cs (08@HR 0=0;5=0;10=1;20=0;30=0;60=0;90=0Z1=12;2=0;4=0;6=0;8=0;10=0;12=0r:	
- !"#$%'()*+,-./124578:;=>@ABCØ
-sC:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\MessageService\Properties\AssemblyInfo.csR 0=1;5=0;10=0;20=0;30=0;60=0;90=0Z1=0;2=0;4=0;6=0;8=0;10=0;12=0j !"r	
-#$•
-dC:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\MessageService\Servicio.cs (08.@.H.R 0=0;5=0;10=0;20=0;30=1;60=0;90=0Z1=3;2=14;4=2;6=0;8=0;10=0;12=0rø	
- !"#%&'()*+,-./012346789:;<=>?@ABCDEFGHIJKLMNOQRSTUVWXYZ[\]^`abdefghijklnopqrstuvwxyz{|}€‚ƒ„…†‡ˆ‰Š‹Œ‘’“”•–—˜™š›œ ¡¢£¤¥¦§¨©ª«¬­®¯±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÅÆÇÈÉÊËÌÍÎÏĞÑÒÓÔÕÖ×ØÚÛÜİŞßàáâãäåæçèéêìîïğñóôõö÷øúûüışÿ€‚„…†‡ˆ‰Š‹Œ‘’“”•–˜™š›œŸ ¡¢£¤¥¦§¨©ª¬­®¯°±²³´µ¶·¸º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÎĞx!‚Ü '(*+-/389;=>?ABCDGKMNSTVWYZ\afgikpqstvx{‚„‡ˆŠ‹Œ–š¢£¥¦¨©ª¬®´µ·¸º»¼½¾ÂÈÉËÌÎĞÑÒÓ×Üİßàáãåçõö÷ıÿ†‡ˆ‰‹‘“•›Ÿ¡¢£¤¥©®°²´¶¼¾ÀÂÃÄÆÈÊ
+Ô
+cC:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\MessageService\Casilla.cs 	(08	@	H	R 0=0;5=1;10=0;20=0;30=0;60=0;90=0Z1=9;2=0;4=0;6=0;8=0;10=0;12=0r	
+‚‚
+gC:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\MessageService\Encriptador.cs (08@HR 0=1;5=0;10=0;20=0;30=0;60=0;90=0Z1=3;2=0;4=0;6=0;8=0;10=0;12=0r.	!"#$%&'()*+,-./012‚$&')*+,-./¦
+bC:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\MessageService\Portal.cs 	(08	@	H	R 0=0;5=1;10=0;20=0;30=0;60=0;90=0Z1=9;2=0;4=0;6=0;8=0;10=0;12=0r_	
+ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`ab‚#)/5;AGMSY_Ê	
+pC:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\MessageService\ServicioMultijugador.csÆ (08S@SHSR 0=0;5=0;10=0;20=0;30=0;60=1;90=0Z1=3;2=10;4=6;6=1;8=1;10=1;12=0r¿	
+ !"#$%&')*+,-./012345679:;<=>?@ABCDEGHIJKLMNOPQRSTUVWXYZ[]^_`abcdefghijklmoqrtuvwxyz{|}~€‚ƒ„…†‡ˆŠ‹‘’“”•–—˜™š›œŸ ¡¢£¤¥§¨©ª«¬­®¯°±²³´µ¶·¹º»¼½¾¿ÀÁÂÃÄÅÆÈÉÊËÌÍÎÏĞÑÒÓÔÕ×ØÙÚÛÜİŞßàáâãäåæçèéêëìîïğñòóôõö÷øùúûışÿ€‚ƒ„…†‡ˆ‰Š‹Œ‘’“”•–˜™š›œŸ ¡¢£¤¥¦§¨©ª«¬­®¯°±²´µ¶·¸¹»¼½¾¿ÀÁÂÃÄÅÆÈÉÊËÌÍÎÏĞÑÒÓÔÕÖ×ØÙÚÛÜİŞßàáãäåæçèéêëìíîïğñòôõö÷øùúûüışÿ€‚ƒ„…†‡ˆ‰Š‹Œ‘’“”•–—˜™š›œŸ ¡¢£¤¥¦§¨©ª«¬­®¯°±²µ¶xS‚½ "$&+,-./135;<>@BDJLNPQRSTUVZ_`bdfjwxyz|}ƒ‡’”–˜š›œŸ¡£©ª«¬­®°²³µ»¼½¾ÀÂÄÊËÍÏÑÓÙÚÜŞàáâãåæèêğñóõö÷ùÿ€ƒ…†‡ˆŠŒ‘“š›œŸ¡£¥§©«­®°¶·¸½¾ÀÄÍÏÑÓÔÙÛÜàèêìíîïñöüş€‚†ˆ‰Š‹Œ“”šœ ¤¦§¨©ª¬­®°Ñ
+mC:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\MessageService\FilaTablaPuntajes.cs (08@HR 0=0;5=1;10=0;20=0;30=0;60=0;90=0Z1=8;2=0;4=0;6=0;8=0;10=0;12=0r	
+ø
+pC:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\MessageService\IAdministradorCuenta.cs (08@HR 0=0;5=0;10=1;20=0;30=0;60=0;90=0Z1=16;2=0;4=0;6=0;8=0;10=0;12=0r4	
+ !#$%'()*+-.01245678:;<>Ï
+vC:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\MessageService\IAdministradorMultijugador.cs $(08$@$H$R 0=0;5=0;10=0;20=0;30=1;60=0;90=0Z1=36;2=0;4=0;6=0;8=0;10=0;12=0r	
+ !"#$%&'()*,-./0123456789:;<=>?@ABCDEFGIJKLMOPRSUVXY[\^_abdeghjkmnpqrstuvwyz|}~€‚ƒ…†ˆ‰‹‚t×
+sC:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\MessageService\Properties\AssemblyInfo.csR 0=1;5=0;10=0;20=0;30=0;60=0;90=0Z1=0;2=0;4=0;6=0;8=0;10=0;12=0j !r	
+"#Ÿ
+jC:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\MessageService\ServicioCuenta.csv 	(08@HR 0=0;5=0;10=0;20=1;30=0;60=0;90=0Z1=2;2=4;4=3;6=0;8=0;10=0;12=0r²	 !"#&()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXY[\]^_`abcdehijklmnoqrstuvwxy{|}~€‚ƒ„…†‡ˆ‰Š‹Œ‘’“”•–—˜™š›œŸ ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÁÂÃÄÅÆÇÈÉÊËÌÍÎÏĞÑÒÓÔÕÖ×ØÙÚÛÜİŞßàáâãäæçèéêëìíîïğñòóôõö÷øùúûüışÿ€‚„…†‡ˆ‰Š‹Œ‘’“”•–—˜™š›œŸ ¡£¥x‚§ )*/0246;>@ABCDFGHJKLMPTVW]^cdhiklmnux}~ƒ„†‹“”š›œ ¢¥§¨©ª¬­³·»¾ÃÄÉÊÌÎĞÒÔÖ×ØÜàãéêïóöøúûüı‡ˆ‘”–˜š›œ 

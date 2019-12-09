@@ -1,28 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace MessageService
 {
     [DataContract]
     public class Portal
     {
-        private String zonaTablero;
-        private String color;
-        private String uriPortal;
-        private int idCasilla;
-
         [DataMember]
-        public String ZonaTablero { get { return zonaTablero; } set { zonaTablero = value; } }
+        public String ZonaTablero { get; set; }
         [DataMember]
-        public String Color { get { return color; } set { color = value; } }
+        public String Color { get; set; }
         [DataMember]
-        public String UriPortal { get { return uriPortal; } set { uriPortal = value; } }
+        public String UriPortal { get; set; }
         [DataMember]
-        public int IdCasilla { get { return idCasilla; } set { idCasilla = value; } }
+        public int IdCasilla { get; set; }
 
         public List<Portal> CrearPortales()
         {

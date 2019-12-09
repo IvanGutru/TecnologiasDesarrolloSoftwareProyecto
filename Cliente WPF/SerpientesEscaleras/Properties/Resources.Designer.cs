@@ -19,7 +19,7 @@ namespace SerpientesEscaleras.Properties {
     // a través de una herramienta como ResGen o Visual Studio.
     // Para agregar o quitar un miembro, edite el archivo .ResX y, a continuación, vuelva a ejecutar ResGen
     // con la opción /str o recompile su proyecto de VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Resources {
@@ -313,6 +313,15 @@ namespace SerpientesEscaleras.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Debe elegir un fondo de escenario.
+        /// </summary>
+        public static string escenarioObligatorio {
+            get {
+                return ResourceManager.GetString("escenarioObligatorio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Esperando jugadores.
         /// </summary>
         public static string esperandoJugadores {
@@ -471,6 +480,15 @@ namespace SerpientesEscaleras.Properties {
         public static string nombre {
             get {
                 return ResourceManager.GetString("nombre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El nombre es obligatorio.
+        /// </summary>
+        public static string nombreObligatorio {
+            get {
+                return ResourceManager.GetString("nombreObligatorio", resourceCulture);
             }
         }
         

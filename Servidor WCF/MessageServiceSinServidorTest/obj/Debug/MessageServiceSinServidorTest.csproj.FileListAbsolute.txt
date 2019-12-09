@@ -23,7 +23,6 @@ C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\Messag
 C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\MessageServiceSinServidorTest\bin\Debug\Microsoft.AspNetCore.Cryptography.KeyDerivation.xml
 C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\MessageServiceSinServidorTest\bin\Debug\Microsoft.AspNetCore.Cryptography.Internal.xml
 C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\MessageServiceSinServidorTest\obj\Debug\MessageServiceSinServidorTest.csprojAssemblyReference.cache
-C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\MessageServiceSinServidorTest\obj\Debug\MessageServiceSinServidorTest.csproj.CoreCompileInputs.cache
 C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\MessageServiceSinServidorTest\obj\Debug\MessageServiceSinServidorTest.csproj.CopyComplete
 C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\MessageServiceSinServidorTest\obj\Debug\MessageServiceSinServidorTest.dll
 C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\MessageServiceSinServidorTest\obj\Debug\MessageServiceSinServidorTest.pdb

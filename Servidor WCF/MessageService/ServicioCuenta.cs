@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Serialization;
 using System.Security.Cryptography;
-using System.ServiceModel;
-using System.Text;
 using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 using DAO;
 using System.Net.Mail;
@@ -44,7 +41,7 @@ namespace MessageService {
             conexionBaseDatos = new ServidorSE();
             using (conexionBaseDatos)
             {
-                DAO.Cuenta cuentaRecuperada = new DAO.Cuenta();
+                DAO.Cuenta cuentaRecuperada;
                 try
                 {
                     cuentaRecuperada = conexionBaseDatos.CuentaSet.Where(c => c.correo.Equals(cuenta.Correo)).FirstOrDefault();
@@ -100,10 +97,10 @@ namespace MessageService {
                 try
                 {
                     cuentaRecuperada = conexionBaseDatos.CuentaSet.Where(c => c.correo.Equals(cuenta.Correo)).FirstOrDefault();
-                    if (cuentaRecuperada != null)
+                    if (cuentaRecuperada != null && cuentaRecuperada.correo.Equals(cuenta.Correo))
                     {
-                        if (cuentaRecuperada.correo.Equals(cuenta.Correo))
-                        {
+                        
+                        
                             String contreseñaHasheada = ObtenerHash(cuenta.Contraseña, cuentaRecuperada.salt);
                             if (contreseñaHasheada.Equals(cuentaRecuperada.password))
                             {
@@ -112,7 +109,7 @@ namespace MessageService {
                                 conexionBaseDatos.SaveChanges();
                                 return new Jugador() { Apodo = cuentaRecuperada.Jugador.apodo };
                             }
-                        }
+                        
                     }
                 }
                 catch (Exception)
@@ -128,16 +125,13 @@ namespace MessageService {
             conexionBaseDatos = new ServidorSE();
             using (conexionBaseDatos)
             {
-                DAO.Cuenta cuentaRecuperada = new DAO.Cuenta();
+                DAO.Cuenta cuentaRecuperada;
                 try
                 {
                     cuentaRecuperada = conexionBaseDatos.CuentaSet.Where(c => c.correo.Equals(cuenta.Correo)).FirstOrDefault();
-                    if (cuentaRecuperada != null)
+                    if (cuentaRecuperada != null && cuentaRecuperada.correo.Equals(cuenta.Correo))
                     {
-                        if (cuentaRecuperada.correo.Equals(cuenta.Correo))
-                        {
                             return new Cuenta { Correo = cuentaRecuperada.correo, Validada = cuentaRecuperada.validada };
-                        }
                     }
                 }
                 catch (System.Data.Entity.Core.EntityException)
@@ -159,19 +153,13 @@ namespace MessageService {
                 {
                     jugadorRecuperado = conexionBaseDatos.JugadorSet.Where(j => j.apodo.Equals(jugador.Apodo)).FirstOrDefault();
                     cuentaRecuperada = conexionBaseDatos.CuentaSet.Where(c => c.correo.Equals(cuenta.Correo)).FirstOrDefault();
-                    if (jugadorRecuperado != null)
+                    if (jugadorRecuperado != null && jugadorRecuperado.apodo.Equals(jugador.Apodo))
                     {
-                        if (jugadorRecuperado.apodo.Equals(jugador.Apodo))
-                        {
                             return -1;
-                        }
                     }
-                    if (cuentaRecuperada != null)
+                    if (cuentaRecuperada != null && cuentaRecuperada.correo.Equals(cuenta.Correo))
                     {
-                        if (cuentaRecuperada.correo.Equals(cuenta.Correo))
-                        {
-                            return -2;
-                        }
+                            return -2;   
                     }
                     String nuevoSalt;
                     nuevoSalt = ObtenerSalt();
@@ -207,16 +195,13 @@ namespace MessageService {
             conexionBaseDatos = new ServidorSE();
             using (conexionBaseDatos)
             {
-                DAO.Cuenta cuentaRecuperada = new DAO.Cuenta();
+                DAO.Cuenta cuentaRecuperada;
                 try
                 {
                     cuentaRecuperada = conexionBaseDatos.CuentaSet.Where(c => c.correo.Equals(cuenta.Correo)).FirstOrDefault();
-                    if (cuentaRecuperada != null)
+                    if (cuentaRecuperada != null && !cuentaRecuperada.correo.Equals(cuenta.Correo))
                     {
-                        if (!cuentaRecuperada.correo.Equals(cuenta.Correo))
-                        {
                             return -1;
-                        }
                     }
                     if (cuentaRecuperada == null)
                     {

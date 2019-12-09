@@ -12,144 +12,39 @@
       },
       "results": [
         {
-          "ruleId": "CS0169",
+          "ruleId": "S4787",
           "level": "warning",
-          "message": "El campo 'Sala.casillasEspeciales' nunca se usa",
+          "message": "Make sure that encrypting data is safe here.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/IAdministradorChat.cs",
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/Encriptador.cs",
                 "region": {
-                  "startLine": 45,
-                  "startColumn": 25,
-                  "endLine": 45,
-                  "endColumn": 43
+                  "startLine": 27,
+                  "startColumn": 46,
+                  "endLine": 27,
+                  "endColumn": 77
                 }
               }
             }
           ],
           "properties": {
-            "warningLevel": 3
+            "warningLevel": 1
           }
         },
         {
-          "ruleId": "CS0169",
+          "ruleId": "S4787",
           "level": "warning",
-          "message": "El campo 'Sala.dobleFicha' nunca se usa",
+          "message": "Make sure that encrypting data is safe here.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/IAdministradorChat.cs",
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/Encriptador.cs",
                 "region": {
                   "startLine": 44,
-                  "startColumn": 25,
+                  "startColumn": 46,
                   "endLine": 44,
-                  "endColumn": 35
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 3
-          }
-        },
-        {
-          "ruleId": "CS0169",
-          "level": "warning",
-          "message": "El campo 'Sala.dobleDado' nunca se usa",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/IAdministradorChat.cs",
-                "region": {
-                  "startLine": 43,
-                  "startColumn": 25,
-                  "endLine": 43,
-                  "endColumn": 34
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 3
-          }
-        },
-        {
-          "ruleId": "CS0169",
-          "level": "warning",
-          "message": "El campo 'Sala.numJugadores' nunca se usa",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/IAdministradorChat.cs",
-                "region": {
-                  "startLine": 46,
-                  "startColumn": 21,
-                  "endLine": 46,
-                  "endColumn": 33
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 3
-          }
-        },
-        {
-          "ruleId": "CS0169",
-          "level": "warning",
-          "message": "El campo 'Sala.diccionarioJugadores' nunca se usa",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/IAdministradorChat.cs",
-                "region": {
-                  "startLine": 47,
-                  "startColumn": 51,
-                  "endLine": 47,
-                  "endColumn": 71
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 3
-          }
-        },
-        {
-          "ruleId": "CS0169",
-          "level": "warning",
-          "message": "El campo 'Sala.nombre' nunca se usa",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/IAdministradorChat.cs",
-                "region": {
-                  "startLine": 42,
-                  "startColumn": 24,
-                  "endLine": 42,
-                  "endColumn": 30
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 3
-          }
-        },
-        {
-          "ruleId": "S1128",
-          "level": "warning",
-          "message": "Remove this unnecessary 'using'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/FilaTablaPuntajes.cs",
-                "region": {
-                  "startLine": 2,
-                  "startColumn": 1,
-                  "endLine": 2,
-                  "endColumn": 34
+                  "endColumn": 77
                 }
               }
             }
@@ -159,18 +54,18 @@
           }
         },
         {
-          "ruleId": "S1128",
+          "ruleId": "S4790",
           "level": "warning",
-          "message": "Remove this unnecessary 'using'.",
+          "message": "Make sure that hashing data is safe here.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/FilaTablaPuntajes.cs",
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/Encriptador.cs",
                 "region": {
-                  "startLine": 3,
-                  "startColumn": 1,
-                  "endLine": 3,
-                  "endColumn": 19
+                  "startLine": 37,
+                  "startColumn": 48,
+                  "endLine": 37,
+                  "endColumn": 78
                 }
               }
             }
@@ -180,18 +75,18 @@
           }
         },
         {
-          "ruleId": "S1128",
+          "ruleId": "S4790",
           "level": "warning",
-          "message": "Remove this unnecessary 'using'.",
+          "message": "Make sure that hashing data is safe here.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/FilaTablaPuntajes.cs",
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/Encriptador.cs",
                 "region": {
-                  "startLine": 4,
-                  "startColumn": 1,
-                  "endLine": 4,
-                  "endColumn": 19
+                  "startLine": 20,
+                  "startColumn": 48,
+                  "endLine": 20,
+                  "endColumn": 78
                 }
               }
             }
@@ -201,18 +96,18 @@
           }
         },
         {
-          "ruleId": "S1128",
+          "ruleId": "S2278",
           "level": "warning",
-          "message": "Remove this unnecessary 'using'.",
+          "message": "Use the recommended AES (Advanced Encryption Standard) instead.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/FilaTablaPuntajes.cs",
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/Encriptador.cs",
                 "region": {
-                  "startLine": 5,
-                  "startColumn": 1,
-                  "endLine": 5,
-                  "endColumn": 30
+                  "startLine": 23,
+                  "startColumn": 64,
+                  "endLine": 23,
+                  "endColumn": 94
                 }
               }
             }
@@ -222,18 +117,18 @@
           }
         },
         {
-          "ruleId": "S1128",
+          "ruleId": "S2278",
           "level": "warning",
-          "message": "Remove this unnecessary 'using'.",
+          "message": "Use the recommended AES (Advanced Encryption Standard) instead.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/IAdministradorCuenta.cs",
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/Encriptador.cs",
                 "region": {
-                  "startLine": 3,
-                  "startColumn": 1,
-                  "endLine": 3,
-                  "endColumn": 19
+                  "startLine": 40,
+                  "startColumn": 64,
+                  "endLine": 40,
+                  "endColumn": 94
                 }
               }
             }
@@ -243,18 +138,18 @@
           }
         },
         {
-          "ruleId": "S1128",
+          "ruleId": "S108",
           "level": "warning",
-          "message": "Remove this unnecessary 'using'.",
+          "message": "Either remove or fill this block of code.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/IAdministradorCuenta.cs",
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/ServicioMultijugador.cs",
                 "region": {
-                  "startLine": 6,
-                  "startColumn": 1,
-                  "endLine": 6,
-                  "endColumn": 19
+                  "startLine": 109,
+                  "startColumn": 17,
+                  "endLine": 111,
+                  "endColumn": 18
                 }
               }
             }
@@ -264,311 +159,17 @@
           }
         },
         {
-          "ruleId": "S2292",
+          "ruleId": "S2245",
           "level": "warning",
-          "message": "Make this an auto-implemented property and remove its backing field.",
+          "message": "Make sure that using this pseudorandom number generator is safe here.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/IAdministradorCuenta.cs",
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/ServicioMultijugador.cs",
                 "region": {
-                  "startLine": 87,
-                  "startColumn": 20,
-                  "endLine": 87,
-                  "endColumn": 26
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S2292",
-          "level": "warning",
-          "message": "Make this an auto-implemented property and remove its backing field.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/IAdministradorCuenta.cs",
-                "region": {
-                  "startLine": 94,
-                  "startColumn": 20,
-                  "endLine": 94,
-                  "endColumn": 26
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S1128",
-          "level": "warning",
-          "message": "Remove this unnecessary 'using'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/IAdministradorChat.cs",
-                "region": {
-                  "startLine": 3,
-                  "startColumn": 1,
-                  "endLine": 3,
-                  "endColumn": 19
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S1128",
-          "level": "warning",
-          "message": "Remove this unnecessary 'using'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/IAdministradorChat.cs",
-                "region": {
-                  "startLine": 6,
-                  "startColumn": 1,
-                  "endLine": 6,
-                  "endColumn": 19
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S1128",
-          "level": "warning",
-          "message": "Remove this unnecessary 'using'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/IAdministradorChat.cs",
-                "region": {
-                  "startLine": 7,
-                  "startColumn": 1,
-                  "endLine": 7,
-                  "endColumn": 30
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S1128",
-          "level": "warning",
-          "message": "Remove this unnecessary 'using'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/Properties/AssemblyInfo.cs",
-                "region": {
-                  "startLine": 2,
-                  "startColumn": 1,
-                  "endLine": 2,
-                  "endColumn": 39
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S2292",
-          "level": "warning",
-          "message": "Make this an auto-implemented property and remove its backing field.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/IAdministradorCuenta.cs",
-                "region": {
-                  "startLine": 73,
-                  "startColumn": 23,
-                  "endLine": 73,
-                  "endColumn": 33
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S2292",
-          "level": "warning",
-          "message": "Make this an auto-implemented property and remove its backing field.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/IAdministradorCuenta.cs",
-                "region": {
-                  "startLine": 66,
-                  "startColumn": 23,
-                  "endLine": 66,
-                  "endColumn": 29
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S2292",
-          "level": "warning",
-          "message": "Make this an auto-implemented property and remove its backing field.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/IAdministradorCuenta.cs",
-                "region": {
-                  "startLine": 38,
-                  "startColumn": 23,
-                  "endLine": 38,
-                  "endColumn": 28
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S2292",
-          "level": "warning",
-          "message": "Make this an auto-implemented property and remove its backing field.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/IAdministradorCuenta.cs",
-                "region": {
-                  "startLine": 45,
-                  "startColumn": 23,
-                  "endLine": 45,
-                  "endColumn": 29
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S2292",
-          "level": "warning",
-          "message": "Make this an auto-implemented property and remove its backing field.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/IAdministradorCuenta.cs",
-                "region": {
-                  "startLine": 52,
-                  "startColumn": 23,
-                  "endLine": 52,
-                  "endColumn": 32
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S1144",
-          "level": "warning",
-          "message": "Remove the unused private field 'nombre'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/IAdministradorChat.cs",
-                "region": {
-                  "startLine": 42,
-                  "startColumn": 9,
-                  "endLine": 42,
-                  "endColumn": 31
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S1144",
-          "level": "warning",
-          "message": "Remove the unused private field 'dobleDado'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/IAdministradorChat.cs",
-                "region": {
-                  "startLine": 43,
-                  "startColumn": 9,
-                  "endLine": 43,
-                  "endColumn": 35
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S1144",
-          "level": "warning",
-          "message": "Remove the unused private field 'dobleFicha'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/IAdministradorChat.cs",
-                "region": {
-                  "startLine": 44,
-                  "startColumn": 9,
-                  "endLine": 44,
-                  "endColumn": 36
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S1144",
-          "level": "warning",
-          "message": "Remove the unused private field 'casillasEspeciales'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/IAdministradorChat.cs",
-                "region": {
-                  "startLine": 45,
-                  "startColumn": 9,
-                  "endLine": 45,
+                  "startLine": 375,
+                  "startColumn": 32,
+                  "endLine": 375,
                   "endColumn": 44
                 }
               }
@@ -579,18 +180,18 @@
           }
         },
         {
-          "ruleId": "S1144",
+          "ruleId": "S2245",
           "level": "warning",
-          "message": "Remove the unused private field 'numJugadores'.",
+          "message": "Make sure that using this pseudorandom number generator is safe here.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/IAdministradorChat.cs",
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/ServicioMultijugador.cs",
                 "region": {
-                  "startLine": 46,
-                  "startColumn": 9,
-                  "endLine": 46,
-                  "endColumn": 34
+                  "startLine": 357,
+                  "startColumn": 32,
+                  "endLine": 357,
+                  "endColumn": 44
                 }
               }
             }
@@ -600,18 +201,18 @@
           }
         },
         {
-          "ruleId": "S1144",
+          "ruleId": "S2245",
           "level": "warning",
-          "message": "Remove the unused private field 'diccionarioJugadores'.",
+          "message": "Make sure that using this pseudorandom number generator is safe here.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/IAdministradorChat.cs",
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/ServicioMultijugador.cs",
                 "region": {
-                  "startLine": 47,
-                  "startColumn": 9,
-                  "endLine": 47,
-                  "endColumn": 72
+                  "startLine": 405,
+                  "startColumn": 32,
+                  "endLine": 405,
+                  "endColumn": 44
                 }
               }
             }
@@ -621,60 +222,18 @@
           }
         },
         {
-          "ruleId": "S1128",
+          "ruleId": "S1168",
           "level": "warning",
-          "message": "Remove this unnecessary 'using'.",
+          "message": "Return an empty collection instead of null.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/Servicio.cs",
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/ServicioCuenta.cs",
                 "region": {
-                  "startLine": 4,
-                  "startColumn": 1,
-                  "endLine": 4,
-                  "endColumn": 36
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S1128",
-          "level": "warning",
-          "message": "Remove this unnecessary 'using'.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/Servicio.cs",
-                "region": {
-                  "startLine": 7,
-                  "startColumn": 1,
-                  "endLine": 7,
-                  "endColumn": 19
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S1066",
-          "level": "warning",
-          "message": "Merge this if statement with the enclosing one.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/Servicio.cs",
-                "region": {
-                  "startLine": 45,
+                  "startLine": 273,
                   "startColumn": 21,
-                  "endLine": 45,
-                  "endColumn": 23
+                  "endLine": 273,
+                  "endColumn": 33
                 }
               }
             }
@@ -682,12 +241,12 @@
           "relatedLocations": [
             {
               "physicalLocation": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/Servicio.cs",
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/ServicioCuenta.cs",
                 "region": {
-                  "startLine": 43,
-                  "startColumn": 17,
-                  "endLine": 43,
-                  "endColumn": 19
+                  "startLine": 276,
+                  "startColumn": 21,
+                  "endLine": 276,
+                  "endColumn": 33
                 }
               }
             }
@@ -697,18 +256,18 @@
           }
         },
         {
-          "ruleId": "S1066",
+          "ruleId": "S1168",
           "level": "warning",
-          "message": "Merge this if statement with the enclosing one.",
+          "message": "Return an empty collection instead of null.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/Servicio.cs",
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/ServicioCuenta.cs",
                 "region": {
-                  "startLine": 118,
+                  "startLine": 243,
                   "startColumn": 21,
-                  "endLine": 118,
-                  "endColumn": 23
+                  "endLine": 243,
+                  "endColumn": 33
                 }
               }
             }
@@ -716,12 +275,12 @@
           "relatedLocations": [
             {
               "physicalLocation": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/Servicio.cs",
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/ServicioCuenta.cs",
                 "region": {
-                  "startLine": 116,
-                  "startColumn": 17,
-                  "endLine": 116,
-                  "endColumn": 19
+                  "startLine": 246,
+                  "startColumn": 21,
+                  "endLine": 246,
+                  "endColumn": 33
                 }
               }
             }
@@ -732,25 +291,12 @@
         }
       ],
       "rules": {
-        "CS0169": {
-          "id": "CS0169",
-          "shortDescription": "Nunca se usa el campo",
+        "S108": {
+          "id": "S108",
+          "shortDescription": "Nested blocks of code should not be left empty",
+          "fullDescription": "Most of the time a block of code is empty when a piece of code is really missing. So such empty block must be either filled or removed.",
           "defaultLevel": "warning",
-          "properties": {
-            "category": "Compiler",
-            "isEnabledByDefault": true,
-            "tags": [
-              "Compiler",
-              "Telemetry"
-            ]
-          }
-        },
-        "S1066": {
-          "id": "S1066",
-          "shortDescription": "Collapsible \"if\" statements should be merged",
-          "fullDescription": "Merging collapsible if statements increases the code's readability.",
-          "defaultLevel": "warning",
-          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1066",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-108",
           "properties": {
             "category": "Major Code Smell",
             "isEnabledByDefault": true,
@@ -762,55 +308,86 @@
             ]
           }
         },
-        "S1128": {
-          "id": "S1128",
-          "shortDescription": "Unused \"using\" should be removed",
-          "fullDescription": "Although unnecessary using won't change anything to the produced application, removing them:",
+        "S1168": {
+          "id": "S1168",
+          "shortDescription": "Empty arrays and collections should be returned instead of null",
+          "fullDescription": "Returning null instead of an actual array or collection forces callers of the method to explicitly test for nullity, making them more complex and less readable.",
           "defaultLevel": "warning",
-          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1128",
-          "properties": {
-            "category": "Minor Code Smell",
-            "isEnabledByDefault": true,
-            "tags": [
-              "C#",
-              "SonarWay",
-              "MainSourceScope",
-              "TestSourceScope"
-            ]
-          }
-        },
-        "S1144": {
-          "id": "S1144",
-          "shortDescription": "Unused private types or members should be removed",
-          "fullDescription": "private or internal types or private members that are never executed or referenced are dead code: unnecessary, inoperative code that should be removed. Cleaning out dead code decreases the size of the maintained codebase, making it easier to understand the program and preventing bugs from being introduced.",
-          "defaultLevel": "note",
-          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1144",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1168",
           "properties": {
             "category": "Major Code Smell",
             "isEnabledByDefault": true,
             "tags": [
               "C#",
               "SonarWay",
-              "MainSourceScope",
-              "TestSourceScope",
-              "Unnecessary"
+              "MainSourceScope"
             ]
           }
         },
-        "S2292": {
-          "id": "S2292",
-          "shortDescription": "Trivial properties should be auto-implemented",
-          "fullDescription": "Trivial properties, which include no logic but setting and getting a backing field should be converted to auto-implemented properties, yielding cleaner and more readable code.",
+        "S2245": {
+          "id": "S2245",
+          "shortDescription": "Using pseudorandom number generators (PRNGs) is security-sensitive",
+          "fullDescription": "Using pseudorandom number generators (PRNGs) is security-sensitive. For example, it has led in the past to the following vulnerabilities:",
           "defaultLevel": "warning",
-          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-2292",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-2245",
           "properties": {
-            "category": "Minor Code Smell",
+            "category": "Critical Security Hotspot",
             "isEnabledByDefault": true,
             "tags": [
               "C#",
               "SonarWay",
               "MainSourceScope",
-              "TestSourceScope"
+              "NotConfigurable"
+            ]
+          }
+        },
+        "S2278": {
+          "id": "S2278",
+          "shortDescription": "Neither DES (Data Encryption Standard) nor DESede (3DES) should be used",
+          "fullDescription": "According to the US National Institute of Standards and Technology (NIST), the Data Encryption Standard (DES) is no longer considered secure:",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-2278",
+          "properties": {
+            "category": "Blocker Vulnerability",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope"
+            ]
+          }
+        },
+        "S4787": {
+          "id": "S4787",
+          "shortDescription": "Encrypting data is security-sensitive",
+          "fullDescription": "Encrypting data is security-sensitive. It has led in the past to the following vulnerabilities:",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-4787",
+          "properties": {
+            "category": "Critical Security Hotspot",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope",
+              "NotConfigurable"
+            ]
+          }
+        },
+        "S4790": {
+          "id": "S4790",
+          "shortDescription": "Hashing data is security-sensitive",
+          "fullDescription": "Hashing data is security-sensitive. It has led in the past to the following vulnerabilities:",
+          "defaultLevel": "warning",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-4790",
+          "properties": {
+            "category": "Critical Security Hotspot",
+            "isEnabledByDefault": true,
+            "tags": [
+              "C#",
+              "SonarWay",
+              "MainSourceScope",
+              "NotConfigurable"
             ]
           }
         }

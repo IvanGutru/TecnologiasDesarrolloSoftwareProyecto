@@ -306,4 +306,10 @@
   <data name="validarCuenta" xml:space="preserve">
     <value>Validate account</value>
   </data>
+  <data name="escenarioObligatorio" xml:space="preserve">
+    <value>You must choose a stage background</value>
+  </data>
+  <data name="nombreObligatorio" xml:space="preserve">
+    <value>The name is required</value>
+  </data>
 </root>

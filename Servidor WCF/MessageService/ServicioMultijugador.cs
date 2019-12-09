@@ -2,8 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace MessageService
 {
@@ -108,7 +107,7 @@ namespace MessageService
                 }
                 catch (System.ServiceModel.CommunicationObjectAbortedException)
                 {
-                    //SacarDelLobby(indice, miembro);
+                   
                 }
                 
             }

@@ -1,34 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Runtime.Serialization;
+
 
 namespace MessageService
 {
     [DataContract]
     public class Casilla
     {
-        private int id;
-        private int fila;
-        private int columna;
-        private bool especial;
-
         public Casilla(int idRecibido, int filaRecibida, int columnaRecibida)
         {
-            id = idRecibido;
-            fila = filaRecibida;
-            columna = columnaRecibida;
+            Id = idRecibido;
+            Fila = filaRecibida;
+            Columna = columnaRecibida;
         }
 
         [DataMember]
-        public int Id { get { return id; } set { id = value; } }
+        public int Id { get; set; }
         [DataMember]
-        public int Fila { get { return fila; } set { fila = value; } }
+        public int Fila { get; set; }
         [DataMember]
-        public int Columna { get { return columna; } set { columna = value; } }
+        public int Columna { get; set; }
         [DataMember]
-        public bool Especial { get { return especial; } set { especial = value; } }
+        public bool Especial { get; set; }
     }
 }

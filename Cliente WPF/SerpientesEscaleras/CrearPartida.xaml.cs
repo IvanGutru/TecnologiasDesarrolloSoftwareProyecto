@@ -81,13 +81,15 @@ namespace SerpientesEscaleras
         {
             if (textBox_Nombre.Text.Equals(""))
             {
-                MessageBox.Show("El nombre es obligatorio");
+                string nombreObligatorio = Properties.Resources.nombreObligatorio;
+                MessageBox.Show(nombreObligatorio);
                 return false;
             }
             var rectanguloSeleccionado = grid_Fondos.Children.Cast<UIElement>().FirstOrDefault(i => i is Rectangle && i.Opacity == 1);
             if (rectanguloSeleccionado == null)
             {
-                MessageBox.Show("Debe elegir un fondo de escenario");
+                string escenarioObligatorio = Properties.Resources.escenarioObligatorio;
+                MessageBox.Show(escenarioObligatorio);
                 return false;
             }
             return true;
