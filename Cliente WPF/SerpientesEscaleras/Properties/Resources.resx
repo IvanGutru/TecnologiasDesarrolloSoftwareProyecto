@@ -301,7 +301,7 @@
     <value>Usuario</value>
   </data>
   <data name="usuarioContraseñaInvalidas" xml:space="preserve">
-    <value>El usuario y/o contraseña no es correcto</value>
+    <value>Usuario o contraseña incorrectos, vuelva a intentar.</value>
   </data>
   <data name="usuarioRepetido" xml:space="preserve">
     <value>Ya se encuentra registrado un usuario con ese apodo</value>

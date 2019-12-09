@@ -6,12 +6,20 @@ namespace SerpientesEscaleras {
     public partial class IngresarCodigo : Window {
 
         private readonly ServidorJuegoSE.Cuenta cuenta;
-
+        /// <summary>
+        ///Constructor de la ventana que recibe la cuenta registrada a la cual se le envio el 
+        ///codigo para verificarla
+        /// </summary>
+        /// <param name="cuentaRecibida"></param>
         public IngresarCodigo (ServidorJuegoSE.Cuenta cuentaRecibida) {
             cuenta = cuentaRecibida;
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Regresa al menu principal del juego
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Salir(object sender, RoutedEventArgs e) {
             MainWindow vetanaPrincipal = new MainWindow();
             vetanaPrincipal.Show();

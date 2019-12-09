@@ -298,7 +298,7 @@
     <value>User</value>
   </data>
   <data name="usuarioContraseñaInvalidas" xml:space="preserve">
-    <value>The username or password is not correct</value>
+    <value>Incorrect username or password, try again.</value>
   </data>
   <data name="usuarioRepetido" xml:space="preserve">
     <value>A user with that nickname is already registered</value>

@@ -9,7 +9,11 @@ namespace SerpientesEscaleras {
     public partial class ConsultarPuntajes : Window {
 
         private ServidorJuegoSE.Jugador jugador;
-
+        /// <summary>
+        /// Método que muestra los puntajes del jugador que recibe como parametro, tambien muestra los 
+        /// puntajes de todas las partidas.
+        /// </summary>
+        /// <param name="jugadorRecibido"></param>
         public ConsultarPuntajes(ServidorJuegoSE.Jugador jugadorRecibido) {
             jugador = jugadorRecibido;
             InitializeComponent();

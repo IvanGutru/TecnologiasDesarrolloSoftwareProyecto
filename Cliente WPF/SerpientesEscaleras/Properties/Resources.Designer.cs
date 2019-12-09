@@ -628,7 +628,7 @@ namespace SerpientesEscaleras.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a El usuario y/o contraseña no es correcto.
+        ///   Busca una cadena traducida similar a Usuario o contraseña incorrectos, vuelva a intentar..
         /// </summary>
         public static string usuarioContraseñaInvalidas {
             get {
