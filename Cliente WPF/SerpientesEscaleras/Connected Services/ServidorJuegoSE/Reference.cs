@@ -510,9 +510,6 @@ namespace SerpientesEscaleras.ServidorJuegoSE {
         private string ApodoJugadorField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int MovimientosField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NombreFichaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -540,19 +537,6 @@ namespace SerpientesEscaleras.ServidorJuegoSE {
                 if ((object.ReferenceEquals(this.ApodoJugadorField, value) != true)) {
                     this.ApodoJugadorField = value;
                     this.RaisePropertyChanged("ApodoJugador");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Movimientos {
-            get {
-                return this.MovimientosField;
-            }
-            set {
-                if ((this.MovimientosField.Equals(value) != true)) {
-                    this.MovimientosField = value;
-                    this.RaisePropertyChanged("Movimientos");
                 }
             }
         }
@@ -595,7 +579,9 @@ namespace SerpientesEscaleras.ServidorJuegoSE {
                 }
             }
         }
-        
+
+        public int Movimientos { get; internal set; }
+
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {

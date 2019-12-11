@@ -525,17 +525,13 @@
     <wsdl:port name="NetTcpBinding_IAdministradorCuenta" binding="tns:NetTcpBinding_IAdministradorCuenta">
       <soap12:address location="net.tcp://192.168.43.115:8091/ServidorSerpientesEscaleras/EndponitCuenta" />
       <wsa10:EndpointReference>
-
         <wsa10:Address>net.tcp://192.168.43.115:8091/ServidorSerpientesEscaleras/EndponitCuenta</wsa10:Address>
-
       </wsa10:EndpointReference>
     </wsdl:port>
     <wsdl:port name="NetTcpBinding_IAdministradorMultijugador" binding="tns:NetTcpBinding_IAdministradorMultijugador">
       <soap12:address location="net.tcp://192.168.43.115:8091/ServidorSerpientesEscaleras/EndpointMultijugador" />
       <wsa10:EndpointReference>
-
         <wsa10:Address>net.tcp://192.168.43.115:8091/ServidorSerpientesEscaleras/EndpointMultijugador</wsa10:Address>
-
       </wsa10:EndpointReference>
     </wsdl:port>
   </wsdl:service>

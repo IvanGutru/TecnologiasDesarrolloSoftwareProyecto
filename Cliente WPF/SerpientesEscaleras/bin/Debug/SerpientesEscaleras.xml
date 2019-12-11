@@ -50,7 +50,6 @@
             </summary>
             <param name="jugadorRecibido"></param>
         </member>
-
         <member name="M:SerpientesEscaleras.ConsultarPuntajes.Button_Click(System.Object,System.Windows.RoutedEventArgs)">
             <summary>
             Método que regresa a la ventana principal y cierra la de consultar puntajes
@@ -58,7 +57,6 @@
             <param name="sender"></param>
             <param name="e"></param>
         </member>
-
         <member name="M:SerpientesEscaleras.ConsultarPuntajes.InitializeComponent">
             <summary>
             InitializeComponent
@@ -93,11 +91,37 @@
             Juego
             </summary>
         </member>
+        <member name="P:SerpientesEscaleras.Juego.Casillas">
+            <summary>
+            Metodo para obtener las casillas
+            </summary>
+        </member>
+        <member name="P:SerpientesEscaleras.Juego.Portales">
+            <summary>
+            Metodo para obtener los portales.
+            </summary>
+        </member>
+        <member name="M:SerpientesEscaleras.Juego.InicializarTablero">
+            <summary>
+            Metodo que inicializa los portales y casillas especiales en el tablero
+            </summary>
+        </member>
+        <member name="M:SerpientesEscaleras.Juego.RecibirListaJugadores(System.Collections.Generic.List{System.String})">
+            <summary>
+            Metodo que agrega los jugadores de la partida a la ventana.
+            </summary>
+            <param name="jugadores">lista de jugadores</param>
+        </member>
+        <member name="M:SerpientesEscaleras.Juego.Entrar">
+            <summary>
+            Metodo que permite al jugador unirse a una sala
+            </summary>
+        </member>
         <member name="M:SerpientesEscaleras.Juego.MoverFicha(System.Boolean)">
             <summary>
-            Metodo que mueve la ficha por el tablero y atraves de los portales
+            Metodo que mueve la ficha del jugador en turno por el tablero y portales.
             </summary>
-            <param name="cayoPortal"> </param>
+            <param name="cayoPortal"> identificar si cayo en un portal </param>
         </member>
         <member name="M:SerpientesEscaleras.Juego.MostrarFichaEnTablero">
             <summary>
@@ -533,6 +557,27 @@
             Lobby
             </summary>
         </member>
+        <member name="M:SerpientesEscaleras.Lobby.#ctor(SerpientesEscaleras.ServidorJuegoSE.Jugador)">
+            <summary>
+            Constructor de la ventana lobby, implementa el servicio al callback para el multijugador
+            </summary>
+            <param name="jugadorRecibido"></param>
+        </member>
+        <member name="M:SerpientesEscaleras.Lobby.CrearPartida(SerpientesEscaleras.ServidorJuegoSE.Sala)">
+            <summary>
+            Metodo que recibe la sala creada en la ventana crear partida y la añade al servidor para despues
+            unirse a ella
+            </summary>
+            <param name="salaRecibida">Sala creada en la ventana crear partida</param>
+        </member>
+        <member name="M:SerpientesEscaleras.Lobby.EntrarPartida(SerpientesEscaleras.ServidorJuegoSE.Sala)">
+            <summary>
+            Verifica que si la sala está dispobible y que no haya empezado, de cumplirse
+            añade a los jugadores a la partida
+            </summary>
+            <param name="salaRecibida">sala creada en la ventana crear partida</param>
+            <returns>true si el jugador entró a la partida, false sino se pudo</returns>
+        </member>
         <member name="M:SerpientesEscaleras.Lobby.InitializeComponent">
             <summary>
             InitializeComponent
@@ -575,6 +620,18 @@
             <summary>
             Turno
             </summary>
+        </member>
+        <member name="M:SerpientesEscaleras.Turno.#ctor(SerpientesEscaleras.Juego)">
+            <summary>
+            Constructor de la ventana tuno
+            </summary>
+            <param name="juegoReferencia"> la configuracion del juego</param>
+        </member>
+        <member name="M:SerpientesEscaleras.Turno.ElegirFicha(System.Collections.Generic.List{SerpientesEscaleras.ServidorJuegoSE.Ficha})">
+            <summary>
+            Muestra la ventana con las fichas a elegir
+            </summary>
+            <param name="fichasEscogidas">lista de fichas disponibles</param>
         </member>
         <member name="M:SerpientesEscaleras.Turno.InitializeComponent">
             <summary>

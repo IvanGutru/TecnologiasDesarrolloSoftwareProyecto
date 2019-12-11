@@ -104,7 +104,7 @@ namespace MessageService {
                             String contreseñaHasheada = ObtenerHash(cuenta.Contraseña, cuentaRecuperada.salt);
                             if (contreseñaHasheada.Equals(cuentaRecuperada.password ))
                             {
-                          
+                                
                                 cuentaRecuperada.secionIniciada = true;
                                 conexionBaseDatos.Entry(cuentaRecuperada).State = System.Data.Entity.EntityState.Modified;
                                 conexionBaseDatos.SaveChanges();
@@ -303,13 +303,6 @@ namespace MessageService {
                     {
                         return;
                     }
-                    //conexionBaseDatos.PuntuacionSet.Add(new DAO.Puntuacion()
-                    //{
-                    //    turnos = Convert.ToInt16(fichaGanador.Movimientos),
-                    //    fecha = DateTime.Now,
-                    //    Jugador = jugadorRecuperado
-                    //});
-                    //conexionBaseDatos.SaveChanges();
                 }
                 catch (System.Data.Entity.Core.EntityException)
                 {

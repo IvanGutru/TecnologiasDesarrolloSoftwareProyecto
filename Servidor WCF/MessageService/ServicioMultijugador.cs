@@ -225,8 +225,10 @@ namespace MessageService
             salasAbiertas[indice].DiccionarioJugadores.Remove(conexion);
             salasAbiertas[indice].JugadoresJugando.Remove(jugador.Apodo);
             salasAbiertas[indice].NumJugadores--;
-            if (salasAbiertas[indice].NumJugadores == 0)
+            if (salasAbiertas[indice].NumJugadores == 1)
             {
+                var ultimoJugador = salasAbiertas[indice].DiccionarioJugadores.First().Key;
+               
                 salasAbiertas.RemoveAt(indice);
                 return;
             }
@@ -235,7 +237,7 @@ namespace MessageService
                 miembro.RecibirMensajeMiembro(false, jugador.Apodo);
             }
         }
-
+  
         private void EmpezarElegirFichas(int indice)
         {
             salasAbiertas[indice].JugadoresJugando = new List<string>();
@@ -244,7 +246,7 @@ namespace MessageService
                 salasAbiertas[indice].JugadoresJugando.Add(miembro.Apodo);
             }
             salasAbiertas[indice].JugadorEnTurno = salasAbiertas[indice].JugadoresJugando.First();
-            salasAbiertas[indice].DiccionarioJugadores.First(x => x.Value.Apodo.Equals(salasAbiertas[indice].JugadorEnTurno)).Key.SolicitarCrearTablero();
+          
             foreach (var miembro in salasAbiertas[indice].DiccionarioJugadores.Keys)
             {
                 miembro.ElegirFicha(salasAbiertas[indice].JugadorEnTurno, salasAbiertas[indice].Fichas.ToArray());
@@ -288,7 +290,7 @@ namespace MessageService
             {
                 ficha.Posicion = 70 - (ficha.Posicion - 70);
             }
-            if (ficha.Posicion == 6 || ficha.Posicion == 7 || ficha.Posicion == 5)
+            if (ficha.Posicion == 70)
             {
                 foreach (var miembro in salasAbiertas[indice].DiccionarioJugadores.Keys)
                 {
