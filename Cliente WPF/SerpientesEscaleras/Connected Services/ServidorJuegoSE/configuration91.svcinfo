@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="7AOkhDpSeCqQdyVWG3MNN9nd81o=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="eyrptKjRyGuNSI6cI/5/aBPhm0s=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="netTcpBinding" name="NetTcpBinding_IAdministradorMultijugador">
       <properties>
@@ -239,10 +239,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="NetTcpBinding_IAdministradorCuenta1" contract="ServidorJuegoSE.IAdministradorCuenta" bindingType="netTcpBinding" address="net.tcp://192.168.43.115:8091/ServidorSerpientesEscaleras/EndponitCuenta" bindingConfiguration="NetTcpBinding_IAdministradorCuenta1">
+    <endpoint name="NetTcpBinding_IAdministradorCuenta1" contract="ServidorJuegoSE.IAdministradorCuenta" bindingType="netTcpBinding" address="net.tcp://localhost:8091/ServidorSerpientesEscaleras/EndponitCuenta" bindingConfiguration="NetTcpBinding_IAdministradorCuenta1">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>net.tcp://192.168.43.115:8091/ServidorSerpientesEscaleras/EndponitCuenta</serializedValue>
+          <serializedValue>net.tcp://localhost:8091/ServidorSerpientesEscaleras/EndponitCuenta</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -324,10 +324,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="NetTcpBinding_IAdministradorMultijugador" contract="ServidorJuegoSE.IAdministradorMultijugador" bindingType="netTcpBinding" address="net.tcp://192.168.43.115:8091/ServidorSerpientesEscaleras/EndpointMultijugador" bindingConfiguration="NetTcpBinding_IAdministradorMultijugador">
+    <endpoint name="NetTcpBinding_IAdministradorMultijugador" contract="ServidorJuegoSE.IAdministradorMultijugador" bindingType="netTcpBinding" address="net.tcp://localhost:8091/ServidorSerpientesEscaleras/EndpointMultijugador" bindingConfiguration="NetTcpBinding_IAdministradorMultijugador">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>net.tcp://192.168.43.115:8091/ServidorSerpientesEscaleras/EndpointMultijugador</serializedValue>
+          <serializedValue>net.tcp://localhost:8091/ServidorSerpientesEscaleras/EndpointMultijugador</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

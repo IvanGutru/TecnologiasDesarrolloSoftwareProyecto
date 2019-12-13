@@ -12,144 +12,102 @@
       },
       "results": [
         {
-          "ruleId": "S4787",
+          "ruleId": "S3241",
           "level": "warning",
-          "message": "Make sure that encrypting data is safe here.",
+          "message": "Change return type to 'void'; not a single caller uses the returned value.",
           "locations": [
             {
               "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/Encriptador.cs",
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/ServicioCuenta.cs",
                 "region": {
-                  "startLine": 27,
-                  "startColumn": 46,
-                  "endLine": 27,
-                  "endColumn": 77
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S4787",
-          "level": "warning",
-          "message": "Make sure that encrypting data is safe here.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/Encriptador.cs",
-                "region": {
-                  "startLine": 44,
-                  "startColumn": 46,
-                  "endLine": 44,
-                  "endColumn": 77
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S4790",
-          "level": "warning",
-          "message": "Make sure that hashing data is safe here.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/Encriptador.cs",
-                "region": {
-                  "startLine": 37,
-                  "startColumn": 48,
-                  "endLine": 37,
-                  "endColumn": 78
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S4790",
-          "level": "warning",
-          "message": "Make sure that hashing data is safe here.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/Encriptador.cs",
-                "region": {
-                  "startLine": 20,
-                  "startColumn": 48,
-                  "endLine": 20,
-                  "endColumn": 78
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S2278",
-          "level": "warning",
-          "message": "Use the recommended AES (Advanced Encryption Standard) instead.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/Encriptador.cs",
-                "region": {
-                  "startLine": 23,
-                  "startColumn": 64,
-                  "endLine": 23,
-                  "endColumn": 94
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S2278",
-          "level": "warning",
-          "message": "Use the recommended AES (Advanced Encryption Standard) instead.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/Encriptador.cs",
-                "region": {
-                  "startLine": 40,
-                  "startColumn": 64,
-                  "endLine": 40,
-                  "endColumn": 94
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S108",
-          "level": "warning",
-          "message": "Either remove or fill this block of code.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/ServicioMultijugador.cs",
-                "region": {
-                  "startLine": 109,
+                  "startLine": 344,
                   "startColumn": 17,
-                  "endLine": 111,
-                  "endColumn": 18
+                  "endLine": 344,
+                  "endColumn": 20
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S4787",
+          "level": "warning",
+          "message": "Make sure that encrypting data is safe here.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/Encriptador.cs",
+                "region": {
+                  "startLine": 36,
+                  "startColumn": 46,
+                  "endLine": 36,
+                  "endColumn": 88
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S4787",
+          "level": "warning",
+          "message": "Make sure that encrypting data is safe here.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/Encriptador.cs",
+                "region": {
+                  "startLine": 59,
+                  "startColumn": 46,
+                  "endLine": 59,
+                  "endColumn": 88
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S4790",
+          "level": "warning",
+          "message": "Make sure that hashing data is safe here.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/Encriptador.cs",
+                "region": {
+                  "startLine": 29,
+                  "startColumn": 48,
+                  "endLine": 29,
+                  "endColumn": 78
+                }
+              }
+            }
+          ],
+          "properties": {
+            "warningLevel": 1
+          }
+        },
+        {
+          "ruleId": "S4790",
+          "level": "warning",
+          "message": "Make sure that hashing data is safe here.",
+          "locations": [
+            {
+              "resultFile": {
+                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/Encriptador.cs",
+                "region": {
+                  "startLine": 52,
+                  "startColumn": 48,
+                  "endLine": 52,
+                  "endColumn": 78
                 }
               }
             }
@@ -167,9 +125,9 @@
               "resultFile": {
                 "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/ServicioMultijugador.cs",
                 "region": {
-                  "startLine": 375,
+                  "startLine": 464,
                   "startColumn": 32,
-                  "endLine": 375,
+                  "endLine": 464,
                   "endColumn": 44
                 }
               }
@@ -188,9 +146,9 @@
               "resultFile": {
                 "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/ServicioMultijugador.cs",
                 "region": {
-                  "startLine": 357,
+                  "startLine": 441,
                   "startColumn": 32,
-                  "endLine": 357,
+                  "endLine": 441,
                   "endColumn": 44
                 }
               }
@@ -209,78 +167,10 @@
               "resultFile": {
                 "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/ServicioMultijugador.cs",
                 "region": {
-                  "startLine": 405,
+                  "startLine": 499,
                   "startColumn": 32,
-                  "endLine": 405,
+                  "endLine": 499,
                   "endColumn": 44
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S1168",
-          "level": "warning",
-          "message": "Return an empty collection instead of null.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/ServicioCuenta.cs",
-                "region": {
-                  "startLine": 273,
-                  "startColumn": 21,
-                  "endLine": 273,
-                  "endColumn": 33
-                }
-              }
-            }
-          ],
-          "relatedLocations": [
-            {
-              "physicalLocation": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/ServicioCuenta.cs",
-                "region": {
-                  "startLine": 276,
-                  "startColumn": 21,
-                  "endLine": 276,
-                  "endColumn": 33
-                }
-              }
-            }
-          ],
-          "properties": {
-            "warningLevel": 1
-          }
-        },
-        {
-          "ruleId": "S1168",
-          "level": "warning",
-          "message": "Return an empty collection instead of null.",
-          "locations": [
-            {
-              "resultFile": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/ServicioCuenta.cs",
-                "region": {
-                  "startLine": 243,
-                  "startColumn": 21,
-                  "endLine": 243,
-                  "endColumn": 33
-                }
-              }
-            }
-          ],
-          "relatedLocations": [
-            {
-              "physicalLocation": {
-                "uri": "file:///C:/Users/irvin/Desktop/TecnologiasDesarrolloSoftwareProyecto/Servidor%20WCF/MessageService/ServicioCuenta.cs",
-                "region": {
-                  "startLine": 246,
-                  "startColumn": 21,
-                  "endLine": 246,
-                  "endColumn": 33
                 }
               }
             }
@@ -291,39 +181,6 @@
         }
       ],
       "rules": {
-        "S108": {
-          "id": "S108",
-          "shortDescription": "Nested blocks of code should not be left empty",
-          "fullDescription": "Most of the time a block of code is empty when a piece of code is really missing. So such empty block must be either filled or removed.",
-          "defaultLevel": "warning",
-          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-108",
-          "properties": {
-            "category": "Major Code Smell",
-            "isEnabledByDefault": true,
-            "tags": [
-              "C#",
-              "SonarWay",
-              "MainSourceScope",
-              "TestSourceScope"
-            ]
-          }
-        },
-        "S1168": {
-          "id": "S1168",
-          "shortDescription": "Empty arrays and collections should be returned instead of null",
-          "fullDescription": "Returning null instead of an actual array or collection forces callers of the method to explicitly test for nullity, making them more complex and less readable.",
-          "defaultLevel": "warning",
-          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-1168",
-          "properties": {
-            "category": "Major Code Smell",
-            "isEnabledByDefault": true,
-            "tags": [
-              "C#",
-              "SonarWay",
-              "MainSourceScope"
-            ]
-          }
-        },
         "S2245": {
           "id": "S2245",
           "shortDescription": "Using pseudorandom number generators (PRNGs) is security-sensitive",
@@ -341,19 +198,20 @@
             ]
           }
         },
-        "S2278": {
-          "id": "S2278",
-          "shortDescription": "Neither DES (Data Encryption Standard) nor DESede (3DES) should be used",
-          "fullDescription": "According to the US National Institute of Standards and Technology (NIST), the Data Encryption Standard (DES) is no longer considered secure:",
+        "S3241": {
+          "id": "S3241",
+          "shortDescription": "Methods should not return values that are never used",
+          "fullDescription": "Private methods are clearly intended for use only within their own scope. When such methods return values that are never used by any of their callers, then clearly there is no need to actually make the return, and it should be removed in the interests of efficiency and clarity. ",
           "defaultLevel": "warning",
-          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-2278",
+          "helpUri": "https://rules.sonarsource.com/csharp/RSPEC-3241",
           "properties": {
-            "category": "Blocker Vulnerability",
+            "category": "Minor Code Smell",
             "isEnabledByDefault": true,
             "tags": [
               "C#",
               "SonarWay",
-              "MainSourceScope"
+              "MainSourceScope",
+              "TestSourceScope"
             ]
           }
         },

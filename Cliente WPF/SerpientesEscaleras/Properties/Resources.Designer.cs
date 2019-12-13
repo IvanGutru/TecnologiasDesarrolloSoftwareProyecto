@@ -97,6 +97,15 @@ namespace SerpientesEscaleras.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Texto en campo inválido.
+        /// </summary>
+        public static string camposInvalidos {
+            get {
+                return ResourceManager.GetString("camposInvalidos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Todos los campos son obligatorios.
         /// </summary>
         public static string camposObligatorios {
@@ -304,7 +313,7 @@ namespace SerpientesEscaleras.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Error al mandar su correo de activación. Verifique que su correo sea correcto..
+        ///   Busca una cadena traducida similar a Error al mandar su correo de activación. Verifique su conexión..
         /// </summary>
         public static string errorMandarCorreo {
             get {

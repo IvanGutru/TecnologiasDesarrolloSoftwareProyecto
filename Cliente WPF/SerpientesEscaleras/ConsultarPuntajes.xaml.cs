@@ -21,11 +21,7 @@ namespace SerpientesEscaleras {
             DataGrid_MisPuntajes.ItemsSource = cliente.ConsultarPuntajesPropios(jugador);
             DataGrid_MejoresPuntajes.ItemsSource = cliente.ConsultarMejoresPuntajes();
         }
-        /// <summary>
-        /// Método que regresa a la ventana principal y cierra la de consultar puntajes
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
         private void Button_Click(object sender, RoutedEventArgs e) {
             MenuPrincipal ventanaPrincipal = new MenuPrincipal(jugador);
             ventanaPrincipal.Show();

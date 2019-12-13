@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Input;
 
@@ -12,6 +12,7 @@ namespace SerpientesEscaleras
     /// </summary>
     public partial class MainWindow : Window
     {
+        const string ERRORBD = "ErrorConexionBaseDatos";
         /// <summary>
         /// Constructor de la ventana.
         /// </summary>
@@ -40,7 +41,7 @@ namespace SerpientesEscaleras
             }
             ServidorJuegoSE.AdministradorCuentaClient cliente = new ServidorJuegoSE.AdministradorCuentaClient();
             ServidorJuegoSE.Cuenta cuenta = new ServidorJuegoSE.Cuenta() { Correo = correoIngresado, Contraseña = contraseñaIngresada };
-            ServidorJuegoSE.Jugador jugador = new ServidorJuegoSE.Jugador();
+            ServidorJuegoSE.Jugador jugador;
             try
             {
                 jugador = cliente.IniciarSesion(cuenta);
@@ -54,7 +55,7 @@ namespace SerpientesEscaleras
             }
             if (jugador != null && cuenta !=null)
             {
-                if (cuenta.Correo.Equals("ErrorConexionBaseDatos") || jugador.Apodo.Equals("ErrorConexionBaseDatos"))
+                if (cuenta.Correo.Equals(ERRORBD) || jugador.Apodo.Equals(ERRORBD))
                 {
                     MessageBox.Show(Properties.Resources.errorConexionBaseDatos, Properties.Resources.tituloErrorConexion, MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
@@ -161,6 +162,12 @@ namespace SerpientesEscaleras
             if (passwordBox_contraseña.Password == "")
             {
                 label_Contraseña.Visibility = Visibility.Visible;
+                return;
+            }
+            if (!Regex.IsMatch(passwordBox_contraseña.Password, @"^\w+$"))
+            {
+                MessageBox.Show(Properties.Resources.camposInvalidos);
+                passwordBox_contraseña.Clear();
             }
         }
 
@@ -211,16 +218,15 @@ namespace SerpientesEscaleras
         private Boolean ValidarFormatoCorreo()
         {
             String expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
-            if (System.Text.RegularExpressions.Regex.IsMatch(textBox_Usuario.Text, expresion))
+            if (Regex.IsMatch(textBox_Usuario.Text, expresion) && Regex.Replace(textBox_Usuario.Text, expresion, String.Empty).Length == 0)
             {
-                if (System.Text.RegularExpressions.Regex.Replace(textBox_Usuario.Text, expresion, String.Empty).Length == 0)
-                {
-                    return true;
-                }
+                return true;
             }
             MessageBox.Show(Properties.Resources.correoInvalido);
             return false;
         }
+
+
 
     }
 }

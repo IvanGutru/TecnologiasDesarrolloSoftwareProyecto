@@ -53,4 +53,3 @@ C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\DAO\ob
 C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\DAO\obj\Debug\DAO.csproj.CopyComplete
 C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\DAO\obj\Debug\DAO.dll
 C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\DAO\obj\Debug\DAO.pdb
-C:\Users\irvin\Desktop\TecnologiasDesarrolloSoftwareProyecto\Servidor WCF\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache

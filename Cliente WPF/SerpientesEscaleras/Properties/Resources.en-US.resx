@@ -312,4 +312,7 @@
   <data name="nombreObligatorio" xml:space="preserve">
     <value>The name is required</value>
   </data>
+  <data name="camposInvalidos" xml:space="preserve">
+    <value>Invalid text in textbox</value>
+  </data>
 </root>

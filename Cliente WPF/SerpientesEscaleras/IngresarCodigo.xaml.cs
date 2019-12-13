@@ -36,7 +36,7 @@ namespace SerpientesEscaleras {
             try
             {
                 int respuesta = cliente.ActivarCuentaJugador(cuenta, textBox_Codigo.Text);
-                if (respuesta == 1)
+                if (respuesta == (int)EstadoDeOperacion.OperacionExitosa)
                 {
                     var cuentaActivada = Properties.Resources.cuentaActivada;
                     MessageBox.Show(cuentaActivada);
@@ -44,11 +44,11 @@ namespace SerpientesEscaleras {
                     vetanaPrincipal.Show();
                     this.Close();
                 }
-                else if (respuesta == 0)
+                else if (respuesta == (int)EstadoDeOperacion.CodigoInvalido)
                 {
                     MessageBox.Show(Properties.Resources.codigoInvalido);
                 }
-                else if (respuesta == -10 || respuesta == -11)
+                else if (respuesta == (int)EstadoDeOperacion.ErrorBaseDatos || respuesta == (int)EstadoDeOperacion.Excepcion)
                 {
                     MessageBox.Show(Properties.Resources.errorConexionBaseDatos, Properties.Resources.tituloErrorConexion, MessageBoxButton.OK, MessageBoxImage.Error);
                 }
@@ -62,18 +62,16 @@ namespace SerpientesEscaleras {
         private void Button_ReenviarCorreo(object sender, RoutedEventArgs e) {
             ServidorJuegoSE.AdministradorCuentaClient cliente = new ServidorJuegoSE.AdministradorCuentaClient();
             int respuesta;
-            try
-            {
+            try {
                 respuesta = cliente.EnviarCorreo(cuenta);
-                if (respuesta == 1)
-                {
+                if (respuesta == (int)EstadoDeOperacion.OperacionExitosa) {
                     MessageBox.Show(Properties.Resources.correoEnviado);
                 }
-                if (respuesta == -10)
+                if (respuesta == (int)EstadoDeOperacion.ErrorBaseDatos)
                 {
                     MessageBox.Show(Properties.Resources.errorConexionBaseDatos, Properties.Resources.tituloErrorConexion, MessageBoxButton.OK, MessageBoxImage.Error);
                 }
-                if (respuesta == 0)
+                if (respuesta == (int)EstadoDeOperacion.NoSeEnvioCorreo)
                 {
                     MessageBox.Show(Properties.Resources.errorMandarCorreo);
                 }
@@ -83,6 +81,13 @@ namespace SerpientesEscaleras {
                 MessageBox.Show(Properties.Resources.errorConexionServidor, Properties.Resources.tituloErrorConexion, MessageBoxButton.OK, MessageBoxImage.Error);
             }
             
+        }
+        enum EstadoDeOperacion{
+            OperacionExitosa = 1,
+            ErrorBaseDatos = -10,
+            NoSeEnvioCorreo = -2,
+            CodigoInvalido = -5,
+            Excepcion = -11,
         }
 
     }

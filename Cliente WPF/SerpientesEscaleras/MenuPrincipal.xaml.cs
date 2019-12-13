@@ -1,7 +1,5 @@
-﻿using System;
-using System.Media;
+﻿using System.Media;
 using System.Windows;
-using System.Windows.Media;
 
 
 namespace SerpientesEscaleras {
@@ -11,10 +9,9 @@ namespace SerpientesEscaleras {
         private ServidorJuegoSE.Jugador jugador;
         private SoundPlayer sonidoBoton = new SoundPlayer("SystemSounds/button.wav");
         /// <summary>
-        /// Constructor de la ventana el menu principal conforme al usuairo qu erecibe
-        /// como 
+        /// Constructor de la ventana del menu principal
         /// </summary>
-        /// <param name="jugadorRecibido"></param>
+        /// <param name="jugadorRecibido"> jugador que inicio sesión</param>
         public MenuPrincipal(ServidorJuegoSE.Jugador jugadorRecibido) {
             jugador = jugadorRecibido;
             InitializeComponent();

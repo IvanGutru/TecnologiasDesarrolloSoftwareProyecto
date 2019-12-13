@@ -11,9 +11,13 @@ using System.Runtime.Serialization.Formatters.Binary;
 namespace MessageService {
 
     public partial class ServicioSistema : IAdministradorCuenta {
-
+        const string errorConexionBaseDatos = "Error de conexion con la BD";
+        const int puntosGanador = 10000;
         private ServidorSE conexionBaseDatos;
-
+        /// <summary>
+        /// Genera un string aleatorio 
+        /// </summary>
+        /// <returns>se incluye junto con la contraseña para generar hash</returns>
         private String ObtenerSalt()
         {
             byte[] salt = new byte[128 / 8];
@@ -23,7 +27,12 @@ namespace MessageService {
             }
             return Convert.ToBase64String(salt);
         }
-
+        /// <summary>
+        /// Cifra la contraseña con el algoritmo 
+        /// </summary>
+        /// <param name="contraseña"> Contraseña a cifrar</param>
+        /// <param name="salt"> cadena de texto aleatorio</param>
+        /// <returns></returns>
         private String ObtenerHash(string contraseña, string salt)
         {
             return Convert.ToBase64String(KeyDerivation.Pbkdf2(
@@ -33,8 +42,25 @@ namespace MessageService {
                 iterationCount: 10000,
                 numBytesRequested: 256 / 8));
         }
-
-
+        enum EstadoDeOperacion
+        {
+            OperacionExitosa = 1,
+            ErrorConexionBD = -10,
+            Excepcion = -11,
+            CuentaNoEncontrada = -1,
+            NoSeEnvioCorreo = -2,
+            JugadorEncontrado = -3,
+            CuentaEncontrada =-4,
+            CodigoInvalido = -5,
+           
+            
+        }
+        /// <summary>
+        /// Abre el archivo donde se encuentra el nombre de correo y contraseña del juego,
+        /// desencripta el usuario y contraseña, envia el correo al destinatario
+        /// </summary>
+        /// <param name="cuenta">cuenta a la que se le enviará el correo</param>
+        /// <returns>1 si el correo fue enviado</returns>
         public int EnviarCorreo(Cuenta cuenta)
 
         {
@@ -47,16 +73,16 @@ namespace MessageService {
                     cuentaRecuperada = conexionBaseDatos.CuentaSet.Where(c => c.correo.Equals(cuenta.Correo)).FirstOrDefault();
                     if (cuentaRecuperada == null)
                     {
-                        return -1;
+                        return (int)EstadoDeOperacion.CuentaNoEncontrada;
                     }
                     if (!cuentaRecuperada.correo.Equals(cuenta.Correo))
                     {
-                        return -1;
+                        return (int)EstadoDeOperacion.CuentaNoEncontrada;
                     }
                 }
                 catch (System.Data.Entity.Core.EntityException)
                 {
-                    return -10;
+                    return (int)EstadoDeOperacion.ErrorConexionBD;
                 }
                 MessageService.Encriptador encriptador = new MessageService.Encriptador();
                 Stream openFileStream = File.OpenRead("CuentaCorreo.txt");
@@ -81,13 +107,17 @@ namespace MessageService {
                 }
                 catch (Exception)
                 {
-                    return 0;
+                    return (int)EstadoDeOperacion.NoSeEnvioCorreo;
                 }
                 clienteSmtp.Dispose();
-                return 1;
+                return (int)EstadoDeOperacion.OperacionExitosa;
             }
         }
-
+        /// <summary>
+        ///  Permite iniciar sesión comparando la cuenta ingresada con la base de datos
+        /// </summary>
+        /// <param name="cuenta"> cuenta ingresada por el usuario</param>
+        /// <returns></returns>
         public Jugador IniciarSesion(Cuenta cuenta)
         {
             conexionBaseDatos = new ServidorSE();
@@ -99,8 +129,6 @@ namespace MessageService {
                     cuentaRecuperada = conexionBaseDatos.CuentaSet.Where(c => c.correo.Equals(cuenta.Correo)).FirstOrDefault();
                     if (cuentaRecuperada != null && cuentaRecuperada.correo.Equals(cuenta.Correo))
                     {
-                        
-                        
                             String contreseñaHasheada = ObtenerHash(cuenta.Contraseña, cuentaRecuperada.salt);
                             if (contreseñaHasheada.Equals(cuentaRecuperada.password ))
                             {
@@ -109,19 +137,21 @@ namespace MessageService {
                                 conexionBaseDatos.Entry(cuentaRecuperada).State = System.Data.Entity.EntityState.Modified;
                                 conexionBaseDatos.SaveChanges();
                                 return new Jugador() { Apodo = cuentaRecuperada.Jugador.apodo };
-                          
                             }
-                        
                     }
                 }
-                catch (Exception)
+                catch (System.Data.Entity.Core.EntityException)
                 {
-                    return new Jugador { Apodo = "ErrorConexionBaseDatos"};
+                    return new Jugador { Apodo = errorConexionBaseDatos};
                 }
             }
             return null;
         }
-
+        /// <summary>
+        /// Regresa el correo de la cuenta y su campo de validada
+        /// </summary>
+        /// <param name="cuenta"> cuenta ingresada por el cliente</param>
+        /// <returns>Cuenta con el campo validada</returns>
         public Cuenta VerificarCuenta(Cuenta cuenta)
         {
             conexionBaseDatos = new ServidorSE();
@@ -138,12 +168,17 @@ namespace MessageService {
                 }
                 catch (System.Data.Entity.Core.EntityException)
                 {
-                    return new Cuenta { Correo = "ErrorConexionBaseDatos" };
+                    return new Cuenta { Correo = errorConexionBaseDatos };
                 }
             }
             return null;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="jugador"></param>
+        /// <param name="cuenta"></param>
+        /// <returns></returns>
         public int RegistrarJugador(Jugador jugador, Cuenta cuenta)
         {
             conexionBaseDatos = new ServidorSE();
@@ -157,11 +192,11 @@ namespace MessageService {
                     cuentaRecuperada = conexionBaseDatos.CuentaSet.Where(c => c.correo.Equals(cuenta.Correo)).FirstOrDefault();
                     if (jugadorRecuperado != null && jugadorRecuperado.apodo.Equals(jugador.Apodo))
                     {
-                            return -1;
+                            return (int)EstadoDeOperacion.JugadorEncontrado;
                     }
                     if (cuentaRecuperada != null && cuentaRecuperada.correo.Equals(cuenta.Correo))
                     {
-                            return -2;   
+                            return (int)EstadoDeOperacion.CuentaEncontrada;   
                     }
                     String nuevoSalt;
                     nuevoSalt = ObtenerSalt();
@@ -182,16 +217,22 @@ namespace MessageService {
                 }
                 catch (System.Data.Entity.Core.EntityException)
                 {
-                    return -10;
+                    return (int)EstadoDeOperacion.ErrorConexionBD;
                 }
                 catch (Exception)
                 {
-                    return -11;
+                    return (int)EstadoDeOperacion.Excepcion;
                 }
             }
-            return 1;
+            return (int)EstadoDeOperacion.OperacionExitosa;
         }
-
+ 
+        /// <summary>
+        /// Cambia el atributo de "validada" a true porque valida la cuenta
+        /// </summary>
+        /// <param name="cuenta">Cuenta ingresada a buscar</param>
+        /// <param name="codigo">codigo de activación</param>
+        /// <returns></returns>
         public int ActivarCuentaJugador(Cuenta cuenta, String codigo)
         {
             conexionBaseDatos = new ServidorSE();
@@ -203,15 +244,15 @@ namespace MessageService {
                     cuentaRecuperada = conexionBaseDatos.CuentaSet.Where(c => c.correo.Equals(cuenta.Correo)).FirstOrDefault();
                     if (cuentaRecuperada != null && !cuentaRecuperada.correo.Equals(cuenta.Correo))
                     {
-                            return -1;
+                            return (int)EstadoDeOperacion.CuentaNoEncontrada;
                     }
                     if (cuentaRecuperada == null)
                     {
-                        return -1;
+                        return (int)EstadoDeOperacion.CuentaNoEncontrada;
                     }
                     if (!cuentaRecuperada.salt.Equals(codigo))
                     {
-                        return 0;
+                        return (int)EstadoDeOperacion.CodigoInvalido;
                     }
                     cuentaRecuperada.validada = true;
                     conexionBaseDatos.Entry(cuentaRecuperada).State = System.Data.Entity.EntityState.Modified;
@@ -219,16 +260,20 @@ namespace MessageService {
                 }
                 catch (System.Data.Entity.Core.EntityException)
                 {
-                    return -10;
+                    return (int)EstadoDeOperacion.ErrorConexionBD;
                 }
                 catch (Exception)
                 {
-                    return -11;
+                    return (int)EstadoDeOperacion.Excepcion;
                 }
             }
-            return 1;
+            return (int)EstadoDeOperacion.OperacionExitosa;
         }
-
+        /// <summary>
+        /// Consulta los mejores puntajes del jugador
+        /// </summary>
+        /// <param name="jugador">Jugador a consultar sus puntajes</param>
+        /// <returns>Lista de los puntajes</returns>
         public List<FilaTablaPuntajes> ConsultarPuntajesPropios(Jugador jugador)
         {
             List<FilaTablaPuntajes> ListaFilas = new List<FilaTablaPuntajes>();
@@ -242,23 +287,26 @@ namespace MessageService {
                 }
                 catch (System.Data.Entity.Core.EntityException)
                 {
-                    return null;
+                    return new List<FilaTablaPuntajes>();
                 } catch (Exception) 
                 {
-                    return null;
+                    return new List<FilaTablaPuntajes>();
                 }
                 foreach (var puntaje in listaPuntajes)
                 {
                     ListaFilas.Add(new FilaTablaPuntajes(){
                         Apodo = puntaje.Jugador.apodo,
                         Turnos = puntaje.turnos,
-                        Puntos = 10000 / puntaje.turnos
+                        Puntos = puntosGanador/ puntaje.turnos
                     });
                 }
             }
             return ListaFilas;
         }
-
+        /// <summary>
+        /// Consulta los mejores puntajes globales registrados
+        /// </summary>
+        /// <returns>lista de los mejores puntajes</returns>
         public List<FilaTablaPuntajes> ConsultarMejoresPuntajes()
         {
             List<FilaTablaPuntajes> ListaFilas = new List<FilaTablaPuntajes>();
@@ -272,10 +320,10 @@ namespace MessageService {
                 }
                 catch (System.Data.Entity.Core.EntityException)
                 {
-                    return null;
+                    return new List<FilaTablaPuntajes>();
                 } catch (Exception)
                 {
-                    return null;
+                    return new List<FilaTablaPuntajes>();
                 }
                 foreach (var puntaje in listaPuntajes)
                 {
@@ -283,16 +331,19 @@ namespace MessageService {
                     {
                         Apodo = puntaje.Jugador.apodo,
                         Turnos = puntaje.turnos,
-                        Puntos = 10000 / puntaje.turnos
+                        Puntos = puntosGanador / puntaje.turnos
                     });
                 }
             }
             return ListaFilas;
         }
-
-        private void RegistrarPuntaje(int indiceSala, Ficha fichaGanador)
+        /// <summary>
+        /// Registra el puntaje obtenido por el jugador que ganó la partida
+        /// </summary>
+        /// <param name="indiceSala"> Posición dentro del arreglo de salas abiertas</param>
+        private int RegistrarPuntaje(int indiceSala)
         {
-            ServidorSE conexionBaseDatos = new ServidorSE();
+            conexionBaseDatos = new ServidorSE();
             using (conexionBaseDatos)
             {
                 DAO.Jugador jugadorRecuperado;
@@ -301,17 +352,14 @@ namespace MessageService {
                     jugadorRecuperado = conexionBaseDatos.JugadorSet.Where(j => j.apodo.Equals(salasAbiertas[indiceSala].JugadorEnTurno)).FirstOrDefault();
                     if (jugadorRecuperado != null && jugadorRecuperado.apodo.Equals(salasAbiertas[indiceSala].JugadorEnTurno))
                     {
-                        return;
+                        return (int)EstadoDeOperacion.OperacionExitosa;
                     }
                 }
                 catch (System.Data.Entity.Core.EntityException)
                 {
-                    return;
+                    return (int)EstadoDeOperacion.ErrorConexionBD;
                 }
-                catch (Exception)
-                {
-                    return;
-                }
+                return (int)EstadoDeOperacion.OperacionExitosa;
             }
         }
 

@@ -19,7 +19,7 @@
         </Grid.ColumnDefinitions>
         <Image HorizontalAlignment="Left" Height="452" VerticalAlignment="Top" Width="366" Source="Resources/serpiente.png" Margin="0,0,0,-86"/>
         <Image HorizontalAlignment="Left" Height="48" Margin="604,10,0,0" VerticalAlignment="Top" Width="53" Source="Resources/traducir.png" RenderTransformOrigin="0.096,0.595"/>
-        <TextBox x:Name="textBox_Usuario" HorizontalAlignment="Left" Margin="438,90,0,0" TextWrapping="NoWrap" MaxLength="100" VerticalAlignment="Top" 
+        <TextBox x:Name="textBox_Usuario" HorizontalAlignment="Left" Margin="438,90,0,0" TextWrapping="NoWrap" MaxLength="100" VerticalAlignment="Top"
                  Width="242" Background="#FF1C1C1C" Foreground="White" SelectionBrush="#FF26D4F5" materialDesign:HintAssist.IsFloating="true" 
                  LostFocus="TextBox_Usuario_LostFocus" KeyDown="TextBox_Usuario_KeyDown">
             <TextBox.BorderBrush>

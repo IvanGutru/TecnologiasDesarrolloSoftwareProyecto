@@ -3,58 +3,60 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.ServiceModel;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
+using SerpientesEscaleras.ServidorJuegoSE;
 
 namespace SerpientesEscaleras
 {
 
     public partial class Juego : Window
     {
-        public ServidorJuegoSE.Jugador jugador;
-        public List<String> chat = new List<string>();
         InstanceContext contexto;
-        public ServidorJuegoSE.AdministradorMultijugadorClient clienteMultijugador;
-        public List<String> jugadoresConectados = new List<String>();
-        private List<ServidorJuegoSE.Casilla> casillas;
-        private List<ServidorJuegoSE.Portal> portales;
         private CallbackMultijugador regresoJuego;
-        public ServidorJuegoSE.Sala sala;
-        public ServidorJuegoSE.Ficha jugadorEnTurno = new ServidorJuegoSE.Ficha();
         private MediaPlayer musicaFondo = new MediaPlayer();
-
+        /// <summary>
+        /// Constructor de la ventana de juego que inicializa las configuraciones y jugadores 
+        /// para el comienzo de la partida.
+        /// </summary>
+        /// <param name="jugadorRecibido"></param>
+        /// <param name="salaRecibida"></param>
+        /// <param name="regresoMensaje"></param>
         public Juego(ServidorJuegoSE.Jugador jugadorRecibido, ServidorJuegoSE.Sala salaRecibida, CallbackMultijugador regresoMensaje)
         {
-            jugador = jugadorRecibido;
-            sala = salaRecibida;
+            Jugador = jugadorRecibido;
+            Sala = salaRecibida;
             regresoJuego = regresoMensaje;
             InitializeComponent();
-            listBox_Chat.ItemsSource = chat;
-            listBox_JugadoresConectados.ItemsSource = jugadoresConectados;
+            listBox_Chat.ItemsSource = Chat;
+            listBox_JugadoresConectados.ItemsSource = JugadoresConectados;
             regresoJuego.Juego = this;
             contexto = new InstanceContext(regresoJuego);
-            clienteMultijugador = new ServidorJuegoSE.AdministradorMultijugadorClient(contexto);
+            ClienteMultijugador = new ServidorJuegoSE.AdministradorMultijugadorClient(contexto);
             ImageBrush brushGrid = new ImageBrush();
-            brushGrid.ImageSource = new BitmapImage(new Uri(sala.UriFondoTablero));
+            brushGrid.ImageSource = new BitmapImage(new Uri(Sala.UriFondoTablero));
             grid_Tablero.Background = brushGrid;
             musicaFondo.MediaOpened += SoundTrackCargado;
             musicaFondo.MediaEnded += SoundTrackFinalizado;
             musicaFondo.Open(new Uri("pack://siteoforigin:,,,/SoundTracks/track1.mp3"));
         }
+
+        public List<ServidorJuegoSE.Casilla> Casillas { get; set; }
+        public List<ServidorJuegoSE.Portal> Portales { get; set; }
+        public Jugador Jugador { get; set; }
+        public List<string> Chat { get; set; } = new List<string>();
+        public AdministradorMultijugadorClient ClienteMultijugador { get; set; }
+        public Sala Sala { get; set; }
+        public Ficha JugadorEnTurno { get; set; } = new ServidorJuegoSE.Ficha();
+        public List<string> JugadoresConectados { get; set; } = new List<String>();
+
         /// <summary>
-        /// Metodo para obtener las casillas
-        /// </summary>
-        public List<ServidorJuegoSE.Casilla> Casillas { get { return casillas; } set { casillas = value; } }
-        /// <summary>
-        /// Metodo para obtener los portales.
-        /// </summary>
-        public List<ServidorJuegoSE.Portal> Portales { get { return portales; } set { portales = value; } }
-        /// <summary>
-        /// Metodo que inicializa los portales y casillas especiales en el tablero
+        /// Metodo que coloca las casillas y portales en el tablero
         /// </summary>
         public void InicializarTablero()
         {
@@ -71,13 +73,14 @@ namespace SerpientesEscaleras
         {
             musicaFondo.Play();
         }
-
-       
+        /// <summary>
+        /// Coloca las casillas especiales en el tablero
+        /// </summary>
         private void ColocarCasillasEspeciales()
         {
             Image casillaEspecial;
-            var casillasEspeciales = casillas.Where(x => x.Especial).ToList();
-            for (int i = 0; i < casillasEspeciales.Count(); i++)
+            var casillasEspeciales = Casillas.Where(x => x.Especial).ToList();
+            for (int i = 0; i < casillasEspeciales.Count; i++)
             {
                 casillaEspecial = new Image();
                 casillaEspecial.Source = new BitmapImage(new Uri("Resources/Tablero/casillaEspecial.png", UriKind.Relative));
@@ -89,20 +92,22 @@ namespace SerpientesEscaleras
                 grid_Tablero.Children.Add(casillaEspecial);
             }
         }
-
+        /// <summary>
+        /// Coloca los portales
+        /// </summary>
         private void ColocarPortales()
         {
             ServidorJuegoSE.Casilla casilla;
             Image imagenPortal;
-            for (int i = 0; i < portales.Count; i++)
+            for (int i = 0; i < Portales.Count; i++)
             {
-                casilla = casillas.Find(x => x.Id == portales[i].IdCasilla);
+                casilla = Casillas.Find(x => x.Id == Portales[i].IdCasilla);
                 imagenPortal = new Image();
-                imagenPortal.Source = new BitmapImage(new Uri(portales[i].UriPortal, UriKind.Relative));
+                imagenPortal.Source = new BitmapImage(new Uri(Portales[i].UriPortal, UriKind.Relative));
                 imagenPortal.HorizontalAlignment = HorizontalAlignment.Left;
                 imagenPortal.VerticalAlignment = VerticalAlignment.Bottom;
                 imagenPortal.Height = 90;
-                imagenPortal.Name = portales[i].Color + portales[i].ZonaTablero;
+                imagenPortal.Name = Portales[i].Color + Portales[i].ZonaTablero;
                 Grid.SetRow(imagenPortal, casilla.Fila);
                 Grid.SetColumn(imagenPortal, casilla.Columna);
                 grid_Tablero.Children.Add(imagenPortal);
@@ -113,7 +118,7 @@ namespace SerpientesEscaleras
         {
             if (textBox_Mensaje.Text != "")
             {
-                clienteMultijugador.EnviarMensajeJuego(sala.IdSala, textBox_Mensaje.Text);
+                ClienteMultijugador.EnviarMensajeJuego(Sala.IdSala, textBox_Mensaje.Text);
                 textBox_Mensaje.Clear();
             }
         }
@@ -121,60 +126,54 @@ namespace SerpientesEscaleras
         private void CerrarVentana(object sender, System.ComponentModel.CancelEventArgs e)
         {
             musicaFondo.Stop();
-            clienteMultijugador.SalirJuego(sala.IdSala);
+            ClienteMultijugador.SalirJuego(Sala.IdSala);
         }
 
         private void Button_Salir(object sender, RoutedEventArgs e)
         {
-            MenuPrincipal menuPrincipal = new MenuPrincipal(jugador);
+            MenuPrincipal menuPrincipal = new MenuPrincipal(Jugador);
             menuPrincipal.Show();
             this.Close();
         }
-        /// <summary>
-        /// Metodo que agrega los jugadores de la partida a la ventana.
-        /// </summary>
-        /// <param name="jugadores">lista de jugadores</param>
+
         public void RecibirListaJugadores(List<String> jugadores)
         {
-            jugadoresConectados.AddRange(jugadores);
+            JugadoresConectados.AddRange(jugadores);
             listBox_JugadoresConectados.Items.Refresh();
         }
-        /// <summary>
-        /// Metodo que permite al jugador unirse a una sala
-        /// </summary>
+
         public void Entrar()
         {
-            clienteMultijugador.UnirseJuego(sala.IdSala, jugador);
+            ClienteMultijugador.UnirseJuego(Sala.IdSala, Jugador);
         }
         /// <summary>
-        /// Metodo que mueve la ficha del jugador en turno por el tablero y portales.
+        /// Mueve la casilla a traves de los portales, cambiandola de posicion
         /// </summary>
-        /// <param name="cayoPortal"> identificar si cayo en un portal </param>
+        /// <param name="cayoPortal"> verifica si cayó en un portal o no</param>
         public void MoverFicha(bool cayoPortal)
         {
-            ServidorJuegoSE.Casilla casillaTemporal = casillas.ElementAt(jugadorEnTurno.Posicion - 1);
-            ImageSource fuenteFicha = new BitmapImage(new Uri(jugadorEnTurno.UriFicha, UriKind.Relative));
+            ServidorJuegoSE.Casilla casillaTemporal = Casillas.ElementAt(JugadorEnTurno.Posicion - 1);
             var imagenesTablero = grid_Tablero.Children.Cast<UIElement>().Where(i => i is Image).Cast<Image>();
-            var fichaAMover = imagenesTablero.FirstOrDefault(i => i.Name == jugadorEnTurno.NombreFicha);
+            var fichaAMover = imagenesTablero.FirstOrDefault(i => i.Name == JugadorEnTurno.NombreFicha);
             Grid.SetColumn(fichaAMover, casillaTemporal.Columna);
             Grid.SetRow(fichaAMover, casillaTemporal.Fila);
-            var portal = portales.Find(x => x.IdCasilla == casillaTemporal.Id);
+            var portal = Portales.Find(x => x.IdCasilla == casillaTemporal.Id);
             if (portal != null && !cayoPortal)
             {
-                var otroPortal = portales.Find(x => x.Color == portal.Color && x.ZonaTablero != portal.ZonaTablero);
-                jugadorEnTurno.Posicion = otroPortal.IdCasilla;
-                if (jugadorEnTurno.ApodoJugador == jugador.Apodo)
+                var otroPortal = Portales.Find(x => x.Color == portal.Color && x.ZonaTablero != portal.ZonaTablero);
+                JugadorEnTurno.Posicion = otroPortal.IdCasilla;
+                if (JugadorEnTurno.ApodoJugador == Jugador.Apodo)
                 {
-                    clienteMultijugador.CambiarPosicionFicha(sala.IdSala, jugadorEnTurno);
+                    ClienteMultijugador.CambiarPosicionFicha(Sala.IdSala, JugadorEnTurno);
                 }
                 DispatcherTimer temporizador = new DispatcherTimer();
                 temporizador.Interval = TimeSpan.FromSeconds(2d);
                 temporizador.Tick += TemporizadorDetenido;
                 temporizador.Start();
             }
-            if (casillaTemporal.Especial && jugadorEnTurno.ApodoJugador == jugador.Apodo)
+            if (casillaTemporal.Especial && JugadorEnTurno.ApodoJugador == Jugador.Apodo)
             {
-                clienteMultijugador.CambiarPortales(sala.IdSala, casillas.ToArray(), portales.ToArray());
+                ClienteMultijugador.CambiarPortales(Sala.IdSala, Casillas.ToArray(), Portales.ToArray());
             }
         }
 
@@ -185,13 +184,13 @@ namespace SerpientesEscaleras
             MoverFicha(true);
         }
         /// <summary>
-        /// Metodo que muestra las fichas en el tablero
+        /// Muestra la ficha en el tablero
         /// </summary>
         public void MostrarFichaEnTablero()
         {
             Image imagenFicha = new Image();
-            imagenFicha.Source = new BitmapImage(new Uri(jugadorEnTurno.UriFicha, UriKind.Relative));
-            imagenFicha.Name = jugadorEnTurno.NombreFicha;
+            imagenFicha.Source = new BitmapImage(new Uri(JugadorEnTurno.UriFicha, UriKind.Relative));
+            imagenFicha.Name = JugadorEnTurno.NombreFicha;
             imagenFicha.Width = 70;
             imagenFicha.Height = 70;
             grid_Tablero.Children.Add(imagenFicha);
@@ -199,24 +198,41 @@ namespace SerpientesEscaleras
             Grid.SetRow(imagenFicha, 6);
         }
         /// <summary>
-        /// Metodo que cambia la ubicación de los portales
+        /// Cambia los portales de casilla cuando cae en una casilla especial
         /// </summary>
-        /// <param name="portalesRecibidos"></param>
+        /// <param name="portalesRecibidos">lista de portales creados</param>
         public void CambiarPortales(ServidorJuegoSE.Portal[] portalesRecibidos)
         {
-            for (int i = 0; i < portales.Count; i++)
+            for (int i = 0; i < Portales.Count; i++)
             {
-                var casillaDelPortal = casillas.Find(x => x.Id == portales[i].IdCasilla);
+                var casillaDelPortal = Casillas.Find(x => x.Id == Portales[i].IdCasilla);
                 var imagenesEnCasilla = grid_Tablero.Children.Cast<UIElement>().Where
                     (x => x is Image && Grid.GetColumn(x) == casillaDelPortal.Columna
                     && Grid.GetRow(x) == casillaDelPortal.Fila).Cast<Image>();
-                var portal = imagenesEnCasilla.FirstOrDefault(x => x.Name.Equals(portales[i].Color + portales[i].ZonaTablero));
-                var nuevaCasilla = casillas.Find(x => x.Id == portalesRecibidos[i].IdCasilla);
+                var portal = imagenesEnCasilla.FirstOrDefault(x => x.Name.Equals(Portales[i].Color + Portales[i].ZonaTablero));
+                var nuevaCasilla = Casillas.Find(x => x.Id == portalesRecibidos[i].IdCasilla);
                 Grid.SetRow(portal, nuevaCasilla.Fila);
                 Grid.SetColumn(portal, nuevaCasilla.Columna);
             }
-            portales = portalesRecibidos.ToList();
+            Portales = portalesRecibidos.ToList();
         }
-
+        /// <summary>
+        /// Valida las entradas dentro de los campos
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ValidarTexto(object sender, RoutedEventArgs e)
+        {
+            var textbox = sender as TextBox;
+            if (textbox.Text == "")
+            {
+                return;
+            }
+            if (!Regex.IsMatch(textbox.Text, @"[A-Za-z0-9\s]+$"))
+            {
+                MessageBox.Show(Properties.Resources.camposInvalidos);
+                textbox.Clear();
+            }
+        }
     }
 }

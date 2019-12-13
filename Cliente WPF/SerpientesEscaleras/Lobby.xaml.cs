@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
+using System.Text.RegularExpressions;
 using System.Windows;
-
+using System.Windows.Controls;
 
 namespace SerpientesEscaleras
 {
@@ -11,22 +12,25 @@ namespace SerpientesEscaleras
     public partial class Lobby : Window
     {
         private ServidorJuegoSE.Jugador jugador;
-        public List<String> chat = new List<string>();
         InstanceContext contexto;
         private ServidorJuegoSE.AdministradorMultijugadorClient clienteMultijugador;
-        public List<String> jugadoresConectados = new List<String>();
         private CallbackMultijugador regresoMensaje;
         private ServidorJuegoSE.Sala sala;
+
+        public List<string> Chat { get; set; } = new List<string>();
+        public List<string> JugadoresConectados { get; set; } = new List<String>();
+
         /// <summary>
-        /// Constructor de la ventana lobby, implementa el servicio al callback para el multijugador
+        /// Constructor de la ventana Lobby donde se muestan los jugadores
+        /// para la partida, inicializa el chat
         /// </summary>
         /// <param name="jugadorRecibido"></param>
         public Lobby(ServidorJuegoSE.Jugador jugadorRecibido)
         {
             jugador = jugadorRecibido;
             InitializeComponent();
-            listBox_Chat.ItemsSource = chat;
-            listBox_JugadoresConectados.ItemsSource = jugadoresConectados;
+            listBox_Chat.ItemsSource = Chat;
+            listBox_JugadoresConectados.ItemsSource = JugadoresConectados;
             regresoMensaje = new CallbackMultijugador
             {
                 Lobby = this
@@ -35,10 +39,10 @@ namespace SerpientesEscaleras
             clienteMultijugador = new ServidorJuegoSE.AdministradorMultijugadorClient(contexto);
         }
         /// <summary>
-        /// Metodo que recibe la sala creada en la ventana crear partida y la añade al servidor para despues
-        /// unirse a ella
+        /// Recibe la sala que se creo en la ventana crear partida, la manda al servidor y 
+        /// une al jugador a dicha sala
         /// </summary>
-        /// <param name="salaRecibida">Sala creada en la ventana crear partida</param>
+        /// <param name="salaRecibida"> sala configurada</param>
         public void CrearPartida(ServidorJuegoSE.Sala salaRecibida)
         {
             sala = salaRecibida;
@@ -46,24 +50,28 @@ namespace SerpientesEscaleras
             clienteMultijugador.UnirseSala(sala.IdSala, jugador);
         }
         /// <summary>
-        /// Verifica que si la sala está dispobible y que no haya empezado, de cumplirse
-        /// añade a los jugadores a la partida
+        /// Metodo que valida que haya lugares en la sala, y mete la 
+        /// lista de los jugadores a la partida.
         /// </summary>
-        /// <param name="salaRecibida">sala creada en la ventana crear partida</param>
-        /// <returns>true si el jugador entró a la partida, false sino se pudo</returns>
+        /// <param name="salaRecibida"> sala que se configuró en la pantalla crear partida "</param>
+        /// <returns>true si se metieron a la partida, false si la sala está llena</returns>
         public Boolean EntrarPartida(ServidorJuegoSE.Sala salaRecibida)
         {
             sala = salaRecibida;
             if (clienteMultijugador.ValidarSala(sala.IdSala))
             {
-                jugadoresConectados = clienteMultijugador.ConsultarJugadoresSala(sala.IdSala).ToList();
-                listBox_JugadoresConectados.ItemsSource = jugadoresConectados;
+                JugadoresConectados = clienteMultijugador.ConsultarJugadoresSala(sala.IdSala).ToList();
+                listBox_JugadoresConectados.ItemsSource = JugadoresConectados;
                 clienteMultijugador.UnirseSala(sala.IdSala, jugador);
                 return true;
             }
             return false;
         }
-
+        /// <summary>
+        /// Metodo que consulta las salas que se encuentran disponibles y la regresa
+        /// a la ventana de buscar partida
+        /// </summary>
+        /// <returns></returns>
         public List<ServidorJuegoSE.Sala> ConsultarPartidasDisponibles()
         {
             return clienteMultijugador.ConsultarSalasDisponibles().ToList();
@@ -94,17 +102,36 @@ namespace SerpientesEscaleras
         {
             clienteMultijugador.IniciarJuego(sala.IdSala);
         }
-
+        /// <summary>
+        /// Recibe las casillas y los portales, llama a inicializar el tablero 
+        /// muestra la ventana de juego y cierra el lobby
+        /// </summary>
+        /// <param name="casillas">casillas implementadas en el tablero</param>
+        /// <param name="portales">portales implementados en el tablero</param>
         public void EntrarJuego(ServidorJuegoSE.Casilla[] casillas, ServidorJuegoSE.Portal[] portales)
         {
             Juego juego = new Juego(jugador, sala, regresoMensaje);
-            juego.RecibirListaJugadores(jugadoresConectados);
+            juego.RecibirListaJugadores(JugadoresConectados);
             juego.Casillas = casillas.ToList();
             juego.Portales = portales.ToList();
             juego.InicializarTablero();
             juego.Show();
             this.Close();
             juego.Entrar();
+        }
+
+        private void ValidarTexto(object sender, RoutedEventArgs e)
+        {
+            var textbox = sender as TextBox;
+            if (textbox.Text == "")
+            {
+                return;
+            }
+            if (!Regex.IsMatch(textbox.Text, @"[A-Za-z0-9\s]+$"))
+            {
+                MessageBox.Show(Properties.Resources.camposInvalidos);
+                textbox.Clear();
+            }
         }
 
     }

@@ -1,24 +1,26 @@
 ﻿using System;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using SerpientesEscaleras.ServidorJuegoSE;
 
 namespace SerpientesEscaleras
 {
     public partial class CrearPartida : Window
     {
-        private ServidorJuegoSE.Jugador jugador = new ServidorJuegoSE.Jugador();
-       
+        public Jugador Jugador { get; set; }
+
         /// <summary>
-        /// Constructor de CrearPartida que muestra los jugadores
+        /// Constructor de la ventana crear partida
         /// </summary>
-        /// <param name="jugadorRecibido"></param>
+        /// <param name="jugadorRecibido"> jugador que creará la partida</param>
         public CrearPartida(ServidorJuegoSE.Jugador jugadorRecibido)
         {
-            jugador = jugadorRecibido;
+            Jugador = jugadorRecibido;
             InitializeComponent();
             textBox_Nombre.Focus();
         }
@@ -43,7 +45,7 @@ namespace SerpientesEscaleras
 
         private void Button_Regresar(object sender, RoutedEventArgs e)
         {
-            MenuPrincipal menuPrincipal = new MenuPrincipal(jugador);
+            MenuPrincipal menuPrincipal = new MenuPrincipal(Jugador);
             menuPrincipal.Show();
             this.Close();
         }
@@ -63,7 +65,7 @@ namespace SerpientesEscaleras
                 CasillasEspeciales = checkBox_CasillasEspeciales.IsChecked.Value,
                 UriFondoTablero = ((BitmapFrame)fondo.Source).Decoder.ToString()
             };
-            Lobby lobby = new Lobby(jugador);
+            Lobby lobby = new Lobby(Jugador);
             lobby.CrearPartida(sala);
             lobby.Show();
             this.Close();
@@ -96,6 +98,17 @@ namespace SerpientesEscaleras
                 return false;
             }
             return true;
+        }
+        private void ValidarTexto(object sender, RoutedEventArgs e)
+        {
+            var textbox = sender as TextBox;
+            if (textbox.Text == "") {
+                return;
+            }
+            if (!Regex.IsMatch(textbox.Text, @"[A-Za-z0-9\s]+$")) {
+                MessageBox.Show(Properties.Resources.camposInvalidos);
+                textbox.Clear();
+            }
         }
     }
 }

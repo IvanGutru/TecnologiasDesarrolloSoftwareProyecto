@@ -1,0 +1,5 @@
+Diccionario de jugadores lobby: 
+	Interfaz del callback para comunicarse con el jugador (Ijugador)
+	Al jugador
+	Sirve para que se pueda comunicar con los jugadores
+

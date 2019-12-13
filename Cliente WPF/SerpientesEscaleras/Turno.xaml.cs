@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using SerpientesEscaleras.ServidorJuegoSE;
 using WpfAnimatedGif;
 
 namespace SerpientesEscaleras
@@ -15,26 +16,28 @@ namespace SerpientesEscaleras
     public partial class Turno : Window
     {
         private Juego juego;
-        public ServidorJuegoSE.Ficha ficha;
         private ImageAnimationController controladorGif;
         private ImageAnimationController controladorGif2;
         private Random aleatorio = new Random();
         private int numeroDado1;
         private int numeroDado2 = 0;
         private bool cerrar = false;
+
+        public Ficha Ficha { get; set; }
+
         /// <summary>
-        /// Constructor de la ventana tuno
+        /// Constructor de la vetana turno
         /// </summary>
-        /// <param name="juegoReferencia"> la configuracion del juego</param>
+        /// <param name="juegoReferencia"></param>
         public Turno(Juego juegoReferencia)
         {
             juego = juegoReferencia;
             InitializeComponent();
         }
         /// <summary>
-        /// Muestra la ventana con las fichas a elegir
+        /// Metodo que muestra la ventana para elegir ficha
         /// </summary>
-        /// <param name="fichasEscogidas">lista de fichas disponibles</param>
+        /// <param name="fichasEscogidas"> la ficha que es elegida por un jugador</param>
         public void ElegirFicha(List<ServidorJuegoSE.Ficha> fichasEscogidas)
         {
             label_Instruccion.Content = "Elija su ficha:";
@@ -42,7 +45,7 @@ namespace SerpientesEscaleras
             String uri;
             Image imagenFicha;
             Rectangle rectangulo;
-            for (int i = 1; i <= 8; i++)
+            for (int i = 1; i <= 7; i++)
             {
                 uri = "/Resources/Tablero/Fichas/ficha" + i + ".ico";
                 if (fichasEscogidas.Find(x => x.UriFicha.Equals(uri)) == null)
@@ -91,25 +94,27 @@ namespace SerpientesEscaleras
                 return;
             }
             var direccionFicha = (Image)grid_Fichas.Children.Cast<UIElement>().First(i => i is Image && Grid.GetColumn(i) == Grid.GetColumn(rectangulo));
-            ficha = new ServidorJuegoSE.Ficha()
-            {
+            Ficha = new ServidorJuegoSE.Ficha() {
                 NombreFicha = direccionFicha.Name,
                 UriFicha = ((BitmapImage)direccionFicha.Source).UriSource.OriginalString,
-                ApodoJugador = juego.jugador.Apodo,
+                ApodoJugador = juego.Jugador.Apodo,
                 Posicion = 1,
-                Movimientos = 0
+                Movimientos = 0,
+                
             };
             cerrar = true;
             this.Close();
-            juego.clienteMultijugador.AsignarFicha(juego.sala.IdSala, ficha);
+            juego.ClienteMultijugador.AsignarFicha(juego.Sala.IdSala, Ficha);
         }
-
+        /// <summary>
+        /// Metodo que prepara la ventana donde se muestra el dado 
+        /// </summary>
         public void Tirar()
         {
             label_Instruccion.Content = "Tira el dado:";
             button_Tirar.Content = "Tirar";
             grid_Dados.Visibility = Visibility.Visible;
-            if (juego.sala.DobleDado)
+            if (juego.Sala.DobleDado)
             {
                 MostrarDados(2);
                 image_Dado2.Visibility = Visibility.Visible;
@@ -125,7 +130,7 @@ namespace SerpientesEscaleras
         {
             button_Tirar.Visibility = Visibility.Hidden;
             numeroDado1 = aleatorio.Next(1, 7);
-            if (juego.sala.DobleDado)
+            if (juego.Sala.DobleDado)
             {
                 numeroDado2 = aleatorio.Next(1, 7);
                 controladorGif2.Play();
@@ -174,7 +179,7 @@ namespace SerpientesEscaleras
             temporizador.Stop();
             cerrar = true;
             this.Close();
-            juego.clienteMultijugador.RecibirTiro(juego.sala.IdSala, numeroDado1 + numeroDado2);
+            juego.ClienteMultijugador.RecibirTiro(juego.Sala.IdSala, numeroDado1 + numeroDado2);
         }
 
         private void MostrarDados(int numDados)
@@ -201,7 +206,10 @@ namespace SerpientesEscaleras
                 }
             }
         }
-
+        /// <summary>
+        /// Metodo que prepara la ventana para mostrar el ganador
+        /// </summary>
+        /// <param name="fichaGanador"> la ficha del jugador que gano</param>
         public void MostrarGanador(ServidorJuegoSE.Ficha fichaGanador)
         {
             label_Instruccion.Content = "El ganador es: " + fichaGanador.ApodoJugador;
@@ -230,7 +238,7 @@ namespace SerpientesEscaleras
         private void Button_Salir(object sender, RoutedEventArgs e)
         {
             cerrar = true;
-            MenuPrincipal menuPrincipal = new MenuPrincipal(juego.jugador);
+            MenuPrincipal menuPrincipal = new MenuPrincipal(juego.Jugador);
             menuPrincipal.Show();
             this.Close();
         }

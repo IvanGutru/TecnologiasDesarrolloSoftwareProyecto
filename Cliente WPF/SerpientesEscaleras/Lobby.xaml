@@ -27,8 +27,8 @@
                 </Style>
             </ListBox.ItemContainerStyle>
         </ListBox>
-        <TextBox x:Name="textBox_Mensaje" HorizontalAlignment="Left" Height="63" Margin="25,465,0,0" TextWrapping="Wrap" VerticalAlignment="Top" 
-                 Width="180" Foreground="White" BorderBrush="#FF107676"/>
+        <TextBox x:Name="textBox_Mensaje" HorizontalAlignment="Left" Height="63" Margin="25,465,0,0" TextWrapping="Wrap" VerticalAlignment="Top" LostFocus="ValidarTexto"
+                 Width="180" Foreground="White" BorderBrush="#FF107676" MaxLength="100"/>
         <Button Content="Enviar" HorizontalAlignment="Left" Height="35" Margin="225,493,0,0" VerticalAlignment="Top" Width="100" Click="Button_Enviar"/>
         <Label x:Name="label_JugadoresConectados" Content="Label" HorizontalAlignment="Left" Margin="694,69,0,0" VerticalAlignment="Top" Foreground="White" Width="250"/>
         <Button x:Name="button_Regresar" Content="{x:Static p:Resources.salirJuego}" HorizontalAlignment="Left" Margin="427,493,0,0" VerticalAlignment="Top" 

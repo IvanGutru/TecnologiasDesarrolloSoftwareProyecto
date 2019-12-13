@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 using System.Windows;
-
-
+using System.Windows.Controls;
 
 namespace SerpientesEscaleras
 {
@@ -19,7 +18,15 @@ namespace SerpientesEscaleras
         {
             InitializeComponent();
         }
+        enum EstadoDeOperacion
+        {
+            OperacionExitosa = 1,
+            ErrorConexionBD = -10,
+            Excepcion = -11,
+            JugadorEncontrado = -3,
+            CuentaEncontrada = -4,
 
+        }
         /// <summary>
         /// Cierra esta ventana y regresa a la ventana de inicio de sesión.
         /// </summary>
@@ -51,7 +58,7 @@ namespace SerpientesEscaleras
             try
             {
                 respuesta = cliente.RegistrarJugador(jugador, cuenta);
-                if (respuesta == 1)
+                if (respuesta == (int)EstadoDeOperacion.OperacionExitosa)
                 {
                     cliente.EnviarCorreo(cuenta);
                     IngresarCodigo ingresarCodigo = new IngresarCodigo(cuenta);
@@ -64,22 +71,21 @@ namespace SerpientesEscaleras
                 MessageBox.Show(Properties.Resources.errorConexionServidor, Properties.Resources.tituloErrorConexion, MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-            if (respuesta == -1)
+            if (respuesta == (int)EstadoDeOperacion.JugadorEncontrado)
             {
                 string usuarioRepetido = Properties.Resources.usuarioRepetido;
                 MessageBox.Show(usuarioRepetido);
                 return;
             }
-            if (respuesta == -2)
+            if (respuesta == (int)EstadoDeOperacion.CuentaEncontrada)
             {
                 string correoRepetido = Properties.Resources.correoRepetido;
                 MessageBox.Show(correoRepetido);
                 return;
             }
-            if (respuesta == -10 || respuesta == -11)
+            if (respuesta == (int)EstadoDeOperacion.ErrorConexionBD || respuesta == (int)EstadoDeOperacion.Excepcion)
             {
                 MessageBox.Show(Properties.Resources.errorConexionBaseDatos, Properties.Resources.tituloErrorConexion, MessageBoxButton.OK, MessageBoxImage.Error);
-                return;
             }
         }
 
@@ -113,16 +119,26 @@ namespace SerpientesEscaleras
         private Boolean ValidarFormatoCorreo()
         {
             String expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
-            if (Regex.IsMatch(textBox_CorreoElectronico.Text, expresion))
+            if (Regex.IsMatch(textBox_CorreoElectronico.Text, expresion)&& Regex.Replace(textBox_CorreoElectronico.Text, expresion, String.Empty).Length == 0)
             {
-                if (Regex.Replace(textBox_CorreoElectronico.Text, expresion, String.Empty).Length == 0)
-                {
-                    return true;
-                }
+                return true;
             }
             MessageBox.Show(Properties.Resources.correoInvalido);
             return false;
         }
 
+        private void ValidarTexto(object sender, RoutedEventArgs e)
+        {
+            var textbox = sender as TextBox;
+            if (textbox.Text == "")
+            {
+                return;
+            }
+                if (!Regex.IsMatch(textbox.Text, @"[A-Za-z0-9\s]+$"))
+            {
+                MessageBox.Show(Properties.Resources.camposInvalidos);
+                textbox.Clear();
+            }
+        }
     }
 }

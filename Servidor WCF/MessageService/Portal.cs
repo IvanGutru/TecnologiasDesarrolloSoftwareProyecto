@@ -5,18 +5,38 @@ using System.Runtime.Serialization;
 
 namespace MessageService
 {
+    /// <summary>
+    /// Expoene los datos de los portales
+    /// </summary>
     [DataContract]
     public class Portal
     {
+        /// <summary>
+        /// Permite acceder a la Propiedad de la zana del tablero donde
+        /// se encuentra el portal
+        /// </summary>
         [DataMember]
         public String ZonaTablero { get; set; }
+        /// <summary>
+        /// Permite acceder a la Porpiedad color del portal
+        /// </summary>
         [DataMember]
         public String Color { get; set; }
+        /// <summary>
+        /// Permite acceder a la imagen para el portal
+        /// </summary>
         [DataMember]
         public String UriPortal { get; set; }
+        /// <summary>
+        /// Permite acceder a la casilla en la que se 
+        /// encuentra el portal
+        /// </summary>
         [DataMember]
         public int IdCasilla { get; set; }
-
+        /// <summary>
+        /// Permite crear una lista de los portales para el tablero 
+        /// </summary>
+        /// <returns>Lista de los portales creados</returns>
         public List<Portal> CrearPortales()
         {
             List<Portal> portales = new List<Portal>();
